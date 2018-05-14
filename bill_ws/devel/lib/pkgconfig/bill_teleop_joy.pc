@@ -1,0 +1,8 @@
+prefix=/home/bill/bill_ros/bill_ws/devel
+
+Name: bill_teleop_joy
+Description: Description of bill_teleop_joy
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/bill/bill_ros/bill_ws/devel/lib 
+Requires: 
