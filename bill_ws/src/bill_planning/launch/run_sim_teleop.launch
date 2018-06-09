@@ -1,0 +1,12 @@
+<launch>
+	<include file="$(find bill_teleop_joy)/launch/bill_joy.launch"/>	
+	<include file="$(find gazebo_ros)/launch/empty_world.launch"/>
+		<!-- <arg name="world_name" value="$(find bill_description)/worlds/bill_gazebo.world"/> -->
+    <!-- more default parameters can be changed here -->
+  	<!-- </include>  -->
+	<include file="$(find bill_description)/launch/spawn.launch"/>	
+	<include file="$(find bill_odom)/launch/publish_sim_odom.launch"/>
+	<include file="$(find bill_control)/launch/bill_control.launch"/>
+	<include file="$(find bill_diff_drive)/launch/diff_drive.launch"/>
+	<include file="$(find bill_diff_drive)/launch/actuator_sim.launch"/>
+</launch>

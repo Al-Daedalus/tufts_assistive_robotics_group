@@ -1,0 +1,8 @@
+<launch>
+	
+	<include file="$(find bill_planning)/launch/run_sim_teleop.launch"/>
+	
+	<include file="$(find bill_navigation)/launch/bill_gmapping.launch"/>
+
+	
+</launch>

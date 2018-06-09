@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+	<param name="robot_description" textfile="$(find bill_description)/urdf/bill.xacro"/>
+	
+	<node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-file $(find bill_description)/urdf/bill.xacro -urdf -z 1 -model bill" />
+</launch>

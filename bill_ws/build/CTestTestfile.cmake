@@ -5,4 +5,14 @@
 # This file includes the relevant testing commands required for 
 # testing this directory and lists subdirectories to be tested as well.
 subdirs(gtest)
+subdirs(bill_control)
+subdirs(bill_description)
+subdirs(bill_diff_drive)
+subdirs(bill_encoder)
+subdirs(bill_navigation)
+subdirs(bill_odom)
+subdirs(bill_planning)
 subdirs(bill_teleop_joy)
+subdirs(diff_drive_msgs)
+subdirs(encoder_msgs)
+subdirs(razor_imu_9dof)

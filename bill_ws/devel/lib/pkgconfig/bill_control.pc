@@ -1,0 +1,8 @@
+prefix=/home/bill/bill_ros/bill_ws/devel
+
+Name: bill_control
+Description: Description of bill_control
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/bill/bill_ros/bill_ws/devel/lib 
+Requires: 

@@ -1,0 +1,8 @@
+prefix=/home/bill/bill_ros/bill_ws/install
+
+Name: bill_description
+Description: Description of bill_description
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/bill/bill_ros/bill_ws/install/lib 
+Requires: 

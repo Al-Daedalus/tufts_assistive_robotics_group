@@ -117,7 +117,17 @@ endif()
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("/home/bill/bill_ros/bill_ws/build/gtest/cmake_install.cmake")
+  include("/home/bill/bill_ros/bill_ws/build/bill_control/cmake_install.cmake")
+  include("/home/bill/bill_ros/bill_ws/build/bill_description/cmake_install.cmake")
+  include("/home/bill/bill_ros/bill_ws/build/bill_diff_drive/cmake_install.cmake")
+  include("/home/bill/bill_ros/bill_ws/build/bill_encoder/cmake_install.cmake")
+  include("/home/bill/bill_ros/bill_ws/build/bill_navigation/cmake_install.cmake")
+  include("/home/bill/bill_ros/bill_ws/build/bill_odom/cmake_install.cmake")
+  include("/home/bill/bill_ros/bill_ws/build/bill_planning/cmake_install.cmake")
   include("/home/bill/bill_ros/bill_ws/build/bill_teleop_joy/cmake_install.cmake")
+  include("/home/bill/bill_ros/bill_ws/build/diff_drive_msgs/cmake_install.cmake")
+  include("/home/bill/bill_ros/bill_ws/build/encoder_msgs/cmake_install.cmake")
+  include("/home/bill/bill_ros/bill_ws/build/razor_imu_9dof/cmake_install.cmake")
 
 endif()
 

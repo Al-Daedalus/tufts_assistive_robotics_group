@@ -1,0 +1,9 @@
+<launch>
+	<rosparam file="$(find bill_control)/config/bill_control.yaml" command="load"/>
+	
+	<node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen" ns="/bill" args="left_wheel_hinge_position_controller right_wheel_hinge_position_controller joint_state_controller "/>
+
+	<node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="false" output="screen">
+		<remap from="/joint_states" to="/bill/joint_states" />
+	</node>
+</launch>

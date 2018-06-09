@@ -1,2 +1,2 @@
-bill_teleop_joy
+bill_control:bill_description:bill_diff_drive:bill_encoder:bill_navigation:bill_odom:bill_planning:bill_teleop_joy:diff_drive_msgs:encoder_msgs:razor_imu_9dof
 -DCATKIN_DEVEL_PREFIX=/home/bill/bill_ros/bill_ws/devel -DCMAKE_INSTALL_PREFIX=/home/bill/bill_ros/bill_ws/install -G Unix Makefiles

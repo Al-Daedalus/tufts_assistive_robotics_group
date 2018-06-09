@@ -1,0 +1,8 @@
+prefix=/home/bill/bill_ros/bill_ws/install
+
+Name: bill_diff_drive
+Description: Description of bill_diff_drive
+Version: 0.0.0
+Cflags: -I/home/bill/bill_ros/bill_ws/install/include
+Libs: -L/home/bill/bill_ros/bill_ws/install/lib 
+Requires: geometry_msgs nav_msgs roscpp rospy message_runtime
