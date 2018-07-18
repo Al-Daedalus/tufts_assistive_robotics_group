@@ -1,0 +1,4 @@
+<launch>
+	<node pkg="bill_planning" type="know_place.py" name="place" output="screen">
+	</node>
+</launch>
