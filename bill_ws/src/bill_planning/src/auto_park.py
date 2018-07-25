@@ -1,5 +1,6 @@
 #! /usr/bin/env python
 
+
 import rospy
 from ar_track_alvar_msgs.msg import AlvarMarkers
 from geometry_msgs.msg import Twist
@@ -69,7 +70,7 @@ class auto_park:
 
 
 	def turn(self,angle):
-		rate = rospy.Rate(5)
+		rate = rospy.Rate(3)
 		diff = fabs(self.orientation - self.init_orientation)
 		while  not (angle < diff):# < 1.658):
 			velocity = Twist()
@@ -101,13 +102,13 @@ class auto_park:
 			x_dist_1 = data.pose.pose.position.x
 			print "z_dist_1 = " + str(z_dist_1)
 
-			if ((dist-0.05)>z_dist_1) or (z_dist_1 > (dist+0.05)):
+			if ((dist-0.01)>z_dist_1) or (z_dist_1 > (dist+0.01)):
 				velocity = Twist()
 
 				#0.05 in order to prevent arm from hitting table
-				if z_dist_1 < (dist-0.05):
+				if z_dist_1 < (dist-0.01):
 					velocity.linear.x = -1.0
-				elif z_dist_1 > (dist+0.05):
+				elif z_dist_1 > (dist+0.01):
 					velocity.linear.x = 1.0
 
 				self.vel_pub.publish(velocity)
@@ -117,12 +118,12 @@ class auto_park:
 				else:
 					time.sleep(0.2)
 				
-				if x_dist_1 < -0.5:
+				if x_dist_1 < -0.25:
 					vel = Twist()
 					vel.angular.z = 1.0
 					self.vel_pub.publish(vel)
 					print "left"
-				elif x_dist_1 > 0.0:
+				elif x_dist_1 > 0.25:
 					vel = Twist()
 					vel.angular.z = -1.0
 					self.vel_pub.publish(vel)
@@ -137,7 +138,11 @@ class auto_park:
 				self.vel_pub.publish(v)
 				time.sleep(3)
 				self.donewith1 = True
-				self.turn(0.022)
+				self.turn(2.8)
+				v=Twist()
+				v.linear.x = -1.0
+				self.vel_pub.publish(v)
+				time.sleep(4)
 
 
 
@@ -148,28 +153,28 @@ class auto_park:
 			x_dist_5 = data.pose.pose.position.x
 			print "z_dist_5 = " + str(z_dist_5)
 
-			if ((dist-0.05)>z_dist_5) or (z_dist_5 > (dist+0.05) or (x_dist_5 < -0.05) or (x_dist_5 > 0.05)):
+			if ((dist-0.02)>z_dist_5) or (z_dist_5 > (dist+0.02) or (x_dist_5 < -0.06) or (x_dist_5 > 0.06)):
 				velocity = Twist()
 
-				if z_dist_5 < (dist-0.05):
+				if z_dist_5 < (dist-0.02):
 					velocity.linear.x = -1.0
-				elif z_dist_5 >(dist+0.05):
+				elif z_dist_5 >(dist+0.02):
 					velocity.linear.x = 1.0
 
 				self.vel_pub.publish(velocity)
-				time.sleep(0.7)
+				time.sleep(0.4)
 				
-				if x_dist_5 < -0.05:
+				if x_dist_5 < -0.06:
 					vel = Twist()
 					vel.angular.z = 1.0
 					self.vel_pub.publish(vel)
 					print "left"
-				elif x_dist_5 > 0.05:
+				elif x_dist_5 > 0.06:
 					vel = Twist()
 					vel.angular.z = -1.0
 					self.vel_pub.publish(vel)
 					print "right"
-				time.sleep(0.35)
+				time.sleep(0.2)
 			else:
 				v = Twist()
 				self.vel_pub.publish(v)
@@ -194,23 +199,23 @@ class auto_park:
 		for i in range(0, len(data.markers)):
 			if data.markers[i].id == 1:
 				if not self.donewith1:
-					self.approach1(1.45, data.markers[i])
+					self.approach1(1.5, data.markers[i])
 				
 				
 
 			if data.markers[i].id == 5:
 				if not self.donewith5:
-					self.approach5(1.39, data.markers[i])
+					self.approach5(0.9, data.markers[i])
 				
 
 			
-			if data.markers[i].id == 34:
-				if data.markers[i].pose.pose.position.z > 3.0:
-					v = Twist()
-					v.linear.x = 1.0
-					self.vel_pub.publish(v)
-					time.sleep(3)
-				self.turn(0.03)
+			#if data.markers[i].id == 34:
+			#	if data.markers[i].pose.pose.position.z > 3.0:
+			#		v = Twist()
+			#		v.linear.x = 1.0
+			#		self.vel_pub.publish(v)
+			#		time.sleep(3)
+			#	self.turn(2.8)
 
 
 

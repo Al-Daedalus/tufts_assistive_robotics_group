@@ -1,0 +1,3 @@
+master addr=98d3:21:fc755f
+slave addr=98d3:51:fd7f12
+
