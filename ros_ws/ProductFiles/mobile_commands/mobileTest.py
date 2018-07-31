@@ -129,21 +129,21 @@ def moveToTableAfterRetrieve():
     lGripper.open()
     time.sleep(1)
    # moveOnAxis(lLimb, 'z', .08, .04, pause_event)
-    moveOnAxis(lLimb, 'x', -0.5, .03, pause_event)
+    moveOnAxis(lLimb, 'x', -0.5, .04, pause_event)
     playPositionFile('move_bottle_to_table_p2.wp', lLimb, rLimb, pause_event)
 
 
 def openMicrowave():
 	global lLimb, rLimb, pause_event, lGripper
-	playPositionFile('openMicrowaveMobile.wp', lLimb, rLimb, pause_event)
+	playPositionFile('open_microwave.wp', lLimb, rLimb, pause_event)
 
 def closeMicrowave():
 	global lLimb, rLimb, pause_event, lGripper
-	playPositionFile('closeMicrowaveMobile.wp', lLimb, rLimb, pause_event)
+	playPositionFile('close_microwave.wp', lLimb, rLimb, pause_event)
 
 def getFoodContainer():
 	global lLimb, rLimb, lGripper, pause_event
-	playPositionFile('getFoodFromFridgeP1.wp', lLimb, rLimb, pause_event)
+	playPositionFile('get_food_from_fridge_p1.wp', lLimb, rLimb, pause_event)
 	#moveOnAxis(lLimb, 'z', -.015, .03, pause_event)
 	moveOnAxis(lLimb, 'y', .07, .03, pause_event)
 	time.sleep(.5)
@@ -152,36 +152,65 @@ def getFoodContainer():
 	time.sleep(.5)
 	#moveOnAxis(lLimb, 'z', .03, .04, pause_event)
 	moveOnAxis(lLimb, 'y', -.1, .03, pause_event)
-	playPositionFile('getFoodFromFridgeP2.wp', lLimb, rLimb, pause_event)
+	playPositionFile('get_food_from_fridge_p2.wp', lLimb, rLimb, pause_event)
+
+def placeInMicrowave():
+	global lLimb, rLimb, lGripper, pause_event
+	playPositionFile('put_food_in_microwave_p1.wp', lLimb, rLimb, pause_event)
+	time.sleep(1)
+	moveOnAxis(lLimb, 'y', .17, .02, pause_event)
+	moveOnAxis(lLimb, 'z', -.02, .02, pause_event)
+	waitForNotPause(pause_event)
+	time.sleep(1)
+	lGripper.open()
+	time.sleep(1)
+	moveOnAxis(lLimb, 'y', -.17, .02, pause_event)
+	playPositionFile('putFoodInMicrowaveP2.wp', lLimb, rLimb, pause_event)
+
+def turnOnMicrowave():
+	global lLimb, rLimb, lGripper, pause_event
+	playPositionFile('turn_on_microwave.wp', lLimb, rLimb, pause_event)
+	time.sleep(.5)
+	moveOnAxis(lLimb, 'y', .07, .09, pause_event)
+	time.sleep(.5)
+	moveOnAxis(lLimb, 'z', -.10, .04, pause_event)	
+	time.sleep(5)
+	turnOffMicrowave()
+
+def turnOffMicrowave():
+	global lLimb, rLimb, lGripper, pause_event
+	moveOnAxis(lLimb, 'z', .15, .07, pause_event)
+	moveOnAxis(lLimb, 'z', -.03, .04, pause_event)
+	moveOnAxis(lLimb, 'y', -.05, .05, pause_event)
+	playPositionFile('turn_off_microwave.wp', lLimb, rLimb, pause_event)
 
 print("Moving to mobile downward position")
 moveToDownward(lLimb, rLimb, pause_event)
 
-
+'''
 print("Opening the fridge")
 openFridge()
 getBottleOpenFridge()
 moveToTableAfterRetrieve()
-#closeFridge()
-'''
-print("Getting bottle in hand")
-getBottleOpenFridge()
-
-moveToTableAfterRetrieve()
 closeFridge()
 '''
 
-#openMicrowave()
-#closeMicrowave()
+
+#print("Getting bottle in hand")
+#getBottleOpenFridge()
+
+#moveToTableAfterRetrieve()
+#closeFridge()
+openMicrowave()
+closeMicrowave()
 
 #openFridge()
 #getFoodContainer()
+#placeInMicrowave()
+turnOnMicrowave()
+#turnOffMicrowave()
 
 
-'''
-task = Thread(target=tester, args=(lLimb, rLimb, lGripper, pause_event), name="testCommand")
-print(task.name)
-task.daemon = True
-task.start()
-'''
+
+
 

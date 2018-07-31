@@ -227,7 +227,6 @@ class auto_park:
 
 
 	def __init__(self):
-		self.announce()
 		self.init_orientation = 0.0
 		self.orientation = 0.0
 		self.announced = False
@@ -240,6 +239,7 @@ class auto_park:
 		self.not_understood = True
 		self.vel_pub = rospy.Publisher('/cmd_vel', Twist, queue_size=10)
 		self.commands=["activate","auto","parking"]
+		#self.accept_command()
 		self.listener()
 
 		

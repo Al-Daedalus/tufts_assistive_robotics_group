@@ -23,7 +23,7 @@ baxter_hostname="tuftsBaxter.local"
 
 # Set *Either* your computers ip address or hostname. Please note if using
 # your_hostname that this must be resolvable to Baxter.
-your_ip="169.254.129.156"
+your_ip="130.64.132.140"
 
 #your_hostname="my_computer.local"
 

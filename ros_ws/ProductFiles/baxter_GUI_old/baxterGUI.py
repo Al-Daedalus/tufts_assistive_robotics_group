@@ -38,7 +38,6 @@ from std_msgs.msg import (
 import baxter_interface as baxter
 import pyttsx
 import speech_recognition as sr
-from GUIhelper import *
 from positionControl import *
 from mobileTasks import *
 from std_msgs.msg import String
@@ -48,11 +47,6 @@ import time
 import cv2
 import cv_bridge
 from Tkinter import *
-from gtts import gTTS
-import playsound
-from auto_park import auto_park
-import subprocess, shlex
-
 
 #Global variables
 rawCommand = ""
@@ -74,7 +68,7 @@ dialog = "Listening..."
 # Environment Tracking Booleans
 env = ({'fridgeOpen': False, 'hasBottle': False, 'bottleOnTable':False, 
         'microwaveOpen': False, 'holdingSomething': False, 
-        'microwaveOn': False, 'foodInMicrowave': False, 'robotlocalized': False, 'mobileBaseActivated': False})
+        'microwaveOn': False, 'foodInMicrowave': False})
 
 # Event for pausing the current task
 pause_event = TEvent()
@@ -104,7 +98,8 @@ curr_command.set("Waiting...")
 command_box["textvariable"] = curr_command
 command_box.pack()
 #blank label separator
-#box
+
+#suggestion box
 prompt = Frame(root, width=200, height=100, bg="#ccefff")
 prompt.pack()
 sug_header = Label(prompt, text="Suggested Commands", font=("Ariel",18), bg="#ccefff",
@@ -118,6 +113,8 @@ second_suggestion = StringVar()
 second = Label(prompt, textvariable=second_suggestion, font = ("Ariel", 15), bg="#ccefff",
                 fg="#181818")
 second.pack(pady=2)
+
+
 #environment title
 env_label = Label(root, text="Environment", fg="white", bg="#000d33",
                   width=60, height=2, font=("Ariel", 20), bd=1, relief=SOLID)
@@ -146,17 +143,17 @@ bottle.pack(pady=15)
 
 #environment tokens#
 at_start = True;
+sug1 = "blank 1"
+sug2 = "blank 2"
 
 def get_prompt():
-    global at_start, lastAliveName
+    global at_start, sug1, sug2
     if (at_start):
         make_label('"Put a water bottle on the table"', '"Put food in the microwave"')
         at_start = False
-    #else:
-        #suggestions = make_suggestion(lastAliveName)
-       # make_label(suggestions[0], suggestions[1])
+    else:
+        make_suggestion()
 
-'''
 def make_suggestion():
     #use the last alive command to make suggestions
     global sug1, sug2
@@ -261,7 +258,7 @@ def make_suggestion():
                 sug1 = '"Put water bottle on table"'
                 sug2 = '"Open the fridge"'
     make_label(sug1, sug2)
-'''   
+   
 
 
 def make_label(sug1, sug2):
@@ -283,8 +280,6 @@ def update_command_box(command):
     curr_command.set(command_string)
     command_box["bg"] = "green"
 
-'''
-#move to another file
 def command_to_string(command):
     if command == "movingToZero":
         return "Moving to default position"
@@ -316,8 +311,6 @@ def command_to_string(command):
         return "Turning on microwave"
 
     return "Command not recognized"
-'''
-
 
 # Helper functions #
 def terminate_thread(thread):
@@ -344,14 +337,6 @@ def clamp(n, minn, maxn):
     return max(min(maxn, n), minn)
 
 # Definitions #
-
-
-#for launching mobile base scripts to activate mobile base
-def activate_mobile_base():
-    command = "gnome-terminal --tab -e './run_mobile_base.sh'"
-    args = shlex.split(command)
-    p1 = subprocess.call(args)
-
 def setup_baxter():
     print "in baxter setup"
     rospy.init_node('speechControl')
@@ -392,9 +377,9 @@ def setup_speech():
 def heard(recognizer, audio):
     # Defining Commands to be accepted
     global t2s, dialog
-    #credsJson = ""
-    #with open('baxter-helper-bot-gspeechcreds.json', 'r') as gspeechcreds:
-        #credsJson = gspeechcreds.read()
+    credsJson = ""
+    with open('baxter-helper-bot-gspeechcreds.json', 'r') as gspeechcreds:
+        credsJson = gspeechcreds.read()
     
     sens = 1
     commands = ["move", "arm", "forward", "backward", "left", "right", "up", "down", 
@@ -402,14 +387,13 @@ def heard(recognizer, audio):
                 "faster", "slower", "fridge", "zero", "get", "water bottle", "fridge", 
                 "place on", "table", "fridge is open", "holding something", "fridge is closed", 
                 "hand is empty", "microwave", "start", "turn off", "continue", "cook",
-                "put", "food", "is open", "get the food", "activate", "auto", "parking","mobile base",
-                "robot is localized"]
+                "put", "food", "is open", "get the food"]
     dialog = "Listening..."
     print("listening")
     try:
         commandIter = [command[0] for command in commands]
         global rawCommand
-        rawCommand = recognizer.recognize_google_cloud(audio_data=audio, language='en-US', preferred_phrases=commands)
+        rawCommand = recognizer.recognize_google_cloud(audio_data=audio, language='en-US', credentials_json=credsJson, preferred_phrases=commands)
         dialog = rawCommand
         print("understood")
     except sr.UnknownValueError:
@@ -432,10 +416,12 @@ def runTask(task_target, task_name, args):
 
 def update_after_task():
     global t2s, lastAliveName
-    tts = gTTS(text='Done with '+ lastAliveName, lang='en')
-    tts.save("donewith.mp3")
-    playsound.playsound('donewith.mp3', True)
-    
+    t2s.say("  ")
+    t2s.say("  ")
+    t2s.say("  ")
+    t2s.say("  ")       # clear text to speech queue
+    t2s.say(" Done with " + lastAliveName)
+    t2s.runAndWait()
     curr_command.set("Waiting...")
     command_box['bg'] = "light grey"
 
@@ -482,11 +468,6 @@ def update_after_task():
         env['foodInMicrowave'] = True
         env['microwaveOpen'] = False
         env['microwaveOn'] = False
-    elif lastAliveName == "activateAutoParking":
-            env['robotlocalized'] = True
-    elif lastAliveName == "activateMobileBase":
-        env['mobileBaseActivated'] = True
-        env['robotlocalized'] = False
     update_tokens()
 
 def update_tokens():
@@ -564,6 +545,7 @@ get_prompt()
 while not rospy.is_shutdown():
 
     #update the GUI
+
     root.update()
     dialog_content.set(dialog)
 
@@ -657,137 +639,131 @@ while not rospy.is_shutdown():
 
     ### Begin task commands ###
 
-    # NOTE!
-    # The fridge and microwave tasks should only run if the environment variable
-    # env['robotlocalized'] is True. 
-    # Else they won't be executed
+    ### Begin fridge commands ### 
+    # Open the fridge #
+    if 'open' in command and 'the fridge' in command:
+        terminate_thread(task)
+        if not env['fridgeOpen']:
+            args=(lLimb, rLimb, pause_event)
+            runTask(openFridge, "openingFridge", args)
+    # Get waterbottle from fridge #
+    if 'get' in command and 'water bottle' in command:
+        terminate_thread(task)
+        # if fridge is closed #
+        if not env['fridgeOpen'] and not env['hasBottle']:
+            args = (lLimb, rLimb,lGripper, pause_event)
+            runTask(getBottleFromStart, "gettingBottleFromStart", args)
+        # if fridge is open #
+        if env['fridgeOpen'] and not env['hasBottle']:
+            args=(lLimb, rLimb,lGripper, pause_event)
+            runTask(pickBottleFromOpenFridge, "gettingBottleFromOpenFridge", 
+                    args)
+        # if fridge is open and has bottle #
+        if env['fridgeOpen'] and env['hasBottle']:
+            rawCommand = ""
+            pass
+    # Close the fridge #
+    if 'close' in command and 'the fridge' in command:
+        terminate_thread(task)
+        if env['fridgeOpen'] and not env['holdingSomething']:
+            args=(lLimb, rLimb, pause_event)
+            runTask(closeFridge, "closingFridge", args)     
+    # Place water bottle on table #
+    if 'place' in command and 'table' in command:
+        terminate_thread(task)
+        if env['hasBottle']:
+            args=(lLimb, rLimb,lGripper, pause_event)
+            runTask(moveToTableAfterRetrieve, "placingOnTable", args)
+        else:
+            print("I don't have the bottle right now")
+            print(task.name)
+            rawCommand = ""
+    # Full command - Put water bottle on table #
+    if 'put' in command and 'water bottle' in command and 'table' in command:
+        terminate_thread(task)
+        args=(lLimb, rLimb,lGripper,pause_event)
+        # if the fridge is closed #
+        if not env['fridgeOpen'] and not env['hasBottle']:
+            runTask(getBottleFull, "gettingBottlePlacingOnTable", args)
+        # if the fridge is open #
+        elif env['fridgeOpen'] and not env['hasBottle']:
+            runTask(bottleOnTableAfterOpenFridge, 
+                    "gettingBottleFromOpenFridgeAndPlacingOnTable", args)
+        # if it has water bottle already #
+        elif env['fridgeOpen'] and env['hasBottle']:
+            runTask(moveToTableAfterRetrieve, "placingOnTable", args)
+    #### End Fridge task commands ####
 
-    if env['robotlocalized']:
-        ### Begin fridge commands ### 
-        # Open the fridge #
-        if 'open' in command and 'the fridge' in command:
-            terminate_thread(task)
-            if not env['fridgeOpen']:
-                args=(lLimb, rLimb, pause_event)
-                runTask(openFridge, "openingFridge", args)
-        # Get waterbottle from fridge #
-        if 'get' in command and 'water bottle' in command:
-            terminate_thread(task)
-            # if fridge is closed #
-            if not env['fridgeOpen'] and not env['hasBottle']:
-                args = (lLimb, rLimb,lGripper, pause_event)
-                runTask(getBottleFromStart, "gettingBottleFromStart", args)
-            # if fridge is open #
-            if env['fridgeOpen'] and not env['hasBottle']:
-                args=(lLimb, rLimb,lGripper, pause_event)
-                runTask(pickBottleFromOpenFridge, "gettingBottleFromOpenFridge", 
-                        args)
-            # if fridge is open and has bottle #
-            if env['fridgeOpen'] and env['hasBottle']:
-                rawCommand = ""
-                pass
-        # Close the fridge #
-        if 'close' in command and 'the fridge' in command:
-            terminate_thread(task)
-            if env['fridgeOpen'] and not env['holdingSomething']:
-                args=(lLimb, rLimb, pause_event)
-                runTask(closeFridge, "closingFridge", args)     
-        # Place water bottle on table #
-        if 'place' in command and 'table' in command:
-            terminate_thread(task)
-            if env['hasBottle']:
-                args=(lLimb, rLimb,lGripper, pause_event)
-                runTask(moveToTableAfterRetrieve, "placingOnTable", args)
-            else:
-                print("I don't have the bottle right now")
-                print(task.name)
-                rawCommand = ""
-        # Full command - Put water bottle on table #
-        if 'put' in command and 'water bottle' in command and 'table' in command:
-            terminate_thread(task)
-            args=(lLimb, rLimb,lGripper,pause_event)
-            # if the fridge is closed #
-            if not env['fridgeOpen'] and not env['hasBottle']:
-                runTask(getBottleFull, "gettingBottlePlacingOnTable", args)
-            # if the fridge is open #
-            elif env['fridgeOpen'] and not env['hasBottle']:
-                runTask(bottleOnTableAfterOpenFridge, 
-                        "gettingBottleFromOpenFridgeAndPlacingOnTable", args)
-            # if it has water bottle already #
-            elif env['fridgeOpen'] and env['hasBottle']:
-                runTask(moveToTableAfterRetrieve, "placingOnTable", args)
-        #### End Fridge task commands ####
+    # Water Bottle Commands #
+    ## Stub for now
 
-        # Water Bottle Commands #
-        ## Stub for now
-
-        ### Microwave commands ###
-        if 'open' in command and 'the microwave' in command:
-            terminate_thread(task)
-            if not env["microwaveOpen"] and not env["holdingSomething"]:
-                args=(lLimb, rLimb, pause_event)
-                runTask(openMicrowave, "openingMicrowave", args)
-            rawCommand = ""
-        if 'close' in command and 'microwave' in command:
-            terminate_thread(task)
-            if env["microwaveOpen"] and not env["holdingSomething"]:
-                args=(lLimb, rLimb, pause_event)
-                runTask(closeMicrowave, "closingMicrowave", args)
-            rawCommand = ""
-        if 'start' in command and 'microwave' in command:
-            terminate_thread(task)
-            if (not env["microwaveOpen"]) and (not env["holdingSomething"]) and (not env["microwaveOn"]):
-                args=(lLimb, rLimb, pause_event)
-                runTask(turnOnMicrowave, "turningOnMicrowave", args)
-                env["microwaveOn"] = True
-            rawCommand = ""
-        if ('turn off' in command) or ('stop'in command and 'microwave' in command):
-            terminate_thread(task)
-            if env["microwaveOn"] and (not env["holdingSomething"]):
-                args=(lLimb, rLimb, pause_event)
-                runTask(turnOffMicrowave, "turningOffMicrowave", args)
-            rawCommand = ""
-        if 'cook' in command and 'seconds' in command:
-            terminate_thread(task)
-            t = [int(s) for s in command.split() if s.isdigit()]
-            print(t)
-            if not t:
-                print("No time given")
-            elif (not env["microwaveOpen"]) and (not env["holdingSomething"]) and (not env["microwaveOn"]):
-                args=(lLimb, rLimb, pause_event, t[0],)
-                runTask(timedMicrowave, "timedCook", args)
-                env["microwaveOn"] = True
-            rawCommand = ""
-        if (('meal' in command) or ('food' in command)) and (('put' in command or 'place' in command) and ('microwave' in command)):
-            terminate_thread(task)
-            if not env["fridgeOpen"] and not env["microwaveOpen"] and not env["holdingSomething"] and not env["foodInMicrowave"]:
-                args=(lLimb, rLimb, lGripper, pause_event,)
-                runTask(placeContainerInMicrowaveFromStart, "puttingFoodInMicrowave"
-                        ,args)
-            if env["fridgeOpen"] and not env["microwaveOpen"] and not env["holdingSomething"] and not env["foodInMicrowave"]:
-                args=(lLimb, rLimb, lGripper, pause_event,)
-                runTask(placeContainerInMicrowaveFromOpenFridge, 
-                        "puttingFoodInMicrowave", args)
-            if not env["fridgeOpen"] and env["microwaveOpen"] and not env["holdingSomething"] and not env["foodInMicrowave"]:
-                args=(lLimb, rLimb, lGripper, pause_event,)
-                runTask(placeContainerInMicrowaveFromOpenMicrowave, 
+    ### Microwave commands ###
+    if 'open' in command and 'the microwave' in command:
+        terminate_thread(task)
+        if not env["microwaveOpen"] and not env["holdingSomething"]:
+            args=(lLimb, rLimb, pause_event)
+            runTask(openMicrowave, "openingMicrowave", args)
+        rawCommand = ""
+    if 'close' in command and 'microwave' in command:
+        terminate_thread(task)
+        if env["microwaveOpen"] and not env["holdingSomething"]:
+            args=(lLimb, rLimb, pause_event)
+            runTask(closeMicrowave, "closingMicrowave", args)
+        rawCommand = ""
+    if 'start' in command and 'microwave' in command:
+        terminate_thread(task)
+        if (not env["microwaveOpen"]) and (not env["holdingSomething"]) and (not env["microwaveOn"]):
+            args=(lLimb, rLimb, pause_event)
+            runTask(turnOnMicrowave, "turningOnMicrowave", args)
+            env["microwaveOn"] = True
+        rawCommand = ""
+    if ('turn off' in command) or ('stop'in command and 'microwave' in command):
+        terminate_thread(task)
+        if env["microwaveOn"] and (not env["holdingSomething"]):
+            args=(lLimb, rLimb, pause_event)
+            runTask(turnOffMicrowave, "turningOffMicrowave", args)
+        rawCommand = ""
+    if 'cook' in command and 'seconds' in command:
+        terminate_thread(task)
+        t = [int(s) for s in command.split() if s.isdigit()]
+        print(t)
+        if not t:
+            print("No time given")
+        elif (not env["microwaveOpen"]) and (not env["holdingSomething"]) and (not env["microwaveOn"]):
+            args=(lLimb, rLimb, pause_event, t[0],)
+            runTask(timedMicrowave, "timedCook", args)
+            env["microwaveOn"] = True
+        rawCommand = ""
+    if (('meal' in command) or ('food' in command)) and (('put' in command or 'place' in command) and ('microwave' in command)):
+        terminate_thread(task)
+        if not env["fridgeOpen"] and not env["microwaveOpen"] and not env["holdingSomething"] and not env["foodInMicrowave"]:
+            args=(lLimb, rLimb, lGripper, pause_event,)
+            runTask(placeContainerInMicrowaveFromStart, "puttingFoodInMicrowave"
+                    ,args)
+        if env["fridgeOpen"] and not env["microwaveOpen"] and not env["holdingSomething"] and not env["foodInMicrowave"]:
+            args=(lLimb, rLimb, lGripper, pause_event,)
+            runTask(placeContainerInMicrowaveFromOpenFridge, 
                     "puttingFoodInMicrowave", args)
-            if env["fridgeOpen"] and env["microwaveOpen"] and not env["holdingSomething"] and not env["foodInMicrowave"]:
-                args=(lLimb, rLimb, lGripper, pause_event,)
-                runTask(placeContainerInMicrowaveFromOpenMicOpenFridge,
-                    "puttingFoodInMicrowave", args) 
-            rawCommand = ""
-        if ('take' in command or 'get' in command) and ('container' in command or 'food' in command) and ('microwave' in command):
-            terminate_thread(task)
-            if not env["microwaveOpen"] and env["foodInMicrowave"]:
-                args=(lLimb, rLimb, lGripper, pause_event,)
-                runTask(getFoodFromMicrowave, "gettingFoodFromMicrowave", args)
-            if env["microwaveOpen"] and env["foodInMicrowave"]:
-                args=(lLimb, rLimb, lGripper, pause_event,)
-                runTask(getFoodFromOpenMicrowave, "gettingFoodFromMicrowave", args)
-            rawCommand = ""
-        # end microwave Commands
-        ### End task related commands ###
+        if not env["fridgeOpen"] and env["microwaveOpen"] and not env["holdingSomething"] and not env["foodInMicrowave"]:
+            args=(lLimb, rLimb, lGripper, pause_event,)
+            runTask(placeContainerInMicrowaveFromOpenMicrowave, 
+                "puttingFoodInMicrowave", args)
+        if env["fridgeOpen"] and env["microwaveOpen"] and not env["holdingSomething"] and not env["foodInMicrowave"]:
+            args=(lLimb, rLimb, lGripper, pause_event,)
+            runTask(placeContainerInMicrowaveFromOpenMicOpenFridge,
+                "puttingFoodInMicrowave", args) 
+        rawCommand = ""
+    if ('take' in command or 'get' in command) and ('container' in command or 'food' in command) and ('microwave' in command):
+        terminate_thread(task)
+        if not env["microwaveOpen"] and env["foodInMicrowave"]:
+            args=(lLimb, rLimb, lGripper, pause_event,)
+            runTask(getFoodFromMicrowave, "gettingFoodFromMicrowave", args)
+        if env["microwaveOpen"] and env["foodInMicrowave"]:
+            args=(lLimb, rLimb, lGripper, pause_event,)
+            runTask(getFoodFromOpenMicrowave, "gettingFoodFromMicrowave", args)
+        rawCommand = ""
+    # end microwave Commands
+    ### End task related commands ###
 
     ### environment variable control commands ###           
     if 'fridge is open' in command:
@@ -813,9 +789,6 @@ while not rospy.is_shutdown():
         env['foodInMicrowave'] = True
     if 'microwave is empty' in command:
         env['foodInMicrowave'] = False
-    if 'robot is localized' in command:
-        env['robotlocalized'] = True
-
     ### end environment variable control commands
 
     ### miscellaneous commands ###
@@ -836,28 +809,7 @@ while not rospy.is_shutdown():
                 'microwaveOn': False, 'foodInMicrowave': False})
         rawCommand = ""
 
-
-
-    ### mobile base commands
-    if 'parking' in command:
-        terminate_thread(task)
-        task = Thread(target=auto_park, name="activateAutoParking")
-        print(task.name)
-        pause_event.clear()
-        task.daemon = True
-        task.start()
-        rawCommand = ""
-
-    if 'mobile base' in command:
-        terminate_thread(task)
-        task = Thread(target=activate_mobile_base, name="activateMobileBase")
-        print(task.name)
-        pause_event.clear()
-        task.daemon = True
-        task.start()
-        rawCommand = ""
     ### End Miscellaneous commands ###
-
     newCommand = ""
     lastCommand = command
     time.sleep(.01)

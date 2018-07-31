@@ -43,6 +43,10 @@ from sensor_msgs.msg import Image
 import time
 import cv2
 import cv_bridge
+from gtts import gTTS
+import playsound
+from auto_park import auto_park
+import subprocess, shlex
 
 rospy.init_node('speechControl')
 
@@ -64,6 +68,11 @@ for voice in voices:
 t2s.setProperty('rate', 150)
 
 ################## Definitions #####################
+#for launching mobile base scripts to activate mobile base
+def activate_mobile_base():
+	command = "gnome-terminal --tab -e './run_mobile_base.sh'"
+	args = shlex.split(command)
+	p1 = subprocess.call(args)
 
 # clamping function to constrain arm movement
 def clamp(n, minn, maxn):
@@ -83,7 +92,8 @@ def heard(recognizer, audio):
                 "faster", "slower", "fridge", "zero", "get", "water bottle", "fridge", 
                 "place on", "table", "fridge is open", "holding something", "fridge is closed", 
                 "hand is empty", "microwave", "start", "turn off", "continue", "cook",
-                "put", "food", "is open", "get the food"]
+                "put", "food", "is open", "get the food", "activate", "auto", "parking","mobile base",
+                "robot is localized"]
 	print('trying to recognize')
 	try:
 		commandIter = [command[0] for command in commands]
@@ -219,12 +229,15 @@ while not rospy.is_shutdown():
 
 	# Check if task has ended
 	if lastAliveStatus and not task.is_alive():
-		t2s.say("  ")
-		t2s.say("  ")
-		t2s.say("  ")
-		t2s.say("  ")		# clear text to speech queue
-		t2s.say(" Done with " + lastAliveName)
-		t2s.runAndWait()
+		# t2s.say("  ")
+		# t2s.say("  ")
+		# t2s.say("  ")
+		# t2s.say("  ")		# clear text to speech queue
+		# t2s.say(" Done with " + lastAliveName)
+		# t2s.runAndWait()
+		tts = gTTS(text='Done with '+ lastAliveName, lang='en')
+		tts.save("donewith.mp3")
+		playsound.playsound('donewith.mp3', True)
 
 		### Set environment variables based on the task that just ended ###
 		if lastAliveName == "openingFridge":
@@ -263,6 +276,11 @@ while not rospy.is_shutdown():
 			env['foodInMicrowave'] = False
 			env['microwaveOpen'] = False
 			env['holdingSomething'] = False
+		elif lastAliveName == "activateAutoParking":
+			env['robotlocalized'] = True
+		elif lastAliveName == "activateMobileBase":
+			env['mobileBaseActivated'] = True
+			env['robotlocalized'] = False
 
 	lastAliveStatus = task.is_alive()
 	lastAliveName = task.name
@@ -373,179 +391,188 @@ while not rospy.is_shutdown():
 
 	### Begin task commands ###
 
+
+
+
+	# NOTE!
+	# The fridge and microwave tasks should only run if the environment variable
+	# env['robotlocalized'] is True. 
+	# Else they won't be executed
+
+	if env['robotlocalized']:
 		# Begin fridge commands # 
-	if 'open' in command and 'the fridge' in command:
-		terminate_thread(task)
-		if not env['fridgeOpen']:
-			task = Thread(target=openFridge, args=(lLimb, rLimb, pause_event), name="openingFridge")
-			pause_event.clear()
-			task.daemon = True
-			task.start()
-			print(task.name)
+		if 'open' in command and 'the fridge' in command:
+			terminate_thread(task)
+			if not env['fridgeOpen']:
+				task = Thread(target=openFridge, args=(lLimb, rLimb, pause_event), name="openingFridge")
+				pause_event.clear()
+				task.daemon = True
+				task.start()
+				print(task.name)
+				rawCommand = ""
+		if 'get' in command and 'water bottle' in command:
+			terminate_thread(task)
+			if not env['fridgeOpen'] and not env['hasBottle']:
+				task = Thread(target=getBottleFromStart, args=(lLimb, rLimb,lGripper, pause_event), name="gettingBottleFromStart")
+				pause_event.clear()
+				task.daemon = True
+				task.start()
+				print(task.name)
+			if env['fridgeOpen'] and not env['hasBottle']:
+				task = Thread(target=pickBottleFromOpenFridge, args=(lLimb, rLimb,lGripper, pause_event), name="gettingBottleFromOpenFridge")
+				pause_event.clear()
+				task.daemon = True
+				task.start()
+				print(task.name)
+			if env['fridgeOpen'] and env['hasBottle']:
+				pass
 			rawCommand = ""
-	if 'get' in command and 'water bottle' in command:
-		terminate_thread(task)
-		if not env['fridgeOpen'] and not env['hasBottle']:
-			task = Thread(target=getBottleFromStart, args=(lLimb, rLimb,lGripper, pause_event), name="gettingBottleFromStart")
-			pause_event.clear()
-			task.daemon = True
-			task.start()
-			print(task.name)
-		if env['fridgeOpen'] and not env['hasBottle']:
-			task = Thread(target=pickBottleFromOpenFridge, args=(lLimb, rLimb,lGripper, pause_event), name="gettingBottleFromOpenFridge")
-			pause_event.clear()
-			task.daemon = True
-			task.start()
-			print(task.name)
-		if env['fridgeOpen'] and env['hasBottle']:
-			pass
-		rawCommand = ""
-	if 'close' in command and 'the fridge' in command:
-		terminate_thread(task)
-		if env['fridgeOpen'] and not env['holdingSomething']:
-			task = Thread(target=closeFridge, args=(lLimb, rLimb, pause_event), name="closingFridge")
-			pause_event.clear()
-			task.daemon = True
-			task.start()
-			print(task.name)
-		rawCommand = ""
-	if 'place' in command and 'table' in command:
-		terminate_thread(task)
-		if env['hasBottle']:
-			task = Thread(target=moveToTableAfterRetrieve, args=(lLimb, rLimb,lGripper, pause_event), name="placingOnTable")
-			pause_event.clear()
-			task.daemon = True
-			task.start()
-			print(task.name)
-		else:
-			print("I don't have the bottle right now")
-			print(task.name)
-		rawCommand = ""
-	if 'put' in command and 'water bottle' in command and 'table' in command:
-		terminate_thread(task)
-		if not env['fridgeOpen'] and not env['hasBottle']:
-			task = Thread(target=getBottleFull, args=(lLimb, rLimb,lGripper,pause_event), name="gettingBottlePlacingOnTable")
-			pause_event.clear()
-			task.daemon = True
-			task.start()
-			print(task.name)
-		elif env['fridgeOpen'] and not env['hasBottle']:
-			task = Thread(target=bottleOnTableAfterOpenFridge, args=(lLimb, rLimb, lGripper, pause_event), name="gettingBottleFromOpenFridgeAndPlacingOnTable")
-			pause_event.clear()
-			task.daemon = True
-			task.start()
-			print(task.name)
-		elif env['fridgeOpen'] and env['hasBottle']:
-			task = Thread(target=moveToTableAfterRetrieve, args=(lLimb, rLimb,lGripper, pause_event), name="placingOnTable")
-			pause_event.clear()
-			task.daemon = True
-			task.start()
-			print(task.name)
-		rawCommand = ""
+		if 'close' in command and 'the fridge' in command:
+			terminate_thread(task)
+			if env['fridgeOpen'] and not env['holdingSomething']:
+				task = Thread(target=closeFridge, args=(lLimb, rLimb, pause_event), name="closingFridge")
+				pause_event.clear()
+				task.daemon = True
+				task.start()
+				print(task.name)
+			rawCommand = ""
+		if 'place' in command and 'table' in command:
+			terminate_thread(task)
+			if env['hasBottle']:
+				task = Thread(target=moveToTableAfterRetrieve, args=(lLimb, rLimb,lGripper, pause_event), name="placingOnTable")
+				pause_event.clear()
+				task.daemon = True
+				task.start()
+				print(task.name)
+			else:
+				print("I don't have the bottle right now")
+				print(task.name)
+			rawCommand = ""
+		if 'put' in command and 'water bottle' in command and 'table' in command:
+			terminate_thread(task)
+			if not env['fridgeOpen'] and not env['hasBottle']:
+				task = Thread(target=getBottleFull, args=(lLimb, rLimb,lGripper,pause_event), name="gettingBottlePlacingOnTable")
+				pause_event.clear()
+				task.daemon = True
+				task.start()
+				print(task.name)
+			elif env['fridgeOpen'] and not env['hasBottle']:
+				task = Thread(target=bottleOnTableAfterOpenFridge, args=(lLimb, rLimb, lGripper, pause_event), name="gettingBottleFromOpenFridgeAndPlacingOnTable")
+				pause_event.clear()
+				task.daemon = True
+				task.start()
+				print(task.name)
+			elif env['fridgeOpen'] and env['hasBottle']:
+				task = Thread(target=moveToTableAfterRetrieve, args=(lLimb, rLimb,lGripper, pause_event), name="placingOnTable")
+				pause_event.clear()
+				task.daemon = True
+				task.start()
+				print(task.name)
+			rawCommand = ""
 
-		# End Fridge task commands #
+			# End Fridge task commands #
 
-		# Water Bottle Commands #
-		## Stub for now
+			# Water Bottle Commands #
+			## Stub for now
 
-		# Microwave commands #
-	if 'open' in command and 'the microwave' in command:
-		terminate_thread(task)
-		if not env["microwaveOpen"] and not env["holdingSomething"]:
-			task = Thread(target=openMicrowave, args=(lLimb, rLimb, pause_event), name="openingMicrowave")
-			pause_event.clear()
-			task.daemon = True
-			task.start()
-			print(task.name)
-		rawCommand = ""
-	if 'close' in command and 'microwave' in command:
-		terminate_thread(task)
-		if env["microwaveOpen"] and not env["holdingSomething"]:
-			task = Thread(target=closeMicrowave, args=(lLimb, rLimb, pause_event), name="closingMicrowave")
-			pause_event.clear()
-			task.daemon = True
-			task.start()
-			print(task.name)
-		rawCommand = ""
-	if 'start' in command and 'microwave' in command:
-		terminate_thread(task)
-		if (not env["microwaveOpen"]) and (not env["holdingSomething"]) and (not env["microwaveOn"]):
-			task = Thread(target=turnOnMicrowave, args=(lLimb, rLimb, pause_event), name="turningOnMicrowave")
-			pause_event.clear()
-			task.daemon = True
-			task.start()
-			print(task.name)
-			env["microwaveOn"] = True
-		rawCommand = ""
-	if ('turn off' in command) or ('stop'in command and 'microwave' in command):
-		terminate_thread(task)
-		if env["microwaveOn"] and (not env["holdingSomething"]):
-			print('here')
-			task = Thread(target=turnOffMicrowave, args=(lLimb, rLimb, pause_event), name="turningOffMicrowave")
-			pause_event.clear()
-			task.daemon = True
-			task.start()
-			print(task.name)
-		rawCommand = ""
-	if 'cook' in command and 'seconds' in command:
-		terminate_thread(task)
-		t = [int(s) for s in command.split() if s.isdigit()]
-		print(t)
-		if not t:
-			print("No time given")
-		elif (not env["microwaveOpen"]) and (not env["holdingSomething"]) and (not env["microwaveOn"]):
-			task = Thread(target=timedMicrowave, args=(lLimb, rLimb, pause_event, t[0],), name="timedCook")
-			pause_event.clear()
-			task.daemon = True
-			task.start()
-			print(task.name)
-			env["microwaveOn"] = True
-		rawCommand = ""
-	if (('meal' in command) or ('food' in command)) and (('put' in command or 'place' in command) and ('microwave' in command)):
-		terminate_thread(task)
-		if not env["fridgeOpen"] and not env["microwaveOpen"] and not env["holdingSomething"] and not env["foodInMicrowave"]:
-			task = Thread(target=placeContainerInMicrowaveFromStart, args=(lLimb, rLimb, lGripper, pause_event,), name="puttingFoodInMicrowave")
-			pause_event.clear()
-			task.daemon = True
-			task.start()
-			print(task.name)
-		if env["fridgeOpen"] and not env["microwaveOpen"] and not env["holdingSomething"] and not env["foodInMicrowave"]:
-			task = Thread(target=placeContainerInMicrowaveFromOpenFridge, args=(lLimb, rLimb, lGripper, pause_event,), name="puttingFoodInMicrowave")
-			pause_event.clear()
-			task.daemon = True
-			task.start()
-			print(task.name)
-		if not env["fridgeOpen"] and env["microwaveOpen"] and not env["holdingSomething"] and not env["foodInMicrowave"]:
-			task = Thread(target=placeContainerInMicrowaveFromOpenMicrowave, args=(lLimb, rLimb, lGripper, pause_event,), name="puttingFoodInMicrowave")
-			pause_event.clear()
-			task.daemon = True
-			task.start()
-			print(task.name)
-		if env["fridgeOpen"] and env["microwaveOpen"] and not env["holdingSomething"] and not env["foodInMicrowave"]:
-			task = Thread(target=placeContainerInMicrowaveFromOpenMicOpenFridge, args=(lLimb, rLimb, lGripper, pause_event,), name="puttingFoodInMicrowave")
-			pause_event.clear()
-			task.daemon = True
-			task.start()
-			print(task.name)	
-		rawCommand = ""
-	if ('take' in command or 'get' in command) and ('container' in command or 'food' in command) and ('microwave' in command):
-		terminate_thread(task)
-		if not env["microwaveOpen"] and env["foodInMicrowave"]:
-			task = Thread(target=getFoodFromMicrowave, args=(lLimb, rLimb, lGripper, pause_event,), name="gettingFoodFromMicrowave")
-			pause_event.clear()
-			task.daemon = True
-			task.start()
-			print(task.name)
-		if env["microwaveOpen"] and env["foodInMicrowave"]:
-			task = Thread(target=getFoodFromOpenMicrowave, args=(lLimb, rLimb, lGripper, pause_event,), name="gettingFoodFromMicrowave")
-			pause_event.clear()
-			task.daemon = True
-			task.start()
-			print(task.name)
-		rawCommand = ""
+			# Microwave commands #
+		if 'open' in command and 'the microwave' in command:
+			terminate_thread(task)
+			if not env["microwaveOpen"] and not env["holdingSomething"]:
+				task = Thread(target=openMicrowave, args=(lLimb, rLimb, pause_event), name="openingMicrowave")
+				pause_event.clear()
+				task.daemon = True
+				task.start()
+				print(task.name)
+			rawCommand = ""
+		if 'close' in command and 'microwave' in command:
+			terminate_thread(task)
+			if env["microwaveOpen"] and not env["holdingSomething"]:
+				task = Thread(target=closeMicrowave, args=(lLimb, rLimb, pause_event), name="closingMicrowave")
+				pause_event.clear()
+				task.daemon = True
+				task.start()
+				print(task.name)
+			rawCommand = ""
+		if 'start' in command and 'microwave' in command:
+			terminate_thread(task)
+			if (not env["microwaveOpen"]) and (not env["holdingSomething"]) and (not env["microwaveOn"]):
+				task = Thread(target=turnOnMicrowave, args=(lLimb, rLimb, pause_event), name="turningOnMicrowave")
+				pause_event.clear()
+				task.daemon = True
+				task.start()
+				print(task.name)
+				env["microwaveOn"] = True
+			rawCommand = ""
+		if ('turn off' in command) or ('stop'in command and 'microwave' in command):
+			terminate_thread(task)
+			if env["microwaveOn"] and (not env["holdingSomething"]):
+				print('here')
+				task = Thread(target=turnOffMicrowave, args=(lLimb, rLimb, pause_event), name="turningOffMicrowave")
+				pause_event.clear()
+				task.daemon = True
+				task.start()
+				print(task.name)
+			rawCommand = ""
+		if 'cook' in command and 'seconds' in command:
+			terminate_thread(task)
+			t = [int(s) for s in command.split() if s.isdigit()]
+			print(t)
+			if not t:
+				print("No time given")
+			elif (not env["microwaveOpen"]) and (not env["holdingSomething"]) and (not env["microwaveOn"]):
+				task = Thread(target=timedMicrowave, args=(lLimb, rLimb, pause_event, t[0],), name="timedCook")
+				pause_event.clear()
+				task.daemon = True
+				task.start()
+				print(task.name)
+				env["microwaveOn"] = True
+			rawCommand = ""
+		if (('meal' in command) or ('food' in command)) and (('put' in command or 'place' in command) and ('microwave' in command)):
+			terminate_thread(task)
+			if not env["fridgeOpen"] and not env["microwaveOpen"] and not env["holdingSomething"] and not env["foodInMicrowave"]:
+				task = Thread(target=placeContainerInMicrowaveFromStart, args=(lLimb, rLimb, lGripper, pause_event,), name="puttingFoodInMicrowave")
+				pause_event.clear()
+				task.daemon = True
+				task.start()
+				print(task.name)
+			if env["fridgeOpen"] and not env["microwaveOpen"] and not env["holdingSomething"] and not env["foodInMicrowave"]:
+				task = Thread(target=placeContainerInMicrowaveFromOpenFridge, args=(lLimb, rLimb, lGripper, pause_event,), name="puttingFoodInMicrowave")
+				pause_event.clear()
+				task.daemon = True
+				task.start()
+				print(task.name)
+			if not env["fridgeOpen"] and env["microwaveOpen"] and not env["holdingSomething"] and not env["foodInMicrowave"]:
+				task = Thread(target=placeContainerInMicrowaveFromOpenMicrowave, args=(lLimb, rLimb, lGripper, pause_event,), name="puttingFoodInMicrowave")
+				pause_event.clear()
+				task.daemon = True
+				task.start()
+				print(task.name)
+			if env["fridgeOpen"] and env["microwaveOpen"] and not env["holdingSomething"] and not env["foodInMicrowave"]:
+				task = Thread(target=placeContainerInMicrowaveFromOpenMicOpenFridge, args=(lLimb, rLimb, lGripper, pause_event,), name="puttingFoodInMicrowave")
+				pause_event.clear()
+				task.daemon = True
+				task.start()
+				print(task.name)	
+			rawCommand = ""
+		if ('take' in command or 'get' in command) and ('container' in command or 'food' in command) and ('microwave' in command):
+			terminate_thread(task)
+			if not env["microwaveOpen"] and env["foodInMicrowave"]:
+				task = Thread(target=getFoodFromMicrowave, args=(lLimb, rLimb, lGripper, pause_event,), name="gettingFoodFromMicrowave")
+				pause_event.clear()
+				task.daemon = True
+				task.start()
+				print(task.name)
+			if env["microwaveOpen"] and env["foodInMicrowave"]:
+				task = Thread(target=getFoodFromOpenMicrowave, args=(lLimb, rLimb, lGripper, pause_event,), name="gettingFoodFromMicrowave")
+				pause_event.clear()
+				task.daemon = True
+				task.start()
+				print(task.name)
+			rawCommand = ""
 
 
-		# end microwave Commands
+			# end microwave Commands
 
 	### End task related commands ###
 
@@ -573,6 +600,8 @@ while not rospy.is_shutdown():
 		env['foodInMicrowave'] = True
 	if 'microwave is empty' in command:
 		env['foodInMicrowave'] = False
+	if 'robot is localized' in command:
+		env['robotlocalized'] = True
 
 	### end environment variable control commands
 
@@ -596,18 +625,39 @@ while not rospy.is_shutdown():
 		envString = json.dumps(env)
 		print(envString)
 		## Clearing text to speech backlog
-		t2s.say("  ")
-		t2s.say("  ")
-		t2s.say("  ")
-		t2s.say("  ")		
-		t2s.say(envString)
-		t2s.runAndWait()
+		# t2s.say("  ")
+		# t2s.say("  ")
+		# t2s.say("  ")
+		# t2s.say("  ")		
+		# t2s.say(envString)
+		# t2s.runAndWait()
+		tts = gTTS(text=envString, lang='en')
+		tts.save("env.mp3")
+		playsound.playsound('env.mp3', True)
 		rawCommand = ""
 	if 'reset environment' in command:
 		env = ({'fridgeOpen': False, 'hasBottle': False, 'bottleOnTable':False, 'microwaveOpen': False, 'holdingSomething': False, 
        'microwaveOn': False, 'foodInMicrowave': False})
 		rawCommand = ""
 
+		### mobile base commands
+	if 'parking' in command:
+		terminate_thread(task)
+		task = Thread(target=auto_park, name="activateAutoParking")
+		print(task.name)
+		pause_event.clear()
+		task.daemon = True
+		task.start()
+		rawCommand = ""
+
+	if 'mobile base' in command:
+		terminate_thread(task)
+		task = Thread(target=activate_mobile_base, name="activateMobileBase")
+		print(task.name)
+		pause_event.clear()
+		task.daemon = True
+		task.start()
+		rawCommand = ""
 	### End Miscellaneous commands ###
 
 	

@@ -13,7 +13,7 @@
 # useful actions within the preset environment. These functions will 
 # only perform correct tasks in the environment set up in the Tufts
 # Controls, Robotics, Identification, and Signal Processing Lab at 
-# 574 Boston Ave, Medford, MA
+# 574 Boston Ave, Medford, MA;s
 
 from positionControl import *
 import threading
@@ -31,7 +31,7 @@ def moveToDownward(lLimb, rLimb, pause_event):
 		moveOnAxis(lLimb, 'y', delY, .2, pause_event)
 
 	if (curY <= 0.6):
-		playPositionFile('default_pos_from_start.wp', lLimb, rLimb, pause_event)
+		playPositionFile('./mobile_commands/default_pos_from_start.wp', lLimb, rLimb, pause_event)
 	else:		
 		downward = {"left_w0":0.38157772098649667,"left_w1":1.880276950750546,
 					"left_w2":0.01917475984856767,"left_e0":-0.7761942786700193,

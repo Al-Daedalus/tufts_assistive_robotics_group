@@ -116,7 +116,6 @@ void loop() {
 
   int volt = roboclaw.ReadMainBatteryVoltage(address);
   volt = map(volt, 0, 255, 0, 24);
-  if (volt < 10) digitalWrite(VOLT_MNTR, LOW); else digitalWrite(VOLT_MNTR, HIGH);
   voltage_pub.data = volt;
   chatter.publish(&voltage_pub);
   nh.spinOnce();

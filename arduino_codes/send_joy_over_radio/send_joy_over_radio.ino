@@ -6,7 +6,7 @@
 
 #define NETWORKID     0   // Must be the same for all nodes (0 to 255)
 #define MYNODEID      3   // My node ID (0 to 255)
-#define KILLNODEID    2   // Destination node ID of Killswitch(0 to 254, 255 = broadcast)
+//#define KILLNODEID    2   // Destination node ID of Killswitch(0 to 254, 255 = broadcast)
 #define JOYNODEID     4   // Destination node ID of Joystick
 #define FREQUENCY     RF69_915MHZ
 
@@ -27,7 +27,7 @@
 //#define LED 13
 
 char thesignal = 'm';
-RFM69 radio = RFM69(RFM69_CS, RFM69_IRQ, IS_RFM69HCW, RFM69_IRQN);
+RFM69 radio = RFM69(RFM69_CS, RFM69_IRQ, IS_RFM69HCW);//, RFM69_IRQN);
 
 void setup()
 { 
@@ -65,17 +65,21 @@ void setup()
 
 void loop()
 {
+  
   int b1state, b2state;
   b1state = digitalRead(Button1);
   b2state = digitalRead(Button2);
 
-  if (b1state == LOW) send_signal('s', KILLNODEID);  //If button is closed, it is low
-  else if (b2state == LOW) send_signal('m', KILLNODEID);
+//  if (b1state == LOW) send_signal('s', KILLNODEID);  //If button is closed, it is low
+//  else if (b2state == LOW) send_signal('m', KILLNODEID);
 
   if (digitalRead(UP) == LOW) send_signal('u', JOYNODEID);
   else if (digitalRead(DOWN) == LOW) send_signal('d', JOYNODEID);
   else if (digitalRead(LEFT) == LOW) send_signal('l', JOYNODEID);
   else if (digitalRead(RIGHT) == LOW) send_signal('r', JOYNODEID);
+  else if (digitalRead(UP) and digitalRead(DOWN) and digitalRead(LEFT) and digitalRead(RIGHT))
+    send_signal('c', JOYNODEID);
+  
    
 }
 
@@ -84,7 +88,7 @@ void send_signal(char thesignal, int NODEID)
 {
     char sendbuffer[1];
     sendbuffer[0] = thesignal;
-    radio.send(NODEID, sendbuffer, 1);   
+    radio.send(NODEID, sendbuffer, 1);     
 }
 
 
