@@ -8,11 +8,11 @@
 
 #define FREQUENCY     RF69_915MHZ
 
-#define MOVE 4
-#define STOP 5
+#define MOTOR1 6
+#define MOTOR2 5
 const unsigned long MAX_DELAY = 5000;
 unsigned long last_heard;
-unsigned long now;
+unsigned long now=millis();
 
 RFM69 radio;
 
@@ -21,10 +21,10 @@ void setup()
   radio.initialize(FREQUENCY, MYNODEID, NETWORKID);
   radio.setHighPower(); // Always use this for RFM69HCW
 
-  pinMode(MOVE, OUTPUT);
-  pinMode(STOP, OUTPUT);
-  digitalWrite(MOVE, LOW);
-  digitalWrite(STOP, LOW);
+  pinMode(MOTOR1, OUTPUT);
+  pinMode(MOTOR2, OUTPUT);
+  digitalWrite(MOTOR1, LOW);
+  digitalWrite(MOTOR2, LOW);
 }
 
 void loop()
@@ -40,9 +40,8 @@ void loop()
     else if ((char)radio.DATA[0] == 's')
       stop_motor();
   }
-
-  digitalWrite(MOVE, LOW);
-  digitalWrite(STOP, LOW);
+  
+  
   last_heard = millis();
 //
   if ((last_heard - now) > MAX_DELAY)
@@ -51,15 +50,15 @@ void loop()
 
 void stop_motor()
 {
-  digitalWrite(MOVE, LOW);
-  digitalWrite(STOP, HIGH);
+  digitalWrite(MOTOR1, LOW);
+  digitalWrite(MOTOR2, LOW);
   delay(100);
 }
 
 void move_motor()
 {
-  digitalWrite(MOVE, HIGH);
-  digitalWrite(STOP, LOW);
+  digitalWrite(MOTOR1, HIGH);
+  digitalWrite(MOTOR2, HIGH);
   delay(100);
 }
 

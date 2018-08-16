@@ -33,11 +33,11 @@ def command_to_string(command):
         return "Turning off microwave"
     if command == "turningOnMicrowave":
         return "Turning on microwave"
-    return "Command not recognized"
+    return command
 
 
 # put in another file by returning an array with two elements - suggestion one and suggestion two
-def make_suggestion(lastAliveName):
+def make_suggestion(lastAliveName, env):
     #use the last alive command to make suggestions
     suggestions = ["No suggested command at this time", ""]
    

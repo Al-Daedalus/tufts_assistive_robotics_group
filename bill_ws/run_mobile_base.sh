@@ -4,7 +4,7 @@ gnome-terminal --tab -e '/bin/bash -c "cd /home/bill/bill_ros/bill_ws; source ./
 
 gnome-terminal --tab -e '/bin/bash -c "cd /home/bill/bill_ros/bill_ws; source ./devel/setup.bash; roslaunch bill_planning rosserial.launch" '
 
-gnome-terminal --tab -e '/bin/bash -c "cd /home/bill/bill_ros/bill_ws; source ./devel/setup.bash; roslaunch bill_teleop_joy bill_joy.launch" '
+#gnome-terminal --tab -e '/bin/bash -c "cd /home/bill/bill_ros/bill_ws; source ./devel/setup.bash; roslaunch bill_teleop_joy bill_joy.launch" '
 
 gnome-terminal --tab -e '/bin/bash -c "cd /home/bill/bill_ros/bill_ws; source ./devel/setup.bash; roslaunch usb_cam logitech.launch" '
 

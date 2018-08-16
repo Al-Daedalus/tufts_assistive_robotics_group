@@ -164,12 +164,12 @@ class auto_park:
 				self.vel_pub.publish(velocity)
 				time.sleep(0.4)
 				
-				if x_dist_5 < -0.06:
+				if x_dist_5 < -0.07:
 					vel = Twist()
 					vel.angular.z = 1.0
 					self.vel_pub.publish(vel)
 					print "left"
-				elif x_dist_5 > 0.06:
+				elif x_dist_5 > 0.07:
 					vel = Twist()
 					vel.angular.z = -1.0
 					self.vel_pub.publish(vel)
@@ -181,7 +181,7 @@ class auto_park:
 				time.sleep(3)
 				self.donewith5 = True
 				print 'done localizing'
-				rospy.signal_shutdown('localization complete')
+				#rospy.signal_shutdown('localization complete')
 
 
 
@@ -200,7 +200,7 @@ class auto_park:
 		for i in range(0, len(data.markers)):
 			if data.markers[i].id == 1:
 				if not self.donewith1:
-					self.approach1(1.5, data.markers[i])
+					self.approach1(1.6, data.markers[i])
 				
 				
 
@@ -227,7 +227,8 @@ class auto_park:
 
 
 	def __init__(self):
-		self.announce()
+		#rospy.init_node('auto_parking',disable_signals=True)
+		#self.announce()
 		self.init_orientation = 0.0
 		self.orientation = 0.0
 		self.announced = False
@@ -249,10 +250,10 @@ class auto_park:
 
 
 
-if __name__ == "__main__":
-	rospy.init_node('auto_parking',disable_signals=True)
-	try:
-		pack = auto_park()
+#if __name__ == "__main__":
+#	rospy.init_node('auto_parking',disable_signals=True)
+#	try:
+#		pack = auto_park()
 
-	except rospy.ROSInterruptException: pass
+#	except rospy.ROSInterruptException: pass
 

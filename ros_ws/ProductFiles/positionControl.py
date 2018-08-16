@@ -172,14 +172,14 @@ def moveOnAxis(limb, axis, dist, speed, pause_event):
 			if minorMove:
 				limb.set_joint_positions(jointPos)
 			else:
-				return limb.endpoint_pose()
+				return False#limb.endpoint_pose()
 				# limb.move_to_joint_positions(jointPos, timeout=3, threshold=.02)
 		else:
 			print("Can't Move Here")
-			return limb.endpoint_pose()
+			return False#limb.endpoint_pose()
 		rate.sleep()
 
-	return limb.endpoint_pose()
+	return True#limb.endpoint_pose()
 
 def playPositionFile(fPath, lLimb, rLimb, pause_event):
 	# Moves limb to specified joint positions
@@ -262,6 +262,114 @@ def splineWaypoints(wpArray):
 	# plt.show()
 
 	return (jointPath, period)
+
+
+
+#This function is an adaptation of the splineWaypoints function above
+#It produces a much smoother spline for smaller waypoint arrays
+#To avoid jerking during arm motion
+def splineForArmMotionWithImageProc(wpArray):
+	nPts = len(wpArray)
+	splinePtsPerwp = 50
+	splinePts = nPts*splinePtsPerwp
+	deltPts = 1
+	splineTime = float(deltPts*(nPts - 1))
+	period = splineTime/splinePts
+	
+	splinedStatesvTime = {}
+	x = frange(0, splineTime, deltPts)
+	xspline = frange(0, splineTime, splineTime/splinePts)
+	for key in wpArray[0]:
+		spline = CubicSpline(x, [Point[key] for Point in wpArray], bc_type=((1, 0.0),(1, 0.0)))
+		splinedState = spline(xspline)
+		splinedStatesvTime[key] = splinedState
+
+	jointPath = []
+	jointPos = {}
+	for i in range(len(xspline)):
+		for key in wpArray[0]:
+			jointPos[key] = splinedStatesvTime[key][i]
+		jointPath.append(jointPos)
+		jointPos = {}
+	return (jointPath, period)
+
+
+#This function takes in the pose of the fridge marker
+#and computes the pose the arm should have in order to 
+#open the fridge
+#The literal values were measured with regards to a specific
+#fridge and a specific position of the marker on the
+#fridge
+def get_open_fridge_goal_pose(marker_pose):
+	goal_pose = PoseStamped()
+	goal_pose.pose.position.x = marker_pose.pose.position.x - 0.15219
+	goal_pose.pose.position.y = marker_pose.pose.position.y + 0.07175
+	goal_pose.pose.position.z = marker_pose.pose.position.z - 0.1539
+
+	goal_pose.pose.orientation.x = 0.959
+	goal_pose.pose.orientation.y = -0.182
+	goal_pose.pose.orientation.z = 0.0723
+	goal_pose.pose.orientation.w = -0.2047
+
+	return goal_pose
+
+def get_open_microwave_goal_pose(marker_pose):
+	goal_pose = PoseStamped()
+	goal_pose.pose.position.x = marker_pose.pose.position.x - 0.10081
+	goal_pose.pose.position.y = marker_pose.pose.position.y - 0.05095
+	goal_pose.pose.position.z = marker_pose.pose.position.z - 0.1623
+
+	goal_pose.pose.orientation.x = 0.1018
+	goal_pose.pose.orientation.y = 0.976
+	goal_pose.pose.orientation.z = 0.1919
+	goal_pose.pose.orientation.w = -0.02187
+
+	return goal_pose
+
+
+
+#Takes in goal pose and moves arm to the goal
+def move_to_goal_pose(limb, goal_pose, pause_event):
+	wp_array = []
+	goal_pose_wp = xyzToAngles('left', goal_pose.pose.position.x, goal_pose.pose.position.y,
+	goal_pose.pose.position.z, goal_pose.pose.orientation.x, goal_pose.pose.orientation.y,
+	goal_pose.pose.orientation.z, goal_pose.pose.orientation.w)
+	init_wp = limb.joint_angles()
+	wp_array.append(init_wp)
+	wp_array.append(goal_pose_wp)
+
+	path, period = splineForArmMotionWithImageProc(wp_array)
+
+	limb.set_joint_position_speed(.7)
+
+	rate = rospy.Rate(50)
+	for i in range(len(path)):
+		waitForNotPause(pause_event)
+		if path[i] != "invalid":
+			limb.set_joint_positions(path[i])
+		rate.sleep()
+
+
+#Takes in goal joint angle dict and moves arm to the goal
+def move_to_goal_joint_angle(limb, joint_angles, pause_event):
+	wp_array = []
+	init_wp = limb.joint_angles()
+	wp_array.append(init_wp)
+	wp_array.append(joint_angles)
+
+	path, period = splineForArmMotionWithImageProc(wp_array)
+
+	limb.set_joint_position_speed(.7)
+
+	rate = rospy.Rate(50)
+	for i in range(len(path)):
+		waitForNotPause(pause_event)
+		if path[i] != "invalid":
+			limb.set_joint_positions(path[i])
+		rate.sleep()
+
+
+
 
 def frange(start, stop, step):
 	i = start

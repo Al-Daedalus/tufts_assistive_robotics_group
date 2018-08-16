@@ -184,15 +184,68 @@ def turnOffMicrowave():
 	moveOnAxis(lLimb, 'y', -.05, .05, pause_event)
 	playPositionFile('turn_off_microwave.wp', lLimb, rLimb, pause_event)
 
+def getFoodFromMicrowave():
+	gripper.open()
+	openMicrowave(lLimb, rLimb, pause_event)
+	time.sleep(1)
+	playPositionFile('get_food_from_microwave.wp', lLimb, rLimb, pause_event)
+	time.sleep(1)
+	moveOnAxis(lLimb, 'z', -.02, .02, pause_event)
+	moveOnAxis(lLimb, 'y', .17, .02, pause_event)
+	waitForNotPause(pause_event)
+	time.sleep(1)
+	gripper.close()
+	time.sleep(1)
+	moveOnAxis(lLimb, 'z', .02, .02, pause_event)
+	moveOnAxis(lLimb, 'y', -.17, .02, pause_event)
+	playPositionFile('getFoodFromMicrowaveP2.wp', lLimb, rLimb, pause_event)
+	gripper.open()
+	playPositionFile('getFoodFromMicrowaveP3.wp', lLimb, rLimb, pause_event)
+	moveOnAxis(lLimb, 'x', -.15, .05, pause_event)
+	playPositionFile('getFoodFromMicrowaveP4.wp', lLimb, rLimb, pause_event)
+	closeMicrowave(lLimb, rLimb, pause_event)
+	moveToDownward(lLimb, rLimb, pause_event)
+
+def getFoodFromOpenMicrowave():
+	lGripper.open()
+	time.sleep(1)
+	playPositionFile('get_food_from_microwave_p1.wp', lLimb, rLimb, pause_event)
+	time.sleep(1)
+	moveOnAxis(lLimb, 'z', -.02, .02, pause_event)
+	moveOnAxis(lLimb, 'y', .17, .02, pause_event)
+	waitForNotPause(pause_event)
+	time.sleep(1)
+	lGripper.close()
+	time.sleep(1)
+	moveOnAxis(lLimb, 'z', .02, .02, pause_event)
+	#moveOnAxis(lLimb, 'y', -.17, .02, pause_event)
+	playPositionFile('get_food_from_microwave_p2.wp', lLimb, rLimb, pause_event)
+	lGripper.open()
+	moveOnAxis(lLimb, 'y', -.06, .02, pause_event)
+	playPositionFile('get_food_from_microwave_p3.wp', lLimb, rLimb, pause_event)
+	closeMicrowave(lLimb, rLimb, pause_event)
+	moveToDownward(lLimb, rLimb, pause_event)
+
+
 print("Moving to mobile downward position")
 moveToDownward(lLimb, rLimb, pause_event)
 
+#openMicrowave()
+getFoodFromOpenMicrowave()
+
+
+
+
+
+
+#print("Opening the fridge")
 '''
-print("Opening the fridge")
 openFridge()
 getBottleOpenFridge()
 moveToTableAfterRetrieve()
 closeFridge()
+
+'''
 '''
 
 
@@ -207,10 +260,10 @@ closeMicrowave()
 #openFridge()
 #getFoodContainer()
 #placeInMicrowave()
-turnOnMicrowave()
+#turnOnMicrowave()
 #turnOffMicrowave()
 
-
+'''
 
 
 

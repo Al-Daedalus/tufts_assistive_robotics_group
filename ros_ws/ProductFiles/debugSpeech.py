@@ -37,17 +37,19 @@ r.pause_threshold = .5
 r.dynamic_energy_threshold = False
 
 with m as source:
+	r.adjust_for_ambient_noise(source, duration=5)
+	print("speak")
 	audio = r.listen(source)
 
 # with open('baxter-helper-bot-gspeechcreds.json', 'r') as gspeechcreds:
 #  		credsJson = gspeechcreds.read()
 # credsJson = GOOGLE_APPLICATION_CREDENTIALS
-
-commands = ["move", "arm", "forward", "backward", "left", "right", "up", "down", 
+print("listening")
+commands = ["move arm forward", "backward", "left", "right", "up", "down", 
 				"higher", "lower", "close", "hand", "open", "stop", "stop", "stop", 
-                "faster", "slower", "fridge", "zero", "get", "water bottle", "fridge", 
+                "faster", "slower", "open the fridge", "zero", "get", "water bottle", "fridge", 
                 "place on", "table", "fridge is open", "holding something", "fridge is closed", 
-                "hand is empty", "microwave", "start", "turn off", "continue", "cook",
+                "hand is empty", "put food in the microwave", "start", "turn off", "continue", "cook",
                 "put", "food", "is open", "get the food"]
 print('trying to recognize')
 try:

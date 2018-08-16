@@ -1,0 +1,4 @@
+<launch>
+	<node pkg="tf" type="static_transform_publisher" name="tf_kinect_broadcaster" args="0 0.08 0 -1.57 -1.57 0  head_camera camera_link 1" />
+	<node pkg="tf" type="static_transform_publisher" name="tf_handle_broadcaster" args="0.07 0.07 0 0 0 0  ar_marker_0 handle 1" />
+</launch>

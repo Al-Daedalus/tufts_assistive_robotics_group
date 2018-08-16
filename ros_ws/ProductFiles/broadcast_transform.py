@@ -19,11 +19,11 @@ def broadcast_camera_transform():
 		static_transformStamped.header.frame_id = "head_camera"
 		static_transformStamped.child_frame_id = 'camera_link'
 
-		static_transformStamped.transform.translation.y = 0
-		static_transformStamped.transform.translation.x = 0
-		static_transformStamped.transform.translation.z = 0.012
+		static_transformStamped.transform.translation.y = 0.08#0.0
+		static_transformStamped.transform.translation.x = 0#-0.07
+		static_transformStamped.transform.translation.z = 0#0.16
 
-		quat = tf.transformations.quaternion_from_euler(0,-1.57,-1.57)
+		quat = tf.transformations.quaternion_from_euler(-1.57,-1.57 ,0)#-1.57,-1.57)
 		static_transformStamped.transform.rotation.x = quat[0]
 		static_transformStamped.transform.rotation.y = quat[1]
 		static_transformStamped.transform.rotation.z = quat[2]

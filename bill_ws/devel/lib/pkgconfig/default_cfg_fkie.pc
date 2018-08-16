@@ -1,0 +1,8 @@
+prefix=/home/bill/bill_ros/bill_ws/devel
+
+Name: default_cfg_fkie
+Description: Description of default_cfg_fkie
+Version: 0.8.0
+Cflags: 
+Libs: -L/home/bill/bill_ros/bill_ws/devel/lib 
+Requires: multimaster_msgs_fkie roslaunch roslib rospy

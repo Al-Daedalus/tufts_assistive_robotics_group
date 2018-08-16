@@ -1,0 +1,8 @@
+prefix=/home/bill/bill_ros/bill_ws/install
+
+Name: catkin_simple
+Description: Description of catkin_simple
+Version: 0.1.1
+Cflags: 
+Libs: -L/home/bill/bill_ros/bill_ws/install/lib 
+Requires: catkin

@@ -5,7 +5,7 @@
 #include <std_msgs/UInt16.h>
 
 #define SPEED 30
-#define OFFSET 5
+#define OFFSET 15
 #define LOFFSET 0
 #define TURN_OFFSET 0
 #define STOP (uint32_t)0

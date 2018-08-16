@@ -5441,6 +5441,24 @@ clean: rascapp_move/CMakeFiles/nav_msgs_generate_messages_eus.dir/clean
 .PHONY : clean
 
 #=============================================================================
+# Directory level rules for directory baxter_one
+
+# Convenience name for "all" pass in the directory.
+baxter_one/all:
+
+.PHONY : baxter_one/all
+
+# Convenience name for "clean" pass in the directory.
+baxter_one/clean:
+
+.PHONY : baxter_one/clean
+
+# Convenience name for "preinstall" pass in the directory.
+baxter_one/preinstall:
+
+.PHONY : baxter_one/preinstall
+
+#=============================================================================
 # Directory level rules for directory baxter_simulator/baxter_sim_controllers
 
 # Convenience name for "all" pass in the directory.
