@@ -302,30 +302,110 @@ def splineForArmMotionWithImageProc(wpArray):
 #fridge
 def get_open_fridge_goal_pose(marker_pose):
 	goal_pose = PoseStamped()
-	goal_pose.pose.position.x = marker_pose.pose.position.x - 0.15219
-	goal_pose.pose.position.y = marker_pose.pose.position.y + 0.07175
-	goal_pose.pose.position.z = marker_pose.pose.position.z - 0.1539
+	goal_pose.pose.position.x = marker_pose.pose.position.x - 0.17404#0.1875
+	goal_pose.pose.position.y = marker_pose.pose.position.y + 0.03785#0.0028
+	goal_pose.pose.position.z = marker_pose.pose.position.z - 0.15695#0.2257
 
-	goal_pose.pose.orientation.x = 0.959
-	goal_pose.pose.orientation.y = -0.182
-	goal_pose.pose.orientation.z = 0.0723
-	goal_pose.pose.orientation.w = -0.2047
+	goal_pose.pose.orientation.x = 0.99266#0.9878
+	goal_pose.pose.orientation.y = -0.00439#-0.0739
+	goal_pose.pose.orientation.z = 0.0395#0.04325
+	goal_pose.pose.orientation.w = -0.1142#-0.13
 
 	return goal_pose
 
 def get_open_microwave_goal_pose(marker_pose):
 	goal_pose = PoseStamped()
-	goal_pose.pose.position.x = marker_pose.pose.position.x - 0.10081
-	goal_pose.pose.position.y = marker_pose.pose.position.y - 0.05095
-	goal_pose.pose.position.z = marker_pose.pose.position.z - 0.1623
+	goal_pose.pose.position.x = marker_pose.pose.position.x - 0.175
+	goal_pose.pose.position.y = marker_pose.pose.position.y - 0.0535
+	goal_pose.pose.position.z = marker_pose.pose.position.z - 0.194
 
-	goal_pose.pose.orientation.x = 0.1018
-	goal_pose.pose.orientation.y = 0.976
-	goal_pose.pose.orientation.z = 0.1919
-	goal_pose.pose.orientation.w = -0.02187
+	goal_pose.pose.orientation.x = 0.965
+	goal_pose.pose.orientation.y = -0.2138
+	goal_pose.pose.orientation.z = -0.062
+	goal_pose.pose.orientation.w = -0.138
 
 	return goal_pose
 
+def get_pick_bottle_goal_pose(marker_pose):
+	goal_pose = PoseStamped()
+	goal_pose.pose.position.x = marker_pose.pose.position.x - 0.0621
+	goal_pose.pose.position.y = marker_pose.pose.position.y + 0.0551
+	goal_pose.pose.position.z = marker_pose.pose.position.z - 0.13
+
+	goal_pose.pose.orientation.x = 0.5053
+	goal_pose.pose.orientation.y = 0.547
+	goal_pose.pose.orientation.z = 0.4688
+	goal_pose.pose.orientation.w = -0.4749
+
+	return goal_pose
+
+def get_fridge_grab_goal_pose(marker_pose):
+	goal_pose = PoseStamped()
+	goal_pose.pose.position.x = marker_pose.pose.position.x - 0.01222
+	goal_pose.pose.position.y = marker_pose.pose.position.y - 0.3961
+	goal_pose.pose.position.z = marker_pose.pose.position.z - 0.1908#0.28453
+
+	goal_pose.pose.orientation.x = 0.4097
+	goal_pose.pose.orientation.y = 0.5572
+	goal_pose.pose.orientation.z = 0.53629
+	goal_pose.pose.orientation.w = -0.483696
+
+	return goal_pose
+
+
+def get_pick_bowl_goal_pose(marker_pose):
+	goal_pose = PoseStamped()
+	goal_pose.pose.position.x = marker_pose.pose.position.x - 0.089
+	goal_pose.pose.position.y = marker_pose.pose.position.y - 0.05676
+	goal_pose.pose.position.z = marker_pose.pose.position.z - 0.122
+
+	goal_pose.pose.orientation.x = 0.0462
+	goal_pose.pose.orientation.y = 0.6932
+	goal_pose.pose.orientation.z = 0.7176
+	goal_pose.pose.orientation.w = -0.048
+
+	return goal_pose
+
+
+def get_get_food_in_microwave_goal_pose(marker_pose):
+	goal_pose = PoseStamped()
+	goal_pose.pose.position.x = marker_pose.pose.position.x - 0.3265
+	goal_pose.pose.position.y = marker_pose.pose.position.y + 0.128
+	goal_pose.pose.position.z = marker_pose.pose.position.z - 0.11#307
+
+	goal_pose.pose.orientation.x = 0.026
+	goal_pose.pose.orientation.y = 0.6931
+	goal_pose.pose.orientation.z = 0.72
+	goal_pose.pose.orientation.w = -0.0226
+
+	return goal_pose
+
+def get_put_food_in_microwave_goal_pose(marker_pose):
+	goal_pose = PoseStamped()
+	goal_pose.pose.position.x = marker_pose.pose.position.x - 0.3265
+	goal_pose.pose.position.y = marker_pose.pose.position.y + 0.128
+	goal_pose.pose.position.z = marker_pose.pose.position.z - 0.10#0.12
+
+	goal_pose.pose.orientation.x = 0.026
+	goal_pose.pose.orientation.y = 0.6931
+	goal_pose.pose.orientation.z = 0.72
+	goal_pose.pose.orientation.w = -0.0226
+
+	return goal_pose
+
+
+def get_cook_for_seconds_goal_pose(marker_pose):
+	goal_pose = PoseStamped()
+	goal_pose.pose.position.x = marker_pose.pose.position.x - 0.01205
+	goal_pose.pose.position.y = marker_pose.pose.position.y + 0.04
+	goal_pose.pose.position.z = marker_pose.pose.position.z - 0.1257
+
+	goal_pose.pose.orientation.x = -0.0014
+	goal_pose.pose.orientation.y = 0.679
+	goal_pose.pose.orientation.z = 0.733
+	goal_pose.pose.orientation.w = 0.0196
+
+	return goal_pose
 
 
 #Takes in goal pose and moves arm to the goal
@@ -336,7 +416,10 @@ def move_to_goal_pose(limb, goal_pose, pause_event):
 	goal_pose.pose.orientation.z, goal_pose.pose.orientation.w)
 	init_wp = limb.joint_angles()
 	wp_array.append(init_wp)
-	wp_array.append(goal_pose_wp)
+	if goal_pose_wp != "invalid":
+		wp_array.append(goal_pose_wp)
+	else:
+		wp_array.append(init_wp)
 
 	path, period = splineForArmMotionWithImageProc(wp_array)
 

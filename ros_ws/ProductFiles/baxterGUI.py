@@ -81,7 +81,7 @@ dialog = "Listening..."
 # Environment Tracking Booleans
 env = ({'fridgeOpen': False, 'hasBottle': False, 'bottleOnTable':False, 'bottleInFridge': True, 
 		'microwaveOpen': False, 'holdingSomething': False, 'microwaveOn': False, 'foodInMicrowave': False, 
-		'foodInFridge': True, 'foodOnTable': False, 'robotlocalized': False, 'mobileBaseActivated': False})
+		'foodInFridge': True, 'foodOnTable': False, 'robotlocalized': True, 'mobileBaseActivated': False})
 
 # Event for pausing the current task
 pause_event = TEvent()
@@ -569,7 +569,7 @@ while not rospy.is_shutdown():
 	args=(lLimb, rLimb, lGripper, pause_event)
 	runTask(dropObject, "dropObject", args)
 
-    if ('place' in command.lower() and 'table' in command.lower()):
+    if ('put' in command.lower() and 'table' in command.lower()):
 	terminate_thread(task)
 	args=(lLimb, rLimb, lGripper, pause_event)
 	runTask(putOnTable, "putOnTable", args)
@@ -753,7 +753,17 @@ while not rospy.is_shutdown():
 	        rawCommand = ""
 	    # end microwave Commands
 	    ### End task related commands ###
+    
+#
+#
+#
+#
 
+    # CONSIDER THE ELIF'S WHEN DEBUGGING UI
+#
+#
+#
+#
     ### environment variable control commands ###           
     if 'fridge is open' in command:
         env['fridgeOpen'] = True
@@ -821,9 +831,9 @@ while not rospy.is_shutdown():
         task.start()
         rawCommand = ""
     if 'reset environment' in command:
-        env = ({'fridgeOpen': False, 'hasBottle': False, 'bottleOnTable':False, 
+        env = ({'fridgeOpen': False, 'hasBottle': False, 'bottleOnTable':False, 'bottleInFridge':True, 
                 'microwaveOpen': False, 'holdingSomething': False, 
-                'microwaveOn': False, 'foodInMicrowave': False, 'robotlocalized':True})
+                'microwaveOn': False, 'foodInMicrowave': False, 'foodOnTable':False, 'mobileBaseActivated':False, 'foodInFridge':True,'robotlocalized':True})
         rawCommand = ""
 
     ### mobile base commands

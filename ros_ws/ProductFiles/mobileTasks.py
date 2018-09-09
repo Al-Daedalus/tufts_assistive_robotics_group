@@ -102,7 +102,8 @@ def closeFridge(lLimb, rLimb, pause_event):
 	except IOError as e:
 		print(e)
 
-	playPositionFile('./mobile_commands/close_fridge.wp', lLimb, rLimb, pause_event)
+	#playPositionFile('./mobile_commands/close_fridge.wp', lLimb, rLimb, pause_event)
+	playPositionFile('closeFridge2.wp', lLimb, rLimb, pause_event)
 	moveToDownward(lLimb, rLimb, pause_event)
 
 
@@ -184,10 +185,15 @@ def placeFoodContainerInMicrowave(lLimb, rLimb, gripper, pause_event):
 		sys.path.insert(0, './mobile_commands')
 	except IOError as e:
 		print(e)
-	playPositionFile('./mobile_commands/put_food_in_microwave_p1.wp', lLimb, rLimb, pause_event)
+	#playPositionFile('./mobile_commands/put_food_in_microwave_p1.wp', lLimb, rLimb, pause_event)
+	playPositionFile('putFoodInMic2.wp', lLimb, rLimb, pause_event)
+	time.sleep(2)
+	
+	moveOnAxis(lLimb, 'y', .15, .02, pause_event)
+	moveOnAxis(lLimb, 'z', -.03, .02, pause_event)
 	time.sleep(1)
-	moveOnAxis(lLimb, 'y', .17, .02, pause_event)
-	moveOnAxis(lLimb, 'z', -.02, .02, pause_event)
+	#gripper.open()
+	
 	waitForNotPause(pause_event)
 	time.sleep(1)
 	gripper.open()
@@ -257,7 +263,8 @@ def getFoodFromMicrowave(lLimb, rLimb, gripper, pause_event):
 def getFoodFromOpenMicrowave(lLimb, rLimb, gripper, pause_event):
 	gripper.open()
 	time.sleep(1)
-	playPositionFile('./mobile_commands/get_food_from_microwave_p1.wp', lLimb, rLimb, pause_event)
+	#playPositionFile('./mobile_commands/get_food_from_microwave_p1.wp', lLimb, rLimb, pause_event)
+	playPositionFile('putFoodInMic.wp', lLimb, rLimb, pause_event)
 	time.sleep(1)
 	moveOnAxis(lLimb, 'z', -.02, .02, pause_event)
 	moveOnAxis(lLimb, 'y', .17, .02, pause_event)
@@ -285,10 +292,11 @@ def groundPickUpMode(lLimb, rLimb, gripper, pause_event):
 
 def pickFromFloor(lLimb, rLimb, gripper, pause_event):
 	gripper.open()
-	playPositionFile('./mobile_commands/pickFromFloor1.wp', lLimb, rLimb, pause_event)
+	playPositionFile('./mobile_commands/pick3.wp', lLimb, rLimb, pause_event)
 	gripper.close()
-	playPositionFile('./mobile_commands/pickFromFloor2.wp', lLimb, rLimb, pause_event)
-	playPositionFile('./mobile_commands/pickFromFloor3.wp', lLimb, rLimb, pause_event)
+	playPositionFile('./mobile_commands/pick2.wp', lLimb, rLimb, pause_event)
+	#playPositionFile('./mobile_commands/pickFromFloor2.wp', lLimb, rLimb, pause_event)
+	#playPositionFile('./mobile_commands/pickFromFloor3.wp', lLimb, rLimb, pause_event)
 
 
 def dropObject(lLimb, rLimb, gripper, pause_event):
@@ -331,7 +339,8 @@ def putBottleInHolder(lLimb, rLimb, gripper, pause_event):
 
 #### TESTING FUNCTION #####################
 def tester(lLimb, rLimb, gripper, pause_event):
-	pickFromFloor(lLimb, rLimb, gripper, pause_event)
+	# pickFromFloor(lLimb, rLimb, gripper, pause_event)
 	#SdropObject(lLimb, rLimb, gripper, pause_event)
-	putOnTable(lLimb, rLimb, gripper, pause_event)
+	# putOnTable(lLimb, rLimb, gripper, pause_event)
 	#moveOnAxis(limb, 'x', -4, .03)
+	playPositionFile('./mobile_commands/put_food_in_microwave_p1.wp', lLimb, rLimb, pause_event)

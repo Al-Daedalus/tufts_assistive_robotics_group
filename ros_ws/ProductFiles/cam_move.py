@@ -35,6 +35,7 @@ class gotomarker:
 					found_object = True
 					self.fridge_marker_pose = data.markers[i].pose
 					self.transform_fridge_marker_pose_to_robot_rf()
+					# print self.fridge_goal_pose
 					self.open_fridge()
 
 
@@ -77,9 +78,13 @@ class gotomarker:
 		def open_fridge(self):
 			p = get_open_fridge_goal_pose(self.fridge_goal_pose)
 			move_to_goal_pose(self.lLimb, p, self.pause_event)
+			#opening motion
 			ang =  self.lLimb.joint_angles()
-			ang['left_w1']+=0.8
+			ang['left_w1']+=1.3
 			move_to_goal_joint_angle(self.lLimb, ang, self.pause_event)
+
+			# g = self.get_fridge_grab_goal_pose(self.bowl_marker)
+			# move_to_goal_pose(self.lLimb, g, self.pause_event)
 			# playPositionFile('./openFreezer.wp', self.lLimb, self.rLimb, self.pause_event)
 			# self.fridgeOpened = True
 			rospy.signal_shutdown("moving done")
@@ -115,27 +120,19 @@ class gotomarker:
 				if data.markers[i].id == self.microwave_marker:
 					self.microwave_marker_pose = data.markers[i].pose
 					self.transform_microwave_marker_pose_to_robot_rf()
-					# print self.microwave_goal_pose
+					print self.microwave_goal_pose
 					self.open_microwave()
 
 
 		def open_microwave(self):
 			p = get_open_microwave_goal_pose(self.microwave_goal_pose)
-
-			# p = PoseStamped()
-			# p.pose.position.x = -0.295
-			# p.pose.position.y = 1.04755
-			# p.pose.position.z = 0.3307
-
-			# p.pose.orientation.x = 0.1018
-			# p.pose.orientation.y = 0.976
-			# p.pose.orientation.z = 0.1919
-			# p.pose.orientation.w = -0.02187
-
 			move_to_goal_pose(self.lLimb, p, self.pause_event)
 			ang =  self.lLimb.joint_angles()
 			ang['left_w0']+=0.5
 			move_to_goal_joint_angle(self.lLimb, ang, self.pause_event)
+
+			#move to origin 
+			# move_to_goal_joint_angle(self.lLimb, self.origin, self.pause_event)
 			# ang =  self.lLimb.joint_angles()
 			# ang['left_w1']+=0.8
 			# move_to_goal_joint_angle(self.lLimb, ang, self.pause_event)
@@ -162,18 +159,11 @@ class gotomarker:
 			tf_buffer = tf2_ros.Buffer(rospy.Duration(1200.0))
 			tf_listener = tf2_ros.TransformListener(tf_buffer)
 
-			transform = tf_buffer.lookup_transform('base', 'left_hand_camera',rospy.Time(0),
+			transform = tf_buffer.lookup_transform('base', 'camera_link',rospy.Time(0),
 				rospy.Duration(1.0))
-			p = tf2_geometry_msgs.do_transform_pose(marker_pose, transform)
+			self.bottle_pose = tf2_geometry_msgs.do_transform_pose(marker_pose, transform)
 
-			self.bottle_pose.pose.position.y = p.pose.position.y
-			self.bottle_pose.pose.position.x = p.pose.position.x
-			self.bottle_pose.pose.position.z = p.pose.position.z
-			self.bottle_pose.pose.orientation.x = p.pose.orientation.x
-			self.bottle_pose.pose.orientation.y = p.pose.orientation.y
-			self.bottle_pose.pose.orientation.z = p.pose.orientation.z
-			self.bottle_pose.pose.orientation.w = p.pose.orientation.w
-
+			
 
 
 		def pick_bottle_callback(self, data):
@@ -182,36 +172,25 @@ class gotomarker:
 			for i in range(0,len(data.markers)):
 				if data.markers[i].id == self.bottle_marker:
 					self.bottle_pose = data.markers[i].pose
+					self.transform_bottle_marker_pose_to_robot_rf()
 					# print self.bottle_pose
-					self.grab_bottle()
+					# self.grab_bottle()
+					self.pick_bottle()
 
 		
-
-
-		def grab_bottle(self):
-			# del_x = self.bottle_pose.pose.position.x
-			# del_y = self.bottle_pose.pose.position.y
-			# del_z = self.bottle_pose.pose.position.z
-			'''
-			self.transform_bottle_marker_pose_to_robot_rf()
-			print "***********************"
-			print self.limb.endpoint_pose()
-			print "____________________________"
-			self.bottle_pose.pose.position.y-=0.1
-			print self.bottle_pose
-
-			p = PoseStamped()
-			p.pose.position.y = 0.491
-			p.pose.position.x = 1.211
-			p.pose.position.z = 0.4556
-
-			p.pose.orientation.x = 0.5563
-			p.pose.orientation.y = -0.4713
-			p.pose.orientation.z = -0.47
-			p.pose.orientation.w = 0-0.4979
-
+		def pick_bottle(self):
+			p = get_pick_bottle_goal_pose(self.bottle_pose)
 			move_to_goal_pose(self.lLimb, p, self.pause_event)
-			'''
+			#opening motion
+			# ang =  self.lLimb.joint_angles()
+			# ang['left_w1']+=1.3
+			# move_to_goal_joint_angle(self.lLimb, ang, self.pause_event)
+			# playPositionFile('./openFreezer.wp', self.lLimb, self.rLimb, self.pause_event)
+			# self.fridgeOpened = True
+			rospy.signal_shutdown("moving done")
+
+		#deprecated
+		def grab_bottle(self):
 			e1 = 1.15
 			s0 = -0.5
 			s1 = 0.15
@@ -219,11 +198,6 @@ class gotomarker:
 			x = self.bottle_pose.pose.position.x
 			y = self.bottle_pose.pose.position.y
 			z = self.bottle_pose.pose.position.z
-
-			# if x > 0.05:
-			# 	e1-=0.05
-			# elif x < 0.03:
-			# 	e1 += 0.05
 
 			if y >0.25:
 				s1+= 0.05
@@ -250,50 +224,57 @@ class gotomarker:
 		
 			print goal
 			move_to_goal_joint_angle(self.lLimb, goal, self.pause_event)
-			# rospy.signal_shutdown("moving done")
+			
 
-			# moveOnAxis(self.lLimb, 'x', del_x, del_x/4, self.pause_event)
-			# time.sleep(2)
-			# moveOnAxis(self.lLimb, 'y', del_y, del_y/4, self.pause_event)
-			# time.sleep(2)
-			# moveOnAxis(self.lLimb, 'z', del_z-0.07, del_z/4, self.pause_event)
-			# time.sleep(2)
 
-			# rospy.signal_shutdown("moving done")
 
-			# if moveOnAxis(self.lLimb, 'y', y-0.05, y/4, self.pause_event):
-			# 	print moveby
-			# 	rospy.signal_shutdown("moving done")
-			# current_pose = self.limb.endpoint_pose()
-			# print "current pose"
-			# print current_pose#['position']
-			# print "marker pose"
-			# print self.goal_pose.pose.position
-					
-			# 		#setting some offsets to the goal position for our convenience
-			# 		goal_pose.pose.position.z -= 0.10
-			# 		# goal_pose.pose.position.y -= 0.05
 
-			# 		gripper_pose = self.limb.endpoint_pose()
+		#################   BOWL OPERATIONS   ######################
 
-			# 		goal_pose.pose.orientation.x = gripper_pose['orientation'][0]
-			# 		goal_pose.pose.orientation.y = gripper_pose['orientation'][1]
-			# 		goal_pose.pose.orientation.z = gripper_pose['orientation'][2]
-			# 		goal_pose.pose.orientation.w = gripper_pose['orientation'][3]
-					
-			# 		#passing the pose goal into the moveit motion planner to plan the trajectory
-			# 		left_arm.set_pose_target(goal_pose)
-			# 		left_arm.set_start_state_to_current_state()
-			# 		left_plan = left_arm.plan()
-			# 		print "done planning"
+		def transform_bowl_marker_pose_to_robot_rf(self):
+			#kinect camera axi is not the same as the robot axis so we could have
+			#to perform the necessary transforms first to get both axes aligned
+			#and then to transform camera rf to robot's rf
+			#goal_pose is the final pose of the marker wrt the robot's rf
+			marker_pose = PoseStamped()
+			marker_pose.pose.position.y = self.bowl_pose.pose.position.y
+			marker_pose.pose.position.x = self.bowl_pose.pose.position.x
+			marker_pose.pose.position.z = self.bowl_pose.pose.position.z
+			marker_pose.pose.orientation = self.bowl_pose.pose.orientation
 
-			# 		#executing planned trajectory
-			# 		rospy.sleep(5)
-			# 		# left_arm.execute(left_plan)
-    				
-			# if not found_object:
-			# 	print "Could not find marker ID "+ str(self.place)
+			tf_buffer = tf2_ros.Buffer(rospy.Duration(1200.0))
+			tf_listener = tf2_ros.TransformListener(tf_buffer)
 
+			transform = tf_buffer.lookup_transform('base', 'camera_link',rospy.Time(0),
+				rospy.Duration(1.0))
+			self.bowl_pose = tf2_geometry_msgs.do_transform_pose(marker_pose, transform)
+
+			
+
+
+		def pick_bowl_callback(self, data):
+			if not data.markers:
+				return
+			for i in range(0,len(data.markers)):
+				if data.markers[i].id == self.bowl_marker:
+					self.bowl_pose = data.markers[i].pose
+					self.transform_bowl_marker_pose_to_robot_rf()
+					print self.bowl_pose
+					# self.grab_bottle()
+					self.pick_bowl()
+
+		
+		def pick_bowl(self):
+			# p = get_pick_bowl_goal_pose(self.bowl_pose)
+			p = get_fridge_grab_goal_pose(self.bowl_pose)
+			move_to_goal_pose(self.lLimb, p, self.pause_event)
+			#opening motion
+			# ang =  self.lLimb.joint_angles()
+			# ang['left_w1']+=1.3
+			# move_to_goal_joint_angle(self.lLimb, ang, self.pause_event)
+			# playPositionFile('./openFreezer.wp', self.lLimb, self.rLimb, self.pause_event)
+			# self.fridgeOpened = True
+			rospy.signal_shutdown("moving done")
 
 
 
@@ -333,7 +314,7 @@ class gotomarker:
 
 			self.rGripper.set_holding_force(100)
 			self.rGripper.set_moving_force(100)
-
+			# self.lGripper.open()
 			self.fridge_goal_pose = PoseStamped()
 			self.head = baxter.Head()
 			self.marker_pose = None
@@ -343,7 +324,7 @@ class gotomarker:
 			self.fridge_marker = 0
 
 			self.bottleGrabbed = False
-			self.bottle_marker = 2
+			self.bottle_marker = 4
 
 			self.microwaveOpened = False
 			self.microwave_marker = 1
@@ -351,20 +332,36 @@ class gotomarker:
 			self.bottle_pose = None
 			self.pause_event = Event()
 
-			self.origin = {'left_w0': -0.34399519168330406, 
-			'left_w1': 0.27880100819817394, 
-			'left_w2': -0.8222137023065818, 
-			'left_e0': 1.7725148004015956, 
-			'left_e1': 1.3863351370514427, 
-			'left_s0': -0.8179952551398969, 
-			'left_s1': -0.40727189918357737
+			self.bowlGrabbed = False
+			self.bowl_pose = None
+			self.bowl_marker = 3
+
+			self.origin = {'left_w0': -0.3156165471074239, 
+			'left_w1': 1.1662088939898858, 
+			'left_w2': -1.0814564554592168, 
+			'left_e0': 0.3041116911982833, 
+			'left_e1': 0.635835036578504, 
+			'left_s0': 0.7359272829880272, 
+			'left_s1': -0.8141603031701834
 			}
+
+			self.fridge_grab_pose = PoseStamped()
+			self.fridge_grab_pose.pose.position.x = 0.58813
+			self.fridge_grab_pose.pose.position.y = 0.8716
+			self.fridge_grab_pose.pose.position.z = 0.60607
+
+			self.fridge_grab_pose.pose.orientation.x = 0.4097
+			self.fridge_grab_pose.pose.orientation.y = 0.5572
+			self.fridge_grab_pose.pose.orientation.z = 0.53629
+			self.fridge_grab_pose.pose.orientation.w = -0.483696
 
 			# print self.lLimb.endpoint_pose()
 			# print self.lLimb.joint_angles()
 			# move_to_goal_joint_angle(self.lLimb, self.origin, self.pause_event)
 			# rospy.Subscriber('/head_kinect/ar_pose_marker', AlvarMarkers, self.open_fridge_callback)
 			rospy.Subscriber('/head_kinect/ar_pose_marker', AlvarMarkers, self.open_microwave_callback)
+			# rospy.Subscriber('/head_kinect/ar_pose_marker', AlvarMarkers, self.pick_bottle_callback)
+			# rospy.Subscriber('/head_kinect/ar_pose_marker', AlvarMarkers, self.pick_bowl_callback)
 			# move_to_goal_joint_angle(self.lLimb, self.origin, self.pause_event)
 			# rospy.Subscriber('/left_hand_camera/ar_pose_marker', AlvarMarkers, self.pick_bottle_callback)
 			rospy.spin()
