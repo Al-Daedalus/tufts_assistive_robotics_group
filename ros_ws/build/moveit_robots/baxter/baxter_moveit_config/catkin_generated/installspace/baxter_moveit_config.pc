@@ -1,8 +1,8 @@
-prefix=/home/bill/ros_ws/install
+prefix=/home/bill/bill_ros/ros_ws/install
 
 Name: baxter_moveit_config
 Description: Description of baxter_moveit_config
 Version: 1.1.1
 Cflags: 
-Libs: -L/home/bill/ros_ws/install/lib 
+Libs: -L/home/bill/bill_ros/ros_ws/install/lib 
 Requires: 

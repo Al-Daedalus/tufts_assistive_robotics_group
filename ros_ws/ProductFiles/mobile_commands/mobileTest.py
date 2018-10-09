@@ -25,6 +25,8 @@ from sensor_msgs.msg import Image
 import time
 import cv2
 import cv_bridge
+from gtts import gTTS 
+import playsound
 
 rawCommand = ""
 collisionState = False
@@ -227,14 +229,18 @@ def getFoodFromOpenMicrowave():
 	moveToDownward(lLimb, rLimb, pause_event)
 
 
-print("Moving to mobile downward position")
-moveToDownward(lLimb, rLimb, pause_event)
+#print("Moving to mobile downward position")
+#moveToDownward(lLimb, rLimb, pause_event)
 
 #openMicrowave()
-getFoodFromOpenMicrowave()
+#getFoodFromOpenMicrowave()
 
 
-
+playPositionFile('happyBirthday.wp', lLimb, rLimb, pause_event)
+tts = gTTS(text='Happy Birthday Berry, Have a wonderful day. God bless you', lang='en')
+tts.save("happy.mp3")
+playsound.playsound("happy.mp3", True)
+time.sleep(5)
 
 
 

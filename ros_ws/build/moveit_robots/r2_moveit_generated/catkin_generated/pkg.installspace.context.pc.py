@@ -4,5 +4,5 @@ PROJECT_PKG_CONFIG_INCLUDE_DIRS = "".split(';') if "" != "" else []
 PROJECT_CATKIN_DEPENDS = "".replace(';', ' ')
 PKG_CONFIG_LIBRARIES_WITH_PREFIX = "".split(';') if "" != "" else []
 PROJECT_NAME = "r2_moveit_generated"
-PROJECT_SPACE_DIR = "/home/bill/ros_ws/install"
+PROJECT_SPACE_DIR = "/home/bill/bill_ros/ros_ws/install"
 PROJECT_VERSION = "1.1.1"

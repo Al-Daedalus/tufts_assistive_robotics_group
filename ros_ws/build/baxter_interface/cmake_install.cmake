@@ -1,8 +1,8 @@
-# Install script for directory: /home/bill/ros_ws/src/baxter_interface
+# Install script for directory: /home/bill/bill_ros/ros_ws/src/baxter_interface
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/bill/ros_ws/install")
+  set(CMAKE_INSTALL_PREFIX "/home/bill/bill_ros/ros_ws/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -33,53 +33,53 @@ if(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  include("/home/bill/ros_ws/build/baxter_interface/catkin_generated/safe_execute_install.cmake")
+  include("/home/bill/bill_ros/ros_ws/build/baxter_interface/catkin_generated/safe_execute_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/baxter_interface" TYPE FILE FILES "/home/bill/ros_ws/devel/include/baxter_interface/PositionJointTrajectoryActionServerConfig.h")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/baxter_interface" TYPE FILE FILES "/home/bill/bill_ros/ros_ws/devel/include/baxter_interface/PositionJointTrajectoryActionServerConfig.h")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/baxter_interface" TYPE FILE FILES "/home/bill/ros_ws/devel/include/baxter_interface/VelocityJointTrajectoryActionServerConfig.h")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/baxter_interface" TYPE FILE FILES "/home/bill/bill_ros/ros_ws/devel/include/baxter_interface/VelocityJointTrajectoryActionServerConfig.h")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/baxter_interface" TYPE FILE FILES "/home/bill/ros_ws/devel/include/baxter_interface/PositionFFJointTrajectoryActionServerConfig.h")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/baxter_interface" TYPE FILE FILES "/home/bill/bill_ros/ros_ws/devel/include/baxter_interface/PositionFFJointTrajectoryActionServerConfig.h")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/baxter_interface" TYPE FILE FILES "/home/bill/ros_ws/devel/include/baxter_interface/GripperActionServerConfig.h")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/baxter_interface" TYPE FILE FILES "/home/bill/bill_ros/ros_ws/devel/include/baxter_interface/GripperActionServerConfig.h")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/baxter_interface" TYPE FILE FILES "/home/bill/ros_ws/devel/include/baxter_interface/HeadActionServerConfig.h")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/baxter_interface" TYPE FILE FILES "/home/bill/bill_ros/ros_ws/devel/include/baxter_interface/HeadActionServerConfig.h")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  execute_process(COMMAND "/usr/bin/python" -m compileall "/home/bill/ros_ws/devel/lib/python2.7/dist-packages/baxter_interface/cfg")
+  execute_process(COMMAND "/usr/bin/python" -m compileall "/home/bill/bill_ros/ros_ws/devel/lib/python2.7/dist-packages/baxter_interface/cfg")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python2.7/dist-packages/baxter_interface" TYPE DIRECTORY FILES "/home/bill/ros_ws/devel/lib/python2.7/dist-packages/baxter_interface/cfg")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python2.7/dist-packages/baxter_interface" TYPE DIRECTORY FILES "/home/bill/bill_ros/ros_ws/devel/lib/python2.7/dist-packages/baxter_interface/cfg")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/bill/ros_ws/build/baxter_interface/catkin_generated/installspace/baxter_interface.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/bill/bill_ros/ros_ws/build/baxter_interface/catkin_generated/installspace/baxter_interface.pc")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/baxter_interface/cmake" TYPE FILE FILES
-    "/home/bill/ros_ws/build/baxter_interface/catkin_generated/installspace/baxter_interfaceConfig.cmake"
-    "/home/bill/ros_ws/build/baxter_interface/catkin_generated/installspace/baxter_interfaceConfig-version.cmake"
+    "/home/bill/bill_ros/ros_ws/build/baxter_interface/catkin_generated/installspace/baxter_interfaceConfig.cmake"
+    "/home/bill/bill_ros/ros_ws/build/baxter_interface/catkin_generated/installspace/baxter_interfaceConfig-version.cmake"
     )
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/baxter_interface" TYPE FILE FILES "/home/bill/ros_ws/src/baxter_interface/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/baxter_interface" TYPE FILE FILES "/home/bill/bill_ros/ros_ws/src/baxter_interface/package.xml")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/baxter_interface" TYPE DIRECTORY FILES "/home/bill/ros_ws/src/baxter_interface/scripts/" USE_SOURCE_PERMISSIONS)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/baxter_interface" TYPE DIRECTORY FILES "/home/bill/bill_ros/ros_ws/src/baxter_interface/scripts/" USE_SOURCE_PERMISSIONS)
 endif()
 

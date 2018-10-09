@@ -67,14 +67,14 @@ set(baxter_sim_kinematics_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("TRUE" STREQUAL "TRUE")
-  set(baxter_sim_kinematics_SOURCE_PREFIX /home/bill/ros_ws/src/baxter_simulator/baxter_sim_kinematics)
-  set(baxter_sim_kinematics_DEVEL_PREFIX /home/bill/ros_ws/devel)
+  set(baxter_sim_kinematics_SOURCE_PREFIX /home/bill/bill_ros/ros_ws/src/baxter_simulator/baxter_sim_kinematics)
+  set(baxter_sim_kinematics_DEVEL_PREFIX /home/bill/bill_ros/ros_ws/devel)
   set(baxter_sim_kinematics_INSTALL_PREFIX "")
   set(baxter_sim_kinematics_PREFIX ${baxter_sim_kinematics_DEVEL_PREFIX})
 else()
   set(baxter_sim_kinematics_SOURCE_PREFIX "")
   set(baxter_sim_kinematics_DEVEL_PREFIX "")
-  set(baxter_sim_kinematics_INSTALL_PREFIX /home/bill/ros_ws/install)
+  set(baxter_sim_kinematics_INSTALL_PREFIX /home/bill/bill_ros/ros_ws/install)
   set(baxter_sim_kinematics_PREFIX ${baxter_sim_kinematics_INSTALL_PREFIX})
 endif()
 
@@ -91,9 +91,9 @@ endif()
 # flag project as catkin-based to distinguish if a find_package()-ed project is a catkin project
 set(baxter_sim_kinematics_FOUND_CATKIN_PROJECT TRUE)
 
-if(NOT "/home/bill/ros_ws/src/baxter_simulator/baxter_sim_kinematics/include " STREQUAL " ")
+if(NOT "/home/bill/bill_ros/ros_ws/src/baxter_simulator/baxter_sim_kinematics/include " STREQUAL " ")
   set(baxter_sim_kinematics_INCLUDE_DIRS "")
-  set(_include_dirs "/home/bill/ros_ws/src/baxter_simulator/baxter_sim_kinematics/include")
+  set(_include_dirs "/home/bill/bill_ros/ros_ws/src/baxter_simulator/baxter_sim_kinematics/include")
   if(NOT "https://github.com/RethinkRobotics/baxter_simulator/issues " STREQUAL " ")
     set(_report "Check the issue tracker 'https://github.com/RethinkRobotics/baxter_simulator/issues' and consider creating a ticket if the problem has not been reported yet.")
   elseif(NOT "http://sdk.rethinkrobotics.com " STREQUAL " ")
@@ -110,7 +110,7 @@ if(NOT "/home/bill/ros_ws/src/baxter_simulator/baxter_sim_kinematics/include " S
         message(FATAL_ERROR "Project 'baxter_sim_kinematics' specifies '${idir}' as an include dir, which is not found.  It does not exist in '${include}'.  ${_report}")
       endif()
     else()
-      message(FATAL_ERROR "Project 'baxter_sim_kinematics' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/bill/ros_ws/src/baxter_simulator/baxter_sim_kinematics/${idir}'.  ${_report}")
+      message(FATAL_ERROR "Project 'baxter_sim_kinematics' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/bill/bill_ros/ros_ws/src/baxter_simulator/baxter_sim_kinematics/${idir}'.  ${_report}")
     endif()
     _list_append_unique(baxter_sim_kinematics_INCLUDE_DIRS ${include})
   endforeach()
@@ -129,7 +129,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/bill/ros_ws/devel/lib;/home/bill/ros_ws/devel/lib;/opt/ros/kinetic/lib)
+    foreach(path /home/bill/bill_ros/ros_ws/devel/lib;/opt/ros/kinetic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)

@@ -43,44 +43,44 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/bill/ros_ws/src
+CMAKE_SOURCE_DIR = /home/bill/bill_ros/ros_ws/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/bill/ros_ws/build
+CMAKE_BINARY_DIR = /home/bill/bill_ros/ros_ws/build
 
 # Utility rule file for baxter_examples_gencfg.
 
 # Include the progress variables for this target.
 include baxter_examples/CMakeFiles/baxter_examples_gencfg.dir/progress.make
 
-baxter_examples/CMakeFiles/baxter_examples_gencfg: /home/bill/ros_ws/devel/include/baxter_examples/JointSpringsExampleConfig.h
-baxter_examples/CMakeFiles/baxter_examples_gencfg: /home/bill/ros_ws/devel/lib/python2.7/dist-packages/baxter_examples/cfg/JointSpringsExampleConfig.py
+baxter_examples/CMakeFiles/baxter_examples_gencfg: /home/bill/bill_ros/ros_ws/devel/include/baxter_examples/JointSpringsExampleConfig.h
+baxter_examples/CMakeFiles/baxter_examples_gencfg: /home/bill/bill_ros/ros_ws/devel/lib/python2.7/dist-packages/baxter_examples/cfg/JointSpringsExampleConfig.py
 
 
-/home/bill/ros_ws/devel/include/baxter_examples/JointSpringsExampleConfig.h: /home/bill/ros_ws/src/baxter_examples/cfg/JointSpringsExample.cfg
-/home/bill/ros_ws/devel/include/baxter_examples/JointSpringsExampleConfig.h: /opt/ros/kinetic/share/dynamic_reconfigure/templates/ConfigType.py.template
-/home/bill/ros_ws/devel/include/baxter_examples/JointSpringsExampleConfig.h: /opt/ros/kinetic/share/dynamic_reconfigure/templates/ConfigType.h.template
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/bill/ros_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating dynamic reconfigure files from cfg/JointSpringsExample.cfg: /home/bill/ros_ws/devel/include/baxter_examples/JointSpringsExampleConfig.h /home/bill/ros_ws/devel/lib/python2.7/dist-packages/baxter_examples/cfg/JointSpringsExampleConfig.py"
-	cd /home/bill/ros_ws/build/baxter_examples && ../catkin_generated/env_cached.sh /home/bill/ros_ws/build/baxter_examples/setup_custom_pythonpath.sh /home/bill/ros_ws/src/baxter_examples/cfg/JointSpringsExample.cfg /opt/ros/kinetic/share/dynamic_reconfigure/cmake/.. /home/bill/ros_ws/devel/share/baxter_examples /home/bill/ros_ws/devel/include/baxter_examples /home/bill/ros_ws/devel/lib/python2.7/dist-packages/baxter_examples
+/home/bill/bill_ros/ros_ws/devel/include/baxter_examples/JointSpringsExampleConfig.h: /home/bill/bill_ros/ros_ws/src/baxter_examples/cfg/JointSpringsExample.cfg
+/home/bill/bill_ros/ros_ws/devel/include/baxter_examples/JointSpringsExampleConfig.h: /opt/ros/kinetic/share/dynamic_reconfigure/templates/ConfigType.py.template
+/home/bill/bill_ros/ros_ws/devel/include/baxter_examples/JointSpringsExampleConfig.h: /opt/ros/kinetic/share/dynamic_reconfigure/templates/ConfigType.h.template
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/bill/bill_ros/ros_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating dynamic reconfigure files from cfg/JointSpringsExample.cfg: /home/bill/bill_ros/ros_ws/devel/include/baxter_examples/JointSpringsExampleConfig.h /home/bill/bill_ros/ros_ws/devel/lib/python2.7/dist-packages/baxter_examples/cfg/JointSpringsExampleConfig.py"
+	cd /home/bill/bill_ros/ros_ws/build/baxter_examples && ../catkin_generated/env_cached.sh /home/bill/bill_ros/ros_ws/build/baxter_examples/setup_custom_pythonpath.sh /home/bill/bill_ros/ros_ws/src/baxter_examples/cfg/JointSpringsExample.cfg /opt/ros/kinetic/share/dynamic_reconfigure/cmake/.. /home/bill/bill_ros/ros_ws/devel/share/baxter_examples /home/bill/bill_ros/ros_ws/devel/include/baxter_examples /home/bill/bill_ros/ros_ws/devel/lib/python2.7/dist-packages/baxter_examples
 
-/home/bill/ros_ws/devel/share/baxter_examples/docs/JointSpringsExampleConfig.dox: /home/bill/ros_ws/devel/include/baxter_examples/JointSpringsExampleConfig.h
-	@$(CMAKE_COMMAND) -E touch_nocreate /home/bill/ros_ws/devel/share/baxter_examples/docs/JointSpringsExampleConfig.dox
+/home/bill/bill_ros/ros_ws/devel/share/baxter_examples/docs/JointSpringsExampleConfig.dox: /home/bill/bill_ros/ros_ws/devel/include/baxter_examples/JointSpringsExampleConfig.h
+	@$(CMAKE_COMMAND) -E touch_nocreate /home/bill/bill_ros/ros_ws/devel/share/baxter_examples/docs/JointSpringsExampleConfig.dox
 
-/home/bill/ros_ws/devel/share/baxter_examples/docs/JointSpringsExampleConfig-usage.dox: /home/bill/ros_ws/devel/include/baxter_examples/JointSpringsExampleConfig.h
-	@$(CMAKE_COMMAND) -E touch_nocreate /home/bill/ros_ws/devel/share/baxter_examples/docs/JointSpringsExampleConfig-usage.dox
+/home/bill/bill_ros/ros_ws/devel/share/baxter_examples/docs/JointSpringsExampleConfig-usage.dox: /home/bill/bill_ros/ros_ws/devel/include/baxter_examples/JointSpringsExampleConfig.h
+	@$(CMAKE_COMMAND) -E touch_nocreate /home/bill/bill_ros/ros_ws/devel/share/baxter_examples/docs/JointSpringsExampleConfig-usage.dox
 
-/home/bill/ros_ws/devel/lib/python2.7/dist-packages/baxter_examples/cfg/JointSpringsExampleConfig.py: /home/bill/ros_ws/devel/include/baxter_examples/JointSpringsExampleConfig.h
-	@$(CMAKE_COMMAND) -E touch_nocreate /home/bill/ros_ws/devel/lib/python2.7/dist-packages/baxter_examples/cfg/JointSpringsExampleConfig.py
+/home/bill/bill_ros/ros_ws/devel/lib/python2.7/dist-packages/baxter_examples/cfg/JointSpringsExampleConfig.py: /home/bill/bill_ros/ros_ws/devel/include/baxter_examples/JointSpringsExampleConfig.h
+	@$(CMAKE_COMMAND) -E touch_nocreate /home/bill/bill_ros/ros_ws/devel/lib/python2.7/dist-packages/baxter_examples/cfg/JointSpringsExampleConfig.py
 
-/home/bill/ros_ws/devel/share/baxter_examples/docs/JointSpringsExampleConfig.wikidoc: /home/bill/ros_ws/devel/include/baxter_examples/JointSpringsExampleConfig.h
-	@$(CMAKE_COMMAND) -E touch_nocreate /home/bill/ros_ws/devel/share/baxter_examples/docs/JointSpringsExampleConfig.wikidoc
+/home/bill/bill_ros/ros_ws/devel/share/baxter_examples/docs/JointSpringsExampleConfig.wikidoc: /home/bill/bill_ros/ros_ws/devel/include/baxter_examples/JointSpringsExampleConfig.h
+	@$(CMAKE_COMMAND) -E touch_nocreate /home/bill/bill_ros/ros_ws/devel/share/baxter_examples/docs/JointSpringsExampleConfig.wikidoc
 
 baxter_examples_gencfg: baxter_examples/CMakeFiles/baxter_examples_gencfg
-baxter_examples_gencfg: /home/bill/ros_ws/devel/include/baxter_examples/JointSpringsExampleConfig.h
-baxter_examples_gencfg: /home/bill/ros_ws/devel/share/baxter_examples/docs/JointSpringsExampleConfig.dox
-baxter_examples_gencfg: /home/bill/ros_ws/devel/share/baxter_examples/docs/JointSpringsExampleConfig-usage.dox
-baxter_examples_gencfg: /home/bill/ros_ws/devel/lib/python2.7/dist-packages/baxter_examples/cfg/JointSpringsExampleConfig.py
-baxter_examples_gencfg: /home/bill/ros_ws/devel/share/baxter_examples/docs/JointSpringsExampleConfig.wikidoc
+baxter_examples_gencfg: /home/bill/bill_ros/ros_ws/devel/include/baxter_examples/JointSpringsExampleConfig.h
+baxter_examples_gencfg: /home/bill/bill_ros/ros_ws/devel/share/baxter_examples/docs/JointSpringsExampleConfig.dox
+baxter_examples_gencfg: /home/bill/bill_ros/ros_ws/devel/share/baxter_examples/docs/JointSpringsExampleConfig-usage.dox
+baxter_examples_gencfg: /home/bill/bill_ros/ros_ws/devel/lib/python2.7/dist-packages/baxter_examples/cfg/JointSpringsExampleConfig.py
+baxter_examples_gencfg: /home/bill/bill_ros/ros_ws/devel/share/baxter_examples/docs/JointSpringsExampleConfig.wikidoc
 baxter_examples_gencfg: baxter_examples/CMakeFiles/baxter_examples_gencfg.dir/build.make
 
 .PHONY : baxter_examples_gencfg
@@ -91,10 +91,10 @@ baxter_examples/CMakeFiles/baxter_examples_gencfg.dir/build: baxter_examples_gen
 .PHONY : baxter_examples/CMakeFiles/baxter_examples_gencfg.dir/build
 
 baxter_examples/CMakeFiles/baxter_examples_gencfg.dir/clean:
-	cd /home/bill/ros_ws/build/baxter_examples && $(CMAKE_COMMAND) -P CMakeFiles/baxter_examples_gencfg.dir/cmake_clean.cmake
+	cd /home/bill/bill_ros/ros_ws/build/baxter_examples && $(CMAKE_COMMAND) -P CMakeFiles/baxter_examples_gencfg.dir/cmake_clean.cmake
 .PHONY : baxter_examples/CMakeFiles/baxter_examples_gencfg.dir/clean
 
 baxter_examples/CMakeFiles/baxter_examples_gencfg.dir/depend:
-	cd /home/bill/ros_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/bill/ros_ws/src /home/bill/ros_ws/src/baxter_examples /home/bill/ros_ws/build /home/bill/ros_ws/build/baxter_examples /home/bill/ros_ws/build/baxter_examples/CMakeFiles/baxter_examples_gencfg.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/bill/bill_ros/ros_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/bill/bill_ros/ros_ws/src /home/bill/bill_ros/ros_ws/src/baxter_examples /home/bill/bill_ros/ros_ws/build /home/bill/bill_ros/ros_ws/build/baxter_examples /home/bill/bill_ros/ros_ws/build/baxter_examples/CMakeFiles/baxter_examples_gencfg.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : baxter_examples/CMakeFiles/baxter_examples_gencfg.dir/depend
 

@@ -1,12 +1,12 @@
 file(REMOVE_RECURSE
   "CMakeFiles/baxter_maintenance_msgs_generate_messages_nodejs"
-  "/home/bill/ros_ws/devel/share/gennodejs/ros/baxter_maintenance_msgs/msg/CalibrateArmData.js"
-  "/home/bill/ros_ws/devel/share/gennodejs/ros/baxter_maintenance_msgs/msg/CalibrateArmEnable.js"
-  "/home/bill/ros_ws/devel/share/gennodejs/ros/baxter_maintenance_msgs/msg/UpdateSources.js"
-  "/home/bill/ros_ws/devel/share/gennodejs/ros/baxter_maintenance_msgs/msg/TareEnable.js"
-  "/home/bill/ros_ws/devel/share/gennodejs/ros/baxter_maintenance_msgs/msg/UpdateStatus.js"
-  "/home/bill/ros_ws/devel/share/gennodejs/ros/baxter_maintenance_msgs/msg/TareData.js"
-  "/home/bill/ros_ws/devel/share/gennodejs/ros/baxter_maintenance_msgs/msg/UpdateSource.js"
+  "/home/bill/bill_ros/ros_ws/devel/share/gennodejs/ros/baxter_maintenance_msgs/msg/CalibrateArmEnable.js"
+  "/home/bill/bill_ros/ros_ws/devel/share/gennodejs/ros/baxter_maintenance_msgs/msg/TareData.js"
+  "/home/bill/bill_ros/ros_ws/devel/share/gennodejs/ros/baxter_maintenance_msgs/msg/TareEnable.js"
+  "/home/bill/bill_ros/ros_ws/devel/share/gennodejs/ros/baxter_maintenance_msgs/msg/CalibrateArmData.js"
+  "/home/bill/bill_ros/ros_ws/devel/share/gennodejs/ros/baxter_maintenance_msgs/msg/UpdateSources.js"
+  "/home/bill/bill_ros/ros_ws/devel/share/gennodejs/ros/baxter_maintenance_msgs/msg/UpdateSource.js"
+  "/home/bill/bill_ros/ros_ws/devel/share/gennodejs/ros/baxter_maintenance_msgs/msg/UpdateStatus.js"
 )
 
 # Per-language clean rules from dependency scanning.

@@ -1,8 +1,8 @@
-# Install script for directory: /home/bill/ros_ws/src/baxter_examples
+# Install script for directory: /home/bill/bill_ros/ros_ws/src/baxter_examples
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/bill/ros_ws/install")
+  set(CMAKE_INSTALL_PREFIX "/home/bill/bill_ros/ros_ws/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -33,45 +33,45 @@ if(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  include("/home/bill/ros_ws/build/baxter_examples/catkin_generated/safe_execute_install.cmake")
+  include("/home/bill/bill_ros/ros_ws/build/baxter_examples/catkin_generated/safe_execute_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/baxter_examples" TYPE FILE FILES "/home/bill/ros_ws/devel/include/baxter_examples/JointSpringsExampleConfig.h")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/baxter_examples" TYPE FILE FILES "/home/bill/bill_ros/ros_ws/devel/include/baxter_examples/JointSpringsExampleConfig.h")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  execute_process(COMMAND "/usr/bin/python" -m compileall "/home/bill/ros_ws/devel/lib/python2.7/dist-packages/baxter_examples/cfg")
+  execute_process(COMMAND "/usr/bin/python" -m compileall "/home/bill/bill_ros/ros_ws/devel/lib/python2.7/dist-packages/baxter_examples/cfg")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python2.7/dist-packages/baxter_examples" TYPE DIRECTORY FILES "/home/bill/ros_ws/devel/lib/python2.7/dist-packages/baxter_examples/cfg")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python2.7/dist-packages/baxter_examples" TYPE DIRECTORY FILES "/home/bill/bill_ros/ros_ws/devel/lib/python2.7/dist-packages/baxter_examples/cfg")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/bill/ros_ws/build/baxter_examples/catkin_generated/installspace/baxter_examples.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/bill/bill_ros/ros_ws/build/baxter_examples/catkin_generated/installspace/baxter_examples.pc")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/baxter_examples/cmake" TYPE FILE FILES
-    "/home/bill/ros_ws/build/baxter_examples/catkin_generated/installspace/baxter_examplesConfig.cmake"
-    "/home/bill/ros_ws/build/baxter_examples/catkin_generated/installspace/baxter_examplesConfig-version.cmake"
+    "/home/bill/bill_ros/ros_ws/build/baxter_examples/catkin_generated/installspace/baxter_examplesConfig.cmake"
+    "/home/bill/bill_ros/ros_ws/build/baxter_examples/catkin_generated/installspace/baxter_examplesConfig-version.cmake"
     )
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/baxter_examples" TYPE FILE FILES "/home/bill/ros_ws/src/baxter_examples/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/baxter_examples" TYPE FILE FILES "/home/bill/bill_ros/ros_ws/src/baxter_examples/package.xml")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/baxter_examples" TYPE DIRECTORY FILES "/home/bill/ros_ws/src/baxter_examples/scripts/" USE_SOURCE_PERMISSIONS)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/baxter_examples" TYPE DIRECTORY FILES "/home/bill/bill_ros/ros_ws/src/baxter_examples/scripts/" USE_SOURCE_PERMISSIONS)
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/baxter_examples/launch" TYPE DIRECTORY FILES "/home/bill/ros_ws/src/baxter_examples/launch/" USE_SOURCE_PERMISSIONS)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/baxter_examples/launch" TYPE DIRECTORY FILES "/home/bill/bill_ros/ros_ws/src/baxter_examples/launch/" USE_SOURCE_PERMISSIONS)
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/baxter_examples/share" TYPE DIRECTORY FILES "/home/bill/ros_ws/src/baxter_examples/share/" USE_SOURCE_PERMISSIONS)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/baxter_examples/share" TYPE DIRECTORY FILES "/home/bill/bill_ros/ros_ws/src/baxter_examples/share/" USE_SOURCE_PERMISSIONS)
 endif()
 

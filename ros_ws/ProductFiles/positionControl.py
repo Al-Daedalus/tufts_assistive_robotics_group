@@ -302,27 +302,27 @@ def splineForArmMotionWithImageProc(wpArray):
 #fridge
 def get_open_fridge_goal_pose(marker_pose):
 	goal_pose = PoseStamped()
-	goal_pose.pose.position.x = marker_pose.pose.position.x - 0.17404#0.1875
-	goal_pose.pose.position.y = marker_pose.pose.position.y + 0.03785#0.0028
-	goal_pose.pose.position.z = marker_pose.pose.position.z - 0.15695#0.2257
+	goal_pose.pose.position.x = marker_pose.pose.position.x - 0.1787
+	goal_pose.pose.position.y = marker_pose.pose.position.y + 0.121
+	goal_pose.pose.position.z = marker_pose.pose.position.z + 0.009
 
-	goal_pose.pose.orientation.x = 0.99266#0.9878
-	goal_pose.pose.orientation.y = -0.00439#-0.0739
-	goal_pose.pose.orientation.z = 0.0395#0.04325
-	goal_pose.pose.orientation.w = -0.1142#-0.13
+	goal_pose.pose.orientation.x = 0.935
+	goal_pose.pose.orientation.y = -0.0086
+	goal_pose.pose.orientation.z = 0.0132
+	goal_pose.pose.orientation.w = -0.354
 
 	return goal_pose
 
 def get_open_microwave_goal_pose(marker_pose):
 	goal_pose = PoseStamped()
-	goal_pose.pose.position.x = marker_pose.pose.position.x - 0.175
-	goal_pose.pose.position.y = marker_pose.pose.position.y - 0.0535
-	goal_pose.pose.position.z = marker_pose.pose.position.z - 0.194
+	goal_pose.pose.position.x = marker_pose.pose.position.x - 0.00773
+	goal_pose.pose.position.y = marker_pose.pose.position.y + 0.1221
+	goal_pose.pose.position.z = marker_pose.pose.position.z - 0.002
 
-	goal_pose.pose.orientation.x = 0.965
-	goal_pose.pose.orientation.y = -0.2138
-	goal_pose.pose.orientation.z = -0.062
-	goal_pose.pose.orientation.w = -0.138
+	goal_pose.pose.orientation.x = 0.920
+	goal_pose.pose.orientation.y = 0.0038
+	goal_pose.pose.orientation.z = -0.033
+	goal_pose.pose.orientation.w = -0.3920
 
 	return goal_pose
 
@@ -390,6 +390,19 @@ def get_put_food_in_microwave_goal_pose(marker_pose):
 	goal_pose.pose.orientation.y = 0.6931
 	goal_pose.pose.orientation.z = 0.72
 	goal_pose.pose.orientation.w = -0.0226
+
+	return goal_pose
+
+def get_take_from_shelf_goal_pose(marker_pose):
+	goal_pose = PoseStamped()
+	goal_pose.pose.position.x = marker_pose.pose.position.x + 0.0986
+	goal_pose.pose.position.y = marker_pose.pose.position.y + 0.10
+	goal_pose.pose.position.z = marker_pose.pose.position.z - 0.0997
+
+	goal_pose.pose.orientation.x = -0.1664
+	goal_pose.pose.orientation.y = 0.6512
+	goal_pose.pose.orientation.z = 0.0515
+	goal_pose.pose.orientation.w = 0.739
 
 	return goal_pose
 

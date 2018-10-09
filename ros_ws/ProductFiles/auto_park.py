@@ -198,7 +198,7 @@ class auto_park:
 		
 		self.updated = True
 		for i in range(0, len(data.markers)):
-			if data.markers[i].id == 1:
+			if data.markers[i].id == 36:
 				if not self.donewith1:
 					self.approach1(1.6, data.markers[i])
 				
@@ -227,7 +227,7 @@ class auto_park:
 
 
 	def __init__(self):
-		#rospy.init_node('auto_parking',disable_signals=True)
+		rospy.init_node('auto_parking',disable_signals=True)
 		self.announce()
 		self.init_orientation = 0.0
 		self.orientation = 0.0

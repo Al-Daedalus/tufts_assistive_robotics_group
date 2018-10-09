@@ -6,27 +6,27 @@
 
 #IncludeRegexTransform: 
 
-/home/bill/ros_ws/build/baxter_simulator/baxter_sim_io/baxter_sim_io_automoc.cpp
+/home/bill/bill_ros/ros_ws/build/baxter_simulator/baxter_sim_io/baxter_sim_io_automoc.cpp
 
-/home/bill/ros_ws/build/baxter_simulator/baxter_sim_io/include/baxter_sim_io/moc_baxter_io.cpp
+/home/bill/bill_ros/ros_ws/build/baxter_simulator/baxter_sim_io/include/baxter_sim_io/moc_baxter_io.cpp
 ../../../../../src/baxter_simulator/baxter_sim_io/include/baxter_sim_io/baxter_io.hpp
-/home/bill/ros_ws/src/baxter_simulator/baxter_sim_io/include/baxter_sim_io/baxter_io.hpp
+/home/bill/bill_ros/ros_ws/src/baxter_simulator/baxter_sim_io/include/baxter_sim_io/baxter_io.hpp
 QtCore/qbytearray.h
 -
 QtCore/qmetatype.h
 -
 
-/home/bill/ros_ws/build/baxter_simulator/baxter_sim_io/include/baxter_sim_io/moc_qnode.cpp
+/home/bill/bill_ros/ros_ws/build/baxter_simulator/baxter_sim_io/include/baxter_sim_io/moc_qnode.cpp
 ../../../../../src/baxter_simulator/baxter_sim_io/include/baxter_sim_io/qnode.hpp
-/home/bill/ros_ws/src/baxter_simulator/baxter_sim_io/include/baxter_sim_io/qnode.hpp
+/home/bill/bill_ros/ros_ws/src/baxter_simulator/baxter_sim_io/include/baxter_sim_io/qnode.hpp
 QtCore/qbytearray.h
 -
 QtCore/qmetatype.h
 -
 
-/home/bill/ros_ws/build/baxter_simulator/baxter_sim_io/qrc_sim_io.cpp
+/home/bill/bill_ros/ros_ws/build/baxter_simulator/baxter_sim_io/qrc_sim_io.cpp
 
-/home/bill/ros_ws/devel/include/baxter_core_msgs/DigitalIOState.h
+/home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/DigitalIOState.h
 string
 -
 vector
@@ -42,7 +42,7 @@ ros/builtin_message_traits.h
 ros/message_operations.h
 -
 
-/home/bill/ros_ws/devel/include/baxter_core_msgs/NavigatorState.h
+/home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/NavigatorState.h
 string
 -
 vector
@@ -58,7 +58,7 @@ ros/builtin_message_traits.h
 ros/message_operations.h
 -
 
-/home/bill/ros_ws/src/baxter_simulator/baxter_sim_io/include/baxter_sim_io/baxter_io.hpp
+/home/bill/bill_ros/ros_ws/src/baxter_simulator/baxter_sim_io/include/baxter_sim_io/baxter_io.hpp
 QtWidgets/QMainWindow
 -
 QBitmap
@@ -66,11 +66,11 @@ QBitmap
 QPushButton
 -
 ui_baxter_io.h
-/home/bill/ros_ws/src/baxter_simulator/baxter_sim_io/include/baxter_sim_io/ui_baxter_io.h
+/home/bill/bill_ros/ros_ws/src/baxter_simulator/baxter_sim_io/include/baxter_sim_io/ui_baxter_io.h
 qnode.hpp
-/home/bill/ros_ws/src/baxter_simulator/baxter_sim_io/include/baxter_sim_io/qnode.hpp
+/home/bill/bill_ros/ros_ws/src/baxter_simulator/baxter_sim_io/include/baxter_sim_io/qnode.hpp
 
-/home/bill/ros_ws/src/baxter_simulator/baxter_sim_io/include/baxter_sim_io/qnode.hpp
+/home/bill/bill_ros/ros_ws/src/baxter_simulator/baxter_sim_io/include/baxter_sim_io/qnode.hpp
 ros/ros.h
 -
 string
@@ -84,7 +84,7 @@ baxter_core_msgs/NavigatorState.h
 baxter_core_msgs/DigitalIOState.h
 -
 
-/home/bill/ros_ws/src/baxter_simulator/baxter_sim_io/src/baxter_io.cpp
+/home/bill/bill_ros/ros_ws/src/baxter_simulator/baxter_sim_io/src/baxter_io.cpp
 QtGui
 -
 QMessageBox
@@ -94,7 +94,7 @@ iostream
 baxter_sim_io/baxter_io.hpp
 -
 
-/home/bill/ros_ws/src/baxter_simulator/baxter_sim_io/src/main.cpp
+/home/bill/bill_ros/ros_ws/src/baxter_simulator/baxter_sim_io/src/main.cpp
 QtGui
 -
 QApplication
@@ -108,7 +108,7 @@ signal.h
 sys/types.h
 -
 
-/home/bill/ros_ws/src/baxter_simulator/baxter_sim_io/src/qnode.cpp
+/home/bill/bill_ros/ros_ws/src/baxter_simulator/baxter_sim_io/src/qnode.cpp
 ros/ros.h
 -
 ros/network.h

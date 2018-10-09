@@ -4,10 +4,10 @@
 baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/baxter_sim_io_automoc.cpp.o: baxter_simulator/baxter_sim_io/baxter_sim_io_automoc.cpp
 
 baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/include/baxter_sim_io/moc_baxter_io.cpp.o: baxter_simulator/baxter_sim_io/include/baxter_sim_io/moc_baxter_io.cpp
-baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/include/baxter_sim_io/moc_baxter_io.cpp.o: /home/bill/ros_ws/devel/include/baxter_core_msgs/DigitalIOState.h
-baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/include/baxter_sim_io/moc_baxter_io.cpp.o: /home/bill/ros_ws/devel/include/baxter_core_msgs/NavigatorState.h
-baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/include/baxter_sim_io/moc_baxter_io.cpp.o: /home/bill/ros_ws/src/baxter_simulator/baxter_sim_io/include/baxter_sim_io/baxter_io.hpp
-baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/include/baxter_sim_io/moc_baxter_io.cpp.o: /home/bill/ros_ws/src/baxter_simulator/baxter_sim_io/include/baxter_sim_io/qnode.hpp
+baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/include/baxter_sim_io/moc_baxter_io.cpp.o: /home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/DigitalIOState.h
+baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/include/baxter_sim_io/moc_baxter_io.cpp.o: /home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/NavigatorState.h
+baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/include/baxter_sim_io/moc_baxter_io.cpp.o: /home/bill/bill_ros/ros_ws/src/baxter_simulator/baxter_sim_io/include/baxter_sim_io/baxter_io.hpp
+baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/include/baxter_sim_io/moc_baxter_io.cpp.o: /home/bill/bill_ros/ros_ws/src/baxter_simulator/baxter_sim_io/include/baxter_sim_io/qnode.hpp
 baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/include/baxter_sim_io/moc_baxter_io.cpp.o: /opt/ros/kinetic/include/ros/advertise_options.h
 baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/include/baxter_sim_io/moc_baxter_io.cpp.o: /opt/ros/kinetic/include/ros/advertise_service_options.h
 baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/include/baxter_sim_io/moc_baxter_io.cpp.o: /opt/ros/kinetic/include/ros/assert.h
@@ -217,9 +217,9 @@ baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/include/baxter_sim_i
 baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/include/baxter_sim_io/moc_baxter_io.cpp.o: baxter_simulator/baxter_sim_io/ui_baxter_io.h
 
 baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/include/baxter_sim_io/moc_qnode.cpp.o: baxter_simulator/baxter_sim_io/include/baxter_sim_io/moc_qnode.cpp
-baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/include/baxter_sim_io/moc_qnode.cpp.o: /home/bill/ros_ws/devel/include/baxter_core_msgs/DigitalIOState.h
-baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/include/baxter_sim_io/moc_qnode.cpp.o: /home/bill/ros_ws/devel/include/baxter_core_msgs/NavigatorState.h
-baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/include/baxter_sim_io/moc_qnode.cpp.o: /home/bill/ros_ws/src/baxter_simulator/baxter_sim_io/include/baxter_sim_io/qnode.hpp
+baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/include/baxter_sim_io/moc_qnode.cpp.o: /home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/DigitalIOState.h
+baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/include/baxter_sim_io/moc_qnode.cpp.o: /home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/NavigatorState.h
+baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/include/baxter_sim_io/moc_qnode.cpp.o: /home/bill/bill_ros/ros_ws/src/baxter_simulator/baxter_sim_io/include/baxter_sim_io/qnode.hpp
 baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/include/baxter_sim_io/moc_qnode.cpp.o: /opt/ros/kinetic/include/ros/advertise_options.h
 baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/include/baxter_sim_io/moc_qnode.cpp.o: /opt/ros/kinetic/include/ros/advertise_service_options.h
 baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/include/baxter_sim_io/moc_qnode.cpp.o: /opt/ros/kinetic/include/ros/assert.h
@@ -350,11 +350,11 @@ baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/include/baxter_sim_i
 
 baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/qrc_sim_io.cpp.o: baxter_simulator/baxter_sim_io/qrc_sim_io.cpp
 
-baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/src/baxter_io.cpp.o: /home/bill/ros_ws/devel/include/baxter_core_msgs/DigitalIOState.h
-baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/src/baxter_io.cpp.o: /home/bill/ros_ws/devel/include/baxter_core_msgs/NavigatorState.h
-baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/src/baxter_io.cpp.o: /home/bill/ros_ws/src/baxter_simulator/baxter_sim_io/include/baxter_sim_io/baxter_io.hpp
-baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/src/baxter_io.cpp.o: /home/bill/ros_ws/src/baxter_simulator/baxter_sim_io/include/baxter_sim_io/qnode.hpp
-baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/src/baxter_io.cpp.o: /home/bill/ros_ws/src/baxter_simulator/baxter_sim_io/src/baxter_io.cpp
+baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/src/baxter_io.cpp.o: /home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/DigitalIOState.h
+baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/src/baxter_io.cpp.o: /home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/NavigatorState.h
+baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/src/baxter_io.cpp.o: /home/bill/bill_ros/ros_ws/src/baxter_simulator/baxter_sim_io/include/baxter_sim_io/baxter_io.hpp
+baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/src/baxter_io.cpp.o: /home/bill/bill_ros/ros_ws/src/baxter_simulator/baxter_sim_io/include/baxter_sim_io/qnode.hpp
+baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/src/baxter_io.cpp.o: /home/bill/bill_ros/ros_ws/src/baxter_simulator/baxter_sim_io/src/baxter_io.cpp
 baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/src/baxter_io.cpp.o: /opt/ros/kinetic/include/ros/advertise_options.h
 baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/src/baxter_io.cpp.o: /opt/ros/kinetic/include/ros/advertise_service_options.h
 baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/src/baxter_io.cpp.o: /opt/ros/kinetic/include/ros/assert.h
@@ -759,11 +759,11 @@ baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/src/baxter_io.cpp.o:
 baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/src/baxter_io.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qwidget.h
 baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/src/baxter_io.cpp.o: baxter_simulator/baxter_sim_io/ui_baxter_io.h
 
-baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/src/main.cpp.o: /home/bill/ros_ws/devel/include/baxter_core_msgs/DigitalIOState.h
-baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/src/main.cpp.o: /home/bill/ros_ws/devel/include/baxter_core_msgs/NavigatorState.h
-baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/src/main.cpp.o: /home/bill/ros_ws/src/baxter_simulator/baxter_sim_io/include/baxter_sim_io/baxter_io.hpp
-baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/src/main.cpp.o: /home/bill/ros_ws/src/baxter_simulator/baxter_sim_io/include/baxter_sim_io/qnode.hpp
-baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/src/main.cpp.o: /home/bill/ros_ws/src/baxter_simulator/baxter_sim_io/src/main.cpp
+baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/src/main.cpp.o: /home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/DigitalIOState.h
+baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/src/main.cpp.o: /home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/NavigatorState.h
+baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/src/main.cpp.o: /home/bill/bill_ros/ros_ws/src/baxter_simulator/baxter_sim_io/include/baxter_sim_io/baxter_io.hpp
+baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/src/main.cpp.o: /home/bill/bill_ros/ros_ws/src/baxter_simulator/baxter_sim_io/include/baxter_sim_io/qnode.hpp
+baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/src/main.cpp.o: /home/bill/bill_ros/ros_ws/src/baxter_simulator/baxter_sim_io/src/main.cpp
 baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/src/main.cpp.o: /opt/ros/kinetic/include/ros/advertise_options.h
 baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/src/main.cpp.o: /opt/ros/kinetic/include/ros/advertise_service_options.h
 baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/src/main.cpp.o: /opt/ros/kinetic/include/ros/assert.h
@@ -1165,10 +1165,10 @@ baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/src/main.cpp.o: /usr
 baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/src/main.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qwidget.h
 baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/src/main.cpp.o: baxter_simulator/baxter_sim_io/ui_baxter_io.h
 
-baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/src/qnode.cpp.o: /home/bill/ros_ws/devel/include/baxter_core_msgs/DigitalIOState.h
-baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/src/qnode.cpp.o: /home/bill/ros_ws/devel/include/baxter_core_msgs/NavigatorState.h
-baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/src/qnode.cpp.o: /home/bill/ros_ws/src/baxter_simulator/baxter_sim_io/include/baxter_sim_io/qnode.hpp
-baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/src/qnode.cpp.o: /home/bill/ros_ws/src/baxter_simulator/baxter_sim_io/src/qnode.cpp
+baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/src/qnode.cpp.o: /home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/DigitalIOState.h
+baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/src/qnode.cpp.o: /home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/NavigatorState.h
+baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/src/qnode.cpp.o: /home/bill/bill_ros/ros_ws/src/baxter_simulator/baxter_sim_io/include/baxter_sim_io/qnode.hpp
+baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/src/qnode.cpp.o: /home/bill/bill_ros/ros_ws/src/baxter_simulator/baxter_sim_io/src/qnode.cpp
 baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/src/qnode.cpp.o: /opt/ros/kinetic/include/ros/advertise_options.h
 baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/src/qnode.cpp.o: /opt/ros/kinetic/include/ros/advertise_service_options.h
 baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/src/qnode.cpp.o: /opt/ros/kinetic/include/ros/assert.h

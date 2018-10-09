@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/bill/ros_ws/src
+CMAKE_SOURCE_DIR = /home/bill/bill_ros/ros_ws/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/bill/ros_ws/build
+CMAKE_BINARY_DIR = /home/bill/bill_ros/ros_ws/build
 
 # Include any dependencies generated for this target.
 include baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/depend.make
@@ -57,54 +57,54 @@ include baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/progress.mak
 # Include the compile flags for this target's objects.
 include baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/flags.make
 
-baxter_simulator/baxter_sim_io/qrc_sim_io.cpp: /home/bill/ros_ws/src/baxter_simulator/baxter_sim_io/resources/torso.png
-baxter_simulator/baxter_sim_io/qrc_sim_io.cpp: /home/bill/ros_ws/src/baxter_simulator/baxter_sim_io/resources/arm.png
-baxter_simulator/baxter_sim_io/qrc_sim_io.cpp: /home/bill/ros_ws/src/baxter_simulator/baxter_sim_io/resources/cuff_squeeze_p.png
-baxter_simulator/baxter_sim_io/qrc_sim_io.cpp: /home/bill/ros_ws/src/baxter_simulator/baxter_sim_io/resources/cuff_squeeze_r.png
-baxter_simulator/baxter_sim_io/qrc_sim_io.cpp: /home/bill/ros_ws/src/baxter_simulator/baxter_sim_io/resources/cuff.png
-baxter_simulator/baxter_sim_io/qrc_sim_io.cpp: /home/bill/ros_ws/src/baxter_simulator/baxter_sim_io/resources/left.png
-baxter_simulator/baxter_sim_io/qrc_sim_io.cpp: /home/bill/ros_ws/src/baxter_simulator/baxter_sim_io/resources/logo.png
-baxter_simulator/baxter_sim_io/qrc_sim_io.cpp: /home/bill/ros_ws/src/baxter_simulator/baxter_sim_io/resources/nav_ok_p.png
-baxter_simulator/baxter_sim_io/qrc_sim_io.cpp: /home/bill/ros_ws/src/baxter_simulator/baxter_sim_io/resources/nav_ok_r.png
-baxter_simulator/baxter_sim_io/qrc_sim_io.cpp: /home/bill/ros_ws/src/baxter_simulator/baxter_sim_io/resources/nav_show_p.png
-baxter_simulator/baxter_sim_io/qrc_sim_io.cpp: /home/bill/ros_ws/src/baxter_simulator/baxter_sim_io/resources/nav_show_r.png
-baxter_simulator/baxter_sim_io/qrc_sim_io.cpp: /home/bill/ros_ws/src/baxter_simulator/baxter_sim_io/resources/nav.png
-baxter_simulator/baxter_sim_io/qrc_sim_io.cpp: /home/bill/ros_ws/src/baxter_simulator/baxter_sim_io/resources/right.png
-baxter_simulator/baxter_sim_io/qrc_sim_io.cpp: /home/bill/ros_ws/src/baxter_simulator/baxter_sim_io/resources/robot_arm.png
-baxter_simulator/baxter_sim_io/qrc_sim_io.cpp: /home/bill/ros_ws/src/baxter_simulator/baxter_sim_io/resources/cuff_grasp_p.png
-baxter_simulator/baxter_sim_io/qrc_sim_io.cpp: /home/bill/ros_ws/src/baxter_simulator/baxter_sim_io/resources/cuff_grasp_r.png
-baxter_simulator/baxter_sim_io/qrc_sim_io.cpp: /home/bill/ros_ws/src/baxter_simulator/baxter_sim_io/resources/cuff_ok_p.png
-baxter_simulator/baxter_sim_io/qrc_sim_io.cpp: /home/bill/ros_ws/src/baxter_simulator/baxter_sim_io/resources/cuff_ok_r.png
-baxter_simulator/baxter_sim_io/qrc_sim_io.cpp: /home/bill/ros_ws/src/baxter_simulator/baxter_sim_io/resources/nav_cancel_p.png
-baxter_simulator/baxter_sim_io/qrc_sim_io.cpp: /home/bill/ros_ws/src/baxter_simulator/baxter_sim_io/resources/nav_cancel_r.png
-baxter_simulator/baxter_sim_io/qrc_sim_io.cpp: /home/bill/ros_ws/src/baxter_simulator/baxter_sim_io/resources/sim_io.qrc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/bill/ros_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating qrc_sim_io.cpp"
-	cd /home/bill/ros_ws/build/baxter_simulator/baxter_sim_io && /usr/lib/x86_64-linux-gnu/qt5/bin/rcc --name sim_io --output /home/bill/ros_ws/build/baxter_simulator/baxter_sim_io/qrc_sim_io.cpp /home/bill/ros_ws/src/baxter_simulator/baxter_sim_io/resources/sim_io.qrc
+baxter_simulator/baxter_sim_io/qrc_sim_io.cpp: /home/bill/bill_ros/ros_ws/src/baxter_simulator/baxter_sim_io/resources/torso.png
+baxter_simulator/baxter_sim_io/qrc_sim_io.cpp: /home/bill/bill_ros/ros_ws/src/baxter_simulator/baxter_sim_io/resources/arm.png
+baxter_simulator/baxter_sim_io/qrc_sim_io.cpp: /home/bill/bill_ros/ros_ws/src/baxter_simulator/baxter_sim_io/resources/cuff_squeeze_p.png
+baxter_simulator/baxter_sim_io/qrc_sim_io.cpp: /home/bill/bill_ros/ros_ws/src/baxter_simulator/baxter_sim_io/resources/cuff_squeeze_r.png
+baxter_simulator/baxter_sim_io/qrc_sim_io.cpp: /home/bill/bill_ros/ros_ws/src/baxter_simulator/baxter_sim_io/resources/cuff.png
+baxter_simulator/baxter_sim_io/qrc_sim_io.cpp: /home/bill/bill_ros/ros_ws/src/baxter_simulator/baxter_sim_io/resources/left.png
+baxter_simulator/baxter_sim_io/qrc_sim_io.cpp: /home/bill/bill_ros/ros_ws/src/baxter_simulator/baxter_sim_io/resources/logo.png
+baxter_simulator/baxter_sim_io/qrc_sim_io.cpp: /home/bill/bill_ros/ros_ws/src/baxter_simulator/baxter_sim_io/resources/nav_ok_p.png
+baxter_simulator/baxter_sim_io/qrc_sim_io.cpp: /home/bill/bill_ros/ros_ws/src/baxter_simulator/baxter_sim_io/resources/nav_ok_r.png
+baxter_simulator/baxter_sim_io/qrc_sim_io.cpp: /home/bill/bill_ros/ros_ws/src/baxter_simulator/baxter_sim_io/resources/nav_show_p.png
+baxter_simulator/baxter_sim_io/qrc_sim_io.cpp: /home/bill/bill_ros/ros_ws/src/baxter_simulator/baxter_sim_io/resources/nav_show_r.png
+baxter_simulator/baxter_sim_io/qrc_sim_io.cpp: /home/bill/bill_ros/ros_ws/src/baxter_simulator/baxter_sim_io/resources/nav.png
+baxter_simulator/baxter_sim_io/qrc_sim_io.cpp: /home/bill/bill_ros/ros_ws/src/baxter_simulator/baxter_sim_io/resources/right.png
+baxter_simulator/baxter_sim_io/qrc_sim_io.cpp: /home/bill/bill_ros/ros_ws/src/baxter_simulator/baxter_sim_io/resources/robot_arm.png
+baxter_simulator/baxter_sim_io/qrc_sim_io.cpp: /home/bill/bill_ros/ros_ws/src/baxter_simulator/baxter_sim_io/resources/cuff_grasp_p.png
+baxter_simulator/baxter_sim_io/qrc_sim_io.cpp: /home/bill/bill_ros/ros_ws/src/baxter_simulator/baxter_sim_io/resources/cuff_grasp_r.png
+baxter_simulator/baxter_sim_io/qrc_sim_io.cpp: /home/bill/bill_ros/ros_ws/src/baxter_simulator/baxter_sim_io/resources/cuff_ok_p.png
+baxter_simulator/baxter_sim_io/qrc_sim_io.cpp: /home/bill/bill_ros/ros_ws/src/baxter_simulator/baxter_sim_io/resources/cuff_ok_r.png
+baxter_simulator/baxter_sim_io/qrc_sim_io.cpp: /home/bill/bill_ros/ros_ws/src/baxter_simulator/baxter_sim_io/resources/nav_cancel_p.png
+baxter_simulator/baxter_sim_io/qrc_sim_io.cpp: /home/bill/bill_ros/ros_ws/src/baxter_simulator/baxter_sim_io/resources/nav_cancel_r.png
+baxter_simulator/baxter_sim_io/qrc_sim_io.cpp: /home/bill/bill_ros/ros_ws/src/baxter_simulator/baxter_sim_io/resources/sim_io.qrc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/bill/bill_ros/ros_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating qrc_sim_io.cpp"
+	cd /home/bill/bill_ros/ros_ws/build/baxter_simulator/baxter_sim_io && /usr/lib/x86_64-linux-gnu/qt5/bin/rcc --name sim_io --output /home/bill/bill_ros/ros_ws/build/baxter_simulator/baxter_sim_io/qrc_sim_io.cpp /home/bill/bill_ros/ros_ws/src/baxter_simulator/baxter_sim_io/resources/sim_io.qrc
 
-baxter_simulator/baxter_sim_io/ui_baxter_io.h: /home/bill/ros_ws/src/baxter_simulator/baxter_sim_io/ui/baxter_io.ui
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/bill/ros_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating ui_baxter_io.h"
-	cd /home/bill/ros_ws/build/baxter_simulator/baxter_sim_io && /usr/lib/x86_64-linux-gnu/qt5/bin/uic -o /home/bill/ros_ws/build/baxter_simulator/baxter_sim_io/ui_baxter_io.h /home/bill/ros_ws/src/baxter_simulator/baxter_sim_io/ui/baxter_io.ui
+baxter_simulator/baxter_sim_io/ui_baxter_io.h: /home/bill/bill_ros/ros_ws/src/baxter_simulator/baxter_sim_io/ui/baxter_io.ui
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/bill/bill_ros/ros_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating ui_baxter_io.h"
+	cd /home/bill/bill_ros/ros_ws/build/baxter_simulator/baxter_sim_io && /usr/lib/x86_64-linux-gnu/qt5/bin/uic -o /home/bill/bill_ros/ros_ws/build/baxter_simulator/baxter_sim_io/ui_baxter_io.h /home/bill/bill_ros/ros_ws/src/baxter_simulator/baxter_sim_io/ui/baxter_io.ui
 
-baxter_simulator/baxter_sim_io/include/baxter_sim_io/moc_baxter_io.cpp: /home/bill/ros_ws/src/baxter_simulator/baxter_sim_io/include/baxter_sim_io/baxter_io.hpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/bill/ros_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating include/baxter_sim_io/moc_baxter_io.cpp"
-	cd /home/bill/ros_ws/build/baxter_simulator/baxter_sim_io/include/baxter_sim_io && /usr/lib/x86_64-linux-gnu/qt5/bin/moc @/home/bill/ros_ws/build/baxter_simulator/baxter_sim_io/include/baxter_sim_io/moc_baxter_io.cpp_parameters
+baxter_simulator/baxter_sim_io/include/baxter_sim_io/moc_baxter_io.cpp: /home/bill/bill_ros/ros_ws/src/baxter_simulator/baxter_sim_io/include/baxter_sim_io/baxter_io.hpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/bill/bill_ros/ros_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating include/baxter_sim_io/moc_baxter_io.cpp"
+	cd /home/bill/bill_ros/ros_ws/build/baxter_simulator/baxter_sim_io/include/baxter_sim_io && /usr/lib/x86_64-linux-gnu/qt5/bin/moc @/home/bill/bill_ros/ros_ws/build/baxter_simulator/baxter_sim_io/include/baxter_sim_io/moc_baxter_io.cpp_parameters
 
-baxter_simulator/baxter_sim_io/include/baxter_sim_io/moc_qnode.cpp: /home/bill/ros_ws/src/baxter_simulator/baxter_sim_io/include/baxter_sim_io/qnode.hpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/bill/ros_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating include/baxter_sim_io/moc_qnode.cpp"
-	cd /home/bill/ros_ws/build/baxter_simulator/baxter_sim_io/include/baxter_sim_io && /usr/lib/x86_64-linux-gnu/qt5/bin/moc @/home/bill/ros_ws/build/baxter_simulator/baxter_sim_io/include/baxter_sim_io/moc_qnode.cpp_parameters
+baxter_simulator/baxter_sim_io/include/baxter_sim_io/moc_qnode.cpp: /home/bill/bill_ros/ros_ws/src/baxter_simulator/baxter_sim_io/include/baxter_sim_io/qnode.hpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/bill/bill_ros/ros_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating include/baxter_sim_io/moc_qnode.cpp"
+	cd /home/bill/bill_ros/ros_ws/build/baxter_simulator/baxter_sim_io/include/baxter_sim_io && /usr/lib/x86_64-linux-gnu/qt5/bin/moc @/home/bill/bill_ros/ros_ws/build/baxter_simulator/baxter_sim_io/include/baxter_sim_io/moc_qnode.cpp_parameters
 
 baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/src/main.cpp.o: baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/flags.make
-baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/src/main.cpp.o: /home/bill/ros_ws/src/baxter_simulator/baxter_sim_io/src/main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/bill/ros_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/src/main.cpp.o"
-	cd /home/bill/ros_ws/build/baxter_simulator/baxter_sim_io && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/baxter_sim_io.dir/src/main.cpp.o -c /home/bill/ros_ws/src/baxter_simulator/baxter_sim_io/src/main.cpp
+baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/src/main.cpp.o: /home/bill/bill_ros/ros_ws/src/baxter_simulator/baxter_sim_io/src/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/bill/bill_ros/ros_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/src/main.cpp.o"
+	cd /home/bill/bill_ros/ros_ws/build/baxter_simulator/baxter_sim_io && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/baxter_sim_io.dir/src/main.cpp.o -c /home/bill/bill_ros/ros_ws/src/baxter_simulator/baxter_sim_io/src/main.cpp
 
 baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/src/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/baxter_sim_io.dir/src/main.cpp.i"
-	cd /home/bill/ros_ws/build/baxter_simulator/baxter_sim_io && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/bill/ros_ws/src/baxter_simulator/baxter_sim_io/src/main.cpp > CMakeFiles/baxter_sim_io.dir/src/main.cpp.i
+	cd /home/bill/bill_ros/ros_ws/build/baxter_simulator/baxter_sim_io && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/bill/bill_ros/ros_ws/src/baxter_simulator/baxter_sim_io/src/main.cpp > CMakeFiles/baxter_sim_io.dir/src/main.cpp.i
 
 baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/baxter_sim_io.dir/src/main.cpp.s"
-	cd /home/bill/ros_ws/build/baxter_simulator/baxter_sim_io && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/bill/ros_ws/src/baxter_simulator/baxter_sim_io/src/main.cpp -o CMakeFiles/baxter_sim_io.dir/src/main.cpp.s
+	cd /home/bill/bill_ros/ros_ws/build/baxter_simulator/baxter_sim_io && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/bill/bill_ros/ros_ws/src/baxter_simulator/baxter_sim_io/src/main.cpp -o CMakeFiles/baxter_sim_io.dir/src/main.cpp.s
 
 baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/src/main.cpp.o.requires:
 
@@ -118,17 +118,17 @@ baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/src/main.cpp.o.provi
 
 
 baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/src/baxter_io.cpp.o: baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/flags.make
-baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/src/baxter_io.cpp.o: /home/bill/ros_ws/src/baxter_simulator/baxter_sim_io/src/baxter_io.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/bill/ros_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/src/baxter_io.cpp.o"
-	cd /home/bill/ros_ws/build/baxter_simulator/baxter_sim_io && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/baxter_sim_io.dir/src/baxter_io.cpp.o -c /home/bill/ros_ws/src/baxter_simulator/baxter_sim_io/src/baxter_io.cpp
+baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/src/baxter_io.cpp.o: /home/bill/bill_ros/ros_ws/src/baxter_simulator/baxter_sim_io/src/baxter_io.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/bill/bill_ros/ros_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/src/baxter_io.cpp.o"
+	cd /home/bill/bill_ros/ros_ws/build/baxter_simulator/baxter_sim_io && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/baxter_sim_io.dir/src/baxter_io.cpp.o -c /home/bill/bill_ros/ros_ws/src/baxter_simulator/baxter_sim_io/src/baxter_io.cpp
 
 baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/src/baxter_io.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/baxter_sim_io.dir/src/baxter_io.cpp.i"
-	cd /home/bill/ros_ws/build/baxter_simulator/baxter_sim_io && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/bill/ros_ws/src/baxter_simulator/baxter_sim_io/src/baxter_io.cpp > CMakeFiles/baxter_sim_io.dir/src/baxter_io.cpp.i
+	cd /home/bill/bill_ros/ros_ws/build/baxter_simulator/baxter_sim_io && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/bill/bill_ros/ros_ws/src/baxter_simulator/baxter_sim_io/src/baxter_io.cpp > CMakeFiles/baxter_sim_io.dir/src/baxter_io.cpp.i
 
 baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/src/baxter_io.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/baxter_sim_io.dir/src/baxter_io.cpp.s"
-	cd /home/bill/ros_ws/build/baxter_simulator/baxter_sim_io && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/bill/ros_ws/src/baxter_simulator/baxter_sim_io/src/baxter_io.cpp -o CMakeFiles/baxter_sim_io.dir/src/baxter_io.cpp.s
+	cd /home/bill/bill_ros/ros_ws/build/baxter_simulator/baxter_sim_io && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/bill/bill_ros/ros_ws/src/baxter_simulator/baxter_sim_io/src/baxter_io.cpp -o CMakeFiles/baxter_sim_io.dir/src/baxter_io.cpp.s
 
 baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/src/baxter_io.cpp.o.requires:
 
@@ -142,17 +142,17 @@ baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/src/baxter_io.cpp.o.
 
 
 baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/src/qnode.cpp.o: baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/flags.make
-baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/src/qnode.cpp.o: /home/bill/ros_ws/src/baxter_simulator/baxter_sim_io/src/qnode.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/bill/ros_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/src/qnode.cpp.o"
-	cd /home/bill/ros_ws/build/baxter_simulator/baxter_sim_io && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/baxter_sim_io.dir/src/qnode.cpp.o -c /home/bill/ros_ws/src/baxter_simulator/baxter_sim_io/src/qnode.cpp
+baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/src/qnode.cpp.o: /home/bill/bill_ros/ros_ws/src/baxter_simulator/baxter_sim_io/src/qnode.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/bill/bill_ros/ros_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/src/qnode.cpp.o"
+	cd /home/bill/bill_ros/ros_ws/build/baxter_simulator/baxter_sim_io && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/baxter_sim_io.dir/src/qnode.cpp.o -c /home/bill/bill_ros/ros_ws/src/baxter_simulator/baxter_sim_io/src/qnode.cpp
 
 baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/src/qnode.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/baxter_sim_io.dir/src/qnode.cpp.i"
-	cd /home/bill/ros_ws/build/baxter_simulator/baxter_sim_io && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/bill/ros_ws/src/baxter_simulator/baxter_sim_io/src/qnode.cpp > CMakeFiles/baxter_sim_io.dir/src/qnode.cpp.i
+	cd /home/bill/bill_ros/ros_ws/build/baxter_simulator/baxter_sim_io && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/bill/bill_ros/ros_ws/src/baxter_simulator/baxter_sim_io/src/qnode.cpp > CMakeFiles/baxter_sim_io.dir/src/qnode.cpp.i
 
 baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/src/qnode.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/baxter_sim_io.dir/src/qnode.cpp.s"
-	cd /home/bill/ros_ws/build/baxter_simulator/baxter_sim_io && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/bill/ros_ws/src/baxter_simulator/baxter_sim_io/src/qnode.cpp -o CMakeFiles/baxter_sim_io.dir/src/qnode.cpp.s
+	cd /home/bill/bill_ros/ros_ws/build/baxter_simulator/baxter_sim_io && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/bill/bill_ros/ros_ws/src/baxter_simulator/baxter_sim_io/src/qnode.cpp -o CMakeFiles/baxter_sim_io.dir/src/qnode.cpp.s
 
 baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/src/qnode.cpp.o.requires:
 
@@ -167,16 +167,16 @@ baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/src/qnode.cpp.o.prov
 
 baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/qrc_sim_io.cpp.o: baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/flags.make
 baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/qrc_sim_io.cpp.o: baxter_simulator/baxter_sim_io/qrc_sim_io.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/bill/ros_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/qrc_sim_io.cpp.o"
-	cd /home/bill/ros_ws/build/baxter_simulator/baxter_sim_io && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/baxter_sim_io.dir/qrc_sim_io.cpp.o -c /home/bill/ros_ws/build/baxter_simulator/baxter_sim_io/qrc_sim_io.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/bill/bill_ros/ros_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/qrc_sim_io.cpp.o"
+	cd /home/bill/bill_ros/ros_ws/build/baxter_simulator/baxter_sim_io && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/baxter_sim_io.dir/qrc_sim_io.cpp.o -c /home/bill/bill_ros/ros_ws/build/baxter_simulator/baxter_sim_io/qrc_sim_io.cpp
 
 baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/qrc_sim_io.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/baxter_sim_io.dir/qrc_sim_io.cpp.i"
-	cd /home/bill/ros_ws/build/baxter_simulator/baxter_sim_io && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/bill/ros_ws/build/baxter_simulator/baxter_sim_io/qrc_sim_io.cpp > CMakeFiles/baxter_sim_io.dir/qrc_sim_io.cpp.i
+	cd /home/bill/bill_ros/ros_ws/build/baxter_simulator/baxter_sim_io && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/bill/bill_ros/ros_ws/build/baxter_simulator/baxter_sim_io/qrc_sim_io.cpp > CMakeFiles/baxter_sim_io.dir/qrc_sim_io.cpp.i
 
 baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/qrc_sim_io.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/baxter_sim_io.dir/qrc_sim_io.cpp.s"
-	cd /home/bill/ros_ws/build/baxter_simulator/baxter_sim_io && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/bill/ros_ws/build/baxter_simulator/baxter_sim_io/qrc_sim_io.cpp -o CMakeFiles/baxter_sim_io.dir/qrc_sim_io.cpp.s
+	cd /home/bill/bill_ros/ros_ws/build/baxter_simulator/baxter_sim_io && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/bill/bill_ros/ros_ws/build/baxter_simulator/baxter_sim_io/qrc_sim_io.cpp -o CMakeFiles/baxter_sim_io.dir/qrc_sim_io.cpp.s
 
 baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/qrc_sim_io.cpp.o.requires:
 
@@ -191,16 +191,16 @@ baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/qrc_sim_io.cpp.o.pro
 
 baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/include/baxter_sim_io/moc_baxter_io.cpp.o: baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/flags.make
 baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/include/baxter_sim_io/moc_baxter_io.cpp.o: baxter_simulator/baxter_sim_io/include/baxter_sim_io/moc_baxter_io.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/bill/ros_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/include/baxter_sim_io/moc_baxter_io.cpp.o"
-	cd /home/bill/ros_ws/build/baxter_simulator/baxter_sim_io && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/baxter_sim_io.dir/include/baxter_sim_io/moc_baxter_io.cpp.o -c /home/bill/ros_ws/build/baxter_simulator/baxter_sim_io/include/baxter_sim_io/moc_baxter_io.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/bill/bill_ros/ros_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/include/baxter_sim_io/moc_baxter_io.cpp.o"
+	cd /home/bill/bill_ros/ros_ws/build/baxter_simulator/baxter_sim_io && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/baxter_sim_io.dir/include/baxter_sim_io/moc_baxter_io.cpp.o -c /home/bill/bill_ros/ros_ws/build/baxter_simulator/baxter_sim_io/include/baxter_sim_io/moc_baxter_io.cpp
 
 baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/include/baxter_sim_io/moc_baxter_io.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/baxter_sim_io.dir/include/baxter_sim_io/moc_baxter_io.cpp.i"
-	cd /home/bill/ros_ws/build/baxter_simulator/baxter_sim_io && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/bill/ros_ws/build/baxter_simulator/baxter_sim_io/include/baxter_sim_io/moc_baxter_io.cpp > CMakeFiles/baxter_sim_io.dir/include/baxter_sim_io/moc_baxter_io.cpp.i
+	cd /home/bill/bill_ros/ros_ws/build/baxter_simulator/baxter_sim_io && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/bill/bill_ros/ros_ws/build/baxter_simulator/baxter_sim_io/include/baxter_sim_io/moc_baxter_io.cpp > CMakeFiles/baxter_sim_io.dir/include/baxter_sim_io/moc_baxter_io.cpp.i
 
 baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/include/baxter_sim_io/moc_baxter_io.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/baxter_sim_io.dir/include/baxter_sim_io/moc_baxter_io.cpp.s"
-	cd /home/bill/ros_ws/build/baxter_simulator/baxter_sim_io && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/bill/ros_ws/build/baxter_simulator/baxter_sim_io/include/baxter_sim_io/moc_baxter_io.cpp -o CMakeFiles/baxter_sim_io.dir/include/baxter_sim_io/moc_baxter_io.cpp.s
+	cd /home/bill/bill_ros/ros_ws/build/baxter_simulator/baxter_sim_io && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/bill/bill_ros/ros_ws/build/baxter_simulator/baxter_sim_io/include/baxter_sim_io/moc_baxter_io.cpp -o CMakeFiles/baxter_sim_io.dir/include/baxter_sim_io/moc_baxter_io.cpp.s
 
 baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/include/baxter_sim_io/moc_baxter_io.cpp.o.requires:
 
@@ -215,16 +215,16 @@ baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/include/baxter_sim_i
 
 baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/include/baxter_sim_io/moc_qnode.cpp.o: baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/flags.make
 baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/include/baxter_sim_io/moc_qnode.cpp.o: baxter_simulator/baxter_sim_io/include/baxter_sim_io/moc_qnode.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/bill/ros_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/include/baxter_sim_io/moc_qnode.cpp.o"
-	cd /home/bill/ros_ws/build/baxter_simulator/baxter_sim_io && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/baxter_sim_io.dir/include/baxter_sim_io/moc_qnode.cpp.o -c /home/bill/ros_ws/build/baxter_simulator/baxter_sim_io/include/baxter_sim_io/moc_qnode.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/bill/bill_ros/ros_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/include/baxter_sim_io/moc_qnode.cpp.o"
+	cd /home/bill/bill_ros/ros_ws/build/baxter_simulator/baxter_sim_io && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/baxter_sim_io.dir/include/baxter_sim_io/moc_qnode.cpp.o -c /home/bill/bill_ros/ros_ws/build/baxter_simulator/baxter_sim_io/include/baxter_sim_io/moc_qnode.cpp
 
 baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/include/baxter_sim_io/moc_qnode.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/baxter_sim_io.dir/include/baxter_sim_io/moc_qnode.cpp.i"
-	cd /home/bill/ros_ws/build/baxter_simulator/baxter_sim_io && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/bill/ros_ws/build/baxter_simulator/baxter_sim_io/include/baxter_sim_io/moc_qnode.cpp > CMakeFiles/baxter_sim_io.dir/include/baxter_sim_io/moc_qnode.cpp.i
+	cd /home/bill/bill_ros/ros_ws/build/baxter_simulator/baxter_sim_io && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/bill/bill_ros/ros_ws/build/baxter_simulator/baxter_sim_io/include/baxter_sim_io/moc_qnode.cpp > CMakeFiles/baxter_sim_io.dir/include/baxter_sim_io/moc_qnode.cpp.i
 
 baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/include/baxter_sim_io/moc_qnode.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/baxter_sim_io.dir/include/baxter_sim_io/moc_qnode.cpp.s"
-	cd /home/bill/ros_ws/build/baxter_simulator/baxter_sim_io && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/bill/ros_ws/build/baxter_simulator/baxter_sim_io/include/baxter_sim_io/moc_qnode.cpp -o CMakeFiles/baxter_sim_io.dir/include/baxter_sim_io/moc_qnode.cpp.s
+	cd /home/bill/bill_ros/ros_ws/build/baxter_simulator/baxter_sim_io && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/bill/bill_ros/ros_ws/build/baxter_simulator/baxter_sim_io/include/baxter_sim_io/moc_qnode.cpp -o CMakeFiles/baxter_sim_io.dir/include/baxter_sim_io/moc_qnode.cpp.s
 
 baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/include/baxter_sim_io/moc_qnode.cpp.o.requires:
 
@@ -239,16 +239,16 @@ baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/include/baxter_sim_i
 
 baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/baxter_sim_io_automoc.cpp.o: baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/flags.make
 baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/baxter_sim_io_automoc.cpp.o: baxter_simulator/baxter_sim_io/baxter_sim_io_automoc.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/bill/ros_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/baxter_sim_io_automoc.cpp.o"
-	cd /home/bill/ros_ws/build/baxter_simulator/baxter_sim_io && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/baxter_sim_io.dir/baxter_sim_io_automoc.cpp.o -c /home/bill/ros_ws/build/baxter_simulator/baxter_sim_io/baxter_sim_io_automoc.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/bill/bill_ros/ros_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/baxter_sim_io_automoc.cpp.o"
+	cd /home/bill/bill_ros/ros_ws/build/baxter_simulator/baxter_sim_io && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/baxter_sim_io.dir/baxter_sim_io_automoc.cpp.o -c /home/bill/bill_ros/ros_ws/build/baxter_simulator/baxter_sim_io/baxter_sim_io_automoc.cpp
 
 baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/baxter_sim_io_automoc.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/baxter_sim_io.dir/baxter_sim_io_automoc.cpp.i"
-	cd /home/bill/ros_ws/build/baxter_simulator/baxter_sim_io && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/bill/ros_ws/build/baxter_simulator/baxter_sim_io/baxter_sim_io_automoc.cpp > CMakeFiles/baxter_sim_io.dir/baxter_sim_io_automoc.cpp.i
+	cd /home/bill/bill_ros/ros_ws/build/baxter_simulator/baxter_sim_io && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/bill/bill_ros/ros_ws/build/baxter_simulator/baxter_sim_io/baxter_sim_io_automoc.cpp > CMakeFiles/baxter_sim_io.dir/baxter_sim_io_automoc.cpp.i
 
 baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/baxter_sim_io_automoc.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/baxter_sim_io.dir/baxter_sim_io_automoc.cpp.s"
-	cd /home/bill/ros_ws/build/baxter_simulator/baxter_sim_io && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/bill/ros_ws/build/baxter_simulator/baxter_sim_io/baxter_sim_io_automoc.cpp -o CMakeFiles/baxter_sim_io.dir/baxter_sim_io_automoc.cpp.s
+	cd /home/bill/bill_ros/ros_ws/build/baxter_simulator/baxter_sim_io && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/bill/bill_ros/ros_ws/build/baxter_simulator/baxter_sim_io/baxter_sim_io_automoc.cpp -o CMakeFiles/baxter_sim_io.dir/baxter_sim_io_automoc.cpp.s
 
 baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/baxter_sim_io_automoc.cpp.o.requires:
 
@@ -274,42 +274,42 @@ baxter_sim_io_OBJECTS = \
 # External object files for target baxter_sim_io
 baxter_sim_io_EXTERNAL_OBJECTS =
 
-/home/bill/ros_ws/devel/lib/baxter_sim_io/baxter_sim_io: baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/src/main.cpp.o
-/home/bill/ros_ws/devel/lib/baxter_sim_io/baxter_sim_io: baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/src/baxter_io.cpp.o
-/home/bill/ros_ws/devel/lib/baxter_sim_io/baxter_sim_io: baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/src/qnode.cpp.o
-/home/bill/ros_ws/devel/lib/baxter_sim_io/baxter_sim_io: baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/qrc_sim_io.cpp.o
-/home/bill/ros_ws/devel/lib/baxter_sim_io/baxter_sim_io: baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/include/baxter_sim_io/moc_baxter_io.cpp.o
-/home/bill/ros_ws/devel/lib/baxter_sim_io/baxter_sim_io: baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/include/baxter_sim_io/moc_qnode.cpp.o
-/home/bill/ros_ws/devel/lib/baxter_sim_io/baxter_sim_io: baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/baxter_sim_io_automoc.cpp.o
-/home/bill/ros_ws/devel/lib/baxter_sim_io/baxter_sim_io: baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/build.make
-/home/bill/ros_ws/devel/lib/baxter_sim_io/baxter_sim_io: /usr/lib/x86_64-linux-gnu/libQt5Widgets.so.5.5.1
-/home/bill/ros_ws/devel/lib/baxter_sim_io/baxter_sim_io: /opt/ros/kinetic/lib/libroscpp.so
-/home/bill/ros_ws/devel/lib/baxter_sim_io/baxter_sim_io: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
-/home/bill/ros_ws/devel/lib/baxter_sim_io/baxter_sim_io: /usr/lib/x86_64-linux-gnu/libboost_signals.so
-/home/bill/ros_ws/devel/lib/baxter_sim_io/baxter_sim_io: /opt/ros/kinetic/lib/librosconsole.so
-/home/bill/ros_ws/devel/lib/baxter_sim_io/baxter_sim_io: /opt/ros/kinetic/lib/librosconsole_log4cxx.so
-/home/bill/ros_ws/devel/lib/baxter_sim_io/baxter_sim_io: /opt/ros/kinetic/lib/librosconsole_backend_interface.so
-/home/bill/ros_ws/devel/lib/baxter_sim_io/baxter_sim_io: /usr/lib/x86_64-linux-gnu/liblog4cxx.so
-/home/bill/ros_ws/devel/lib/baxter_sim_io/baxter_sim_io: /usr/lib/x86_64-linux-gnu/libboost_regex.so
-/home/bill/ros_ws/devel/lib/baxter_sim_io/baxter_sim_io: /opt/ros/kinetic/lib/libxmlrpcpp.so
-/home/bill/ros_ws/devel/lib/baxter_sim_io/baxter_sim_io: /opt/ros/kinetic/lib/libroscpp_serialization.so
-/home/bill/ros_ws/devel/lib/baxter_sim_io/baxter_sim_io: /opt/ros/kinetic/lib/librostime.so
-/home/bill/ros_ws/devel/lib/baxter_sim_io/baxter_sim_io: /opt/ros/kinetic/lib/libcpp_common.so
-/home/bill/ros_ws/devel/lib/baxter_sim_io/baxter_sim_io: /usr/lib/x86_64-linux-gnu/libboost_system.so
-/home/bill/ros_ws/devel/lib/baxter_sim_io/baxter_sim_io: /usr/lib/x86_64-linux-gnu/libboost_thread.so
-/home/bill/ros_ws/devel/lib/baxter_sim_io/baxter_sim_io: /usr/lib/x86_64-linux-gnu/libboost_chrono.so
-/home/bill/ros_ws/devel/lib/baxter_sim_io/baxter_sim_io: /usr/lib/x86_64-linux-gnu/libboost_date_time.so
-/home/bill/ros_ws/devel/lib/baxter_sim_io/baxter_sim_io: /usr/lib/x86_64-linux-gnu/libboost_atomic.so
-/home/bill/ros_ws/devel/lib/baxter_sim_io/baxter_sim_io: /usr/lib/x86_64-linux-gnu/libpthread.so
-/home/bill/ros_ws/devel/lib/baxter_sim_io/baxter_sim_io: /usr/lib/x86_64-linux-gnu/libconsole_bridge.so
-/home/bill/ros_ws/devel/lib/baxter_sim_io/baxter_sim_io: /usr/lib/x86_64-linux-gnu/libQt5Gui.so.5.5.1
-/home/bill/ros_ws/devel/lib/baxter_sim_io/baxter_sim_io: /usr/lib/x86_64-linux-gnu/libQt5Core.so.5.5.1
-/home/bill/ros_ws/devel/lib/baxter_sim_io/baxter_sim_io: baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/bill/ros_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Linking CXX executable /home/bill/ros_ws/devel/lib/baxter_sim_io/baxter_sim_io"
-	cd /home/bill/ros_ws/build/baxter_simulator/baxter_sim_io && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/baxter_sim_io.dir/link.txt --verbose=$(VERBOSE)
+/home/bill/bill_ros/ros_ws/devel/lib/baxter_sim_io/baxter_sim_io: baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/src/main.cpp.o
+/home/bill/bill_ros/ros_ws/devel/lib/baxter_sim_io/baxter_sim_io: baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/src/baxter_io.cpp.o
+/home/bill/bill_ros/ros_ws/devel/lib/baxter_sim_io/baxter_sim_io: baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/src/qnode.cpp.o
+/home/bill/bill_ros/ros_ws/devel/lib/baxter_sim_io/baxter_sim_io: baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/qrc_sim_io.cpp.o
+/home/bill/bill_ros/ros_ws/devel/lib/baxter_sim_io/baxter_sim_io: baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/include/baxter_sim_io/moc_baxter_io.cpp.o
+/home/bill/bill_ros/ros_ws/devel/lib/baxter_sim_io/baxter_sim_io: baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/include/baxter_sim_io/moc_qnode.cpp.o
+/home/bill/bill_ros/ros_ws/devel/lib/baxter_sim_io/baxter_sim_io: baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/baxter_sim_io_automoc.cpp.o
+/home/bill/bill_ros/ros_ws/devel/lib/baxter_sim_io/baxter_sim_io: baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/build.make
+/home/bill/bill_ros/ros_ws/devel/lib/baxter_sim_io/baxter_sim_io: /usr/lib/x86_64-linux-gnu/libQt5Widgets.so.5.5.1
+/home/bill/bill_ros/ros_ws/devel/lib/baxter_sim_io/baxter_sim_io: /opt/ros/kinetic/lib/libroscpp.so
+/home/bill/bill_ros/ros_ws/devel/lib/baxter_sim_io/baxter_sim_io: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
+/home/bill/bill_ros/ros_ws/devel/lib/baxter_sim_io/baxter_sim_io: /usr/lib/x86_64-linux-gnu/libboost_signals.so
+/home/bill/bill_ros/ros_ws/devel/lib/baxter_sim_io/baxter_sim_io: /opt/ros/kinetic/lib/librosconsole.so
+/home/bill/bill_ros/ros_ws/devel/lib/baxter_sim_io/baxter_sim_io: /opt/ros/kinetic/lib/librosconsole_log4cxx.so
+/home/bill/bill_ros/ros_ws/devel/lib/baxter_sim_io/baxter_sim_io: /opt/ros/kinetic/lib/librosconsole_backend_interface.so
+/home/bill/bill_ros/ros_ws/devel/lib/baxter_sim_io/baxter_sim_io: /usr/lib/x86_64-linux-gnu/liblog4cxx.so
+/home/bill/bill_ros/ros_ws/devel/lib/baxter_sim_io/baxter_sim_io: /usr/lib/x86_64-linux-gnu/libboost_regex.so
+/home/bill/bill_ros/ros_ws/devel/lib/baxter_sim_io/baxter_sim_io: /opt/ros/kinetic/lib/libxmlrpcpp.so
+/home/bill/bill_ros/ros_ws/devel/lib/baxter_sim_io/baxter_sim_io: /opt/ros/kinetic/lib/libroscpp_serialization.so
+/home/bill/bill_ros/ros_ws/devel/lib/baxter_sim_io/baxter_sim_io: /opt/ros/kinetic/lib/librostime.so
+/home/bill/bill_ros/ros_ws/devel/lib/baxter_sim_io/baxter_sim_io: /opt/ros/kinetic/lib/libcpp_common.so
+/home/bill/bill_ros/ros_ws/devel/lib/baxter_sim_io/baxter_sim_io: /usr/lib/x86_64-linux-gnu/libboost_system.so
+/home/bill/bill_ros/ros_ws/devel/lib/baxter_sim_io/baxter_sim_io: /usr/lib/x86_64-linux-gnu/libboost_thread.so
+/home/bill/bill_ros/ros_ws/devel/lib/baxter_sim_io/baxter_sim_io: /usr/lib/x86_64-linux-gnu/libboost_chrono.so
+/home/bill/bill_ros/ros_ws/devel/lib/baxter_sim_io/baxter_sim_io: /usr/lib/x86_64-linux-gnu/libboost_date_time.so
+/home/bill/bill_ros/ros_ws/devel/lib/baxter_sim_io/baxter_sim_io: /usr/lib/x86_64-linux-gnu/libboost_atomic.so
+/home/bill/bill_ros/ros_ws/devel/lib/baxter_sim_io/baxter_sim_io: /usr/lib/x86_64-linux-gnu/libpthread.so
+/home/bill/bill_ros/ros_ws/devel/lib/baxter_sim_io/baxter_sim_io: /usr/lib/x86_64-linux-gnu/libconsole_bridge.so
+/home/bill/bill_ros/ros_ws/devel/lib/baxter_sim_io/baxter_sim_io: /usr/lib/x86_64-linux-gnu/libQt5Gui.so.5.5.1
+/home/bill/bill_ros/ros_ws/devel/lib/baxter_sim_io/baxter_sim_io: /usr/lib/x86_64-linux-gnu/libQt5Core.so.5.5.1
+/home/bill/bill_ros/ros_ws/devel/lib/baxter_sim_io/baxter_sim_io: baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/bill/bill_ros/ros_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Linking CXX executable /home/bill/bill_ros/ros_ws/devel/lib/baxter_sim_io/baxter_sim_io"
+	cd /home/bill/bill_ros/ros_ws/build/baxter_simulator/baxter_sim_io && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/baxter_sim_io.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/build: /home/bill/ros_ws/devel/lib/baxter_sim_io/baxter_sim_io
+baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/build: /home/bill/bill_ros/ros_ws/devel/lib/baxter_sim_io/baxter_sim_io
 
 .PHONY : baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/build
 
@@ -324,13 +324,13 @@ baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/requires: baxter_sim
 .PHONY : baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/requires
 
 baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/clean:
-	cd /home/bill/ros_ws/build/baxter_simulator/baxter_sim_io && $(CMAKE_COMMAND) -P CMakeFiles/baxter_sim_io.dir/cmake_clean.cmake
+	cd /home/bill/bill_ros/ros_ws/build/baxter_simulator/baxter_sim_io && $(CMAKE_COMMAND) -P CMakeFiles/baxter_sim_io.dir/cmake_clean.cmake
 .PHONY : baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/clean
 
 baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/depend: baxter_simulator/baxter_sim_io/qrc_sim_io.cpp
 baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/depend: baxter_simulator/baxter_sim_io/ui_baxter_io.h
 baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/depend: baxter_simulator/baxter_sim_io/include/baxter_sim_io/moc_baxter_io.cpp
 baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/depend: baxter_simulator/baxter_sim_io/include/baxter_sim_io/moc_qnode.cpp
-	cd /home/bill/ros_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/bill/ros_ws/src /home/bill/ros_ws/src/baxter_simulator/baxter_sim_io /home/bill/ros_ws/build /home/bill/ros_ws/build/baxter_simulator/baxter_sim_io /home/bill/ros_ws/build/baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/bill/bill_ros/ros_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/bill/bill_ros/ros_ws/src /home/bill/bill_ros/ros_ws/src/baxter_simulator/baxter_sim_io /home/bill/bill_ros/ros_ws/build /home/bill/bill_ros/ros_ws/build/baxter_simulator/baxter_sim_io /home/bill/bill_ros/ros_ws/build/baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io.dir/depend
 

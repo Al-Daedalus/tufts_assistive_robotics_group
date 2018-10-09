@@ -7,7 +7,10 @@
 	<arg name="cam_info_topic" default="/usb_cam/camera_info" />
         
 	<arg name="output_frame" default="/usb_cam" />
-	<arg name="bundle_files" default="$(find bill_marker_rec)/markers/MarkerData_15_16_17_18.xml $(find bill_marker_rec)/markers/MarkerData_19_20_21_22.xml $(find bill_marker_rec)/markers/MarkerData_1_2_3_4.xml $(find bill_marker_rec)/markers/MarkerData_5_6_7_8.xml $(find bill_marker_rec)/markers/MarkerData_30_31_32_33.xml $(find bill_marker_rec)/markers/MarkerData_34_35_36_37.xml" />
+	<arg name="bundle_files" default="$(find bill_marker_rec)/markers/MarkerData_15_16_17_18.xml $(find bill_marker_rec)/markers/MarkerData_19_20_21_22.xml  $(find bill_marker_rec)/markers/MarkerData_5_6_7_8.xml $(find bill_marker_rec)/markers/MarkerData_30_31_32_33.xml $(find bill_marker_rec)/markers/MarkerData_34_35_36_37.xml" />
 
-	<node name="ar_track_alvar" pkg="ar_track_alvar" type="findMarkerBundlesNoKinect" respawn="false" output="screen" args="$(arg marker_size) $(arg max_new_marker_error) $(arg max_track_error) $(arg cam_image_topic) $(arg cam_info_topic) $(arg output_frame) $(arg bundle_files)" />
+	<node name="ar_track_alvar" pkg="ar_track_alvar" type="findMarkerBundlesNoKinect" respawn="false" output="screen" args="$(arg marker_size) $(arg max_new_marker_error) $(arg max_track_error) $(arg cam_image_topic) $(arg cam_info_topic) $(arg output_frame) $(arg bundle_files)" >
+
+	<remap from="/ar_pose_marker" to="/mobile_base_cam/ar_pose_marker"/>
+	</node>
 </launch>

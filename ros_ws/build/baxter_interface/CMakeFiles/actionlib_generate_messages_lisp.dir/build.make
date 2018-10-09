@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/bill/ros_ws/src
+CMAKE_SOURCE_DIR = /home/bill/bill_ros/ros_ws/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/bill/ros_ws/build
+CMAKE_BINARY_DIR = /home/bill/bill_ros/ros_ws/build
 
 # Utility rule file for actionlib_generate_messages_lisp.
 
@@ -63,10 +63,10 @@ baxter_interface/CMakeFiles/actionlib_generate_messages_lisp.dir/build: actionli
 .PHONY : baxter_interface/CMakeFiles/actionlib_generate_messages_lisp.dir/build
 
 baxter_interface/CMakeFiles/actionlib_generate_messages_lisp.dir/clean:
-	cd /home/bill/ros_ws/build/baxter_interface && $(CMAKE_COMMAND) -P CMakeFiles/actionlib_generate_messages_lisp.dir/cmake_clean.cmake
+	cd /home/bill/bill_ros/ros_ws/build/baxter_interface && $(CMAKE_COMMAND) -P CMakeFiles/actionlib_generate_messages_lisp.dir/cmake_clean.cmake
 .PHONY : baxter_interface/CMakeFiles/actionlib_generate_messages_lisp.dir/clean
 
 baxter_interface/CMakeFiles/actionlib_generate_messages_lisp.dir/depend:
-	cd /home/bill/ros_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/bill/ros_ws/src /home/bill/ros_ws/src/baxter_interface /home/bill/ros_ws/build /home/bill/ros_ws/build/baxter_interface /home/bill/ros_ws/build/baxter_interface/CMakeFiles/actionlib_generate_messages_lisp.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/bill/bill_ros/ros_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/bill/bill_ros/ros_ws/src /home/bill/bill_ros/ros_ws/src/baxter_interface /home/bill/bill_ros/ros_ws/build /home/bill/bill_ros/ros_ws/build/baxter_interface /home/bill/bill_ros/ros_ws/build/baxter_interface/CMakeFiles/actionlib_generate_messages_lisp.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : baxter_interface/CMakeFiles/actionlib_generate_messages_lisp.dir/depend
 

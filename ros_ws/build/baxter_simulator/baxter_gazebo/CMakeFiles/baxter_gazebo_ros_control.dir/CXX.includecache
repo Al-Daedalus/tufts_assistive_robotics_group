@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/bill/ros_ws/devel/include/baxter_core_msgs/AssemblyState.h
+/home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/AssemblyState.h
 string
 -
 vector
@@ -22,7 +22,7 @@ ros/builtin_message_traits.h
 ros/message_operations.h
 -
 
-/home/bill/ros_ws/devel/include/baxter_core_msgs/EndEffectorCommand.h
+/home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/EndEffectorCommand.h
 string
 -
 vector
@@ -38,7 +38,7 @@ ros/builtin_message_traits.h
 ros/message_operations.h
 -
 
-/home/bill/ros_ws/devel/include/baxter_core_msgs/HeadPanCommand.h
+/home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/HeadPanCommand.h
 string
 -
 vector
@@ -54,7 +54,7 @@ ros/builtin_message_traits.h
 ros/message_operations.h
 -
 
-/home/bill/ros_ws/devel/include/baxter_core_msgs/JointCommand.h
+/home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/JointCommand.h
 string
 -
 vector
@@ -70,7 +70,7 @@ ros/builtin_message_traits.h
 ros/message_operations.h
 -
 
-/home/bill/ros_ws/src/baxter_simulator/baxter_gazebo/src/baxter_gazebo_ros_control_plugin.cpp
+/home/bill/bill_ros/ros_ws/src/baxter_simulator/baxter_gazebo/src/baxter_gazebo_ros_control_plugin.cpp
 gazebo_ros_control/gazebo_ros_control_plugin.h
 -
 controller_manager_msgs/SwitchController.h

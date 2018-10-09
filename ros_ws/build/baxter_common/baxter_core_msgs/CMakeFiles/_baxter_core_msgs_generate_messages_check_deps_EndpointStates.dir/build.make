@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/bill/ros_ws/src
+CMAKE_SOURCE_DIR = /home/bill/bill_ros/ros_ws/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/bill/ros_ws/build
+CMAKE_BINARY_DIR = /home/bill/bill_ros/ros_ws/build
 
 # Utility rule file for _baxter_core_msgs_generate_messages_check_deps_EndpointStates.
 
@@ -54,7 +54,7 @@ CMAKE_BINARY_DIR = /home/bill/ros_ws/build
 include baxter_common/baxter_core_msgs/CMakeFiles/_baxter_core_msgs_generate_messages_check_deps_EndpointStates.dir/progress.make
 
 baxter_common/baxter_core_msgs/CMakeFiles/_baxter_core_msgs_generate_messages_check_deps_EndpointStates:
-	cd /home/bill/ros_ws/build/baxter_common/baxter_core_msgs && ../../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py baxter_core_msgs /home/bill/ros_ws/src/baxter_common/baxter_core_msgs/msg/EndpointStates.msg geometry_msgs/Pose:std_msgs/Header:geometry_msgs/Quaternion:geometry_msgs/Wrench:geometry_msgs/Point:geometry_msgs/Vector3:baxter_core_msgs/EndpointState:geometry_msgs/Twist
+	cd /home/bill/bill_ros/ros_ws/build/baxter_common/baxter_core_msgs && ../../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py baxter_core_msgs /home/bill/bill_ros/ros_ws/src/baxter_common/baxter_core_msgs/msg/EndpointStates.msg baxter_core_msgs/EndpointState:std_msgs/Header:geometry_msgs/Quaternion:geometry_msgs/Wrench:geometry_msgs/Point:geometry_msgs/Vector3:geometry_msgs/Pose:geometry_msgs/Twist
 
 _baxter_core_msgs_generate_messages_check_deps_EndpointStates: baxter_common/baxter_core_msgs/CMakeFiles/_baxter_core_msgs_generate_messages_check_deps_EndpointStates
 _baxter_core_msgs_generate_messages_check_deps_EndpointStates: baxter_common/baxter_core_msgs/CMakeFiles/_baxter_core_msgs_generate_messages_check_deps_EndpointStates.dir/build.make
@@ -67,10 +67,10 @@ baxter_common/baxter_core_msgs/CMakeFiles/_baxter_core_msgs_generate_messages_ch
 .PHONY : baxter_common/baxter_core_msgs/CMakeFiles/_baxter_core_msgs_generate_messages_check_deps_EndpointStates.dir/build
 
 baxter_common/baxter_core_msgs/CMakeFiles/_baxter_core_msgs_generate_messages_check_deps_EndpointStates.dir/clean:
-	cd /home/bill/ros_ws/build/baxter_common/baxter_core_msgs && $(CMAKE_COMMAND) -P CMakeFiles/_baxter_core_msgs_generate_messages_check_deps_EndpointStates.dir/cmake_clean.cmake
+	cd /home/bill/bill_ros/ros_ws/build/baxter_common/baxter_core_msgs && $(CMAKE_COMMAND) -P CMakeFiles/_baxter_core_msgs_generate_messages_check_deps_EndpointStates.dir/cmake_clean.cmake
 .PHONY : baxter_common/baxter_core_msgs/CMakeFiles/_baxter_core_msgs_generate_messages_check_deps_EndpointStates.dir/clean
 
 baxter_common/baxter_core_msgs/CMakeFiles/_baxter_core_msgs_generate_messages_check_deps_EndpointStates.dir/depend:
-	cd /home/bill/ros_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/bill/ros_ws/src /home/bill/ros_ws/src/baxter_common/baxter_core_msgs /home/bill/ros_ws/build /home/bill/ros_ws/build/baxter_common/baxter_core_msgs /home/bill/ros_ws/build/baxter_common/baxter_core_msgs/CMakeFiles/_baxter_core_msgs_generate_messages_check_deps_EndpointStates.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/bill/bill_ros/ros_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/bill/bill_ros/ros_ws/src /home/bill/bill_ros/ros_ws/src/baxter_common/baxter_core_msgs /home/bill/bill_ros/ros_ws/build /home/bill/bill_ros/ros_ws/build/baxter_common/baxter_core_msgs /home/bill/bill_ros/ros_ws/build/baxter_common/baxter_core_msgs/CMakeFiles/_baxter_core_msgs_generate_messages_check_deps_EndpointStates.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : baxter_common/baxter_core_msgs/CMakeFiles/_baxter_core_msgs_generate_messages_check_deps_EndpointStates.dir/depend
 

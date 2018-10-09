@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/baxter_right_arm_moveit_ikfast_plugin.dir/src/baxter_right_arm_ikfast_moveit_plugin.cpp.o"
-  "/home/bill/ros_ws/devel/lib/libbaxter_right_arm_moveit_ikfast_plugin.pdb"
-  "/home/bill/ros_ws/devel/lib/libbaxter_right_arm_moveit_ikfast_plugin.so"
+  "/home/bill/bill_ros/ros_ws/devel/lib/libbaxter_right_arm_moveit_ikfast_plugin.pdb"
+  "/home/bill/bill_ros/ros_ws/devel/lib/libbaxter_right_arm_moveit_ikfast_plugin.so"
 )
 
 # Per-language clean rules from dependency scanning.

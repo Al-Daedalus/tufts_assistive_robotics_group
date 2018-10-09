@@ -67,14 +67,14 @@ set(baxter_sim_hardware_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("FALSE" STREQUAL "TRUE")
-  set(baxter_sim_hardware_SOURCE_PREFIX /home/bill/ros_ws/src/baxter_simulator/baxter_sim_hardware)
-  set(baxter_sim_hardware_DEVEL_PREFIX /home/bill/ros_ws/devel)
+  set(baxter_sim_hardware_SOURCE_PREFIX /home/bill/bill_ros/ros_ws/src/baxter_simulator/baxter_sim_hardware)
+  set(baxter_sim_hardware_DEVEL_PREFIX /home/bill/bill_ros/ros_ws/devel)
   set(baxter_sim_hardware_INSTALL_PREFIX "")
   set(baxter_sim_hardware_PREFIX ${baxter_sim_hardware_DEVEL_PREFIX})
 else()
   set(baxter_sim_hardware_SOURCE_PREFIX "")
   set(baxter_sim_hardware_DEVEL_PREFIX "")
-  set(baxter_sim_hardware_INSTALL_PREFIX /home/bill/ros_ws/install)
+  set(baxter_sim_hardware_INSTALL_PREFIX /home/bill/bill_ros/ros_ws/install)
   set(baxter_sim_hardware_PREFIX ${baxter_sim_hardware_INSTALL_PREFIX})
 endif()
 
@@ -110,7 +110,7 @@ if(NOT "include;/opt/ros/kinetic/include/opencv-3.3.1-dev;/opt/ros/kinetic/inclu
         message(FATAL_ERROR "Project 'baxter_sim_hardware' specifies '${idir}' as an include dir, which is not found.  It does not exist in '${include}'.  ${_report}")
       endif()
     else()
-      message(FATAL_ERROR "Project 'baxter_sim_hardware' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/bill/ros_ws/install/${idir}'.  ${_report}")
+      message(FATAL_ERROR "Project 'baxter_sim_hardware' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/bill/bill_ros/ros_ws/install/${idir}'.  ${_report}")
     endif()
     _list_append_unique(baxter_sim_hardware_INCLUDE_DIRS ${include})
   endforeach()
@@ -129,7 +129,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/bill/ros_ws/install/lib;/home/bill/ros_ws/devel/lib;/opt/ros/kinetic/lib)
+    foreach(path /home/bill/bill_ros/ros_ws/install/lib;/opt/ros/kinetic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)

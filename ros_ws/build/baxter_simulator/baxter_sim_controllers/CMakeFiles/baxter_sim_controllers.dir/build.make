@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/bill/ros_ws/src
+CMAKE_SOURCE_DIR = /home/bill/bill_ros/ros_ws/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/bill/ros_ws/build
+CMAKE_BINARY_DIR = /home/bill/bill_ros/ros_ws/build
 
 # Include any dependencies generated for this target.
 include baxter_simulator/baxter_sim_controllers/CMakeFiles/baxter_sim_controllers.dir/depend.make
@@ -58,17 +58,17 @@ include baxter_simulator/baxter_sim_controllers/CMakeFiles/baxter_sim_controller
 include baxter_simulator/baxter_sim_controllers/CMakeFiles/baxter_sim_controllers.dir/flags.make
 
 baxter_simulator/baxter_sim_controllers/CMakeFiles/baxter_sim_controllers.dir/src/baxter_position_controller.cpp.o: baxter_simulator/baxter_sim_controllers/CMakeFiles/baxter_sim_controllers.dir/flags.make
-baxter_simulator/baxter_sim_controllers/CMakeFiles/baxter_sim_controllers.dir/src/baxter_position_controller.cpp.o: /home/bill/ros_ws/src/baxter_simulator/baxter_sim_controllers/src/baxter_position_controller.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/bill/ros_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object baxter_simulator/baxter_sim_controllers/CMakeFiles/baxter_sim_controllers.dir/src/baxter_position_controller.cpp.o"
-	cd /home/bill/ros_ws/build/baxter_simulator/baxter_sim_controllers && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/baxter_sim_controllers.dir/src/baxter_position_controller.cpp.o -c /home/bill/ros_ws/src/baxter_simulator/baxter_sim_controllers/src/baxter_position_controller.cpp
+baxter_simulator/baxter_sim_controllers/CMakeFiles/baxter_sim_controllers.dir/src/baxter_position_controller.cpp.o: /home/bill/bill_ros/ros_ws/src/baxter_simulator/baxter_sim_controllers/src/baxter_position_controller.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/bill/bill_ros/ros_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object baxter_simulator/baxter_sim_controllers/CMakeFiles/baxter_sim_controllers.dir/src/baxter_position_controller.cpp.o"
+	cd /home/bill/bill_ros/ros_ws/build/baxter_simulator/baxter_sim_controllers && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/baxter_sim_controllers.dir/src/baxter_position_controller.cpp.o -c /home/bill/bill_ros/ros_ws/src/baxter_simulator/baxter_sim_controllers/src/baxter_position_controller.cpp
 
 baxter_simulator/baxter_sim_controllers/CMakeFiles/baxter_sim_controllers.dir/src/baxter_position_controller.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/baxter_sim_controllers.dir/src/baxter_position_controller.cpp.i"
-	cd /home/bill/ros_ws/build/baxter_simulator/baxter_sim_controllers && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/bill/ros_ws/src/baxter_simulator/baxter_sim_controllers/src/baxter_position_controller.cpp > CMakeFiles/baxter_sim_controllers.dir/src/baxter_position_controller.cpp.i
+	cd /home/bill/bill_ros/ros_ws/build/baxter_simulator/baxter_sim_controllers && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/bill/bill_ros/ros_ws/src/baxter_simulator/baxter_sim_controllers/src/baxter_position_controller.cpp > CMakeFiles/baxter_sim_controllers.dir/src/baxter_position_controller.cpp.i
 
 baxter_simulator/baxter_sim_controllers/CMakeFiles/baxter_sim_controllers.dir/src/baxter_position_controller.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/baxter_sim_controllers.dir/src/baxter_position_controller.cpp.s"
-	cd /home/bill/ros_ws/build/baxter_simulator/baxter_sim_controllers && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/bill/ros_ws/src/baxter_simulator/baxter_sim_controllers/src/baxter_position_controller.cpp -o CMakeFiles/baxter_sim_controllers.dir/src/baxter_position_controller.cpp.s
+	cd /home/bill/bill_ros/ros_ws/build/baxter_simulator/baxter_sim_controllers && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/bill/bill_ros/ros_ws/src/baxter_simulator/baxter_sim_controllers/src/baxter_position_controller.cpp -o CMakeFiles/baxter_sim_controllers.dir/src/baxter_position_controller.cpp.s
 
 baxter_simulator/baxter_sim_controllers/CMakeFiles/baxter_sim_controllers.dir/src/baxter_position_controller.cpp.o.requires:
 
@@ -82,17 +82,17 @@ baxter_simulator/baxter_sim_controllers/CMakeFiles/baxter_sim_controllers.dir/sr
 
 
 baxter_simulator/baxter_sim_controllers/CMakeFiles/baxter_sim_controllers.dir/src/baxter_velocity_controller.cpp.o: baxter_simulator/baxter_sim_controllers/CMakeFiles/baxter_sim_controllers.dir/flags.make
-baxter_simulator/baxter_sim_controllers/CMakeFiles/baxter_sim_controllers.dir/src/baxter_velocity_controller.cpp.o: /home/bill/ros_ws/src/baxter_simulator/baxter_sim_controllers/src/baxter_velocity_controller.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/bill/ros_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object baxter_simulator/baxter_sim_controllers/CMakeFiles/baxter_sim_controllers.dir/src/baxter_velocity_controller.cpp.o"
-	cd /home/bill/ros_ws/build/baxter_simulator/baxter_sim_controllers && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/baxter_sim_controllers.dir/src/baxter_velocity_controller.cpp.o -c /home/bill/ros_ws/src/baxter_simulator/baxter_sim_controllers/src/baxter_velocity_controller.cpp
+baxter_simulator/baxter_sim_controllers/CMakeFiles/baxter_sim_controllers.dir/src/baxter_velocity_controller.cpp.o: /home/bill/bill_ros/ros_ws/src/baxter_simulator/baxter_sim_controllers/src/baxter_velocity_controller.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/bill/bill_ros/ros_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object baxter_simulator/baxter_sim_controllers/CMakeFiles/baxter_sim_controllers.dir/src/baxter_velocity_controller.cpp.o"
+	cd /home/bill/bill_ros/ros_ws/build/baxter_simulator/baxter_sim_controllers && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/baxter_sim_controllers.dir/src/baxter_velocity_controller.cpp.o -c /home/bill/bill_ros/ros_ws/src/baxter_simulator/baxter_sim_controllers/src/baxter_velocity_controller.cpp
 
 baxter_simulator/baxter_sim_controllers/CMakeFiles/baxter_sim_controllers.dir/src/baxter_velocity_controller.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/baxter_sim_controllers.dir/src/baxter_velocity_controller.cpp.i"
-	cd /home/bill/ros_ws/build/baxter_simulator/baxter_sim_controllers && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/bill/ros_ws/src/baxter_simulator/baxter_sim_controllers/src/baxter_velocity_controller.cpp > CMakeFiles/baxter_sim_controllers.dir/src/baxter_velocity_controller.cpp.i
+	cd /home/bill/bill_ros/ros_ws/build/baxter_simulator/baxter_sim_controllers && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/bill/bill_ros/ros_ws/src/baxter_simulator/baxter_sim_controllers/src/baxter_velocity_controller.cpp > CMakeFiles/baxter_sim_controllers.dir/src/baxter_velocity_controller.cpp.i
 
 baxter_simulator/baxter_sim_controllers/CMakeFiles/baxter_sim_controllers.dir/src/baxter_velocity_controller.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/baxter_sim_controllers.dir/src/baxter_velocity_controller.cpp.s"
-	cd /home/bill/ros_ws/build/baxter_simulator/baxter_sim_controllers && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/bill/ros_ws/src/baxter_simulator/baxter_sim_controllers/src/baxter_velocity_controller.cpp -o CMakeFiles/baxter_sim_controllers.dir/src/baxter_velocity_controller.cpp.s
+	cd /home/bill/bill_ros/ros_ws/build/baxter_simulator/baxter_sim_controllers && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/bill/bill_ros/ros_ws/src/baxter_simulator/baxter_sim_controllers/src/baxter_velocity_controller.cpp -o CMakeFiles/baxter_sim_controllers.dir/src/baxter_velocity_controller.cpp.s
 
 baxter_simulator/baxter_sim_controllers/CMakeFiles/baxter_sim_controllers.dir/src/baxter_velocity_controller.cpp.o.requires:
 
@@ -106,17 +106,17 @@ baxter_simulator/baxter_sim_controllers/CMakeFiles/baxter_sim_controllers.dir/sr
 
 
 baxter_simulator/baxter_sim_controllers/CMakeFiles/baxter_sim_controllers.dir/src/baxter_effort_controller.cpp.o: baxter_simulator/baxter_sim_controllers/CMakeFiles/baxter_sim_controllers.dir/flags.make
-baxter_simulator/baxter_sim_controllers/CMakeFiles/baxter_sim_controllers.dir/src/baxter_effort_controller.cpp.o: /home/bill/ros_ws/src/baxter_simulator/baxter_sim_controllers/src/baxter_effort_controller.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/bill/ros_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object baxter_simulator/baxter_sim_controllers/CMakeFiles/baxter_sim_controllers.dir/src/baxter_effort_controller.cpp.o"
-	cd /home/bill/ros_ws/build/baxter_simulator/baxter_sim_controllers && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/baxter_sim_controllers.dir/src/baxter_effort_controller.cpp.o -c /home/bill/ros_ws/src/baxter_simulator/baxter_sim_controllers/src/baxter_effort_controller.cpp
+baxter_simulator/baxter_sim_controllers/CMakeFiles/baxter_sim_controllers.dir/src/baxter_effort_controller.cpp.o: /home/bill/bill_ros/ros_ws/src/baxter_simulator/baxter_sim_controllers/src/baxter_effort_controller.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/bill/bill_ros/ros_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object baxter_simulator/baxter_sim_controllers/CMakeFiles/baxter_sim_controllers.dir/src/baxter_effort_controller.cpp.o"
+	cd /home/bill/bill_ros/ros_ws/build/baxter_simulator/baxter_sim_controllers && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/baxter_sim_controllers.dir/src/baxter_effort_controller.cpp.o -c /home/bill/bill_ros/ros_ws/src/baxter_simulator/baxter_sim_controllers/src/baxter_effort_controller.cpp
 
 baxter_simulator/baxter_sim_controllers/CMakeFiles/baxter_sim_controllers.dir/src/baxter_effort_controller.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/baxter_sim_controllers.dir/src/baxter_effort_controller.cpp.i"
-	cd /home/bill/ros_ws/build/baxter_simulator/baxter_sim_controllers && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/bill/ros_ws/src/baxter_simulator/baxter_sim_controllers/src/baxter_effort_controller.cpp > CMakeFiles/baxter_sim_controllers.dir/src/baxter_effort_controller.cpp.i
+	cd /home/bill/bill_ros/ros_ws/build/baxter_simulator/baxter_sim_controllers && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/bill/bill_ros/ros_ws/src/baxter_simulator/baxter_sim_controllers/src/baxter_effort_controller.cpp > CMakeFiles/baxter_sim_controllers.dir/src/baxter_effort_controller.cpp.i
 
 baxter_simulator/baxter_sim_controllers/CMakeFiles/baxter_sim_controllers.dir/src/baxter_effort_controller.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/baxter_sim_controllers.dir/src/baxter_effort_controller.cpp.s"
-	cd /home/bill/ros_ws/build/baxter_simulator/baxter_sim_controllers && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/bill/ros_ws/src/baxter_simulator/baxter_sim_controllers/src/baxter_effort_controller.cpp -o CMakeFiles/baxter_sim_controllers.dir/src/baxter_effort_controller.cpp.s
+	cd /home/bill/bill_ros/ros_ws/build/baxter_simulator/baxter_sim_controllers && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/bill/bill_ros/ros_ws/src/baxter_simulator/baxter_sim_controllers/src/baxter_effort_controller.cpp -o CMakeFiles/baxter_sim_controllers.dir/src/baxter_effort_controller.cpp.s
 
 baxter_simulator/baxter_sim_controllers/CMakeFiles/baxter_sim_controllers.dir/src/baxter_effort_controller.cpp.o.requires:
 
@@ -130,17 +130,17 @@ baxter_simulator/baxter_sim_controllers/CMakeFiles/baxter_sim_controllers.dir/sr
 
 
 baxter_simulator/baxter_sim_controllers/CMakeFiles/baxter_sim_controllers.dir/src/baxter_head_controller.cpp.o: baxter_simulator/baxter_sim_controllers/CMakeFiles/baxter_sim_controllers.dir/flags.make
-baxter_simulator/baxter_sim_controllers/CMakeFiles/baxter_sim_controllers.dir/src/baxter_head_controller.cpp.o: /home/bill/ros_ws/src/baxter_simulator/baxter_sim_controllers/src/baxter_head_controller.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/bill/ros_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object baxter_simulator/baxter_sim_controllers/CMakeFiles/baxter_sim_controllers.dir/src/baxter_head_controller.cpp.o"
-	cd /home/bill/ros_ws/build/baxter_simulator/baxter_sim_controllers && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/baxter_sim_controllers.dir/src/baxter_head_controller.cpp.o -c /home/bill/ros_ws/src/baxter_simulator/baxter_sim_controllers/src/baxter_head_controller.cpp
+baxter_simulator/baxter_sim_controllers/CMakeFiles/baxter_sim_controllers.dir/src/baxter_head_controller.cpp.o: /home/bill/bill_ros/ros_ws/src/baxter_simulator/baxter_sim_controllers/src/baxter_head_controller.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/bill/bill_ros/ros_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object baxter_simulator/baxter_sim_controllers/CMakeFiles/baxter_sim_controllers.dir/src/baxter_head_controller.cpp.o"
+	cd /home/bill/bill_ros/ros_ws/build/baxter_simulator/baxter_sim_controllers && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/baxter_sim_controllers.dir/src/baxter_head_controller.cpp.o -c /home/bill/bill_ros/ros_ws/src/baxter_simulator/baxter_sim_controllers/src/baxter_head_controller.cpp
 
 baxter_simulator/baxter_sim_controllers/CMakeFiles/baxter_sim_controllers.dir/src/baxter_head_controller.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/baxter_sim_controllers.dir/src/baxter_head_controller.cpp.i"
-	cd /home/bill/ros_ws/build/baxter_simulator/baxter_sim_controllers && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/bill/ros_ws/src/baxter_simulator/baxter_sim_controllers/src/baxter_head_controller.cpp > CMakeFiles/baxter_sim_controllers.dir/src/baxter_head_controller.cpp.i
+	cd /home/bill/bill_ros/ros_ws/build/baxter_simulator/baxter_sim_controllers && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/bill/bill_ros/ros_ws/src/baxter_simulator/baxter_sim_controllers/src/baxter_head_controller.cpp > CMakeFiles/baxter_sim_controllers.dir/src/baxter_head_controller.cpp.i
 
 baxter_simulator/baxter_sim_controllers/CMakeFiles/baxter_sim_controllers.dir/src/baxter_head_controller.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/baxter_sim_controllers.dir/src/baxter_head_controller.cpp.s"
-	cd /home/bill/ros_ws/build/baxter_simulator/baxter_sim_controllers && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/bill/ros_ws/src/baxter_simulator/baxter_sim_controllers/src/baxter_head_controller.cpp -o CMakeFiles/baxter_sim_controllers.dir/src/baxter_head_controller.cpp.s
+	cd /home/bill/bill_ros/ros_ws/build/baxter_simulator/baxter_sim_controllers && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/bill/bill_ros/ros_ws/src/baxter_simulator/baxter_sim_controllers/src/baxter_head_controller.cpp -o CMakeFiles/baxter_sim_controllers.dir/src/baxter_head_controller.cpp.s
 
 baxter_simulator/baxter_sim_controllers/CMakeFiles/baxter_sim_controllers.dir/src/baxter_head_controller.cpp.o.requires:
 
@@ -154,17 +154,17 @@ baxter_simulator/baxter_sim_controllers/CMakeFiles/baxter_sim_controllers.dir/sr
 
 
 baxter_simulator/baxter_sim_controllers/CMakeFiles/baxter_sim_controllers.dir/src/baxter_gripper_controller.cpp.o: baxter_simulator/baxter_sim_controllers/CMakeFiles/baxter_sim_controllers.dir/flags.make
-baxter_simulator/baxter_sim_controllers/CMakeFiles/baxter_sim_controllers.dir/src/baxter_gripper_controller.cpp.o: /home/bill/ros_ws/src/baxter_simulator/baxter_sim_controllers/src/baxter_gripper_controller.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/bill/ros_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object baxter_simulator/baxter_sim_controllers/CMakeFiles/baxter_sim_controllers.dir/src/baxter_gripper_controller.cpp.o"
-	cd /home/bill/ros_ws/build/baxter_simulator/baxter_sim_controllers && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/baxter_sim_controllers.dir/src/baxter_gripper_controller.cpp.o -c /home/bill/ros_ws/src/baxter_simulator/baxter_sim_controllers/src/baxter_gripper_controller.cpp
+baxter_simulator/baxter_sim_controllers/CMakeFiles/baxter_sim_controllers.dir/src/baxter_gripper_controller.cpp.o: /home/bill/bill_ros/ros_ws/src/baxter_simulator/baxter_sim_controllers/src/baxter_gripper_controller.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/bill/bill_ros/ros_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object baxter_simulator/baxter_sim_controllers/CMakeFiles/baxter_sim_controllers.dir/src/baxter_gripper_controller.cpp.o"
+	cd /home/bill/bill_ros/ros_ws/build/baxter_simulator/baxter_sim_controllers && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/baxter_sim_controllers.dir/src/baxter_gripper_controller.cpp.o -c /home/bill/bill_ros/ros_ws/src/baxter_simulator/baxter_sim_controllers/src/baxter_gripper_controller.cpp
 
 baxter_simulator/baxter_sim_controllers/CMakeFiles/baxter_sim_controllers.dir/src/baxter_gripper_controller.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/baxter_sim_controllers.dir/src/baxter_gripper_controller.cpp.i"
-	cd /home/bill/ros_ws/build/baxter_simulator/baxter_sim_controllers && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/bill/ros_ws/src/baxter_simulator/baxter_sim_controllers/src/baxter_gripper_controller.cpp > CMakeFiles/baxter_sim_controllers.dir/src/baxter_gripper_controller.cpp.i
+	cd /home/bill/bill_ros/ros_ws/build/baxter_simulator/baxter_sim_controllers && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/bill/bill_ros/ros_ws/src/baxter_simulator/baxter_sim_controllers/src/baxter_gripper_controller.cpp > CMakeFiles/baxter_sim_controllers.dir/src/baxter_gripper_controller.cpp.i
 
 baxter_simulator/baxter_sim_controllers/CMakeFiles/baxter_sim_controllers.dir/src/baxter_gripper_controller.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/baxter_sim_controllers.dir/src/baxter_gripper_controller.cpp.s"
-	cd /home/bill/ros_ws/build/baxter_simulator/baxter_sim_controllers && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/bill/ros_ws/src/baxter_simulator/baxter_sim_controllers/src/baxter_gripper_controller.cpp -o CMakeFiles/baxter_sim_controllers.dir/src/baxter_gripper_controller.cpp.s
+	cd /home/bill/bill_ros/ros_ws/build/baxter_simulator/baxter_sim_controllers && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/bill/bill_ros/ros_ws/src/baxter_simulator/baxter_sim_controllers/src/baxter_gripper_controller.cpp -o CMakeFiles/baxter_sim_controllers.dir/src/baxter_gripper_controller.cpp.s
 
 baxter_simulator/baxter_sim_controllers/CMakeFiles/baxter_sim_controllers.dir/src/baxter_gripper_controller.cpp.o.requires:
 
@@ -188,64 +188,64 @@ baxter_sim_controllers_OBJECTS = \
 # External object files for target baxter_sim_controllers
 baxter_sim_controllers_EXTERNAL_OBJECTS =
 
-/home/bill/ros_ws/devel/lib/libbaxter_sim_controllers.so: baxter_simulator/baxter_sim_controllers/CMakeFiles/baxter_sim_controllers.dir/src/baxter_position_controller.cpp.o
-/home/bill/ros_ws/devel/lib/libbaxter_sim_controllers.so: baxter_simulator/baxter_sim_controllers/CMakeFiles/baxter_sim_controllers.dir/src/baxter_velocity_controller.cpp.o
-/home/bill/ros_ws/devel/lib/libbaxter_sim_controllers.so: baxter_simulator/baxter_sim_controllers/CMakeFiles/baxter_sim_controllers.dir/src/baxter_effort_controller.cpp.o
-/home/bill/ros_ws/devel/lib/libbaxter_sim_controllers.so: baxter_simulator/baxter_sim_controllers/CMakeFiles/baxter_sim_controllers.dir/src/baxter_head_controller.cpp.o
-/home/bill/ros_ws/devel/lib/libbaxter_sim_controllers.so: baxter_simulator/baxter_sim_controllers/CMakeFiles/baxter_sim_controllers.dir/src/baxter_gripper_controller.cpp.o
-/home/bill/ros_ws/devel/lib/libbaxter_sim_controllers.so: baxter_simulator/baxter_sim_controllers/CMakeFiles/baxter_sim_controllers.dir/build.make
-/home/bill/ros_ws/devel/lib/libbaxter_sim_controllers.so: /usr/lib/x86_64-linux-gnu/libyaml-cpp.so
-/home/bill/ros_ws/devel/lib/libbaxter_sim_controllers.so: /opt/ros/kinetic/lib/libeffort_controllers.so
-/home/bill/ros_ws/devel/lib/libbaxter_sim_controllers.so: /opt/ros/kinetic/lib/libcontrol_toolbox.so
-/home/bill/ros_ws/devel/lib/libbaxter_sim_controllers.so: /opt/ros/kinetic/lib/libdynamic_reconfigure_config_init_mutex.so
-/home/bill/ros_ws/devel/lib/libbaxter_sim_controllers.so: /usr/lib/x86_64-linux-gnu/libtinyxml2.so
-/home/bill/ros_ws/devel/lib/libbaxter_sim_controllers.so: /opt/ros/kinetic/lib/libclass_loader.so
-/home/bill/ros_ws/devel/lib/libbaxter_sim_controllers.so: /usr/lib/libPocoFoundation.so
-/home/bill/ros_ws/devel/lib/libbaxter_sim_controllers.so: /usr/lib/x86_64-linux-gnu/libdl.so
-/home/bill/ros_ws/devel/lib/libbaxter_sim_controllers.so: /opt/ros/kinetic/lib/libroslib.so
-/home/bill/ros_ws/devel/lib/libbaxter_sim_controllers.so: /opt/ros/kinetic/lib/librospack.so
-/home/bill/ros_ws/devel/lib/libbaxter_sim_controllers.so: /usr/lib/x86_64-linux-gnu/libpython2.7.so
-/home/bill/ros_ws/devel/lib/libbaxter_sim_controllers.so: /usr/lib/x86_64-linux-gnu/libboost_program_options.so
-/home/bill/ros_ws/devel/lib/libbaxter_sim_controllers.so: /opt/ros/kinetic/lib/librealtime_tools.so
-/home/bill/ros_ws/devel/lib/libbaxter_sim_controllers.so: /opt/ros/kinetic/lib/liburdf.so
-/home/bill/ros_ws/devel/lib/libbaxter_sim_controllers.so: /usr/lib/x86_64-linux-gnu/liburdfdom_sensor.so
-/home/bill/ros_ws/devel/lib/libbaxter_sim_controllers.so: /usr/lib/x86_64-linux-gnu/liburdfdom_model_state.so
-/home/bill/ros_ws/devel/lib/libbaxter_sim_controllers.so: /usr/lib/x86_64-linux-gnu/liburdfdom_model.so
-/home/bill/ros_ws/devel/lib/libbaxter_sim_controllers.so: /usr/lib/x86_64-linux-gnu/liburdfdom_world.so
-/home/bill/ros_ws/devel/lib/libbaxter_sim_controllers.so: /usr/lib/x86_64-linux-gnu/libtinyxml.so
-/home/bill/ros_ws/devel/lib/libbaxter_sim_controllers.so: /opt/ros/kinetic/lib/librosconsole_bridge.so
-/home/bill/ros_ws/devel/lib/libbaxter_sim_controllers.so: /opt/ros/kinetic/lib/libroscpp.so
-/home/bill/ros_ws/devel/lib/libbaxter_sim_controllers.so: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
-/home/bill/ros_ws/devel/lib/libbaxter_sim_controllers.so: /usr/lib/x86_64-linux-gnu/libboost_signals.so
-/home/bill/ros_ws/devel/lib/libbaxter_sim_controllers.so: /opt/ros/kinetic/lib/librosconsole.so
-/home/bill/ros_ws/devel/lib/libbaxter_sim_controllers.so: /opt/ros/kinetic/lib/librosconsole_log4cxx.so
-/home/bill/ros_ws/devel/lib/libbaxter_sim_controllers.so: /opt/ros/kinetic/lib/librosconsole_backend_interface.so
-/home/bill/ros_ws/devel/lib/libbaxter_sim_controllers.so: /usr/lib/x86_64-linux-gnu/liblog4cxx.so
-/home/bill/ros_ws/devel/lib/libbaxter_sim_controllers.so: /usr/lib/x86_64-linux-gnu/libboost_regex.so
-/home/bill/ros_ws/devel/lib/libbaxter_sim_controllers.so: /opt/ros/kinetic/lib/libxmlrpcpp.so
-/home/bill/ros_ws/devel/lib/libbaxter_sim_controllers.so: /opt/ros/kinetic/lib/libroscpp_serialization.so
-/home/bill/ros_ws/devel/lib/libbaxter_sim_controllers.so: /opt/ros/kinetic/lib/librostime.so
-/home/bill/ros_ws/devel/lib/libbaxter_sim_controllers.so: /opt/ros/kinetic/lib/libcpp_common.so
-/home/bill/ros_ws/devel/lib/libbaxter_sim_controllers.so: /usr/lib/x86_64-linux-gnu/libboost_system.so
-/home/bill/ros_ws/devel/lib/libbaxter_sim_controllers.so: /usr/lib/x86_64-linux-gnu/libboost_thread.so
-/home/bill/ros_ws/devel/lib/libbaxter_sim_controllers.so: /usr/lib/x86_64-linux-gnu/libboost_chrono.so
-/home/bill/ros_ws/devel/lib/libbaxter_sim_controllers.so: /usr/lib/x86_64-linux-gnu/libboost_date_time.so
-/home/bill/ros_ws/devel/lib/libbaxter_sim_controllers.so: /usr/lib/x86_64-linux-gnu/libboost_atomic.so
-/home/bill/ros_ws/devel/lib/libbaxter_sim_controllers.so: /usr/lib/x86_64-linux-gnu/libpthread.so
-/home/bill/ros_ws/devel/lib/libbaxter_sim_controllers.so: /usr/lib/x86_64-linux-gnu/libconsole_bridge.so
-/home/bill/ros_ws/devel/lib/libbaxter_sim_controllers.so: /usr/lib/x86_64-linux-gnu/libboost_system.so
-/home/bill/ros_ws/devel/lib/libbaxter_sim_controllers.so: /usr/lib/x86_64-linux-gnu/libboost_thread.so
-/home/bill/ros_ws/devel/lib/libbaxter_sim_controllers.so: /usr/lib/x86_64-linux-gnu/libboost_chrono.so
-/home/bill/ros_ws/devel/lib/libbaxter_sim_controllers.so: /usr/lib/x86_64-linux-gnu/libboost_date_time.so
-/home/bill/ros_ws/devel/lib/libbaxter_sim_controllers.so: /usr/lib/x86_64-linux-gnu/libboost_atomic.so
-/home/bill/ros_ws/devel/lib/libbaxter_sim_controllers.so: /usr/lib/x86_64-linux-gnu/libpthread.so
-/home/bill/ros_ws/devel/lib/libbaxter_sim_controllers.so: /usr/lib/x86_64-linux-gnu/libconsole_bridge.so
-/home/bill/ros_ws/devel/lib/libbaxter_sim_controllers.so: baxter_simulator/baxter_sim_controllers/CMakeFiles/baxter_sim_controllers.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/bill/ros_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX shared library /home/bill/ros_ws/devel/lib/libbaxter_sim_controllers.so"
-	cd /home/bill/ros_ws/build/baxter_simulator/baxter_sim_controllers && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/baxter_sim_controllers.dir/link.txt --verbose=$(VERBOSE)
+/home/bill/bill_ros/ros_ws/devel/lib/libbaxter_sim_controllers.so: baxter_simulator/baxter_sim_controllers/CMakeFiles/baxter_sim_controllers.dir/src/baxter_position_controller.cpp.o
+/home/bill/bill_ros/ros_ws/devel/lib/libbaxter_sim_controllers.so: baxter_simulator/baxter_sim_controllers/CMakeFiles/baxter_sim_controllers.dir/src/baxter_velocity_controller.cpp.o
+/home/bill/bill_ros/ros_ws/devel/lib/libbaxter_sim_controllers.so: baxter_simulator/baxter_sim_controllers/CMakeFiles/baxter_sim_controllers.dir/src/baxter_effort_controller.cpp.o
+/home/bill/bill_ros/ros_ws/devel/lib/libbaxter_sim_controllers.so: baxter_simulator/baxter_sim_controllers/CMakeFiles/baxter_sim_controllers.dir/src/baxter_head_controller.cpp.o
+/home/bill/bill_ros/ros_ws/devel/lib/libbaxter_sim_controllers.so: baxter_simulator/baxter_sim_controllers/CMakeFiles/baxter_sim_controllers.dir/src/baxter_gripper_controller.cpp.o
+/home/bill/bill_ros/ros_ws/devel/lib/libbaxter_sim_controllers.so: baxter_simulator/baxter_sim_controllers/CMakeFiles/baxter_sim_controllers.dir/build.make
+/home/bill/bill_ros/ros_ws/devel/lib/libbaxter_sim_controllers.so: /usr/lib/x86_64-linux-gnu/libyaml-cpp.so
+/home/bill/bill_ros/ros_ws/devel/lib/libbaxter_sim_controllers.so: /opt/ros/kinetic/lib/libeffort_controllers.so
+/home/bill/bill_ros/ros_ws/devel/lib/libbaxter_sim_controllers.so: /opt/ros/kinetic/lib/libcontrol_toolbox.so
+/home/bill/bill_ros/ros_ws/devel/lib/libbaxter_sim_controllers.so: /opt/ros/kinetic/lib/libdynamic_reconfigure_config_init_mutex.so
+/home/bill/bill_ros/ros_ws/devel/lib/libbaxter_sim_controllers.so: /usr/lib/x86_64-linux-gnu/libtinyxml2.so
+/home/bill/bill_ros/ros_ws/devel/lib/libbaxter_sim_controllers.so: /opt/ros/kinetic/lib/libclass_loader.so
+/home/bill/bill_ros/ros_ws/devel/lib/libbaxter_sim_controllers.so: /usr/lib/libPocoFoundation.so
+/home/bill/bill_ros/ros_ws/devel/lib/libbaxter_sim_controllers.so: /usr/lib/x86_64-linux-gnu/libdl.so
+/home/bill/bill_ros/ros_ws/devel/lib/libbaxter_sim_controllers.so: /opt/ros/kinetic/lib/libroslib.so
+/home/bill/bill_ros/ros_ws/devel/lib/libbaxter_sim_controllers.so: /opt/ros/kinetic/lib/librospack.so
+/home/bill/bill_ros/ros_ws/devel/lib/libbaxter_sim_controllers.so: /usr/lib/x86_64-linux-gnu/libpython2.7.so
+/home/bill/bill_ros/ros_ws/devel/lib/libbaxter_sim_controllers.so: /usr/lib/x86_64-linux-gnu/libboost_program_options.so
+/home/bill/bill_ros/ros_ws/devel/lib/libbaxter_sim_controllers.so: /opt/ros/kinetic/lib/librealtime_tools.so
+/home/bill/bill_ros/ros_ws/devel/lib/libbaxter_sim_controllers.so: /opt/ros/kinetic/lib/liburdf.so
+/home/bill/bill_ros/ros_ws/devel/lib/libbaxter_sim_controllers.so: /usr/lib/x86_64-linux-gnu/liburdfdom_sensor.so
+/home/bill/bill_ros/ros_ws/devel/lib/libbaxter_sim_controllers.so: /usr/lib/x86_64-linux-gnu/liburdfdom_model_state.so
+/home/bill/bill_ros/ros_ws/devel/lib/libbaxter_sim_controllers.so: /usr/lib/x86_64-linux-gnu/liburdfdom_model.so
+/home/bill/bill_ros/ros_ws/devel/lib/libbaxter_sim_controllers.so: /usr/lib/x86_64-linux-gnu/liburdfdom_world.so
+/home/bill/bill_ros/ros_ws/devel/lib/libbaxter_sim_controllers.so: /usr/lib/x86_64-linux-gnu/libtinyxml.so
+/home/bill/bill_ros/ros_ws/devel/lib/libbaxter_sim_controllers.so: /opt/ros/kinetic/lib/librosconsole_bridge.so
+/home/bill/bill_ros/ros_ws/devel/lib/libbaxter_sim_controllers.so: /opt/ros/kinetic/lib/libroscpp.so
+/home/bill/bill_ros/ros_ws/devel/lib/libbaxter_sim_controllers.so: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
+/home/bill/bill_ros/ros_ws/devel/lib/libbaxter_sim_controllers.so: /usr/lib/x86_64-linux-gnu/libboost_signals.so
+/home/bill/bill_ros/ros_ws/devel/lib/libbaxter_sim_controllers.so: /opt/ros/kinetic/lib/librosconsole.so
+/home/bill/bill_ros/ros_ws/devel/lib/libbaxter_sim_controllers.so: /opt/ros/kinetic/lib/librosconsole_log4cxx.so
+/home/bill/bill_ros/ros_ws/devel/lib/libbaxter_sim_controllers.so: /opt/ros/kinetic/lib/librosconsole_backend_interface.so
+/home/bill/bill_ros/ros_ws/devel/lib/libbaxter_sim_controllers.so: /usr/lib/x86_64-linux-gnu/liblog4cxx.so
+/home/bill/bill_ros/ros_ws/devel/lib/libbaxter_sim_controllers.so: /usr/lib/x86_64-linux-gnu/libboost_regex.so
+/home/bill/bill_ros/ros_ws/devel/lib/libbaxter_sim_controllers.so: /opt/ros/kinetic/lib/libxmlrpcpp.so
+/home/bill/bill_ros/ros_ws/devel/lib/libbaxter_sim_controllers.so: /opt/ros/kinetic/lib/libroscpp_serialization.so
+/home/bill/bill_ros/ros_ws/devel/lib/libbaxter_sim_controllers.so: /opt/ros/kinetic/lib/librostime.so
+/home/bill/bill_ros/ros_ws/devel/lib/libbaxter_sim_controllers.so: /opt/ros/kinetic/lib/libcpp_common.so
+/home/bill/bill_ros/ros_ws/devel/lib/libbaxter_sim_controllers.so: /usr/lib/x86_64-linux-gnu/libboost_system.so
+/home/bill/bill_ros/ros_ws/devel/lib/libbaxter_sim_controllers.so: /usr/lib/x86_64-linux-gnu/libboost_thread.so
+/home/bill/bill_ros/ros_ws/devel/lib/libbaxter_sim_controllers.so: /usr/lib/x86_64-linux-gnu/libboost_chrono.so
+/home/bill/bill_ros/ros_ws/devel/lib/libbaxter_sim_controllers.so: /usr/lib/x86_64-linux-gnu/libboost_date_time.so
+/home/bill/bill_ros/ros_ws/devel/lib/libbaxter_sim_controllers.so: /usr/lib/x86_64-linux-gnu/libboost_atomic.so
+/home/bill/bill_ros/ros_ws/devel/lib/libbaxter_sim_controllers.so: /usr/lib/x86_64-linux-gnu/libpthread.so
+/home/bill/bill_ros/ros_ws/devel/lib/libbaxter_sim_controllers.so: /usr/lib/x86_64-linux-gnu/libconsole_bridge.so
+/home/bill/bill_ros/ros_ws/devel/lib/libbaxter_sim_controllers.so: /usr/lib/x86_64-linux-gnu/libboost_system.so
+/home/bill/bill_ros/ros_ws/devel/lib/libbaxter_sim_controllers.so: /usr/lib/x86_64-linux-gnu/libboost_thread.so
+/home/bill/bill_ros/ros_ws/devel/lib/libbaxter_sim_controllers.so: /usr/lib/x86_64-linux-gnu/libboost_chrono.so
+/home/bill/bill_ros/ros_ws/devel/lib/libbaxter_sim_controllers.so: /usr/lib/x86_64-linux-gnu/libboost_date_time.so
+/home/bill/bill_ros/ros_ws/devel/lib/libbaxter_sim_controllers.so: /usr/lib/x86_64-linux-gnu/libboost_atomic.so
+/home/bill/bill_ros/ros_ws/devel/lib/libbaxter_sim_controllers.so: /usr/lib/x86_64-linux-gnu/libpthread.so
+/home/bill/bill_ros/ros_ws/devel/lib/libbaxter_sim_controllers.so: /usr/lib/x86_64-linux-gnu/libconsole_bridge.so
+/home/bill/bill_ros/ros_ws/devel/lib/libbaxter_sim_controllers.so: baxter_simulator/baxter_sim_controllers/CMakeFiles/baxter_sim_controllers.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/bill/bill_ros/ros_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX shared library /home/bill/bill_ros/ros_ws/devel/lib/libbaxter_sim_controllers.so"
+	cd /home/bill/bill_ros/ros_ws/build/baxter_simulator/baxter_sim_controllers && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/baxter_sim_controllers.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-baxter_simulator/baxter_sim_controllers/CMakeFiles/baxter_sim_controllers.dir/build: /home/bill/ros_ws/devel/lib/libbaxter_sim_controllers.so
+baxter_simulator/baxter_sim_controllers/CMakeFiles/baxter_sim_controllers.dir/build: /home/bill/bill_ros/ros_ws/devel/lib/libbaxter_sim_controllers.so
 
 .PHONY : baxter_simulator/baxter_sim_controllers/CMakeFiles/baxter_sim_controllers.dir/build
 
@@ -258,10 +258,10 @@ baxter_simulator/baxter_sim_controllers/CMakeFiles/baxter_sim_controllers.dir/re
 .PHONY : baxter_simulator/baxter_sim_controllers/CMakeFiles/baxter_sim_controllers.dir/requires
 
 baxter_simulator/baxter_sim_controllers/CMakeFiles/baxter_sim_controllers.dir/clean:
-	cd /home/bill/ros_ws/build/baxter_simulator/baxter_sim_controllers && $(CMAKE_COMMAND) -P CMakeFiles/baxter_sim_controllers.dir/cmake_clean.cmake
+	cd /home/bill/bill_ros/ros_ws/build/baxter_simulator/baxter_sim_controllers && $(CMAKE_COMMAND) -P CMakeFiles/baxter_sim_controllers.dir/cmake_clean.cmake
 .PHONY : baxter_simulator/baxter_sim_controllers/CMakeFiles/baxter_sim_controllers.dir/clean
 
 baxter_simulator/baxter_sim_controllers/CMakeFiles/baxter_sim_controllers.dir/depend:
-	cd /home/bill/ros_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/bill/ros_ws/src /home/bill/ros_ws/src/baxter_simulator/baxter_sim_controllers /home/bill/ros_ws/build /home/bill/ros_ws/build/baxter_simulator/baxter_sim_controllers /home/bill/ros_ws/build/baxter_simulator/baxter_sim_controllers/CMakeFiles/baxter_sim_controllers.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/bill/bill_ros/ros_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/bill/bill_ros/ros_ws/src /home/bill/bill_ros/ros_ws/src/baxter_simulator/baxter_sim_controllers /home/bill/bill_ros/ros_ws/build /home/bill/bill_ros/ros_ws/build/baxter_simulator/baxter_sim_controllers /home/bill/bill_ros/ros_ws/build/baxter_simulator/baxter_sim_controllers/CMakeFiles/baxter_sim_controllers.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : baxter_simulator/baxter_sim_controllers/CMakeFiles/baxter_sim_controllers.dir/depend
 

@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/bill/ros_ws/src
+CMAKE_SOURCE_DIR = /home/bill/bill_ros/ros_ws/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/bill/ros_ws/build
+CMAKE_BINARY_DIR = /home/bill/bill_ros/ros_ws/build
 
 # Utility rule file for baxter_sim_io_automoc.
 
@@ -54,8 +54,8 @@ CMAKE_BINARY_DIR = /home/bill/ros_ws/build
 include baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io_automoc.dir/progress.make
 
 baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io_automoc:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/bill/ros_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Automatic moc for target baxter_sim_io"
-	cd /home/bill/ros_ws/build/baxter_simulator/baxter_sim_io && /usr/bin/cmake -E cmake_autogen /home/bill/ros_ws/build/baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io_automoc.dir/ ""
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/bill/bill_ros/ros_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Automatic moc for target baxter_sim_io"
+	cd /home/bill/bill_ros/ros_ws/build/baxter_simulator/baxter_sim_io && /usr/bin/cmake -E cmake_autogen /home/bill/bill_ros/ros_ws/build/baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io_automoc.dir/ ""
 
 baxter_sim_io_automoc: baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io_automoc
 baxter_sim_io_automoc: baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io_automoc.dir/build.make
@@ -68,10 +68,10 @@ baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io_automoc.dir/build: baxte
 .PHONY : baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io_automoc.dir/build
 
 baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io_automoc.dir/clean:
-	cd /home/bill/ros_ws/build/baxter_simulator/baxter_sim_io && $(CMAKE_COMMAND) -P CMakeFiles/baxter_sim_io_automoc.dir/cmake_clean.cmake
+	cd /home/bill/bill_ros/ros_ws/build/baxter_simulator/baxter_sim_io && $(CMAKE_COMMAND) -P CMakeFiles/baxter_sim_io_automoc.dir/cmake_clean.cmake
 .PHONY : baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io_automoc.dir/clean
 
 baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io_automoc.dir/depend:
-	cd /home/bill/ros_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/bill/ros_ws/src /home/bill/ros_ws/src/baxter_simulator/baxter_sim_io /home/bill/ros_ws/build /home/bill/ros_ws/build/baxter_simulator/baxter_sim_io /home/bill/ros_ws/build/baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io_automoc.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/bill/bill_ros/ros_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/bill/bill_ros/ros_ws/src /home/bill/bill_ros/ros_ws/src/baxter_simulator/baxter_sim_io /home/bill/bill_ros/ros_ws/build /home/bill/bill_ros/ros_ws/build/baxter_simulator/baxter_sim_io /home/bill/bill_ros/ros_ws/build/baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io_automoc.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : baxter_simulator/baxter_sim_io/CMakeFiles/baxter_sim_io_automoc.dir/depend
 

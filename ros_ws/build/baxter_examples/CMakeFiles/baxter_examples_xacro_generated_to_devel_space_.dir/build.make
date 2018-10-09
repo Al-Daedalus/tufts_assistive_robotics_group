@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/bill/ros_ws/src
+CMAKE_SOURCE_DIR = /home/bill/bill_ros/ros_ws/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/bill/ros_ws/build
+CMAKE_BINARY_DIR = /home/bill/bill_ros/ros_ws/build
 
 # Utility rule file for baxter_examples_xacro_generated_to_devel_space_.
 
@@ -63,10 +63,10 @@ baxter_examples/CMakeFiles/baxter_examples_xacro_generated_to_devel_space_.dir/b
 .PHONY : baxter_examples/CMakeFiles/baxter_examples_xacro_generated_to_devel_space_.dir/build
 
 baxter_examples/CMakeFiles/baxter_examples_xacro_generated_to_devel_space_.dir/clean:
-	cd /home/bill/ros_ws/build/baxter_examples && $(CMAKE_COMMAND) -P CMakeFiles/baxter_examples_xacro_generated_to_devel_space_.dir/cmake_clean.cmake
+	cd /home/bill/bill_ros/ros_ws/build/baxter_examples && $(CMAKE_COMMAND) -P CMakeFiles/baxter_examples_xacro_generated_to_devel_space_.dir/cmake_clean.cmake
 .PHONY : baxter_examples/CMakeFiles/baxter_examples_xacro_generated_to_devel_space_.dir/clean
 
 baxter_examples/CMakeFiles/baxter_examples_xacro_generated_to_devel_space_.dir/depend:
-	cd /home/bill/ros_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/bill/ros_ws/src /home/bill/ros_ws/src/baxter_examples /home/bill/ros_ws/build /home/bill/ros_ws/build/baxter_examples /home/bill/ros_ws/build/baxter_examples/CMakeFiles/baxter_examples_xacro_generated_to_devel_space_.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/bill/bill_ros/ros_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/bill/bill_ros/ros_ws/src /home/bill/bill_ros/ros_ws/src/baxter_examples /home/bill/bill_ros/ros_ws/build /home/bill/bill_ros/ros_ws/build/baxter_examples /home/bill/bill_ros/ros_ws/build/baxter_examples/CMakeFiles/baxter_examples_xacro_generated_to_devel_space_.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : baxter_examples/CMakeFiles/baxter_examples_xacro_generated_to_devel_space_.dir/depend
 

@@ -1,6 +1,6 @@
 # CMake generated Testfile for 
-# Source directory: /home/bill/ros_ws/src
-# Build directory: /home/bill/ros_ws/build
+# Source directory: /home/bill/bill_ros/ros_ws/src
+# Build directory: /home/bill/bill_ros/ros_ws/build
 # 
 # This file includes the relevant testing commands required for 
 # testing this directory and lists subdirectories to be tested as well.
@@ -20,7 +20,6 @@ subdirs(baxter_common/baxter_core_msgs)
 subdirs(baxter_interface)
 subdirs(baxter_simulator/baxter_sim_io)
 subdirs(baxter_tools)
-subdirs(rascapp_move)
 subdirs(baxter_one)
 subdirs(baxter_simulator/baxter_sim_controllers)
 subdirs(baxter_simulator/baxter_gazebo)

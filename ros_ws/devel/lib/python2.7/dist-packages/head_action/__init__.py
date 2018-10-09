@@ -7,7 +7,7 @@ from sys import path as sys_path
 
 from pkgutil import extend_path
 
-__extended_path = "/home/bill/ros_ws/src/baxter_interface/src".split(";")
+__extended_path = "/home/bill/bill_ros/ros_ws/src/baxter_interface/src".split(";")
 for p in reversed(__extended_path):
     sys_path.insert(0, p)
     del p

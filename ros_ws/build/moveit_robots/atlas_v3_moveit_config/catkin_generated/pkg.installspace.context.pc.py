@@ -4,5 +4,5 @@ PROJECT_PKG_CONFIG_INCLUDE_DIRS = "".split(';') if "" != "" else []
 PROJECT_CATKIN_DEPENDS = "".replace(';', ' ')
 PKG_CONFIG_LIBRARIES_WITH_PREFIX = "".split(';') if "" != "" else []
 PROJECT_NAME = "atlas_v3_moveit_config"
-PROJECT_SPACE_DIR = "/home/bill/ros_ws/install"
+PROJECT_SPACE_DIR = "/home/bill/bill_ros/ros_ws/install"
 PROJECT_VERSION = "1.1.1"

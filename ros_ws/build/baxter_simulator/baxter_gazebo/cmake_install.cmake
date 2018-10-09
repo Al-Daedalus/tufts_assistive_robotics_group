@@ -1,8 +1,8 @@
-# Install script for directory: /home/bill/ros_ws/src/baxter_simulator/baxter_gazebo
+# Install script for directory: /home/bill/bill_ros/ros_ws/src/baxter_simulator/baxter_gazebo
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/bill/ros_ws/install")
+  set(CMAKE_INSTALL_PREFIX "/home/bill/bill_ros/ros_ws/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -33,18 +33,18 @@ if(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/bill/ros_ws/build/baxter_simulator/baxter_gazebo/catkin_generated/installspace/baxter_gazebo.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/bill/bill_ros/ros_ws/build/baxter_simulator/baxter_gazebo/catkin_generated/installspace/baxter_gazebo.pc")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/baxter_gazebo/cmake" TYPE FILE FILES
-    "/home/bill/ros_ws/build/baxter_simulator/baxter_gazebo/catkin_generated/installspace/baxter_gazeboConfig.cmake"
-    "/home/bill/ros_ws/build/baxter_simulator/baxter_gazebo/catkin_generated/installspace/baxter_gazeboConfig-version.cmake"
+    "/home/bill/bill_ros/ros_ws/build/baxter_simulator/baxter_gazebo/catkin_generated/installspace/baxter_gazeboConfig.cmake"
+    "/home/bill/bill_ros/ros_ws/build/baxter_simulator/baxter_gazebo/catkin_generated/installspace/baxter_gazeboConfig-version.cmake"
     )
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/baxter_gazebo" TYPE FILE FILES "/home/bill/ros_ws/src/baxter_simulator/baxter_gazebo/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/baxter_gazebo" TYPE FILE FILES "/home/bill/bill_ros/ros_ws/src/baxter_simulator/baxter_gazebo/package.xml")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
@@ -54,7 +54,7 @@ if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspeci
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libbaxter_gazebo_ros_control.so"
          RPATH "")
   endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE SHARED_LIBRARY FILES "/home/bill/ros_ws/devel/lib/libbaxter_gazebo_ros_control.so")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE SHARED_LIBRARY FILES "/home/bill/bill_ros/ros_ws/devel/lib/libbaxter_gazebo_ros_control.so")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libbaxter_gazebo_ros_control.so" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libbaxter_gazebo_ros_control.so")
     file(RPATH_CHANGE
@@ -69,8 +69,8 @@ endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/baxter_gazebo" TYPE DIRECTORY FILES
-    "/home/bill/ros_ws/src/baxter_simulator/baxter_gazebo/launch"
-    "/home/bill/ros_ws/src/baxter_simulator/baxter_gazebo/worlds"
+    "/home/bill/bill_ros/ros_ws/src/baxter_simulator/baxter_gazebo/launch"
+    "/home/bill/bill_ros/ros_ws/src/baxter_simulator/baxter_gazebo/worlds"
     )
 endif()
 

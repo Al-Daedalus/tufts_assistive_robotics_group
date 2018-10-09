@@ -6,5 +6,5 @@ CXX_FLAGS = -fPIC
 
 CXX_DEFINES = -DHAVE_NEW_YAMLCPP -DROSCONSOLE_BACKEND_LOG4CXX -DROS_BUILD_SHARED_LIBS=1 -DROS_PACKAGE_NAME=\"baxter_sim_controllers\" -Dbaxter_sim_controllers_EXPORTS
 
-CXX_INCLUDES = -I/home/bill/ros_ws/src/baxter_simulator/baxter_sim_controllers/include -I/home/bill/ros_ws/devel/include -I/opt/ros/kinetic/include -I/opt/ros/kinetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp 
+CXX_INCLUDES = -I/home/bill/bill_ros/ros_ws/src/baxter_simulator/baxter_sim_controllers/include -I/home/bill/bill_ros/ros_ws/devel/include -I/opt/ros/kinetic/include -I/opt/ros/kinetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp 
 

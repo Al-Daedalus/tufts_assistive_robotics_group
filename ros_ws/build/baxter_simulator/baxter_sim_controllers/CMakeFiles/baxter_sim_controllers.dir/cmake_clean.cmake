@@ -4,8 +4,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/baxter_sim_controllers.dir/src/baxter_effort_controller.cpp.o"
   "CMakeFiles/baxter_sim_controllers.dir/src/baxter_head_controller.cpp.o"
   "CMakeFiles/baxter_sim_controllers.dir/src/baxter_gripper_controller.cpp.o"
-  "/home/bill/ros_ws/devel/lib/libbaxter_sim_controllers.pdb"
-  "/home/bill/ros_ws/devel/lib/libbaxter_sim_controllers.so"
+  "/home/bill/bill_ros/ros_ws/devel/lib/libbaxter_sim_controllers.pdb"
+  "/home/bill/bill_ros/ros_ws/devel/lib/libbaxter_sim_controllers.so"
 )
 
 # Per-language clean rules from dependency scanning.

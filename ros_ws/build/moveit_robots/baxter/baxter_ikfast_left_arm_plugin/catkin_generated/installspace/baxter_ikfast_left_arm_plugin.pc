@@ -1,8 +1,8 @@
-prefix=/home/bill/ros_ws/install
+prefix=/home/bill/bill_ros/ros_ws/install
 
 Name: baxter_ikfast_left_arm_plugin
 Description: Description of baxter_ikfast_left_arm_plugin
 Version: 1.1.1
 Cflags: 
-Libs: -L/home/bill/ros_ws/install/lib 
+Libs: -L/home/bill/bill_ros/ros_ws/install/lib 
 Requires: moveit_core pluginlib roscpp tf_conversions

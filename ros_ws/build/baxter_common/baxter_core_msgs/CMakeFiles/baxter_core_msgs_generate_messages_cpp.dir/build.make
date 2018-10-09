@@ -43,286 +43,286 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/bill/ros_ws/src
+CMAKE_SOURCE_DIR = /home/bill/bill_ros/ros_ws/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/bill/ros_ws/build
+CMAKE_BINARY_DIR = /home/bill/bill_ros/ros_ws/build
 
 # Utility rule file for baxter_core_msgs_generate_messages_cpp.
 
 # Include the progress variables for this target.
 include baxter_common/baxter_core_msgs/CMakeFiles/baxter_core_msgs_generate_messages_cpp.dir/progress.make
 
-baxter_common/baxter_core_msgs/CMakeFiles/baxter_core_msgs_generate_messages_cpp: /home/bill/ros_ws/devel/include/baxter_core_msgs/AssemblyStates.h
-baxter_common/baxter_core_msgs/CMakeFiles/baxter_core_msgs_generate_messages_cpp: /home/bill/ros_ws/devel/include/baxter_core_msgs/RobustControllerStatus.h
-baxter_common/baxter_core_msgs/CMakeFiles/baxter_core_msgs_generate_messages_cpp: /home/bill/ros_ws/devel/include/baxter_core_msgs/CollisionDetectionState.h
-baxter_common/baxter_core_msgs/CMakeFiles/baxter_core_msgs_generate_messages_cpp: /home/bill/ros_ws/devel/include/baxter_core_msgs/AssemblyState.h
-baxter_common/baxter_core_msgs/CMakeFiles/baxter_core_msgs_generate_messages_cpp: /home/bill/ros_ws/devel/include/baxter_core_msgs/EndEffectorState.h
-baxter_common/baxter_core_msgs/CMakeFiles/baxter_core_msgs_generate_messages_cpp: /home/bill/ros_ws/devel/include/baxter_core_msgs/AnalogIOStates.h
-baxter_common/baxter_core_msgs/CMakeFiles/baxter_core_msgs_generate_messages_cpp: /home/bill/ros_ws/devel/include/baxter_core_msgs/NavigatorStates.h
-baxter_common/baxter_core_msgs/CMakeFiles/baxter_core_msgs_generate_messages_cpp: /home/bill/ros_ws/devel/include/baxter_core_msgs/DigitalIOState.h
-baxter_common/baxter_core_msgs/CMakeFiles/baxter_core_msgs_generate_messages_cpp: /home/bill/ros_ws/devel/include/baxter_core_msgs/EndpointStates.h
-baxter_common/baxter_core_msgs/CMakeFiles/baxter_core_msgs_generate_messages_cpp: /home/bill/ros_ws/devel/include/baxter_core_msgs/HeadState.h
-baxter_common/baxter_core_msgs/CMakeFiles/baxter_core_msgs_generate_messages_cpp: /home/bill/ros_ws/devel/include/baxter_core_msgs/CameraControl.h
-baxter_common/baxter_core_msgs/CMakeFiles/baxter_core_msgs_generate_messages_cpp: /home/bill/ros_ws/devel/include/baxter_core_msgs/AnalogIOState.h
-baxter_common/baxter_core_msgs/CMakeFiles/baxter_core_msgs_generate_messages_cpp: /home/bill/ros_ws/devel/include/baxter_core_msgs/DigitalIOStates.h
-baxter_common/baxter_core_msgs/CMakeFiles/baxter_core_msgs_generate_messages_cpp: /home/bill/ros_ws/devel/include/baxter_core_msgs/HeadPanCommand.h
-baxter_common/baxter_core_msgs/CMakeFiles/baxter_core_msgs_generate_messages_cpp: /home/bill/ros_ws/devel/include/baxter_core_msgs/EndpointState.h
-baxter_common/baxter_core_msgs/CMakeFiles/baxter_core_msgs_generate_messages_cpp: /home/bill/ros_ws/devel/include/baxter_core_msgs/EndEffectorProperties.h
-baxter_common/baxter_core_msgs/CMakeFiles/baxter_core_msgs_generate_messages_cpp: /home/bill/ros_ws/devel/include/baxter_core_msgs/EndEffectorCommand.h
-baxter_common/baxter_core_msgs/CMakeFiles/baxter_core_msgs_generate_messages_cpp: /home/bill/ros_ws/devel/include/baxter_core_msgs/CameraSettings.h
-baxter_common/baxter_core_msgs/CMakeFiles/baxter_core_msgs_generate_messages_cpp: /home/bill/ros_ws/devel/include/baxter_core_msgs/JointCommand.h
-baxter_common/baxter_core_msgs/CMakeFiles/baxter_core_msgs_generate_messages_cpp: /home/bill/ros_ws/devel/include/baxter_core_msgs/NavigatorState.h
-baxter_common/baxter_core_msgs/CMakeFiles/baxter_core_msgs_generate_messages_cpp: /home/bill/ros_ws/devel/include/baxter_core_msgs/URDFConfiguration.h
-baxter_common/baxter_core_msgs/CMakeFiles/baxter_core_msgs_generate_messages_cpp: /home/bill/ros_ws/devel/include/baxter_core_msgs/DigitalOutputCommand.h
-baxter_common/baxter_core_msgs/CMakeFiles/baxter_core_msgs_generate_messages_cpp: /home/bill/ros_ws/devel/include/baxter_core_msgs/SEAJointState.h
-baxter_common/baxter_core_msgs/CMakeFiles/baxter_core_msgs_generate_messages_cpp: /home/bill/ros_ws/devel/include/baxter_core_msgs/AnalogOutputCommand.h
-baxter_common/baxter_core_msgs/CMakeFiles/baxter_core_msgs_generate_messages_cpp: /home/bill/ros_ws/devel/include/baxter_core_msgs/CollisionAvoidanceState.h
-baxter_common/baxter_core_msgs/CMakeFiles/baxter_core_msgs_generate_messages_cpp: /home/bill/ros_ws/devel/include/baxter_core_msgs/CloseCamera.h
-baxter_common/baxter_core_msgs/CMakeFiles/baxter_core_msgs_generate_messages_cpp: /home/bill/ros_ws/devel/include/baxter_core_msgs/ListCameras.h
-baxter_common/baxter_core_msgs/CMakeFiles/baxter_core_msgs_generate_messages_cpp: /home/bill/ros_ws/devel/include/baxter_core_msgs/SolvePositionIK.h
-baxter_common/baxter_core_msgs/CMakeFiles/baxter_core_msgs_generate_messages_cpp: /home/bill/ros_ws/devel/include/baxter_core_msgs/OpenCamera.h
+baxter_common/baxter_core_msgs/CMakeFiles/baxter_core_msgs_generate_messages_cpp: /home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/JointCommand.h
+baxter_common/baxter_core_msgs/CMakeFiles/baxter_core_msgs_generate_messages_cpp: /home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/RobustControllerStatus.h
+baxter_common/baxter_core_msgs/CMakeFiles/baxter_core_msgs_generate_messages_cpp: /home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/CollisionAvoidanceState.h
+baxter_common/baxter_core_msgs/CMakeFiles/baxter_core_msgs_generate_messages_cpp: /home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/CameraControl.h
+baxter_common/baxter_core_msgs/CMakeFiles/baxter_core_msgs_generate_messages_cpp: /home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/NavigatorState.h
+baxter_common/baxter_core_msgs/CMakeFiles/baxter_core_msgs_generate_messages_cpp: /home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/AnalogIOState.h
+baxter_common/baxter_core_msgs/CMakeFiles/baxter_core_msgs_generate_messages_cpp: /home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/DigitalIOState.h
+baxter_common/baxter_core_msgs/CMakeFiles/baxter_core_msgs_generate_messages_cpp: /home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/EndEffectorCommand.h
+baxter_common/baxter_core_msgs/CMakeFiles/baxter_core_msgs_generate_messages_cpp: /home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/SEAJointState.h
+baxter_common/baxter_core_msgs/CMakeFiles/baxter_core_msgs_generate_messages_cpp: /home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/CameraSettings.h
+baxter_common/baxter_core_msgs/CMakeFiles/baxter_core_msgs_generate_messages_cpp: /home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/NavigatorStates.h
+baxter_common/baxter_core_msgs/CMakeFiles/baxter_core_msgs_generate_messages_cpp: /home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/EndpointState.h
+baxter_common/baxter_core_msgs/CMakeFiles/baxter_core_msgs_generate_messages_cpp: /home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/HeadPanCommand.h
+baxter_common/baxter_core_msgs/CMakeFiles/baxter_core_msgs_generate_messages_cpp: /home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/DigitalIOStates.h
+baxter_common/baxter_core_msgs/CMakeFiles/baxter_core_msgs_generate_messages_cpp: /home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/AnalogIOStates.h
+baxter_common/baxter_core_msgs/CMakeFiles/baxter_core_msgs_generate_messages_cpp: /home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/CollisionDetectionState.h
+baxter_common/baxter_core_msgs/CMakeFiles/baxter_core_msgs_generate_messages_cpp: /home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/DigitalOutputCommand.h
+baxter_common/baxter_core_msgs/CMakeFiles/baxter_core_msgs_generate_messages_cpp: /home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/AnalogOutputCommand.h
+baxter_common/baxter_core_msgs/CMakeFiles/baxter_core_msgs_generate_messages_cpp: /home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/AssemblyStates.h
+baxter_common/baxter_core_msgs/CMakeFiles/baxter_core_msgs_generate_messages_cpp: /home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/AssemblyState.h
+baxter_common/baxter_core_msgs/CMakeFiles/baxter_core_msgs_generate_messages_cpp: /home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/URDFConfiguration.h
+baxter_common/baxter_core_msgs/CMakeFiles/baxter_core_msgs_generate_messages_cpp: /home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/HeadState.h
+baxter_common/baxter_core_msgs/CMakeFiles/baxter_core_msgs_generate_messages_cpp: /home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/EndpointStates.h
+baxter_common/baxter_core_msgs/CMakeFiles/baxter_core_msgs_generate_messages_cpp: /home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/EndEffectorProperties.h
+baxter_common/baxter_core_msgs/CMakeFiles/baxter_core_msgs_generate_messages_cpp: /home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/EndEffectorState.h
+baxter_common/baxter_core_msgs/CMakeFiles/baxter_core_msgs_generate_messages_cpp: /home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/CloseCamera.h
+baxter_common/baxter_core_msgs/CMakeFiles/baxter_core_msgs_generate_messages_cpp: /home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/SolvePositionIK.h
+baxter_common/baxter_core_msgs/CMakeFiles/baxter_core_msgs_generate_messages_cpp: /home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/ListCameras.h
+baxter_common/baxter_core_msgs/CMakeFiles/baxter_core_msgs_generate_messages_cpp: /home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/OpenCamera.h
 
 
-/home/bill/ros_ws/devel/include/baxter_core_msgs/AssemblyStates.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
-/home/bill/ros_ws/devel/include/baxter_core_msgs/AssemblyStates.h: /home/bill/ros_ws/src/baxter_common/baxter_core_msgs/msg/AssemblyStates.msg
-/home/bill/ros_ws/devel/include/baxter_core_msgs/AssemblyStates.h: /home/bill/ros_ws/src/baxter_common/baxter_core_msgs/msg/AssemblyState.msg
-/home/bill/ros_ws/devel/include/baxter_core_msgs/AssemblyStates.h: /opt/ros/kinetic/share/gencpp/msg.h.template
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/bill/ros_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating C++ code from baxter_core_msgs/AssemblyStates.msg"
-	cd /home/bill/ros_ws/src/baxter_common/baxter_core_msgs && /home/bill/ros_ws/build/catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/bill/ros_ws/src/baxter_common/baxter_core_msgs/msg/AssemblyStates.msg -Ibaxter_core_msgs:/home/bill/ros_ws/src/baxter_common/baxter_core_msgs/msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p baxter_core_msgs -o /home/bill/ros_ws/devel/include/baxter_core_msgs -e /opt/ros/kinetic/share/gencpp/cmake/..
+/home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/JointCommand.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
+/home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/JointCommand.h: /home/bill/bill_ros/ros_ws/src/baxter_common/baxter_core_msgs/msg/JointCommand.msg
+/home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/JointCommand.h: /opt/ros/kinetic/share/gencpp/msg.h.template
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/bill/bill_ros/ros_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating C++ code from baxter_core_msgs/JointCommand.msg"
+	cd /home/bill/bill_ros/ros_ws/src/baxter_common/baxter_core_msgs && /home/bill/bill_ros/ros_ws/build/catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/bill/bill_ros/ros_ws/src/baxter_common/baxter_core_msgs/msg/JointCommand.msg -Ibaxter_core_msgs:/home/bill/bill_ros/ros_ws/src/baxter_common/baxter_core_msgs/msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p baxter_core_msgs -o /home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs -e /opt/ros/kinetic/share/gencpp/cmake/..
 
-/home/bill/ros_ws/devel/include/baxter_core_msgs/RobustControllerStatus.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
-/home/bill/ros_ws/devel/include/baxter_core_msgs/RobustControllerStatus.h: /home/bill/ros_ws/src/baxter_common/baxter_core_msgs/msg/RobustControllerStatus.msg
-/home/bill/ros_ws/devel/include/baxter_core_msgs/RobustControllerStatus.h: /opt/ros/kinetic/share/gencpp/msg.h.template
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/bill/ros_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating C++ code from baxter_core_msgs/RobustControllerStatus.msg"
-	cd /home/bill/ros_ws/src/baxter_common/baxter_core_msgs && /home/bill/ros_ws/build/catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/bill/ros_ws/src/baxter_common/baxter_core_msgs/msg/RobustControllerStatus.msg -Ibaxter_core_msgs:/home/bill/ros_ws/src/baxter_common/baxter_core_msgs/msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p baxter_core_msgs -o /home/bill/ros_ws/devel/include/baxter_core_msgs -e /opt/ros/kinetic/share/gencpp/cmake/..
+/home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/RobustControllerStatus.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
+/home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/RobustControllerStatus.h: /home/bill/bill_ros/ros_ws/src/baxter_common/baxter_core_msgs/msg/RobustControllerStatus.msg
+/home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/RobustControllerStatus.h: /opt/ros/kinetic/share/gencpp/msg.h.template
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/bill/bill_ros/ros_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating C++ code from baxter_core_msgs/RobustControllerStatus.msg"
+	cd /home/bill/bill_ros/ros_ws/src/baxter_common/baxter_core_msgs && /home/bill/bill_ros/ros_ws/build/catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/bill/bill_ros/ros_ws/src/baxter_common/baxter_core_msgs/msg/RobustControllerStatus.msg -Ibaxter_core_msgs:/home/bill/bill_ros/ros_ws/src/baxter_common/baxter_core_msgs/msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p baxter_core_msgs -o /home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs -e /opt/ros/kinetic/share/gencpp/cmake/..
 
-/home/bill/ros_ws/devel/include/baxter_core_msgs/CollisionDetectionState.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
-/home/bill/ros_ws/devel/include/baxter_core_msgs/CollisionDetectionState.h: /home/bill/ros_ws/src/baxter_common/baxter_core_msgs/msg/CollisionDetectionState.msg
-/home/bill/ros_ws/devel/include/baxter_core_msgs/CollisionDetectionState.h: /opt/ros/kinetic/share/std_msgs/msg/Header.msg
-/home/bill/ros_ws/devel/include/baxter_core_msgs/CollisionDetectionState.h: /opt/ros/kinetic/share/gencpp/msg.h.template
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/bill/ros_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating C++ code from baxter_core_msgs/CollisionDetectionState.msg"
-	cd /home/bill/ros_ws/src/baxter_common/baxter_core_msgs && /home/bill/ros_ws/build/catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/bill/ros_ws/src/baxter_common/baxter_core_msgs/msg/CollisionDetectionState.msg -Ibaxter_core_msgs:/home/bill/ros_ws/src/baxter_common/baxter_core_msgs/msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p baxter_core_msgs -o /home/bill/ros_ws/devel/include/baxter_core_msgs -e /opt/ros/kinetic/share/gencpp/cmake/..
+/home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/CollisionAvoidanceState.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
+/home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/CollisionAvoidanceState.h: /home/bill/bill_ros/ros_ws/src/baxter_common/baxter_core_msgs/msg/CollisionAvoidanceState.msg
+/home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/CollisionAvoidanceState.h: /opt/ros/kinetic/share/std_msgs/msg/Header.msg
+/home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/CollisionAvoidanceState.h: /opt/ros/kinetic/share/gencpp/msg.h.template
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/bill/bill_ros/ros_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating C++ code from baxter_core_msgs/CollisionAvoidanceState.msg"
+	cd /home/bill/bill_ros/ros_ws/src/baxter_common/baxter_core_msgs && /home/bill/bill_ros/ros_ws/build/catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/bill/bill_ros/ros_ws/src/baxter_common/baxter_core_msgs/msg/CollisionAvoidanceState.msg -Ibaxter_core_msgs:/home/bill/bill_ros/ros_ws/src/baxter_common/baxter_core_msgs/msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p baxter_core_msgs -o /home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs -e /opt/ros/kinetic/share/gencpp/cmake/..
 
-/home/bill/ros_ws/devel/include/baxter_core_msgs/AssemblyState.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
-/home/bill/ros_ws/devel/include/baxter_core_msgs/AssemblyState.h: /home/bill/ros_ws/src/baxter_common/baxter_core_msgs/msg/AssemblyState.msg
-/home/bill/ros_ws/devel/include/baxter_core_msgs/AssemblyState.h: /opt/ros/kinetic/share/gencpp/msg.h.template
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/bill/ros_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating C++ code from baxter_core_msgs/AssemblyState.msg"
-	cd /home/bill/ros_ws/src/baxter_common/baxter_core_msgs && /home/bill/ros_ws/build/catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/bill/ros_ws/src/baxter_common/baxter_core_msgs/msg/AssemblyState.msg -Ibaxter_core_msgs:/home/bill/ros_ws/src/baxter_common/baxter_core_msgs/msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p baxter_core_msgs -o /home/bill/ros_ws/devel/include/baxter_core_msgs -e /opt/ros/kinetic/share/gencpp/cmake/..
+/home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/CameraControl.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
+/home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/CameraControl.h: /home/bill/bill_ros/ros_ws/src/baxter_common/baxter_core_msgs/msg/CameraControl.msg
+/home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/CameraControl.h: /opt/ros/kinetic/share/gencpp/msg.h.template
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/bill/bill_ros/ros_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating C++ code from baxter_core_msgs/CameraControl.msg"
+	cd /home/bill/bill_ros/ros_ws/src/baxter_common/baxter_core_msgs && /home/bill/bill_ros/ros_ws/build/catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/bill/bill_ros/ros_ws/src/baxter_common/baxter_core_msgs/msg/CameraControl.msg -Ibaxter_core_msgs:/home/bill/bill_ros/ros_ws/src/baxter_common/baxter_core_msgs/msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p baxter_core_msgs -o /home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs -e /opt/ros/kinetic/share/gencpp/cmake/..
 
-/home/bill/ros_ws/devel/include/baxter_core_msgs/EndEffectorState.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
-/home/bill/ros_ws/devel/include/baxter_core_msgs/EndEffectorState.h: /home/bill/ros_ws/src/baxter_common/baxter_core_msgs/msg/EndEffectorState.msg
-/home/bill/ros_ws/devel/include/baxter_core_msgs/EndEffectorState.h: /opt/ros/kinetic/share/gencpp/msg.h.template
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/bill/ros_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Generating C++ code from baxter_core_msgs/EndEffectorState.msg"
-	cd /home/bill/ros_ws/src/baxter_common/baxter_core_msgs && /home/bill/ros_ws/build/catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/bill/ros_ws/src/baxter_common/baxter_core_msgs/msg/EndEffectorState.msg -Ibaxter_core_msgs:/home/bill/ros_ws/src/baxter_common/baxter_core_msgs/msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p baxter_core_msgs -o /home/bill/ros_ws/devel/include/baxter_core_msgs -e /opt/ros/kinetic/share/gencpp/cmake/..
+/home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/NavigatorState.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
+/home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/NavigatorState.h: /home/bill/bill_ros/ros_ws/src/baxter_common/baxter_core_msgs/msg/NavigatorState.msg
+/home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/NavigatorState.h: /opt/ros/kinetic/share/gencpp/msg.h.template
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/bill/bill_ros/ros_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Generating C++ code from baxter_core_msgs/NavigatorState.msg"
+	cd /home/bill/bill_ros/ros_ws/src/baxter_common/baxter_core_msgs && /home/bill/bill_ros/ros_ws/build/catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/bill/bill_ros/ros_ws/src/baxter_common/baxter_core_msgs/msg/NavigatorState.msg -Ibaxter_core_msgs:/home/bill/bill_ros/ros_ws/src/baxter_common/baxter_core_msgs/msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p baxter_core_msgs -o /home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs -e /opt/ros/kinetic/share/gencpp/cmake/..
 
-/home/bill/ros_ws/devel/include/baxter_core_msgs/AnalogIOStates.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
-/home/bill/ros_ws/devel/include/baxter_core_msgs/AnalogIOStates.h: /home/bill/ros_ws/src/baxter_common/baxter_core_msgs/msg/AnalogIOStates.msg
-/home/bill/ros_ws/devel/include/baxter_core_msgs/AnalogIOStates.h: /home/bill/ros_ws/src/baxter_common/baxter_core_msgs/msg/AnalogIOState.msg
-/home/bill/ros_ws/devel/include/baxter_core_msgs/AnalogIOStates.h: /opt/ros/kinetic/share/gencpp/msg.h.template
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/bill/ros_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Generating C++ code from baxter_core_msgs/AnalogIOStates.msg"
-	cd /home/bill/ros_ws/src/baxter_common/baxter_core_msgs && /home/bill/ros_ws/build/catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/bill/ros_ws/src/baxter_common/baxter_core_msgs/msg/AnalogIOStates.msg -Ibaxter_core_msgs:/home/bill/ros_ws/src/baxter_common/baxter_core_msgs/msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p baxter_core_msgs -o /home/bill/ros_ws/devel/include/baxter_core_msgs -e /opt/ros/kinetic/share/gencpp/cmake/..
+/home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/AnalogIOState.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
+/home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/AnalogIOState.h: /home/bill/bill_ros/ros_ws/src/baxter_common/baxter_core_msgs/msg/AnalogIOState.msg
+/home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/AnalogIOState.h: /opt/ros/kinetic/share/gencpp/msg.h.template
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/bill/bill_ros/ros_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Generating C++ code from baxter_core_msgs/AnalogIOState.msg"
+	cd /home/bill/bill_ros/ros_ws/src/baxter_common/baxter_core_msgs && /home/bill/bill_ros/ros_ws/build/catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/bill/bill_ros/ros_ws/src/baxter_common/baxter_core_msgs/msg/AnalogIOState.msg -Ibaxter_core_msgs:/home/bill/bill_ros/ros_ws/src/baxter_common/baxter_core_msgs/msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p baxter_core_msgs -o /home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs -e /opt/ros/kinetic/share/gencpp/cmake/..
 
-/home/bill/ros_ws/devel/include/baxter_core_msgs/NavigatorStates.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
-/home/bill/ros_ws/devel/include/baxter_core_msgs/NavigatorStates.h: /home/bill/ros_ws/src/baxter_common/baxter_core_msgs/msg/NavigatorStates.msg
-/home/bill/ros_ws/devel/include/baxter_core_msgs/NavigatorStates.h: /home/bill/ros_ws/src/baxter_common/baxter_core_msgs/msg/NavigatorState.msg
-/home/bill/ros_ws/devel/include/baxter_core_msgs/NavigatorStates.h: /opt/ros/kinetic/share/gencpp/msg.h.template
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/bill/ros_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Generating C++ code from baxter_core_msgs/NavigatorStates.msg"
-	cd /home/bill/ros_ws/src/baxter_common/baxter_core_msgs && /home/bill/ros_ws/build/catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/bill/ros_ws/src/baxter_common/baxter_core_msgs/msg/NavigatorStates.msg -Ibaxter_core_msgs:/home/bill/ros_ws/src/baxter_common/baxter_core_msgs/msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p baxter_core_msgs -o /home/bill/ros_ws/devel/include/baxter_core_msgs -e /opt/ros/kinetic/share/gencpp/cmake/..
+/home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/DigitalIOState.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
+/home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/DigitalIOState.h: /home/bill/bill_ros/ros_ws/src/baxter_common/baxter_core_msgs/msg/DigitalIOState.msg
+/home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/DigitalIOState.h: /opt/ros/kinetic/share/gencpp/msg.h.template
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/bill/bill_ros/ros_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Generating C++ code from baxter_core_msgs/DigitalIOState.msg"
+	cd /home/bill/bill_ros/ros_ws/src/baxter_common/baxter_core_msgs && /home/bill/bill_ros/ros_ws/build/catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/bill/bill_ros/ros_ws/src/baxter_common/baxter_core_msgs/msg/DigitalIOState.msg -Ibaxter_core_msgs:/home/bill/bill_ros/ros_ws/src/baxter_common/baxter_core_msgs/msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p baxter_core_msgs -o /home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs -e /opt/ros/kinetic/share/gencpp/cmake/..
 
-/home/bill/ros_ws/devel/include/baxter_core_msgs/DigitalIOState.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
-/home/bill/ros_ws/devel/include/baxter_core_msgs/DigitalIOState.h: /home/bill/ros_ws/src/baxter_common/baxter_core_msgs/msg/DigitalIOState.msg
-/home/bill/ros_ws/devel/include/baxter_core_msgs/DigitalIOState.h: /opt/ros/kinetic/share/gencpp/msg.h.template
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/bill/ros_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Generating C++ code from baxter_core_msgs/DigitalIOState.msg"
-	cd /home/bill/ros_ws/src/baxter_common/baxter_core_msgs && /home/bill/ros_ws/build/catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/bill/ros_ws/src/baxter_common/baxter_core_msgs/msg/DigitalIOState.msg -Ibaxter_core_msgs:/home/bill/ros_ws/src/baxter_common/baxter_core_msgs/msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p baxter_core_msgs -o /home/bill/ros_ws/devel/include/baxter_core_msgs -e /opt/ros/kinetic/share/gencpp/cmake/..
+/home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/EndEffectorCommand.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
+/home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/EndEffectorCommand.h: /home/bill/bill_ros/ros_ws/src/baxter_common/baxter_core_msgs/msg/EndEffectorCommand.msg
+/home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/EndEffectorCommand.h: /opt/ros/kinetic/share/gencpp/msg.h.template
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/bill/bill_ros/ros_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Generating C++ code from baxter_core_msgs/EndEffectorCommand.msg"
+	cd /home/bill/bill_ros/ros_ws/src/baxter_common/baxter_core_msgs && /home/bill/bill_ros/ros_ws/build/catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/bill/bill_ros/ros_ws/src/baxter_common/baxter_core_msgs/msg/EndEffectorCommand.msg -Ibaxter_core_msgs:/home/bill/bill_ros/ros_ws/src/baxter_common/baxter_core_msgs/msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p baxter_core_msgs -o /home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs -e /opt/ros/kinetic/share/gencpp/cmake/..
 
-/home/bill/ros_ws/devel/include/baxter_core_msgs/EndpointStates.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
-/home/bill/ros_ws/devel/include/baxter_core_msgs/EndpointStates.h: /home/bill/ros_ws/src/baxter_common/baxter_core_msgs/msg/EndpointStates.msg
-/home/bill/ros_ws/devel/include/baxter_core_msgs/EndpointStates.h: /opt/ros/kinetic/share/geometry_msgs/msg/Pose.msg
-/home/bill/ros_ws/devel/include/baxter_core_msgs/EndpointStates.h: /opt/ros/kinetic/share/std_msgs/msg/Header.msg
-/home/bill/ros_ws/devel/include/baxter_core_msgs/EndpointStates.h: /opt/ros/kinetic/share/geometry_msgs/msg/Quaternion.msg
-/home/bill/ros_ws/devel/include/baxter_core_msgs/EndpointStates.h: /opt/ros/kinetic/share/geometry_msgs/msg/Wrench.msg
-/home/bill/ros_ws/devel/include/baxter_core_msgs/EndpointStates.h: /opt/ros/kinetic/share/geometry_msgs/msg/Point.msg
-/home/bill/ros_ws/devel/include/baxter_core_msgs/EndpointStates.h: /opt/ros/kinetic/share/geometry_msgs/msg/Vector3.msg
-/home/bill/ros_ws/devel/include/baxter_core_msgs/EndpointStates.h: /home/bill/ros_ws/src/baxter_common/baxter_core_msgs/msg/EndpointState.msg
-/home/bill/ros_ws/devel/include/baxter_core_msgs/EndpointStates.h: /opt/ros/kinetic/share/geometry_msgs/msg/Twist.msg
-/home/bill/ros_ws/devel/include/baxter_core_msgs/EndpointStates.h: /opt/ros/kinetic/share/gencpp/msg.h.template
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/bill/ros_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Generating C++ code from baxter_core_msgs/EndpointStates.msg"
-	cd /home/bill/ros_ws/src/baxter_common/baxter_core_msgs && /home/bill/ros_ws/build/catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/bill/ros_ws/src/baxter_common/baxter_core_msgs/msg/EndpointStates.msg -Ibaxter_core_msgs:/home/bill/ros_ws/src/baxter_common/baxter_core_msgs/msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p baxter_core_msgs -o /home/bill/ros_ws/devel/include/baxter_core_msgs -e /opt/ros/kinetic/share/gencpp/cmake/..
+/home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/SEAJointState.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
+/home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/SEAJointState.h: /home/bill/bill_ros/ros_ws/src/baxter_common/baxter_core_msgs/msg/SEAJointState.msg
+/home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/SEAJointState.h: /opt/ros/kinetic/share/std_msgs/msg/Header.msg
+/home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/SEAJointState.h: /opt/ros/kinetic/share/gencpp/msg.h.template
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/bill/bill_ros/ros_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Generating C++ code from baxter_core_msgs/SEAJointState.msg"
+	cd /home/bill/bill_ros/ros_ws/src/baxter_common/baxter_core_msgs && /home/bill/bill_ros/ros_ws/build/catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/bill/bill_ros/ros_ws/src/baxter_common/baxter_core_msgs/msg/SEAJointState.msg -Ibaxter_core_msgs:/home/bill/bill_ros/ros_ws/src/baxter_common/baxter_core_msgs/msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p baxter_core_msgs -o /home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs -e /opt/ros/kinetic/share/gencpp/cmake/..
 
-/home/bill/ros_ws/devel/include/baxter_core_msgs/HeadState.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
-/home/bill/ros_ws/devel/include/baxter_core_msgs/HeadState.h: /home/bill/ros_ws/src/baxter_common/baxter_core_msgs/msg/HeadState.msg
-/home/bill/ros_ws/devel/include/baxter_core_msgs/HeadState.h: /opt/ros/kinetic/share/gencpp/msg.h.template
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/bill/ros_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Generating C++ code from baxter_core_msgs/HeadState.msg"
-	cd /home/bill/ros_ws/src/baxter_common/baxter_core_msgs && /home/bill/ros_ws/build/catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/bill/ros_ws/src/baxter_common/baxter_core_msgs/msg/HeadState.msg -Ibaxter_core_msgs:/home/bill/ros_ws/src/baxter_common/baxter_core_msgs/msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p baxter_core_msgs -o /home/bill/ros_ws/devel/include/baxter_core_msgs -e /opt/ros/kinetic/share/gencpp/cmake/..
+/home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/CameraSettings.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
+/home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/CameraSettings.h: /home/bill/bill_ros/ros_ws/src/baxter_common/baxter_core_msgs/msg/CameraSettings.msg
+/home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/CameraSettings.h: /home/bill/bill_ros/ros_ws/src/baxter_common/baxter_core_msgs/msg/CameraControl.msg
+/home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/CameraSettings.h: /opt/ros/kinetic/share/gencpp/msg.h.template
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/bill/bill_ros/ros_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Generating C++ code from baxter_core_msgs/CameraSettings.msg"
+	cd /home/bill/bill_ros/ros_ws/src/baxter_common/baxter_core_msgs && /home/bill/bill_ros/ros_ws/build/catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/bill/bill_ros/ros_ws/src/baxter_common/baxter_core_msgs/msg/CameraSettings.msg -Ibaxter_core_msgs:/home/bill/bill_ros/ros_ws/src/baxter_common/baxter_core_msgs/msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p baxter_core_msgs -o /home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs -e /opt/ros/kinetic/share/gencpp/cmake/..
 
-/home/bill/ros_ws/devel/include/baxter_core_msgs/CameraControl.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
-/home/bill/ros_ws/devel/include/baxter_core_msgs/CameraControl.h: /home/bill/ros_ws/src/baxter_common/baxter_core_msgs/msg/CameraControl.msg
-/home/bill/ros_ws/devel/include/baxter_core_msgs/CameraControl.h: /opt/ros/kinetic/share/gencpp/msg.h.template
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/bill/ros_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Generating C++ code from baxter_core_msgs/CameraControl.msg"
-	cd /home/bill/ros_ws/src/baxter_common/baxter_core_msgs && /home/bill/ros_ws/build/catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/bill/ros_ws/src/baxter_common/baxter_core_msgs/msg/CameraControl.msg -Ibaxter_core_msgs:/home/bill/ros_ws/src/baxter_common/baxter_core_msgs/msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p baxter_core_msgs -o /home/bill/ros_ws/devel/include/baxter_core_msgs -e /opt/ros/kinetic/share/gencpp/cmake/..
+/home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/NavigatorStates.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
+/home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/NavigatorStates.h: /home/bill/bill_ros/ros_ws/src/baxter_common/baxter_core_msgs/msg/NavigatorStates.msg
+/home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/NavigatorStates.h: /home/bill/bill_ros/ros_ws/src/baxter_common/baxter_core_msgs/msg/NavigatorState.msg
+/home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/NavigatorStates.h: /opt/ros/kinetic/share/gencpp/msg.h.template
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/bill/bill_ros/ros_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Generating C++ code from baxter_core_msgs/NavigatorStates.msg"
+	cd /home/bill/bill_ros/ros_ws/src/baxter_common/baxter_core_msgs && /home/bill/bill_ros/ros_ws/build/catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/bill/bill_ros/ros_ws/src/baxter_common/baxter_core_msgs/msg/NavigatorStates.msg -Ibaxter_core_msgs:/home/bill/bill_ros/ros_ws/src/baxter_common/baxter_core_msgs/msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p baxter_core_msgs -o /home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs -e /opt/ros/kinetic/share/gencpp/cmake/..
 
-/home/bill/ros_ws/devel/include/baxter_core_msgs/AnalogIOState.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
-/home/bill/ros_ws/devel/include/baxter_core_msgs/AnalogIOState.h: /home/bill/ros_ws/src/baxter_common/baxter_core_msgs/msg/AnalogIOState.msg
-/home/bill/ros_ws/devel/include/baxter_core_msgs/AnalogIOState.h: /opt/ros/kinetic/share/gencpp/msg.h.template
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/bill/ros_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Generating C++ code from baxter_core_msgs/AnalogIOState.msg"
-	cd /home/bill/ros_ws/src/baxter_common/baxter_core_msgs && /home/bill/ros_ws/build/catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/bill/ros_ws/src/baxter_common/baxter_core_msgs/msg/AnalogIOState.msg -Ibaxter_core_msgs:/home/bill/ros_ws/src/baxter_common/baxter_core_msgs/msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p baxter_core_msgs -o /home/bill/ros_ws/devel/include/baxter_core_msgs -e /opt/ros/kinetic/share/gencpp/cmake/..
+/home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/EndpointState.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
+/home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/EndpointState.h: /home/bill/bill_ros/ros_ws/src/baxter_common/baxter_core_msgs/msg/EndpointState.msg
+/home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/EndpointState.h: /opt/ros/kinetic/share/geometry_msgs/msg/Twist.msg
+/home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/EndpointState.h: /opt/ros/kinetic/share/std_msgs/msg/Header.msg
+/home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/EndpointState.h: /opt/ros/kinetic/share/geometry_msgs/msg/Quaternion.msg
+/home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/EndpointState.h: /opt/ros/kinetic/share/geometry_msgs/msg/Wrench.msg
+/home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/EndpointState.h: /opt/ros/kinetic/share/geometry_msgs/msg/Vector3.msg
+/home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/EndpointState.h: /opt/ros/kinetic/share/geometry_msgs/msg/Point.msg
+/home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/EndpointState.h: /opt/ros/kinetic/share/geometry_msgs/msg/Pose.msg
+/home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/EndpointState.h: /opt/ros/kinetic/share/gencpp/msg.h.template
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/bill/bill_ros/ros_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Generating C++ code from baxter_core_msgs/EndpointState.msg"
+	cd /home/bill/bill_ros/ros_ws/src/baxter_common/baxter_core_msgs && /home/bill/bill_ros/ros_ws/build/catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/bill/bill_ros/ros_ws/src/baxter_common/baxter_core_msgs/msg/EndpointState.msg -Ibaxter_core_msgs:/home/bill/bill_ros/ros_ws/src/baxter_common/baxter_core_msgs/msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p baxter_core_msgs -o /home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs -e /opt/ros/kinetic/share/gencpp/cmake/..
 
-/home/bill/ros_ws/devel/include/baxter_core_msgs/DigitalIOStates.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
-/home/bill/ros_ws/devel/include/baxter_core_msgs/DigitalIOStates.h: /home/bill/ros_ws/src/baxter_common/baxter_core_msgs/msg/DigitalIOStates.msg
-/home/bill/ros_ws/devel/include/baxter_core_msgs/DigitalIOStates.h: /home/bill/ros_ws/src/baxter_common/baxter_core_msgs/msg/DigitalIOState.msg
-/home/bill/ros_ws/devel/include/baxter_core_msgs/DigitalIOStates.h: /opt/ros/kinetic/share/gencpp/msg.h.template
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/bill/ros_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Generating C++ code from baxter_core_msgs/DigitalIOStates.msg"
-	cd /home/bill/ros_ws/src/baxter_common/baxter_core_msgs && /home/bill/ros_ws/build/catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/bill/ros_ws/src/baxter_common/baxter_core_msgs/msg/DigitalIOStates.msg -Ibaxter_core_msgs:/home/bill/ros_ws/src/baxter_common/baxter_core_msgs/msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p baxter_core_msgs -o /home/bill/ros_ws/devel/include/baxter_core_msgs -e /opt/ros/kinetic/share/gencpp/cmake/..
+/home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/HeadPanCommand.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
+/home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/HeadPanCommand.h: /home/bill/bill_ros/ros_ws/src/baxter_common/baxter_core_msgs/msg/HeadPanCommand.msg
+/home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/HeadPanCommand.h: /opt/ros/kinetic/share/gencpp/msg.h.template
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/bill/bill_ros/ros_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Generating C++ code from baxter_core_msgs/HeadPanCommand.msg"
+	cd /home/bill/bill_ros/ros_ws/src/baxter_common/baxter_core_msgs && /home/bill/bill_ros/ros_ws/build/catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/bill/bill_ros/ros_ws/src/baxter_common/baxter_core_msgs/msg/HeadPanCommand.msg -Ibaxter_core_msgs:/home/bill/bill_ros/ros_ws/src/baxter_common/baxter_core_msgs/msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p baxter_core_msgs -o /home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs -e /opt/ros/kinetic/share/gencpp/cmake/..
 
-/home/bill/ros_ws/devel/include/baxter_core_msgs/HeadPanCommand.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
-/home/bill/ros_ws/devel/include/baxter_core_msgs/HeadPanCommand.h: /home/bill/ros_ws/src/baxter_common/baxter_core_msgs/msg/HeadPanCommand.msg
-/home/bill/ros_ws/devel/include/baxter_core_msgs/HeadPanCommand.h: /opt/ros/kinetic/share/gencpp/msg.h.template
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/bill/ros_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Generating C++ code from baxter_core_msgs/HeadPanCommand.msg"
-	cd /home/bill/ros_ws/src/baxter_common/baxter_core_msgs && /home/bill/ros_ws/build/catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/bill/ros_ws/src/baxter_common/baxter_core_msgs/msg/HeadPanCommand.msg -Ibaxter_core_msgs:/home/bill/ros_ws/src/baxter_common/baxter_core_msgs/msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p baxter_core_msgs -o /home/bill/ros_ws/devel/include/baxter_core_msgs -e /opt/ros/kinetic/share/gencpp/cmake/..
+/home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/DigitalIOStates.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
+/home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/DigitalIOStates.h: /home/bill/bill_ros/ros_ws/src/baxter_common/baxter_core_msgs/msg/DigitalIOStates.msg
+/home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/DigitalIOStates.h: /home/bill/bill_ros/ros_ws/src/baxter_common/baxter_core_msgs/msg/DigitalIOState.msg
+/home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/DigitalIOStates.h: /opt/ros/kinetic/share/gencpp/msg.h.template
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/bill/bill_ros/ros_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Generating C++ code from baxter_core_msgs/DigitalIOStates.msg"
+	cd /home/bill/bill_ros/ros_ws/src/baxter_common/baxter_core_msgs && /home/bill/bill_ros/ros_ws/build/catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/bill/bill_ros/ros_ws/src/baxter_common/baxter_core_msgs/msg/DigitalIOStates.msg -Ibaxter_core_msgs:/home/bill/bill_ros/ros_ws/src/baxter_common/baxter_core_msgs/msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p baxter_core_msgs -o /home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs -e /opt/ros/kinetic/share/gencpp/cmake/..
 
-/home/bill/ros_ws/devel/include/baxter_core_msgs/EndpointState.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
-/home/bill/ros_ws/devel/include/baxter_core_msgs/EndpointState.h: /home/bill/ros_ws/src/baxter_common/baxter_core_msgs/msg/EndpointState.msg
-/home/bill/ros_ws/devel/include/baxter_core_msgs/EndpointState.h: /opt/ros/kinetic/share/geometry_msgs/msg/Twist.msg
-/home/bill/ros_ws/devel/include/baxter_core_msgs/EndpointState.h: /opt/ros/kinetic/share/std_msgs/msg/Header.msg
-/home/bill/ros_ws/devel/include/baxter_core_msgs/EndpointState.h: /opt/ros/kinetic/share/geometry_msgs/msg/Quaternion.msg
-/home/bill/ros_ws/devel/include/baxter_core_msgs/EndpointState.h: /opt/ros/kinetic/share/geometry_msgs/msg/Wrench.msg
-/home/bill/ros_ws/devel/include/baxter_core_msgs/EndpointState.h: /opt/ros/kinetic/share/geometry_msgs/msg/Vector3.msg
-/home/bill/ros_ws/devel/include/baxter_core_msgs/EndpointState.h: /opt/ros/kinetic/share/geometry_msgs/msg/Point.msg
-/home/bill/ros_ws/devel/include/baxter_core_msgs/EndpointState.h: /opt/ros/kinetic/share/geometry_msgs/msg/Pose.msg
-/home/bill/ros_ws/devel/include/baxter_core_msgs/EndpointState.h: /opt/ros/kinetic/share/gencpp/msg.h.template
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/bill/ros_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Generating C++ code from baxter_core_msgs/EndpointState.msg"
-	cd /home/bill/ros_ws/src/baxter_common/baxter_core_msgs && /home/bill/ros_ws/build/catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/bill/ros_ws/src/baxter_common/baxter_core_msgs/msg/EndpointState.msg -Ibaxter_core_msgs:/home/bill/ros_ws/src/baxter_common/baxter_core_msgs/msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p baxter_core_msgs -o /home/bill/ros_ws/devel/include/baxter_core_msgs -e /opt/ros/kinetic/share/gencpp/cmake/..
+/home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/AnalogIOStates.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
+/home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/AnalogIOStates.h: /home/bill/bill_ros/ros_ws/src/baxter_common/baxter_core_msgs/msg/AnalogIOStates.msg
+/home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/AnalogIOStates.h: /home/bill/bill_ros/ros_ws/src/baxter_common/baxter_core_msgs/msg/AnalogIOState.msg
+/home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/AnalogIOStates.h: /opt/ros/kinetic/share/gencpp/msg.h.template
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/bill/bill_ros/ros_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Generating C++ code from baxter_core_msgs/AnalogIOStates.msg"
+	cd /home/bill/bill_ros/ros_ws/src/baxter_common/baxter_core_msgs && /home/bill/bill_ros/ros_ws/build/catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/bill/bill_ros/ros_ws/src/baxter_common/baxter_core_msgs/msg/AnalogIOStates.msg -Ibaxter_core_msgs:/home/bill/bill_ros/ros_ws/src/baxter_common/baxter_core_msgs/msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p baxter_core_msgs -o /home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs -e /opt/ros/kinetic/share/gencpp/cmake/..
 
-/home/bill/ros_ws/devel/include/baxter_core_msgs/EndEffectorProperties.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
-/home/bill/ros_ws/devel/include/baxter_core_msgs/EndEffectorProperties.h: /home/bill/ros_ws/src/baxter_common/baxter_core_msgs/msg/EndEffectorProperties.msg
-/home/bill/ros_ws/devel/include/baxter_core_msgs/EndEffectorProperties.h: /opt/ros/kinetic/share/gencpp/msg.h.template
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/bill/ros_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Generating C++ code from baxter_core_msgs/EndEffectorProperties.msg"
-	cd /home/bill/ros_ws/src/baxter_common/baxter_core_msgs && /home/bill/ros_ws/build/catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/bill/ros_ws/src/baxter_common/baxter_core_msgs/msg/EndEffectorProperties.msg -Ibaxter_core_msgs:/home/bill/ros_ws/src/baxter_common/baxter_core_msgs/msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p baxter_core_msgs -o /home/bill/ros_ws/devel/include/baxter_core_msgs -e /opt/ros/kinetic/share/gencpp/cmake/..
+/home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/CollisionDetectionState.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
+/home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/CollisionDetectionState.h: /home/bill/bill_ros/ros_ws/src/baxter_common/baxter_core_msgs/msg/CollisionDetectionState.msg
+/home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/CollisionDetectionState.h: /opt/ros/kinetic/share/std_msgs/msg/Header.msg
+/home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/CollisionDetectionState.h: /opt/ros/kinetic/share/gencpp/msg.h.template
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/bill/bill_ros/ros_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Generating C++ code from baxter_core_msgs/CollisionDetectionState.msg"
+	cd /home/bill/bill_ros/ros_ws/src/baxter_common/baxter_core_msgs && /home/bill/bill_ros/ros_ws/build/catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/bill/bill_ros/ros_ws/src/baxter_common/baxter_core_msgs/msg/CollisionDetectionState.msg -Ibaxter_core_msgs:/home/bill/bill_ros/ros_ws/src/baxter_common/baxter_core_msgs/msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p baxter_core_msgs -o /home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs -e /opt/ros/kinetic/share/gencpp/cmake/..
 
-/home/bill/ros_ws/devel/include/baxter_core_msgs/EndEffectorCommand.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
-/home/bill/ros_ws/devel/include/baxter_core_msgs/EndEffectorCommand.h: /home/bill/ros_ws/src/baxter_common/baxter_core_msgs/msg/EndEffectorCommand.msg
-/home/bill/ros_ws/devel/include/baxter_core_msgs/EndEffectorCommand.h: /opt/ros/kinetic/share/gencpp/msg.h.template
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/bill/ros_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Generating C++ code from baxter_core_msgs/EndEffectorCommand.msg"
-	cd /home/bill/ros_ws/src/baxter_common/baxter_core_msgs && /home/bill/ros_ws/build/catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/bill/ros_ws/src/baxter_common/baxter_core_msgs/msg/EndEffectorCommand.msg -Ibaxter_core_msgs:/home/bill/ros_ws/src/baxter_common/baxter_core_msgs/msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p baxter_core_msgs -o /home/bill/ros_ws/devel/include/baxter_core_msgs -e /opt/ros/kinetic/share/gencpp/cmake/..
+/home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/DigitalOutputCommand.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
+/home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/DigitalOutputCommand.h: /home/bill/bill_ros/ros_ws/src/baxter_common/baxter_core_msgs/msg/DigitalOutputCommand.msg
+/home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/DigitalOutputCommand.h: /opt/ros/kinetic/share/gencpp/msg.h.template
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/bill/bill_ros/ros_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Generating C++ code from baxter_core_msgs/DigitalOutputCommand.msg"
+	cd /home/bill/bill_ros/ros_ws/src/baxter_common/baxter_core_msgs && /home/bill/bill_ros/ros_ws/build/catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/bill/bill_ros/ros_ws/src/baxter_common/baxter_core_msgs/msg/DigitalOutputCommand.msg -Ibaxter_core_msgs:/home/bill/bill_ros/ros_ws/src/baxter_common/baxter_core_msgs/msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p baxter_core_msgs -o /home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs -e /opt/ros/kinetic/share/gencpp/cmake/..
 
-/home/bill/ros_ws/devel/include/baxter_core_msgs/CameraSettings.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
-/home/bill/ros_ws/devel/include/baxter_core_msgs/CameraSettings.h: /home/bill/ros_ws/src/baxter_common/baxter_core_msgs/msg/CameraSettings.msg
-/home/bill/ros_ws/devel/include/baxter_core_msgs/CameraSettings.h: /home/bill/ros_ws/src/baxter_common/baxter_core_msgs/msg/CameraControl.msg
-/home/bill/ros_ws/devel/include/baxter_core_msgs/CameraSettings.h: /opt/ros/kinetic/share/gencpp/msg.h.template
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/bill/ros_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Generating C++ code from baxter_core_msgs/CameraSettings.msg"
-	cd /home/bill/ros_ws/src/baxter_common/baxter_core_msgs && /home/bill/ros_ws/build/catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/bill/ros_ws/src/baxter_common/baxter_core_msgs/msg/CameraSettings.msg -Ibaxter_core_msgs:/home/bill/ros_ws/src/baxter_common/baxter_core_msgs/msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p baxter_core_msgs -o /home/bill/ros_ws/devel/include/baxter_core_msgs -e /opt/ros/kinetic/share/gencpp/cmake/..
+/home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/AnalogOutputCommand.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
+/home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/AnalogOutputCommand.h: /home/bill/bill_ros/ros_ws/src/baxter_common/baxter_core_msgs/msg/AnalogOutputCommand.msg
+/home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/AnalogOutputCommand.h: /opt/ros/kinetic/share/gencpp/msg.h.template
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/bill/bill_ros/ros_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Generating C++ code from baxter_core_msgs/AnalogOutputCommand.msg"
+	cd /home/bill/bill_ros/ros_ws/src/baxter_common/baxter_core_msgs && /home/bill/bill_ros/ros_ws/build/catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/bill/bill_ros/ros_ws/src/baxter_common/baxter_core_msgs/msg/AnalogOutputCommand.msg -Ibaxter_core_msgs:/home/bill/bill_ros/ros_ws/src/baxter_common/baxter_core_msgs/msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p baxter_core_msgs -o /home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs -e /opt/ros/kinetic/share/gencpp/cmake/..
 
-/home/bill/ros_ws/devel/include/baxter_core_msgs/JointCommand.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
-/home/bill/ros_ws/devel/include/baxter_core_msgs/JointCommand.h: /home/bill/ros_ws/src/baxter_common/baxter_core_msgs/msg/JointCommand.msg
-/home/bill/ros_ws/devel/include/baxter_core_msgs/JointCommand.h: /opt/ros/kinetic/share/gencpp/msg.h.template
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/bill/ros_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Generating C++ code from baxter_core_msgs/JointCommand.msg"
-	cd /home/bill/ros_ws/src/baxter_common/baxter_core_msgs && /home/bill/ros_ws/build/catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/bill/ros_ws/src/baxter_common/baxter_core_msgs/msg/JointCommand.msg -Ibaxter_core_msgs:/home/bill/ros_ws/src/baxter_common/baxter_core_msgs/msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p baxter_core_msgs -o /home/bill/ros_ws/devel/include/baxter_core_msgs -e /opt/ros/kinetic/share/gencpp/cmake/..
+/home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/AssemblyStates.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
+/home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/AssemblyStates.h: /home/bill/bill_ros/ros_ws/src/baxter_common/baxter_core_msgs/msg/AssemblyStates.msg
+/home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/AssemblyStates.h: /home/bill/bill_ros/ros_ws/src/baxter_common/baxter_core_msgs/msg/AssemblyState.msg
+/home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/AssemblyStates.h: /opt/ros/kinetic/share/gencpp/msg.h.template
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/bill/bill_ros/ros_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Generating C++ code from baxter_core_msgs/AssemblyStates.msg"
+	cd /home/bill/bill_ros/ros_ws/src/baxter_common/baxter_core_msgs && /home/bill/bill_ros/ros_ws/build/catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/bill/bill_ros/ros_ws/src/baxter_common/baxter_core_msgs/msg/AssemblyStates.msg -Ibaxter_core_msgs:/home/bill/bill_ros/ros_ws/src/baxter_common/baxter_core_msgs/msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p baxter_core_msgs -o /home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs -e /opt/ros/kinetic/share/gencpp/cmake/..
 
-/home/bill/ros_ws/devel/include/baxter_core_msgs/NavigatorState.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
-/home/bill/ros_ws/devel/include/baxter_core_msgs/NavigatorState.h: /home/bill/ros_ws/src/baxter_common/baxter_core_msgs/msg/NavigatorState.msg
-/home/bill/ros_ws/devel/include/baxter_core_msgs/NavigatorState.h: /opt/ros/kinetic/share/gencpp/msg.h.template
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/bill/ros_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Generating C++ code from baxter_core_msgs/NavigatorState.msg"
-	cd /home/bill/ros_ws/src/baxter_common/baxter_core_msgs && /home/bill/ros_ws/build/catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/bill/ros_ws/src/baxter_common/baxter_core_msgs/msg/NavigatorState.msg -Ibaxter_core_msgs:/home/bill/ros_ws/src/baxter_common/baxter_core_msgs/msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p baxter_core_msgs -o /home/bill/ros_ws/devel/include/baxter_core_msgs -e /opt/ros/kinetic/share/gencpp/cmake/..
+/home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/AssemblyState.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
+/home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/AssemblyState.h: /home/bill/bill_ros/ros_ws/src/baxter_common/baxter_core_msgs/msg/AssemblyState.msg
+/home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/AssemblyState.h: /opt/ros/kinetic/share/gencpp/msg.h.template
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/bill/bill_ros/ros_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Generating C++ code from baxter_core_msgs/AssemblyState.msg"
+	cd /home/bill/bill_ros/ros_ws/src/baxter_common/baxter_core_msgs && /home/bill/bill_ros/ros_ws/build/catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/bill/bill_ros/ros_ws/src/baxter_common/baxter_core_msgs/msg/AssemblyState.msg -Ibaxter_core_msgs:/home/bill/bill_ros/ros_ws/src/baxter_common/baxter_core_msgs/msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p baxter_core_msgs -o /home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs -e /opt/ros/kinetic/share/gencpp/cmake/..
 
-/home/bill/ros_ws/devel/include/baxter_core_msgs/URDFConfiguration.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
-/home/bill/ros_ws/devel/include/baxter_core_msgs/URDFConfiguration.h: /home/bill/ros_ws/src/baxter_common/baxter_core_msgs/msg/URDFConfiguration.msg
-/home/bill/ros_ws/devel/include/baxter_core_msgs/URDFConfiguration.h: /opt/ros/kinetic/share/gencpp/msg.h.template
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/bill/ros_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Generating C++ code from baxter_core_msgs/URDFConfiguration.msg"
-	cd /home/bill/ros_ws/src/baxter_common/baxter_core_msgs && /home/bill/ros_ws/build/catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/bill/ros_ws/src/baxter_common/baxter_core_msgs/msg/URDFConfiguration.msg -Ibaxter_core_msgs:/home/bill/ros_ws/src/baxter_common/baxter_core_msgs/msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p baxter_core_msgs -o /home/bill/ros_ws/devel/include/baxter_core_msgs -e /opt/ros/kinetic/share/gencpp/cmake/..
+/home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/URDFConfiguration.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
+/home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/URDFConfiguration.h: /home/bill/bill_ros/ros_ws/src/baxter_common/baxter_core_msgs/msg/URDFConfiguration.msg
+/home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/URDFConfiguration.h: /opt/ros/kinetic/share/gencpp/msg.h.template
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/bill/bill_ros/ros_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Generating C++ code from baxter_core_msgs/URDFConfiguration.msg"
+	cd /home/bill/bill_ros/ros_ws/src/baxter_common/baxter_core_msgs && /home/bill/bill_ros/ros_ws/build/catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/bill/bill_ros/ros_ws/src/baxter_common/baxter_core_msgs/msg/URDFConfiguration.msg -Ibaxter_core_msgs:/home/bill/bill_ros/ros_ws/src/baxter_common/baxter_core_msgs/msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p baxter_core_msgs -o /home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs -e /opt/ros/kinetic/share/gencpp/cmake/..
 
-/home/bill/ros_ws/devel/include/baxter_core_msgs/DigitalOutputCommand.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
-/home/bill/ros_ws/devel/include/baxter_core_msgs/DigitalOutputCommand.h: /home/bill/ros_ws/src/baxter_common/baxter_core_msgs/msg/DigitalOutputCommand.msg
-/home/bill/ros_ws/devel/include/baxter_core_msgs/DigitalOutputCommand.h: /opt/ros/kinetic/share/gencpp/msg.h.template
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/bill/ros_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Generating C++ code from baxter_core_msgs/DigitalOutputCommand.msg"
-	cd /home/bill/ros_ws/src/baxter_common/baxter_core_msgs && /home/bill/ros_ws/build/catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/bill/ros_ws/src/baxter_common/baxter_core_msgs/msg/DigitalOutputCommand.msg -Ibaxter_core_msgs:/home/bill/ros_ws/src/baxter_common/baxter_core_msgs/msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p baxter_core_msgs -o /home/bill/ros_ws/devel/include/baxter_core_msgs -e /opt/ros/kinetic/share/gencpp/cmake/..
+/home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/HeadState.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
+/home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/HeadState.h: /home/bill/bill_ros/ros_ws/src/baxter_common/baxter_core_msgs/msg/HeadState.msg
+/home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/HeadState.h: /opt/ros/kinetic/share/gencpp/msg.h.template
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/bill/bill_ros/ros_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Generating C++ code from baxter_core_msgs/HeadState.msg"
+	cd /home/bill/bill_ros/ros_ws/src/baxter_common/baxter_core_msgs && /home/bill/bill_ros/ros_ws/build/catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/bill/bill_ros/ros_ws/src/baxter_common/baxter_core_msgs/msg/HeadState.msg -Ibaxter_core_msgs:/home/bill/bill_ros/ros_ws/src/baxter_common/baxter_core_msgs/msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p baxter_core_msgs -o /home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs -e /opt/ros/kinetic/share/gencpp/cmake/..
 
-/home/bill/ros_ws/devel/include/baxter_core_msgs/SEAJointState.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
-/home/bill/ros_ws/devel/include/baxter_core_msgs/SEAJointState.h: /home/bill/ros_ws/src/baxter_common/baxter_core_msgs/msg/SEAJointState.msg
-/home/bill/ros_ws/devel/include/baxter_core_msgs/SEAJointState.h: /opt/ros/kinetic/share/std_msgs/msg/Header.msg
-/home/bill/ros_ws/devel/include/baxter_core_msgs/SEAJointState.h: /opt/ros/kinetic/share/gencpp/msg.h.template
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/bill/ros_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Generating C++ code from baxter_core_msgs/SEAJointState.msg"
-	cd /home/bill/ros_ws/src/baxter_common/baxter_core_msgs && /home/bill/ros_ws/build/catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/bill/ros_ws/src/baxter_common/baxter_core_msgs/msg/SEAJointState.msg -Ibaxter_core_msgs:/home/bill/ros_ws/src/baxter_common/baxter_core_msgs/msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p baxter_core_msgs -o /home/bill/ros_ws/devel/include/baxter_core_msgs -e /opt/ros/kinetic/share/gencpp/cmake/..
+/home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/EndpointStates.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
+/home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/EndpointStates.h: /home/bill/bill_ros/ros_ws/src/baxter_common/baxter_core_msgs/msg/EndpointStates.msg
+/home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/EndpointStates.h: /home/bill/bill_ros/ros_ws/src/baxter_common/baxter_core_msgs/msg/EndpointState.msg
+/home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/EndpointStates.h: /opt/ros/kinetic/share/std_msgs/msg/Header.msg
+/home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/EndpointStates.h: /opt/ros/kinetic/share/geometry_msgs/msg/Quaternion.msg
+/home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/EndpointStates.h: /opt/ros/kinetic/share/geometry_msgs/msg/Wrench.msg
+/home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/EndpointStates.h: /opt/ros/kinetic/share/geometry_msgs/msg/Point.msg
+/home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/EndpointStates.h: /opt/ros/kinetic/share/geometry_msgs/msg/Vector3.msg
+/home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/EndpointStates.h: /opt/ros/kinetic/share/geometry_msgs/msg/Pose.msg
+/home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/EndpointStates.h: /opt/ros/kinetic/share/geometry_msgs/msg/Twist.msg
+/home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/EndpointStates.h: /opt/ros/kinetic/share/gencpp/msg.h.template
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/bill/bill_ros/ros_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Generating C++ code from baxter_core_msgs/EndpointStates.msg"
+	cd /home/bill/bill_ros/ros_ws/src/baxter_common/baxter_core_msgs && /home/bill/bill_ros/ros_ws/build/catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/bill/bill_ros/ros_ws/src/baxter_common/baxter_core_msgs/msg/EndpointStates.msg -Ibaxter_core_msgs:/home/bill/bill_ros/ros_ws/src/baxter_common/baxter_core_msgs/msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p baxter_core_msgs -o /home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs -e /opt/ros/kinetic/share/gencpp/cmake/..
 
-/home/bill/ros_ws/devel/include/baxter_core_msgs/AnalogOutputCommand.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
-/home/bill/ros_ws/devel/include/baxter_core_msgs/AnalogOutputCommand.h: /home/bill/ros_ws/src/baxter_common/baxter_core_msgs/msg/AnalogOutputCommand.msg
-/home/bill/ros_ws/devel/include/baxter_core_msgs/AnalogOutputCommand.h: /opt/ros/kinetic/share/gencpp/msg.h.template
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/bill/ros_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Generating C++ code from baxter_core_msgs/AnalogOutputCommand.msg"
-	cd /home/bill/ros_ws/src/baxter_common/baxter_core_msgs && /home/bill/ros_ws/build/catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/bill/ros_ws/src/baxter_common/baxter_core_msgs/msg/AnalogOutputCommand.msg -Ibaxter_core_msgs:/home/bill/ros_ws/src/baxter_common/baxter_core_msgs/msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p baxter_core_msgs -o /home/bill/ros_ws/devel/include/baxter_core_msgs -e /opt/ros/kinetic/share/gencpp/cmake/..
+/home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/EndEffectorProperties.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
+/home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/EndEffectorProperties.h: /home/bill/bill_ros/ros_ws/src/baxter_common/baxter_core_msgs/msg/EndEffectorProperties.msg
+/home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/EndEffectorProperties.h: /opt/ros/kinetic/share/gencpp/msg.h.template
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/bill/bill_ros/ros_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Generating C++ code from baxter_core_msgs/EndEffectorProperties.msg"
+	cd /home/bill/bill_ros/ros_ws/src/baxter_common/baxter_core_msgs && /home/bill/bill_ros/ros_ws/build/catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/bill/bill_ros/ros_ws/src/baxter_common/baxter_core_msgs/msg/EndEffectorProperties.msg -Ibaxter_core_msgs:/home/bill/bill_ros/ros_ws/src/baxter_common/baxter_core_msgs/msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p baxter_core_msgs -o /home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs -e /opt/ros/kinetic/share/gencpp/cmake/..
 
-/home/bill/ros_ws/devel/include/baxter_core_msgs/CollisionAvoidanceState.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
-/home/bill/ros_ws/devel/include/baxter_core_msgs/CollisionAvoidanceState.h: /home/bill/ros_ws/src/baxter_common/baxter_core_msgs/msg/CollisionAvoidanceState.msg
-/home/bill/ros_ws/devel/include/baxter_core_msgs/CollisionAvoidanceState.h: /opt/ros/kinetic/share/std_msgs/msg/Header.msg
-/home/bill/ros_ws/devel/include/baxter_core_msgs/CollisionAvoidanceState.h: /opt/ros/kinetic/share/gencpp/msg.h.template
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/bill/ros_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Generating C++ code from baxter_core_msgs/CollisionAvoidanceState.msg"
-	cd /home/bill/ros_ws/src/baxter_common/baxter_core_msgs && /home/bill/ros_ws/build/catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/bill/ros_ws/src/baxter_common/baxter_core_msgs/msg/CollisionAvoidanceState.msg -Ibaxter_core_msgs:/home/bill/ros_ws/src/baxter_common/baxter_core_msgs/msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p baxter_core_msgs -o /home/bill/ros_ws/devel/include/baxter_core_msgs -e /opt/ros/kinetic/share/gencpp/cmake/..
+/home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/EndEffectorState.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
+/home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/EndEffectorState.h: /home/bill/bill_ros/ros_ws/src/baxter_common/baxter_core_msgs/msg/EndEffectorState.msg
+/home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/EndEffectorState.h: /opt/ros/kinetic/share/gencpp/msg.h.template
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/bill/bill_ros/ros_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Generating C++ code from baxter_core_msgs/EndEffectorState.msg"
+	cd /home/bill/bill_ros/ros_ws/src/baxter_common/baxter_core_msgs && /home/bill/bill_ros/ros_ws/build/catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/bill/bill_ros/ros_ws/src/baxter_common/baxter_core_msgs/msg/EndEffectorState.msg -Ibaxter_core_msgs:/home/bill/bill_ros/ros_ws/src/baxter_common/baxter_core_msgs/msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p baxter_core_msgs -o /home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs -e /opt/ros/kinetic/share/gencpp/cmake/..
 
-/home/bill/ros_ws/devel/include/baxter_core_msgs/CloseCamera.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
-/home/bill/ros_ws/devel/include/baxter_core_msgs/CloseCamera.h: /home/bill/ros_ws/src/baxter_common/baxter_core_msgs/srv/CloseCamera.srv
-/home/bill/ros_ws/devel/include/baxter_core_msgs/CloseCamera.h: /opt/ros/kinetic/share/gencpp/msg.h.template
-/home/bill/ros_ws/devel/include/baxter_core_msgs/CloseCamera.h: /opt/ros/kinetic/share/gencpp/srv.h.template
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/bill/ros_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Generating C++ code from baxter_core_msgs/CloseCamera.srv"
-	cd /home/bill/ros_ws/src/baxter_common/baxter_core_msgs && /home/bill/ros_ws/build/catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/bill/ros_ws/src/baxter_common/baxter_core_msgs/srv/CloseCamera.srv -Ibaxter_core_msgs:/home/bill/ros_ws/src/baxter_common/baxter_core_msgs/msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p baxter_core_msgs -o /home/bill/ros_ws/devel/include/baxter_core_msgs -e /opt/ros/kinetic/share/gencpp/cmake/..
+/home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/CloseCamera.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
+/home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/CloseCamera.h: /home/bill/bill_ros/ros_ws/src/baxter_common/baxter_core_msgs/srv/CloseCamera.srv
+/home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/CloseCamera.h: /opt/ros/kinetic/share/gencpp/msg.h.template
+/home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/CloseCamera.h: /opt/ros/kinetic/share/gencpp/srv.h.template
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/bill/bill_ros/ros_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Generating C++ code from baxter_core_msgs/CloseCamera.srv"
+	cd /home/bill/bill_ros/ros_ws/src/baxter_common/baxter_core_msgs && /home/bill/bill_ros/ros_ws/build/catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/bill/bill_ros/ros_ws/src/baxter_common/baxter_core_msgs/srv/CloseCamera.srv -Ibaxter_core_msgs:/home/bill/bill_ros/ros_ws/src/baxter_common/baxter_core_msgs/msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p baxter_core_msgs -o /home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs -e /opt/ros/kinetic/share/gencpp/cmake/..
 
-/home/bill/ros_ws/devel/include/baxter_core_msgs/ListCameras.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
-/home/bill/ros_ws/devel/include/baxter_core_msgs/ListCameras.h: /home/bill/ros_ws/src/baxter_common/baxter_core_msgs/srv/ListCameras.srv
-/home/bill/ros_ws/devel/include/baxter_core_msgs/ListCameras.h: /opt/ros/kinetic/share/gencpp/msg.h.template
-/home/bill/ros_ws/devel/include/baxter_core_msgs/ListCameras.h: /opt/ros/kinetic/share/gencpp/srv.h.template
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/bill/ros_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Generating C++ code from baxter_core_msgs/ListCameras.srv"
-	cd /home/bill/ros_ws/src/baxter_common/baxter_core_msgs && /home/bill/ros_ws/build/catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/bill/ros_ws/src/baxter_common/baxter_core_msgs/srv/ListCameras.srv -Ibaxter_core_msgs:/home/bill/ros_ws/src/baxter_common/baxter_core_msgs/msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p baxter_core_msgs -o /home/bill/ros_ws/devel/include/baxter_core_msgs -e /opt/ros/kinetic/share/gencpp/cmake/..
+/home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/SolvePositionIK.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
+/home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/SolvePositionIK.h: /home/bill/bill_ros/ros_ws/src/baxter_common/baxter_core_msgs/srv/SolvePositionIK.srv
+/home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/SolvePositionIK.h: /opt/ros/kinetic/share/geometry_msgs/msg/PoseStamped.msg
+/home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/SolvePositionIK.h: /opt/ros/kinetic/share/std_msgs/msg/Header.msg
+/home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/SolvePositionIK.h: /opt/ros/kinetic/share/geometry_msgs/msg/Quaternion.msg
+/home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/SolvePositionIK.h: /opt/ros/kinetic/share/geometry_msgs/msg/Point.msg
+/home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/SolvePositionIK.h: /opt/ros/kinetic/share/geometry_msgs/msg/Pose.msg
+/home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/SolvePositionIK.h: /opt/ros/kinetic/share/sensor_msgs/msg/JointState.msg
+/home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/SolvePositionIK.h: /opt/ros/kinetic/share/gencpp/msg.h.template
+/home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/SolvePositionIK.h: /opt/ros/kinetic/share/gencpp/srv.h.template
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/bill/bill_ros/ros_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Generating C++ code from baxter_core_msgs/SolvePositionIK.srv"
+	cd /home/bill/bill_ros/ros_ws/src/baxter_common/baxter_core_msgs && /home/bill/bill_ros/ros_ws/build/catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/bill/bill_ros/ros_ws/src/baxter_common/baxter_core_msgs/srv/SolvePositionIK.srv -Ibaxter_core_msgs:/home/bill/bill_ros/ros_ws/src/baxter_common/baxter_core_msgs/msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p baxter_core_msgs -o /home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs -e /opt/ros/kinetic/share/gencpp/cmake/..
 
-/home/bill/ros_ws/devel/include/baxter_core_msgs/SolvePositionIK.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
-/home/bill/ros_ws/devel/include/baxter_core_msgs/SolvePositionIK.h: /home/bill/ros_ws/src/baxter_common/baxter_core_msgs/srv/SolvePositionIK.srv
-/home/bill/ros_ws/devel/include/baxter_core_msgs/SolvePositionIK.h: /opt/ros/kinetic/share/geometry_msgs/msg/PoseStamped.msg
-/home/bill/ros_ws/devel/include/baxter_core_msgs/SolvePositionIK.h: /opt/ros/kinetic/share/std_msgs/msg/Header.msg
-/home/bill/ros_ws/devel/include/baxter_core_msgs/SolvePositionIK.h: /opt/ros/kinetic/share/geometry_msgs/msg/Quaternion.msg
-/home/bill/ros_ws/devel/include/baxter_core_msgs/SolvePositionIK.h: /opt/ros/kinetic/share/geometry_msgs/msg/Point.msg
-/home/bill/ros_ws/devel/include/baxter_core_msgs/SolvePositionIK.h: /opt/ros/kinetic/share/geometry_msgs/msg/Pose.msg
-/home/bill/ros_ws/devel/include/baxter_core_msgs/SolvePositionIK.h: /opt/ros/kinetic/share/sensor_msgs/msg/JointState.msg
-/home/bill/ros_ws/devel/include/baxter_core_msgs/SolvePositionIK.h: /opt/ros/kinetic/share/gencpp/msg.h.template
-/home/bill/ros_ws/devel/include/baxter_core_msgs/SolvePositionIK.h: /opt/ros/kinetic/share/gencpp/srv.h.template
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/bill/ros_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Generating C++ code from baxter_core_msgs/SolvePositionIK.srv"
-	cd /home/bill/ros_ws/src/baxter_common/baxter_core_msgs && /home/bill/ros_ws/build/catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/bill/ros_ws/src/baxter_common/baxter_core_msgs/srv/SolvePositionIK.srv -Ibaxter_core_msgs:/home/bill/ros_ws/src/baxter_common/baxter_core_msgs/msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p baxter_core_msgs -o /home/bill/ros_ws/devel/include/baxter_core_msgs -e /opt/ros/kinetic/share/gencpp/cmake/..
+/home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/ListCameras.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
+/home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/ListCameras.h: /home/bill/bill_ros/ros_ws/src/baxter_common/baxter_core_msgs/srv/ListCameras.srv
+/home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/ListCameras.h: /opt/ros/kinetic/share/gencpp/msg.h.template
+/home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/ListCameras.h: /opt/ros/kinetic/share/gencpp/srv.h.template
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/bill/bill_ros/ros_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Generating C++ code from baxter_core_msgs/ListCameras.srv"
+	cd /home/bill/bill_ros/ros_ws/src/baxter_common/baxter_core_msgs && /home/bill/bill_ros/ros_ws/build/catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/bill/bill_ros/ros_ws/src/baxter_common/baxter_core_msgs/srv/ListCameras.srv -Ibaxter_core_msgs:/home/bill/bill_ros/ros_ws/src/baxter_common/baxter_core_msgs/msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p baxter_core_msgs -o /home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs -e /opt/ros/kinetic/share/gencpp/cmake/..
 
-/home/bill/ros_ws/devel/include/baxter_core_msgs/OpenCamera.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
-/home/bill/ros_ws/devel/include/baxter_core_msgs/OpenCamera.h: /home/bill/ros_ws/src/baxter_common/baxter_core_msgs/srv/OpenCamera.srv
-/home/bill/ros_ws/devel/include/baxter_core_msgs/OpenCamera.h: /home/bill/ros_ws/src/baxter_common/baxter_core_msgs/msg/CameraControl.msg
-/home/bill/ros_ws/devel/include/baxter_core_msgs/OpenCamera.h: /home/bill/ros_ws/src/baxter_common/baxter_core_msgs/msg/CameraSettings.msg
-/home/bill/ros_ws/devel/include/baxter_core_msgs/OpenCamera.h: /opt/ros/kinetic/share/gencpp/msg.h.template
-/home/bill/ros_ws/devel/include/baxter_core_msgs/OpenCamera.h: /opt/ros/kinetic/share/gencpp/srv.h.template
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/bill/ros_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Generating C++ code from baxter_core_msgs/OpenCamera.srv"
-	cd /home/bill/ros_ws/src/baxter_common/baxter_core_msgs && /home/bill/ros_ws/build/catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/bill/ros_ws/src/baxter_common/baxter_core_msgs/srv/OpenCamera.srv -Ibaxter_core_msgs:/home/bill/ros_ws/src/baxter_common/baxter_core_msgs/msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p baxter_core_msgs -o /home/bill/ros_ws/devel/include/baxter_core_msgs -e /opt/ros/kinetic/share/gencpp/cmake/..
+/home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/OpenCamera.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
+/home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/OpenCamera.h: /home/bill/bill_ros/ros_ws/src/baxter_common/baxter_core_msgs/srv/OpenCamera.srv
+/home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/OpenCamera.h: /home/bill/bill_ros/ros_ws/src/baxter_common/baxter_core_msgs/msg/CameraControl.msg
+/home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/OpenCamera.h: /home/bill/bill_ros/ros_ws/src/baxter_common/baxter_core_msgs/msg/CameraSettings.msg
+/home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/OpenCamera.h: /opt/ros/kinetic/share/gencpp/msg.h.template
+/home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/OpenCamera.h: /opt/ros/kinetic/share/gencpp/srv.h.template
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/bill/bill_ros/ros_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Generating C++ code from baxter_core_msgs/OpenCamera.srv"
+	cd /home/bill/bill_ros/ros_ws/src/baxter_common/baxter_core_msgs && /home/bill/bill_ros/ros_ws/build/catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/bill/bill_ros/ros_ws/src/baxter_common/baxter_core_msgs/srv/OpenCamera.srv -Ibaxter_core_msgs:/home/bill/bill_ros/ros_ws/src/baxter_common/baxter_core_msgs/msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/kinetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p baxter_core_msgs -o /home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs -e /opt/ros/kinetic/share/gencpp/cmake/..
 
 baxter_core_msgs_generate_messages_cpp: baxter_common/baxter_core_msgs/CMakeFiles/baxter_core_msgs_generate_messages_cpp
-baxter_core_msgs_generate_messages_cpp: /home/bill/ros_ws/devel/include/baxter_core_msgs/AssemblyStates.h
-baxter_core_msgs_generate_messages_cpp: /home/bill/ros_ws/devel/include/baxter_core_msgs/RobustControllerStatus.h
-baxter_core_msgs_generate_messages_cpp: /home/bill/ros_ws/devel/include/baxter_core_msgs/CollisionDetectionState.h
-baxter_core_msgs_generate_messages_cpp: /home/bill/ros_ws/devel/include/baxter_core_msgs/AssemblyState.h
-baxter_core_msgs_generate_messages_cpp: /home/bill/ros_ws/devel/include/baxter_core_msgs/EndEffectorState.h
-baxter_core_msgs_generate_messages_cpp: /home/bill/ros_ws/devel/include/baxter_core_msgs/AnalogIOStates.h
-baxter_core_msgs_generate_messages_cpp: /home/bill/ros_ws/devel/include/baxter_core_msgs/NavigatorStates.h
-baxter_core_msgs_generate_messages_cpp: /home/bill/ros_ws/devel/include/baxter_core_msgs/DigitalIOState.h
-baxter_core_msgs_generate_messages_cpp: /home/bill/ros_ws/devel/include/baxter_core_msgs/EndpointStates.h
-baxter_core_msgs_generate_messages_cpp: /home/bill/ros_ws/devel/include/baxter_core_msgs/HeadState.h
-baxter_core_msgs_generate_messages_cpp: /home/bill/ros_ws/devel/include/baxter_core_msgs/CameraControl.h
-baxter_core_msgs_generate_messages_cpp: /home/bill/ros_ws/devel/include/baxter_core_msgs/AnalogIOState.h
-baxter_core_msgs_generate_messages_cpp: /home/bill/ros_ws/devel/include/baxter_core_msgs/DigitalIOStates.h
-baxter_core_msgs_generate_messages_cpp: /home/bill/ros_ws/devel/include/baxter_core_msgs/HeadPanCommand.h
-baxter_core_msgs_generate_messages_cpp: /home/bill/ros_ws/devel/include/baxter_core_msgs/EndpointState.h
-baxter_core_msgs_generate_messages_cpp: /home/bill/ros_ws/devel/include/baxter_core_msgs/EndEffectorProperties.h
-baxter_core_msgs_generate_messages_cpp: /home/bill/ros_ws/devel/include/baxter_core_msgs/EndEffectorCommand.h
-baxter_core_msgs_generate_messages_cpp: /home/bill/ros_ws/devel/include/baxter_core_msgs/CameraSettings.h
-baxter_core_msgs_generate_messages_cpp: /home/bill/ros_ws/devel/include/baxter_core_msgs/JointCommand.h
-baxter_core_msgs_generate_messages_cpp: /home/bill/ros_ws/devel/include/baxter_core_msgs/NavigatorState.h
-baxter_core_msgs_generate_messages_cpp: /home/bill/ros_ws/devel/include/baxter_core_msgs/URDFConfiguration.h
-baxter_core_msgs_generate_messages_cpp: /home/bill/ros_ws/devel/include/baxter_core_msgs/DigitalOutputCommand.h
-baxter_core_msgs_generate_messages_cpp: /home/bill/ros_ws/devel/include/baxter_core_msgs/SEAJointState.h
-baxter_core_msgs_generate_messages_cpp: /home/bill/ros_ws/devel/include/baxter_core_msgs/AnalogOutputCommand.h
-baxter_core_msgs_generate_messages_cpp: /home/bill/ros_ws/devel/include/baxter_core_msgs/CollisionAvoidanceState.h
-baxter_core_msgs_generate_messages_cpp: /home/bill/ros_ws/devel/include/baxter_core_msgs/CloseCamera.h
-baxter_core_msgs_generate_messages_cpp: /home/bill/ros_ws/devel/include/baxter_core_msgs/ListCameras.h
-baxter_core_msgs_generate_messages_cpp: /home/bill/ros_ws/devel/include/baxter_core_msgs/SolvePositionIK.h
-baxter_core_msgs_generate_messages_cpp: /home/bill/ros_ws/devel/include/baxter_core_msgs/OpenCamera.h
+baxter_core_msgs_generate_messages_cpp: /home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/JointCommand.h
+baxter_core_msgs_generate_messages_cpp: /home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/RobustControllerStatus.h
+baxter_core_msgs_generate_messages_cpp: /home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/CollisionAvoidanceState.h
+baxter_core_msgs_generate_messages_cpp: /home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/CameraControl.h
+baxter_core_msgs_generate_messages_cpp: /home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/NavigatorState.h
+baxter_core_msgs_generate_messages_cpp: /home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/AnalogIOState.h
+baxter_core_msgs_generate_messages_cpp: /home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/DigitalIOState.h
+baxter_core_msgs_generate_messages_cpp: /home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/EndEffectorCommand.h
+baxter_core_msgs_generate_messages_cpp: /home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/SEAJointState.h
+baxter_core_msgs_generate_messages_cpp: /home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/CameraSettings.h
+baxter_core_msgs_generate_messages_cpp: /home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/NavigatorStates.h
+baxter_core_msgs_generate_messages_cpp: /home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/EndpointState.h
+baxter_core_msgs_generate_messages_cpp: /home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/HeadPanCommand.h
+baxter_core_msgs_generate_messages_cpp: /home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/DigitalIOStates.h
+baxter_core_msgs_generate_messages_cpp: /home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/AnalogIOStates.h
+baxter_core_msgs_generate_messages_cpp: /home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/CollisionDetectionState.h
+baxter_core_msgs_generate_messages_cpp: /home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/DigitalOutputCommand.h
+baxter_core_msgs_generate_messages_cpp: /home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/AnalogOutputCommand.h
+baxter_core_msgs_generate_messages_cpp: /home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/AssemblyStates.h
+baxter_core_msgs_generate_messages_cpp: /home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/AssemblyState.h
+baxter_core_msgs_generate_messages_cpp: /home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/URDFConfiguration.h
+baxter_core_msgs_generate_messages_cpp: /home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/HeadState.h
+baxter_core_msgs_generate_messages_cpp: /home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/EndpointStates.h
+baxter_core_msgs_generate_messages_cpp: /home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/EndEffectorProperties.h
+baxter_core_msgs_generate_messages_cpp: /home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/EndEffectorState.h
+baxter_core_msgs_generate_messages_cpp: /home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/CloseCamera.h
+baxter_core_msgs_generate_messages_cpp: /home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/SolvePositionIK.h
+baxter_core_msgs_generate_messages_cpp: /home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/ListCameras.h
+baxter_core_msgs_generate_messages_cpp: /home/bill/bill_ros/ros_ws/devel/include/baxter_core_msgs/OpenCamera.h
 baxter_core_msgs_generate_messages_cpp: baxter_common/baxter_core_msgs/CMakeFiles/baxter_core_msgs_generate_messages_cpp.dir/build.make
 
 .PHONY : baxter_core_msgs_generate_messages_cpp
@@ -333,10 +333,10 @@ baxter_common/baxter_core_msgs/CMakeFiles/baxter_core_msgs_generate_messages_cpp
 .PHONY : baxter_common/baxter_core_msgs/CMakeFiles/baxter_core_msgs_generate_messages_cpp.dir/build
 
 baxter_common/baxter_core_msgs/CMakeFiles/baxter_core_msgs_generate_messages_cpp.dir/clean:
-	cd /home/bill/ros_ws/build/baxter_common/baxter_core_msgs && $(CMAKE_COMMAND) -P CMakeFiles/baxter_core_msgs_generate_messages_cpp.dir/cmake_clean.cmake
+	cd /home/bill/bill_ros/ros_ws/build/baxter_common/baxter_core_msgs && $(CMAKE_COMMAND) -P CMakeFiles/baxter_core_msgs_generate_messages_cpp.dir/cmake_clean.cmake
 .PHONY : baxter_common/baxter_core_msgs/CMakeFiles/baxter_core_msgs_generate_messages_cpp.dir/clean
 
 baxter_common/baxter_core_msgs/CMakeFiles/baxter_core_msgs_generate_messages_cpp.dir/depend:
-	cd /home/bill/ros_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/bill/ros_ws/src /home/bill/ros_ws/src/baxter_common/baxter_core_msgs /home/bill/ros_ws/build /home/bill/ros_ws/build/baxter_common/baxter_core_msgs /home/bill/ros_ws/build/baxter_common/baxter_core_msgs/CMakeFiles/baxter_core_msgs_generate_messages_cpp.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/bill/bill_ros/ros_ws/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/bill/bill_ros/ros_ws/src /home/bill/bill_ros/ros_ws/src/baxter_common/baxter_core_msgs /home/bill/bill_ros/ros_ws/build /home/bill/bill_ros/ros_ws/build/baxter_common/baxter_core_msgs /home/bill/bill_ros/ros_ws/build/baxter_common/baxter_core_msgs/CMakeFiles/baxter_core_msgs_generate_messages_cpp.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : baxter_common/baxter_core_msgs/CMakeFiles/baxter_core_msgs_generate_messages_cpp.dir/depend
 
