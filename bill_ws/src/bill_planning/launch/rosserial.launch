@@ -7,5 +7,5 @@
 <param name="port" value="/dev/ultrasonic"/>
 </node>
 
-<include file="$(find usb_cam)/launch/logitech.launch"/>
+<!--<include file="$(find usb_cam)/launch/logitech.launch"/>-->
 </launch>

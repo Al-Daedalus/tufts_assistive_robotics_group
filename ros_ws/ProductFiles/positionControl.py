@@ -328,7 +328,7 @@ def get_open_microwave_goal_pose(marker_pose):
 
 def get_pick_bottle_goal_pose(marker_pose):
 	goal_pose = PoseStamped()
-	goal_pose.pose.position.x = marker_pose.pose.position.x - 0.0621
+	goal_pose.pose.position.x = marker_pose.pose.position.x - 0.05#621
 	goal_pose.pose.position.y = marker_pose.pose.position.y + 0.0551
 	goal_pose.pose.position.z = marker_pose.pose.position.z - 0.13
 
@@ -355,14 +355,14 @@ def get_fridge_grab_goal_pose(marker_pose):
 
 def get_pick_bowl_goal_pose(marker_pose):
 	goal_pose = PoseStamped()
-	goal_pose.pose.position.x = marker_pose.pose.position.x - 0.089
-	goal_pose.pose.position.y = marker_pose.pose.position.y - 0.05676
-	goal_pose.pose.position.z = marker_pose.pose.position.z - 0.122
+	goal_pose.pose.position.x = marker_pose.pose.position.x - 0.0862
+	goal_pose.pose.position.y = marker_pose.pose.position.y - 0.0521
+	goal_pose.pose.position.z = marker_pose.pose.position.z - 0.13#0.1235
 
-	goal_pose.pose.orientation.x = 0.0462
-	goal_pose.pose.orientation.y = 0.6932
-	goal_pose.pose.orientation.z = 0.7176
-	goal_pose.pose.orientation.w = -0.048
+	goal_pose.pose.orientation.x = -0.00932
+	goal_pose.pose.orientation.y = 0.6588
+	goal_pose.pose.orientation.z = 0.7501
+	goal_pose.pose.orientation.w = 0.0563
 
 	return goal_pose
 

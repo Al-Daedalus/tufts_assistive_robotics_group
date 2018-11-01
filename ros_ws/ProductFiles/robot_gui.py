@@ -58,7 +58,7 @@ class robot_gui:
 		#blank label separator
 
 		#box for displaying suggestions
-		self.prompt = Frame(self.root, width=200, height=100, bg="#ccefff")
+		self.prompt = Frame(self.root, width=100, height=200, bg="#ccefff")
 		self.prompt.pack()
 		self.sug_header = Label(self.prompt, text="Suggested Commands", font=("Ariel",18), bg="#ccefff",
 		                    fg="#000033")
@@ -70,14 +70,20 @@ class robot_gui:
 		self.second_suggestion = StringVar()
 		self.second = Label(self.prompt, textvariable=self.second_suggestion, font = ("Ariel", 15), bg="#ccefff",
 		                fg="#181818")
-		self.second.pack(pady=2)
-
+		self.second.pack(pady=10)
+		# self.env_frame = Frame(self.root, width=200, height=100, bg="#ccefff")
+		# self.env_frame.pack(pady=20)
+		# self.microwave_value = StringVar()
+		# self.microwave_value.set("Microwave: Off, Closed")
+		# self.microwave = Label(self.env_frame, textvariable=self.microwave_value, bg="light grey", bd=1, 
+		#                   relief=SOLID, width=100, height=100, font=("Ariel", 15))
+		# self.microwave.pack(padx= 10, side=LEFT, pady=5)
 
 		#Displays whether or not robot is localized
 		self.mode_value = StringVar()
 		self.mode_value.set("Robot not localized")
 		self.robot_mode = Label(self.root, textvariable=self.mode_value, fg="white", bg="red", 
-			width=60, height=2, font=("Ariel", 20), bd=1, relief=SOLID)
+		width=60, height=2, font=("Ariel", 20), bd=1, relief=SOLID)
 		self.robot_mode.pack()
 
 		#environment title. Aesthetics for the label "Environment"
@@ -88,43 +94,44 @@ class robot_gui:
 		self.env_frame = Frame(self.root, width=200, height=100, bg="#ccefff")
 		self.env_frame.pack(pady=20)
 
-
+		
 		#Fridge box - Indicates the state of the fridge
+		
 		self.fridge_value = StringVar()
 		self.fridge_value.set("Fridge: Closed")
 		self.fridge = Label(self.env_frame, textvariable=self.fridge_value, bg="light grey", bd=1, relief=SOLID, 
 		                width=20, height=6, font=("Ariel", 15))
 		self.fridge.pack(padx = 10, side=LEFT, pady=5)
 
-
+		
 		#Microwave box - Indicates the state of the microwave
 		self.microwave_value = StringVar()
 		self.microwave_value.set("Microwave: Off, Closed")
 		self.microwave = Label(self.env_frame, textvariable=self.microwave_value, bg="light grey", bd=1, 
 		                  relief=SOLID, width=20, height=6, font=("Ariel", 15))
 		self.microwave.pack(padx= 10, side=LEFT, pady=5)
-
+		
 		#Aesthetics
 		self.env_frame2 = Frame(self.root, width=200, height=100, bg="#ccefff")
 		self.env_frame2.pack(pady=20)
 
-
+		
 		#Bottle box - Indicates the state of the bottle
 		self.bottle_value = StringVar()
 		self.bottle_value.set("Bottle: In fridge")
 		self.bottle = Label(self.env_frame2, textvariable=self.bottle_value, width=20, height=6, bd=1, relief=SOLID,
 		                font=("Ariel", 15), bg="light grey")
 		self.bottle.pack(padx= 10, side=LEFT, pady=5) 
-
-
-		#Food box - Indicates the state of the food
+		
+		
+		# #Food box - Indicates the state of the food
 		self.food_value = StringVar()
 		self.food_value.set("food: In fridge")
 		self.food = Label(self.env_frame2, textvariable=self.food_value, width=20, height=6, bd=1, relief=SOLID,
 		                font=("Ariel", 15), bg="light grey")
 		self.food.pack(padx= 10, side=LEFT, pady=5) 
-
-		#environment tokens#
+		
+		# #environment tokens#
 		self.root.title("Baxter Kitchen Helper")
 		self.root.minsize(width=800, height=1000)
 		self.root.maxsize(width=800, height=1000)
@@ -138,6 +145,8 @@ class robot_gui:
 	def update_root(self):
 		self.root.update()
 
+	def main_loop(self):
+		self.root.mainloop()
 
 	def update_command_display(self):
 		self.dialog_content.set(self.label_dict['dialog'])
@@ -192,6 +201,7 @@ class robot_gui:
 
 		 
 
-# g = robot_gui()
+#g = robot_gui()
+#g.main_loop() 
 # while True:
 # 	g.update_root()

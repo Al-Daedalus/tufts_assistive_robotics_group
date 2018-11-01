@@ -149,20 +149,25 @@ class gotomarker:
 		def auto_park_callback(self, data):
 			if self.activate_auto_park:
 				if not data.markers:
-					print "didn't update"
-					v=Twist()
-					self.vel_pub.publish(v)
+					#print "didn't update"
+					#v=Twist()
+					#self.vel_pub.publish(v)
 					return
 
-				for i in range(0, len(data.markers)):
-					if data.markers[i].id == 34:
-						if not self.donewith36:
-							self.approach36(1.6, data.markers[i])
+				#for i in range(0, len(data.markers)):
+					# if data.markers[i].id == 34:
+						# if not self.donewith36:
+							#self.approach36(1.6, data.markers[i])
 
 
-					if data.markers[i].id == 5:
-						if not self.donewith5:
-							self.approach5(0.75, data.markers[i])
+					#if data.markers[i].id == 5:
+						#if not self.donewith5:
+							#self.approach5(0.75, data.markers[i])
+					#	self.dist_to_table = data.markers[i].pose.pose.position.z
+					#	self.env['distanceToKitchen'] = self.dist_to_kitchen
+		    		#		self.env['distanceToTable'] = self.dist_to_table
+					#	self.gui.update_labels(self.env)
+		        	#		self.gui.update_command_display()
 
 
 		#######   FRIDGE OPERATIONS   ##############
@@ -339,7 +344,7 @@ class gotomarker:
 			self.transform_shelf_object_marker_pose_to_robot_rf()
 			#print self.shelf_object_pose
 			playPositionFile('./startshelfpicking.wp', self.lLimb, self.rLimb, self.pause_event)
-		
+			self.lGripper.open()
 			p = get_take_from_shelf_goal_pose(self.shelf_object_pose)
 			move_to_goal_pose(self.lLimb, p, self.pause_event)
 			self.lGripper.close()
@@ -415,6 +420,7 @@ class gotomarker:
 		
 		def pick_bowl(self):
 			time.sleep(3)
+			
 			p = get_pick_bowl_goal_pose(self.bowl_pose)
 			# p = get_fridge_grab_goal_pose(self.bowl_pose)
 			move_to_goal_pose(self.lLimb, p, self.pause_event)
@@ -433,16 +439,19 @@ class gotomarker:
 		def put_food_in_microwave(self):
 			playPositionFile('putFoodInMicPose.wp', self.lLimb, self.rLimb, self.pause_event)
 			time.sleep(3)
+			self.transform_microwave_marker_pose_to_robot_rf()
 			p = get_put_food_in_microwave_goal_pose(self.microwave_goal_pose)
+			moveOnAxis(self.lLimb, 'x', .02, .02, self.pause_event)
+			time.sleep(2)
 			move_to_goal_pose(self.lLimb, p, self.pause_event)
-			# moveOnAxis(self.lLimb, 'z', .02, .02, self.pause_event)
+			
 			time.sleep(2)
 			moveOnAxis(self.lLimb, 'y', .04, .02, self.pause_event)
 			time.sleep(2)
 			moveOnAxis(self.lLimb, 'y', .02, .02, self.pause_event)
 			time.sleep(1)
 			self.lGripper.open()
-			# moveOnAxis(self.lLimb, 'z', -.02, .02, self.pause_event)
+			moveOnAxis(self.lLimb, 'z', -.02, .02, self.pause_event)
 			time.sleep(1)
 			moveOnAxis(self.lLimb, 'y', -.15, .02, self.pause_event)
 			# playPositionFile('closeMicrowave.wp', self.lLimb, self.rLimb, self.pause_event)
@@ -458,6 +467,7 @@ class gotomarker:
 			move_to_goal_pose(self.lLimb, p, self.pause_event)
 			# moveOnAxis(self.lLimb, 'z', -.02, .02, self.pause_event)
 			# time.sleep(2)
+			moveOnAxis(self.lLimb, 'z', -.04, .02, self.pause_event)
 			moveOnAxis(self.lLimb, 'y', .05, .02, self.pause_event)
 			self.lGripper.close()
 			moveOnAxis(self.lLimb, 'y', -.25, .02, self.pause_event)
@@ -494,6 +504,7 @@ class gotomarker:
 			for i in range(0,len(data.markers)):
 				if data.markers[i].id == self.fridge_marker:
 					self.fridge_marker_pose = data.markers[i].pose
+					self.dist_to_kitchen = data.markers[i].pose.pose.position.x
 					#if not self.worked:
 						#self.transform_fridge_marker_pose_to_robot_rf()
 						#self.open_fridge()
@@ -515,6 +526,9 @@ class gotomarker:
 				
 				if data.markers[i].id == self.bowl_marker:
 					self.bowl_marker_pose = data.markers[i].pose
+					#self.transform_bowl_marker_pose_to_robot_rf()
+					#print self.bowl_pose
+					
 
 				if data.markers[i].id == self.shelf_object_marker:
 					self.shelf_object_marker_pose = data.markers[i].pose
@@ -558,9 +572,13 @@ class gotomarker:
 		                "hand is empty", "put food in the microwave", "get food from the microwave", "start", "turn off", "continue", "cook for",
 		                "put", "food", "is open", "get the food", "activate auto localization","activate mobile base",
 		                "robot is localized","move arm lower","move arm higher", "put water bottle on the table", "ground grab mode", "table grab mode",
-		                "pick object from floor", "forward", "backward", "left", "right", "pause", "drop object", "long range", "short range"]
+		                "pick object from floor", "forward", "backward", "left", "right", "pause", "drop object", "drop in bin"]
 		    dialog = "Listening..."
 		    print("listening")
+		    #print('Distance to kitchen: ',self.dist_to_kitchen)
+		    #print('Distance to table: ',self.dist_to_table)
+		    #self.env['distanceToKitchen'] = self.dist_to_kitchen
+		    #self.env['distanceToTable'] = self.dist_to_table
 		    try:
 		        commandIter = [command[0] for command in commands]
 		        global rawCommand
@@ -568,12 +586,12 @@ class gotomarker:
 		        dialog = rawCommand
 		        print("understood")
 		        print(dialog)
-
-		        #update command display in gui
-		        # self.gui.label_dict['dialog'] = dialog
-		        # self.gui.update_command_display()
-
 		        self.interprete_command(rawCommand)
+
+		        #self.gui.label_dict['dialog'] = dialog
+		        #self.gui.update_labels(self.env)
+		        #self.gui.update_command_display()
+
 		    except sr.UnknownValueError:
 		        dialog = "Listening..."
 		        pass
@@ -586,6 +604,7 @@ class gotomarker:
 
 		##FRIDGE TASKS
 		def interprete_fridge_tasks(self, command):
+			
 			if 'open' in command and 'the fridge' in command:
 				# self.gui.label_dict['command'] = 'open the fridge'
 				# self.gui.update_command_display()
@@ -603,12 +622,14 @@ class gotomarker:
 				# self.gui.update_command_display()
 
 				if True:#self.env['fridgeOpen'] and not self.env['hasBottle']:
+					self.lGripper.open()
 					self.transform_bottle_marker_pose_to_robot_rf()
 					playPositionFile('./fridge_grab_pose3.wp', self.lLimb, self.rLimb, self.pause_event)
 					# print self.bottle_pose
 					self.pick_bottle()
 					self.env['hasBottle'] = True
 					self.env['holdingSomething'] = True
+					self.env['bottleInFridge'] = False
 				else:
 					print "Either fridge is closed or robot already has the bottle"
 		        
@@ -636,6 +657,7 @@ class gotomarker:
 					move_to_goal_joint_angle(self.lLimb, self.origin, self.pause_event)
 					self.env['bottleOnTable'] = True
 					self.env['holdingSomething'] = False
+					self.env['hasBottle'] = False
 		        
 				else:
 					print "Robot doesn't have the bottle"
@@ -651,7 +673,7 @@ class gotomarker:
 				self.env['fridgeOpen'] = True
 
 				self.transform_bottle_marker_pose_to_robot_rf()
-				playPositionFile('./fridge_grab_pose2.wp', self.lLimb, self.rLimb, self.pause_event)
+				playPositionFile('./fridge_grab_pose3.wp', self.lLimb, self.rLimb, self.pause_event)
 				self.pick_bottle()
 				self.env['hasBottle'] = True
 				self.env['holdingSomething'] = True
@@ -666,6 +688,7 @@ class gotomarker:
 				playPositionFile('closeTheFridge.wp', self.lLimb, self.rLimb, self.pause_event)
 				move_to_goal_joint_angle(self.lLimb, self.origin, self.pause_event)
 				self.env['fridgeOpen'] = False
+				self.env['hasBottle'] = False
 			#### End Fridge task commands ####
 
 
@@ -744,9 +767,10 @@ class gotomarker:
 				if not t:
 					print("No time given")
 				elif (not self.env["microwaveOpen"]) and (not self.env["holdingSomething"]):
+					self.env['microwaveOn'] = True
 					self.cook_for_seconds(t[0])
 					move_to_goal_joint_angle(self.lLimb, self.origin, self.pause_event)
-					
+					self.env['microwaveOn'] = False
 
 			elif 'put' in command and 'microwave' in command:
 				# self.gui.label_dict['command'] = 'put food in the microwave'
@@ -778,11 +802,14 @@ class gotomarker:
 					time.sleep(3)
 					self.pick_bowl()
 					print "done picking bowl from fridge"
+					self.env['holdingSomething'] = True
 
 					#put bowl in microwave and close microwave
 					print "putting food in microwave"
 					self.put_food_in_microwave()
 					self.env['foodInMicrowave'] = True
+					self.env['holdingSomething'] = False
+					self.env['foodInFridge'] = False
 
 					#close microwave
 					playPositionFile('closeMicrowave.wp', self.lLimb, self.rLimb, self.pause_event)
@@ -849,17 +876,18 @@ class gotomarker:
 			elif 'get' in command and 'microwave' in command:
 				# self.gui.label_dict['command'] = 'get food from the microwave'
 				# self.gui.update_command_display()
-				if not self.env["microwaveOpen"] and self.env["foodInMicrowave"]:
+				if True:#not self.env["microwaveOpen"] and self.env["foodInMicrowave"]:
 					#open microwave
 					
 					move_to_goal_joint_angle(self.lLimb, self.origin, self.pause_event)
 					time.sleep(2)
 					self.transform_microwave_marker_pose_to_robot_rf()
-					playPositionFile('./openmicpose.wp', self.lLimb, self.rLimb, self.pause_event)
+					#playPositionFile('./openmicpose.wp', self.lLimb, self.rLimb, self.pause_event)
 					self.open_microwave()
 					self.env['microwaveOpen'] = True 
 					time.sleep(2)
 					self.get_food_from_microwave()
+					self.env['foodInMicrowave'] = False
 		        
 				else:
 					print "There's no food in the microwave"
@@ -872,7 +900,8 @@ class gotomarker:
 			self.env = ({'fridgeOpen': False, 'hasBottle': False, 'bottleOnTable':False, 
 				'bottleInFridge': True, 'microwaveOpen': False, 'holdingSomething': False, 
 				'microwaveOn': False, 'foodInMicrowave': False, 'foodInFridge': True, 
-				'foodOnTable': False, 'robotlocalized': True, 'mobileBaseActivated': False})
+				'foodOnTable': False, 'robotlocalized': True, 'mobileBaseActivated': False,
+				'distanceToKitchen' : self.dist_to_kitchen, 'distanceToTable' : self.dist_to_table})
 
 
 
@@ -943,11 +972,14 @@ class gotomarker:
 			elif 'move to origin' in command:
 				move_to_goal_joint_angle(self.lLimb, self.origin, self.pause_event)
 			elif 'pick up object' in command:
+				
 				pickFromFloor(self.lLimb, self.rLimb,self.lGripper, self.pause_event)
 			elif 'drop object' in command:
 				dropObject(self.lLimb, self.rLimb, self.lGripper, self.pause_event)
+			
 	
 			elif 'take' in command and 'shelf' in command.lower():			
+				self.lGripper.open()
 				self.pick_shelf_object()
 
 			elif "let's go" in command:
@@ -955,12 +987,24 @@ class gotomarker:
 				playPositionFile('movearmtohead.wp', self.lLimb, self.rLimb, self.pause_event)
 				
 			elif "you are in the kitchen" in command:
-				self.head.set_pan(1.57)
+				#self.head.set_pan(1.57)
 				playPositionFile('kitchengrab.wp', self.lLimb, self.rLimb, self.pause_event)
+				self.env['robotlocalized'] = True
+				move_to_goal_joint_angle(self.lLimb, self.origin, self.pause_event)
 
 			elif 'go' in command and 'kitchen' in command:
 				self.activate_auto_park = True
 
+			elif "adjusting" in command:
+				
+				playPositionFile('adjusting.wp', self.lLimb, self.rLimb, self.pause_event)
+				self.head.set_pan(1.57)
+
+			elif "drop in bin" in command:
+				
+				playPositionFile('putInBin.wp', self.lLimb, self.rLimb, self.pause_event)
+				self.lGripper.open()
+				playPositionFile('finishDropInBin.wp', self.lLimb, self.rLimb, self.pause_event)
 				
 
 
@@ -969,6 +1013,7 @@ class gotomarker:
 		##   VOICE    COMMAND INTERPRETATION
 		######################################
 		def interprete_command(self,command):
+			
 			self.set_environment_state(command)
 			self.miscellaneous_tasks(command)
 			self.interprete_fridge_tasks(command)
@@ -988,6 +1033,7 @@ class gotomarker:
 			self.rLimb = baxter.Limb('right')
 			self.lGripper = baxter.Gripper('left')
 			self.rGripper = baxter.Gripper('right')
+			#print self.lLimb.endpoint_pose()
 
 			# calibrating gripper
 			if not self.lGripper.calibrate():
@@ -1034,7 +1080,8 @@ class gotomarker:
 			self.env = ({'fridgeOpen': False, 'hasBottle': False, 'bottleOnTable':False, 
 				'bottleInFridge': True, 'microwaveOpen': False, 'holdingSomething': False, 
 				'microwaveOn': False, 'foodInMicrowave': False, 'foodInFridge': True, 
-				'foodOnTable': False, 'robotlocalized': False, 'mobileBaseActivated': False})
+				'foodOnTable': False, 'robotlocalized': False, 'mobileBaseActivated': False,
+				'distanceToKitchen' : 0.0, 'distanceToTable' : 0.0})
 
 			#Origin joint angles
 			self.origin = {'left_w0': -0.07286408742455715, 
@@ -1045,15 +1092,20 @@ class gotomarker:
 			'left_s0': 0.6879903833666081, 
 			'left_s1': -0.5414952181235511
 			}
-			
+			self.activate_auto_park = True
 			#move_to_goal_joint_angle(self.lLimb, self.origin, self.pause_event)
 			rospy.Subscriber('/head_kinect/ar_pose_marker', AlvarMarkers, self.master_callback)
-			rospy.Subscriber('/mobile_base_cam/ar_pose_marker', AlvarMarkers, self.auto_park_callback)
+			#rospy.Subscriber('/mobile_base_cam/ar_pose_marker', AlvarMarkers, self.auto_park_callback)
+
+			self.dist_to_kitchen = 0
+			self.dist_to_table = 0
 
 			self.setup_speech()
 			self.stopListening = self.rec.listen_in_background(self.mic, self.speech_callback, phrase_time_limit=4)
 			
+			#self.gui.main_loop()
 
+			
 
 			#print self.lLimb.endpoint_pose()
 			#print self.lLimb.joint_angles()
