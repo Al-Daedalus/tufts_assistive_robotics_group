@@ -1,2 +1,2 @@
 - setup-file:
-    local-name: /home/baxter/ros_ws/install/setup.sh
+    local-name: /home/bill/bill_ros/ros_ws/install/setup.sh
