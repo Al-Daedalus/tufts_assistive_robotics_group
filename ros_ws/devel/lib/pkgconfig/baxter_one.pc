@@ -1,0 +1,8 @@
+prefix=/home/bill/bill_ros/ros_ws/devel
+
+Name: baxter_one
+Description: Description of baxter_one
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/bill/bill_ros/ros_ws/devel/lib 
+Requires: 

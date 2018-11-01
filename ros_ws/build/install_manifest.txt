@@ -1,6 +1,0 @@
-/home/bill/bill_ros/ros_ws/install/_setup_util.py
-/home/bill/bill_ros/ros_ws/install/env.sh
-/home/bill/bill_ros/ros_ws/install/setup.bash
-/home/bill/bill_ros/ros_ws/install/setup.sh
-/home/bill/bill_ros/ros_ws/install/setup.zsh
-/home/bill/bill_ros/ros_ws/install/.rosinstall

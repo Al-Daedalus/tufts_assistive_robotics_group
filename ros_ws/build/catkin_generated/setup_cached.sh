@@ -8,6 +8,9 @@
 
 # modified environment variables
 export CMAKE_PREFIX_PATH="/home/bill/bill_ros/ros_ws/devel:$CMAKE_PREFIX_PATH"
+export LD_LIBRARY_PATH="/home/bill/bill_ros/ros_ws/devel/lib:$LD_LIBRARY_PATH"
+export PKG_CONFIG_PATH="/home/bill/bill_ros/ros_ws/devel/lib/pkgconfig:$PKG_CONFIG_PATH"
 export PWD="/home/bill/bill_ros/ros_ws/build"
+export PYTHONPATH="/home/bill/bill_ros/ros_ws/devel/lib/python2.7/dist-packages:$PYTHONPATH"
 export ROSLISP_PACKAGE_DIRECTORIES="/home/bill/bill_ros/ros_ws/devel/share/common-lisp"
-export ROS_PACKAGE_PATH="/home/bill/bill_ros/ros_ws/src:$ROS_PACKAGE_PATH"
+export ROS_PACKAGE_PATH="/home/bill/ros_ws/src:/home/bill/bill_ros/ros_ws/src:$ROS_PACKAGE_PATH"
