@@ -1,8 +1,0 @@
-prefix=/home/bill/ros_ws/devel
-
-Name: rascapp_move
-Description: Description of rascapp_move
-Version: 0.0.0
-Cflags: 
-Libs: -L/home/bill/ros_ws/devel/lib 
-Requires: 
