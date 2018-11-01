@@ -10,6 +10,12 @@
 #ifndef __baxter_interface__HEADACTIONSERVERCONFIG_H__
 #define __baxter_interface__HEADACTIONSERVERCONFIG_H__
 
+#if __cplusplus >= 201103L
+#define DYNAMIC_RECONFIGURE_FINAL final
+#else
+#define DYNAMIC_RECONFIGURE_FINAL
+#endif
+
 #include <dynamic_reconfigure/config_tools.h>
 #include <limits>
 #include <ros/node_handle.h>
@@ -51,8 +57,10 @@ namespace baxter_interface
     typedef boost::shared_ptr<AbstractParamDescription> AbstractParamDescriptionPtr;
     typedef boost::shared_ptr<const AbstractParamDescription> AbstractParamDescriptionConstPtr;
 
+    // Final keyword added to class because it has virtual methods and inherits
+    // from a class with a non-virtual destructor.
     template <class T>
-    class ParamDescription : public AbstractParamDescription
+    class ParamDescription DYNAMIC_RECONFIGURE_FINAL : public AbstractParamDescription
     {
     public:
       ParamDescription(std::string a_name, std::string a_type, uint32_t a_level,
@@ -137,8 +145,10 @@ namespace baxter_interface
     typedef boost::shared_ptr<AbstractGroupDescription> AbstractGroupDescriptionPtr;
     typedef boost::shared_ptr<const AbstractGroupDescription> AbstractGroupDescriptionConstPtr;
 
+    // Final keyword added to class because it has virtual methods and inherits
+    // from a class with a non-virtual destructor.
     template<class T, class PT>
-    class GroupDescription : public AbstractGroupDescription
+    class GroupDescription DYNAMIC_RECONFIGURE_FINAL : public AbstractGroupDescription
     {
     public:
       GroupDescription(std::string a_name, std::string a_type, int a_parent, int a_id, bool a_s, T PT::* a_f) : AbstractGroupDescription(a_name, a_type, a_parent, a_id, a_s), field(a_f)
@@ -242,11 +252,11 @@ double goal;
 
 
 
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       double timeout;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       double goal;
-//#line 218 "/opt/ros/kinetic/share/dynamic_reconfigure/cmake/../templates/ConfigType.h.template"
+//#line 228 "/opt/ros/kinetic/share/dynamic_reconfigure/cmake/../templates/ConfigType.h.template"
 
     bool __fromMessage__(dynamic_reconfigure::Config &msg)
     {
@@ -384,31 +394,31 @@ double goal;
     HeadActionServerConfigStatics()
     {
 HeadActionServerConfig::GroupDescription<HeadActionServerConfig::DEFAULT, HeadActionServerConfig> Default("Default", "", 0, 0, true, &HeadActionServerConfig::groups);
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __min__.timeout = -1.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __max__.timeout = 20.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __default__.timeout = 5.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       Default.abstract_parameters.push_back(HeadActionServerConfig::AbstractParamDescriptionConstPtr(new HeadActionServerConfig::ParamDescription<double>("timeout", "double", 0, " - Timeout (Seconds) to achieve command", "", &HeadActionServerConfig::timeout)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __param_descriptions__.push_back(HeadActionServerConfig::AbstractParamDescriptionConstPtr(new HeadActionServerConfig::ParamDescription<double>("timeout", "double", 0, " - Timeout (Seconds) to achieve command", "", &HeadActionServerConfig::timeout)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __min__.goal = 0.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __max__.goal = 1.57;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __default__.goal = 0.1396263401;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       Default.abstract_parameters.push_back(HeadActionServerConfig::AbstractParamDescriptionConstPtr(new HeadActionServerConfig::ParamDescription<double>("goal", "double", 0, " - Maximum final error", "", &HeadActionServerConfig::goal)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __param_descriptions__.push_back(HeadActionServerConfig::AbstractParamDescriptionConstPtr(new HeadActionServerConfig::ParamDescription<double>("goal", "double", 0, " - Maximum final error", "", &HeadActionServerConfig::goal)));
 //#line 245 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       Default.convertParams();
 //#line 245 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __group_descriptions__.push_back(HeadActionServerConfig::AbstractGroupDescriptionConstPtr(new HeadActionServerConfig::GroupDescription<HeadActionServerConfig::DEFAULT, HeadActionServerConfig>(Default)));
-//#line 356 "/opt/ros/kinetic/share/dynamic_reconfigure/cmake/../templates/ConfigType.h.template"
+//#line 366 "/opt/ros/kinetic/share/dynamic_reconfigure/cmake/../templates/ConfigType.h.template"
 
       for (std::vector<HeadActionServerConfig::AbstractGroupDescriptionConstPtr>::const_iterator i = __group_descriptions__.begin(); i != __group_descriptions__.end(); ++i)
       {
@@ -485,5 +495,7 @@ HeadActionServerConfig::GroupDescription<HeadActionServerConfig::DEFAULT, HeadAc
 
 
 }
+
+#undef DYNAMIC_RECONFIGURE_FINAL
 
 #endif // __HEADACTIONSERVERRECONFIGURATOR_H__

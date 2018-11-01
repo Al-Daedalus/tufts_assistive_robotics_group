@@ -1,56 +1,56 @@
 
 "use strict";
 
-let AnalogOutputCommand = require('./AnalogOutputCommand.js');
-let AssemblyStates = require('./AssemblyStates.js');
-let RobustControllerStatus = require('./RobustControllerStatus.js');
-let EndEffectorCommand = require('./EndEffectorCommand.js');
-let EndEffectorState = require('./EndEffectorState.js');
+let DigitalIOState = require('./DigitalIOState.js');
 let JointCommand = require('./JointCommand.js');
-let EndpointState = require('./EndpointState.js');
-let SEAJointState = require('./SEAJointState.js');
-let CollisionAvoidanceState = require('./CollisionAvoidanceState.js');
-let AnalogIOStates = require('./AnalogIOStates.js');
-let NavigatorState = require('./NavigatorState.js');
-let CollisionDetectionState = require('./CollisionDetectionState.js');
-let NavigatorStates = require('./NavigatorStates.js');
-let HeadState = require('./HeadState.js');
-let CameraSettings = require('./CameraSettings.js');
-let EndpointStates = require('./EndpointStates.js');
+let EndEffectorCommand = require('./EndEffectorCommand.js');
 let EndEffectorProperties = require('./EndEffectorProperties.js');
-let AnalogIOState = require('./AnalogIOState.js');
-let AssemblyState = require('./AssemblyState.js');
-let CameraControl = require('./CameraControl.js');
+let NavigatorState = require('./NavigatorState.js');
 let URDFConfiguration = require('./URDFConfiguration.js');
 let DigitalOutputCommand = require('./DigitalOutputCommand.js');
-let DigitalIOState = require('./DigitalIOState.js');
+let AssemblyStates = require('./AssemblyStates.js');
+let CollisionAvoidanceState = require('./CollisionAvoidanceState.js');
+let AnalogIOState = require('./AnalogIOState.js');
 let DigitalIOStates = require('./DigitalIOStates.js');
+let CollisionDetectionState = require('./CollisionDetectionState.js');
+let EndEffectorState = require('./EndEffectorState.js');
+let EndpointState = require('./EndpointState.js');
+let AssemblyState = require('./AssemblyState.js');
+let AnalogIOStates = require('./AnalogIOStates.js');
+let HeadState = require('./HeadState.js');
+let EndpointStates = require('./EndpointStates.js');
+let AnalogOutputCommand = require('./AnalogOutputCommand.js');
+let SEAJointState = require('./SEAJointState.js');
 let HeadPanCommand = require('./HeadPanCommand.js');
+let CameraSettings = require('./CameraSettings.js');
+let CameraControl = require('./CameraControl.js');
+let RobustControllerStatus = require('./RobustControllerStatus.js');
+let NavigatorStates = require('./NavigatorStates.js');
 
 module.exports = {
-  AnalogOutputCommand: AnalogOutputCommand,
-  AssemblyStates: AssemblyStates,
-  RobustControllerStatus: RobustControllerStatus,
-  EndEffectorCommand: EndEffectorCommand,
-  EndEffectorState: EndEffectorState,
+  DigitalIOState: DigitalIOState,
   JointCommand: JointCommand,
-  EndpointState: EndpointState,
-  SEAJointState: SEAJointState,
-  CollisionAvoidanceState: CollisionAvoidanceState,
-  AnalogIOStates: AnalogIOStates,
-  NavigatorState: NavigatorState,
-  CollisionDetectionState: CollisionDetectionState,
-  NavigatorStates: NavigatorStates,
-  HeadState: HeadState,
-  CameraSettings: CameraSettings,
-  EndpointStates: EndpointStates,
+  EndEffectorCommand: EndEffectorCommand,
   EndEffectorProperties: EndEffectorProperties,
-  AnalogIOState: AnalogIOState,
-  AssemblyState: AssemblyState,
-  CameraControl: CameraControl,
+  NavigatorState: NavigatorState,
   URDFConfiguration: URDFConfiguration,
   DigitalOutputCommand: DigitalOutputCommand,
-  DigitalIOState: DigitalIOState,
+  AssemblyStates: AssemblyStates,
+  CollisionAvoidanceState: CollisionAvoidanceState,
+  AnalogIOState: AnalogIOState,
   DigitalIOStates: DigitalIOStates,
+  CollisionDetectionState: CollisionDetectionState,
+  EndEffectorState: EndEffectorState,
+  EndpointState: EndpointState,
+  AssemblyState: AssemblyState,
+  AnalogIOStates: AnalogIOStates,
+  HeadState: HeadState,
+  EndpointStates: EndpointStates,
+  AnalogOutputCommand: AnalogOutputCommand,
+  SEAJointState: SEAJointState,
   HeadPanCommand: HeadPanCommand,
+  CameraSettings: CameraSettings,
+  CameraControl: CameraControl,
+  RobustControllerStatus: RobustControllerStatus,
+  NavigatorStates: NavigatorStates,
 };

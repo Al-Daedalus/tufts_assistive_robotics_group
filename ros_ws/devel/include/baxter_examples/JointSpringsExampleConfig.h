@@ -10,6 +10,12 @@
 #ifndef __joint_torque__JOINTSPRINGSEXAMPLECONFIG_H__
 #define __joint_torque__JOINTSPRINGSEXAMPLECONFIG_H__
 
+#if __cplusplus >= 201103L
+#define DYNAMIC_RECONFIGURE_FINAL final
+#else
+#define DYNAMIC_RECONFIGURE_FINAL
+#endif
+
 #include <dynamic_reconfigure/config_tools.h>
 #include <limits>
 #include <ros/node_handle.h>
@@ -51,8 +57,10 @@ namespace joint_torque
     typedef boost::shared_ptr<AbstractParamDescription> AbstractParamDescriptionPtr;
     typedef boost::shared_ptr<const AbstractParamDescription> AbstractParamDescriptionConstPtr;
 
+    // Final keyword added to class because it has virtual methods and inherits
+    // from a class with a non-virtual destructor.
     template <class T>
-    class ParamDescription : public AbstractParamDescription
+    class ParamDescription DYNAMIC_RECONFIGURE_FINAL : public AbstractParamDescription
     {
     public:
       ParamDescription(std::string a_name, std::string a_type, uint32_t a_level,
@@ -137,8 +145,10 @@ namespace joint_torque
     typedef boost::shared_ptr<AbstractGroupDescription> AbstractGroupDescriptionPtr;
     typedef boost::shared_ptr<const AbstractGroupDescription> AbstractGroupDescriptionConstPtr;
 
+    // Final keyword added to class because it has virtual methods and inherits
+    // from a class with a non-virtual destructor.
     template<class T, class PT>
-    class GroupDescription : public AbstractGroupDescription
+    class GroupDescription DYNAMIC_RECONFIGURE_FINAL : public AbstractGroupDescription
     {
     public:
       GroupDescription(std::string a_name, std::string a_type, int a_parent, int a_id, bool a_s, T PT::* a_f) : AbstractGroupDescription(a_name, a_type, a_parent, a_id, a_s), field(a_f)
@@ -266,35 +276,35 @@ double w2_damping_coefficient;
 
 
 
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       double s0_spring_stiffness;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       double s0_damping_coefficient;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       double s1_spring_stiffness;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       double s1_damping_coefficient;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       double e0_spring_stiffness;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       double e0_damping_coefficient;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       double e1_spring_stiffness;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       double e1_damping_coefficient;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       double w0_spring_stiffness;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       double w0_damping_coefficient;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       double w1_spring_stiffness;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       double w1_damping_coefficient;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       double w2_spring_stiffness;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       double w2_damping_coefficient;
-//#line 218 "/opt/ros/kinetic/share/dynamic_reconfigure/cmake/../templates/ConfigType.h.template"
+//#line 228 "/opt/ros/kinetic/share/dynamic_reconfigure/cmake/../templates/ConfigType.h.template"
 
     bool __fromMessage__(dynamic_reconfigure::Config &msg)
     {
@@ -432,151 +442,151 @@ double w2_damping_coefficient;
     JointSpringsExampleConfigStatics()
     {
 JointSpringsExampleConfig::GroupDescription<JointSpringsExampleConfig::DEFAULT, JointSpringsExampleConfig> Default("Default", "", 0, 0, true, &JointSpringsExampleConfig::groups);
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __min__.s0_spring_stiffness = 0.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __max__.s0_spring_stiffness = 30.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __default__.s0_spring_stiffness = 10.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       Default.abstract_parameters.push_back(JointSpringsExampleConfig::AbstractParamDescriptionConstPtr(new JointSpringsExampleConfig::ParamDescription<double>("s0_spring_stiffness", "double", 0, "s0 - Joint spring stiffness (k). Hooke's Law.", "", &JointSpringsExampleConfig::s0_spring_stiffness)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __param_descriptions__.push_back(JointSpringsExampleConfig::AbstractParamDescriptionConstPtr(new JointSpringsExampleConfig::ParamDescription<double>("s0_spring_stiffness", "double", 0, "s0 - Joint spring stiffness (k). Hooke's Law.", "", &JointSpringsExampleConfig::s0_spring_stiffness)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __min__.s0_damping_coefficient = 0.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __max__.s0_damping_coefficient = 10.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __default__.s0_damping_coefficient = 0.1;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       Default.abstract_parameters.push_back(JointSpringsExampleConfig::AbstractParamDescriptionConstPtr(new JointSpringsExampleConfig::ParamDescription<double>("s0_damping_coefficient", "double", 0, "s0 - Joint damping coefficient (c).", "", &JointSpringsExampleConfig::s0_damping_coefficient)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __param_descriptions__.push_back(JointSpringsExampleConfig::AbstractParamDescriptionConstPtr(new JointSpringsExampleConfig::ParamDescription<double>("s0_damping_coefficient", "double", 0, "s0 - Joint damping coefficient (c).", "", &JointSpringsExampleConfig::s0_damping_coefficient)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __min__.s1_spring_stiffness = 0.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __max__.s1_spring_stiffness = 30.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __default__.s1_spring_stiffness = 15.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       Default.abstract_parameters.push_back(JointSpringsExampleConfig::AbstractParamDescriptionConstPtr(new JointSpringsExampleConfig::ParamDescription<double>("s1_spring_stiffness", "double", 0, "s1 - Joint spring stiffness (k). Hooke's Law.", "", &JointSpringsExampleConfig::s1_spring_stiffness)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __param_descriptions__.push_back(JointSpringsExampleConfig::AbstractParamDescriptionConstPtr(new JointSpringsExampleConfig::ParamDescription<double>("s1_spring_stiffness", "double", 0, "s1 - Joint spring stiffness (k). Hooke's Law.", "", &JointSpringsExampleConfig::s1_spring_stiffness)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __min__.s1_damping_coefficient = 0.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __max__.s1_damping_coefficient = 7.5;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __default__.s1_damping_coefficient = 0.1;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       Default.abstract_parameters.push_back(JointSpringsExampleConfig::AbstractParamDescriptionConstPtr(new JointSpringsExampleConfig::ParamDescription<double>("s1_damping_coefficient", "double", 0, "s1 - Joint damping coefficient (c).", "", &JointSpringsExampleConfig::s1_damping_coefficient)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __param_descriptions__.push_back(JointSpringsExampleConfig::AbstractParamDescriptionConstPtr(new JointSpringsExampleConfig::ParamDescription<double>("s1_damping_coefficient", "double", 0, "s1 - Joint damping coefficient (c).", "", &JointSpringsExampleConfig::s1_damping_coefficient)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __min__.e0_spring_stiffness = 0.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __max__.e0_spring_stiffness = 15.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __default__.e0_spring_stiffness = 5.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       Default.abstract_parameters.push_back(JointSpringsExampleConfig::AbstractParamDescriptionConstPtr(new JointSpringsExampleConfig::ParamDescription<double>("e0_spring_stiffness", "double", 0, "e0 - Joint spring stiffness (k). Hooke's Law.", "", &JointSpringsExampleConfig::e0_spring_stiffness)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __param_descriptions__.push_back(JointSpringsExampleConfig::AbstractParamDescriptionConstPtr(new JointSpringsExampleConfig::ParamDescription<double>("e0_spring_stiffness", "double", 0, "e0 - Joint spring stiffness (k). Hooke's Law.", "", &JointSpringsExampleConfig::e0_spring_stiffness)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __min__.e0_damping_coefficient = 0.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __max__.e0_damping_coefficient = 7.5;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __default__.e0_damping_coefficient = 0.1;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       Default.abstract_parameters.push_back(JointSpringsExampleConfig::AbstractParamDescriptionConstPtr(new JointSpringsExampleConfig::ParamDescription<double>("e0_damping_coefficient", "double", 0, "e0 - Joint damping coefficient (c).", "", &JointSpringsExampleConfig::e0_damping_coefficient)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __param_descriptions__.push_back(JointSpringsExampleConfig::AbstractParamDescriptionConstPtr(new JointSpringsExampleConfig::ParamDescription<double>("e0_damping_coefficient", "double", 0, "e0 - Joint damping coefficient (c).", "", &JointSpringsExampleConfig::e0_damping_coefficient)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __min__.e1_spring_stiffness = 0.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __max__.e1_spring_stiffness = 15.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __default__.e1_spring_stiffness = 5.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       Default.abstract_parameters.push_back(JointSpringsExampleConfig::AbstractParamDescriptionConstPtr(new JointSpringsExampleConfig::ParamDescription<double>("e1_spring_stiffness", "double", 0, "e1 - Joint spring stiffness (k). Hooke's Law.", "", &JointSpringsExampleConfig::e1_spring_stiffness)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __param_descriptions__.push_back(JointSpringsExampleConfig::AbstractParamDescriptionConstPtr(new JointSpringsExampleConfig::ParamDescription<double>("e1_spring_stiffness", "double", 0, "e1 - Joint spring stiffness (k). Hooke's Law.", "", &JointSpringsExampleConfig::e1_spring_stiffness)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __min__.e1_damping_coefficient = 0.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __max__.e1_damping_coefficient = 5.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __default__.e1_damping_coefficient = 0.1;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       Default.abstract_parameters.push_back(JointSpringsExampleConfig::AbstractParamDescriptionConstPtr(new JointSpringsExampleConfig::ParamDescription<double>("e1_damping_coefficient", "double", 0, "e1 - Joint damping coefficient (c).", "", &JointSpringsExampleConfig::e1_damping_coefficient)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __param_descriptions__.push_back(JointSpringsExampleConfig::AbstractParamDescriptionConstPtr(new JointSpringsExampleConfig::ParamDescription<double>("e1_damping_coefficient", "double", 0, "e1 - Joint damping coefficient (c).", "", &JointSpringsExampleConfig::e1_damping_coefficient)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __min__.w0_spring_stiffness = 0.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __max__.w0_spring_stiffness = 9.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __default__.w0_spring_stiffness = 3.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       Default.abstract_parameters.push_back(JointSpringsExampleConfig::AbstractParamDescriptionConstPtr(new JointSpringsExampleConfig::ParamDescription<double>("w0_spring_stiffness", "double", 0, "w0 - Joint spring stiffness (k). Hooke's Law.", "", &JointSpringsExampleConfig::w0_spring_stiffness)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __param_descriptions__.push_back(JointSpringsExampleConfig::AbstractParamDescriptionConstPtr(new JointSpringsExampleConfig::ParamDescription<double>("w0_spring_stiffness", "double", 0, "w0 - Joint spring stiffness (k). Hooke's Law.", "", &JointSpringsExampleConfig::w0_spring_stiffness)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __min__.w0_damping_coefficient = 0.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __max__.w0_damping_coefficient = 1.5;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __default__.w0_damping_coefficient = 0.1;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       Default.abstract_parameters.push_back(JointSpringsExampleConfig::AbstractParamDescriptionConstPtr(new JointSpringsExampleConfig::ParamDescription<double>("w0_damping_coefficient", "double", 0, "w0 - Joint damping coefficient (c).", "", &JointSpringsExampleConfig::w0_damping_coefficient)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __param_descriptions__.push_back(JointSpringsExampleConfig::AbstractParamDescriptionConstPtr(new JointSpringsExampleConfig::ParamDescription<double>("w0_damping_coefficient", "double", 0, "w0 - Joint damping coefficient (c).", "", &JointSpringsExampleConfig::w0_damping_coefficient)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __min__.w1_spring_stiffness = 0.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __max__.w1_spring_stiffness = 4.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __default__.w1_spring_stiffness = 2.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       Default.abstract_parameters.push_back(JointSpringsExampleConfig::AbstractParamDescriptionConstPtr(new JointSpringsExampleConfig::ParamDescription<double>("w1_spring_stiffness", "double", 0, "w1 - Joint spring stiffness (k). Hooke's Law.", "", &JointSpringsExampleConfig::w1_spring_stiffness)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __param_descriptions__.push_back(JointSpringsExampleConfig::AbstractParamDescriptionConstPtr(new JointSpringsExampleConfig::ParamDescription<double>("w1_spring_stiffness", "double", 0, "w1 - Joint spring stiffness (k). Hooke's Law.", "", &JointSpringsExampleConfig::w1_spring_stiffness)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __min__.w1_damping_coefficient = 0.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __max__.w1_damping_coefficient = 1.5;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __default__.w1_damping_coefficient = 0.1;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       Default.abstract_parameters.push_back(JointSpringsExampleConfig::AbstractParamDescriptionConstPtr(new JointSpringsExampleConfig::ParamDescription<double>("w1_damping_coefficient", "double", 0, "w1 - Joint damping coefficient (c).", "", &JointSpringsExampleConfig::w1_damping_coefficient)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __param_descriptions__.push_back(JointSpringsExampleConfig::AbstractParamDescriptionConstPtr(new JointSpringsExampleConfig::ParamDescription<double>("w1_damping_coefficient", "double", 0, "w1 - Joint damping coefficient (c).", "", &JointSpringsExampleConfig::w1_damping_coefficient)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __min__.w2_spring_stiffness = 0.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __max__.w2_spring_stiffness = 4.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __default__.w2_spring_stiffness = 1.5;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       Default.abstract_parameters.push_back(JointSpringsExampleConfig::AbstractParamDescriptionConstPtr(new JointSpringsExampleConfig::ParamDescription<double>("w2_spring_stiffness", "double", 0, "w2 - Joint spring stiffness (k). Hooke's Law.", "", &JointSpringsExampleConfig::w2_spring_stiffness)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __param_descriptions__.push_back(JointSpringsExampleConfig::AbstractParamDescriptionConstPtr(new JointSpringsExampleConfig::ParamDescription<double>("w2_spring_stiffness", "double", 0, "w2 - Joint spring stiffness (k). Hooke's Law.", "", &JointSpringsExampleConfig::w2_spring_stiffness)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __min__.w2_damping_coefficient = 0.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __max__.w2_damping_coefficient = 1.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __default__.w2_damping_coefficient = 0.1;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       Default.abstract_parameters.push_back(JointSpringsExampleConfig::AbstractParamDescriptionConstPtr(new JointSpringsExampleConfig::ParamDescription<double>("w2_damping_coefficient", "double", 0, "w2 - Joint damping coefficient (c).", "", &JointSpringsExampleConfig::w2_damping_coefficient)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __param_descriptions__.push_back(JointSpringsExampleConfig::AbstractParamDescriptionConstPtr(new JointSpringsExampleConfig::ParamDescription<double>("w2_damping_coefficient", "double", 0, "w2 - Joint damping coefficient (c).", "", &JointSpringsExampleConfig::w2_damping_coefficient)));
 //#line 245 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       Default.convertParams();
 //#line 245 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __group_descriptions__.push_back(JointSpringsExampleConfig::AbstractGroupDescriptionConstPtr(new JointSpringsExampleConfig::GroupDescription<JointSpringsExampleConfig::DEFAULT, JointSpringsExampleConfig>(Default)));
-//#line 356 "/opt/ros/kinetic/share/dynamic_reconfigure/cmake/../templates/ConfigType.h.template"
+//#line 366 "/opt/ros/kinetic/share/dynamic_reconfigure/cmake/../templates/ConfigType.h.template"
 
       for (std::vector<JointSpringsExampleConfig::AbstractGroupDescriptionConstPtr>::const_iterator i = __group_descriptions__.begin(); i != __group_descriptions__.end(); ++i)
       {
@@ -653,5 +663,7 @@ JointSpringsExampleConfig::GroupDescription<JointSpringsExampleConfig::DEFAULT, 
 
 
 }
+
+#undef DYNAMIC_RECONFIGURE_FINAL
 
 #endif // __JOINTSPRINGSEXAMPLERECONFIGURATOR_H__

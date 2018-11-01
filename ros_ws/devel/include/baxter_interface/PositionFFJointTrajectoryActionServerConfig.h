@@ -10,6 +10,12 @@
 #ifndef __baxter_interface__POSITIONFFJOINTTRAJECTORYACTIONSERVERCONFIG_H__
 #define __baxter_interface__POSITIONFFJOINTTRAJECTORYACTIONSERVERCONFIG_H__
 
+#if __cplusplus >= 201103L
+#define DYNAMIC_RECONFIGURE_FINAL final
+#else
+#define DYNAMIC_RECONFIGURE_FINAL
+#endif
+
 #include <dynamic_reconfigure/config_tools.h>
 #include <limits>
 #include <ros/node_handle.h>
@@ -51,8 +57,10 @@ namespace baxter_interface
     typedef boost::shared_ptr<AbstractParamDescription> AbstractParamDescriptionPtr;
     typedef boost::shared_ptr<const AbstractParamDescription> AbstractParamDescriptionConstPtr;
 
+    // Final keyword added to class because it has virtual methods and inherits
+    // from a class with a non-virtual destructor.
     template <class T>
-    class ParamDescription : public AbstractParamDescription
+    class ParamDescription DYNAMIC_RECONFIGURE_FINAL : public AbstractParamDescription
     {
     public:
       ParamDescription(std::string a_name, std::string a_type, uint32_t a_level,
@@ -137,8 +145,10 @@ namespace baxter_interface
     typedef boost::shared_ptr<AbstractGroupDescription> AbstractGroupDescriptionPtr;
     typedef boost::shared_ptr<const AbstractGroupDescription> AbstractGroupDescriptionConstPtr;
 
+    // Final keyword added to class because it has virtual methods and inherits
+    // from a class with a non-virtual destructor.
     template<class T, class PT>
-    class GroupDescription : public AbstractGroupDescription
+    class GroupDescription DYNAMIC_RECONFIGURE_FINAL : public AbstractGroupDescription
     {
     public:
       GroupDescription(std::string a_name, std::string a_type, int a_parent, int a_id, bool a_s, T PT::* a_f) : AbstractGroupDescription(a_name, a_type, a_parent, a_id, a_s), field(a_f)
@@ -298,67 +308,67 @@ double right_w2_trajectory;
 
 
 
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       double goal_time;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       double stopped_velocity_tolerance;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       double left_s0_goal;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       double left_s1_goal;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       double left_e0_goal;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       double left_e1_goal;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       double left_w0_goal;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       double left_w1_goal;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       double left_w2_goal;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       double right_s0_goal;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       double right_s1_goal;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       double right_e0_goal;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       double right_e1_goal;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       double right_w0_goal;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       double right_w1_goal;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       double right_w2_goal;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       double left_s0_trajectory;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       double left_s1_trajectory;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       double left_e0_trajectory;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       double left_e1_trajectory;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       double left_w0_trajectory;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       double left_w1_trajectory;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       double left_w2_trajectory;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       double right_s0_trajectory;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       double right_s1_trajectory;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       double right_e0_trajectory;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       double right_e1_trajectory;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       double right_w0_trajectory;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       double right_w1_trajectory;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       double right_w2_trajectory;
-//#line 218 "/opt/ros/kinetic/share/dynamic_reconfigure/cmake/../templates/ConfigType.h.template"
+//#line 228 "/opt/ros/kinetic/share/dynamic_reconfigure/cmake/../templates/ConfigType.h.template"
 
     bool __fromMessage__(dynamic_reconfigure::Config &msg)
     {
@@ -496,311 +506,311 @@ double right_w2_trajectory;
     PositionFFJointTrajectoryActionServerConfigStatics()
     {
 PositionFFJointTrajectoryActionServerConfig::GroupDescription<PositionFFJointTrajectoryActionServerConfig::DEFAULT, PositionFFJointTrajectoryActionServerConfig> Default("Default", "", 0, 0, true, &PositionFFJointTrajectoryActionServerConfig::groups);
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __min__.goal_time = 0.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __max__.goal_time = 120.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __default__.goal_time = 0.1;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       Default.abstract_parameters.push_back(PositionFFJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new PositionFFJointTrajectoryActionServerConfig::ParamDescription<double>("goal_time", "double", 0, "Amount of time (s) controller is permitted to be late achieving goal", "", &PositionFFJointTrajectoryActionServerConfig::goal_time)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __param_descriptions__.push_back(PositionFFJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new PositionFFJointTrajectoryActionServerConfig::ParamDescription<double>("goal_time", "double", 0, "Amount of time (s) controller is permitted to be late achieving goal", "", &PositionFFJointTrajectoryActionServerConfig::goal_time)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __min__.stopped_velocity_tolerance = -1.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __max__.stopped_velocity_tolerance = 1.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __default__.stopped_velocity_tolerance = 0.2;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       Default.abstract_parameters.push_back(PositionFFJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new PositionFFJointTrajectoryActionServerConfig::ParamDescription<double>("stopped_velocity_tolerance", "double", 0, "Maximum velocity (m/s) at end of trajectory to be considered stopped", "", &PositionFFJointTrajectoryActionServerConfig::stopped_velocity_tolerance)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __param_descriptions__.push_back(PositionFFJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new PositionFFJointTrajectoryActionServerConfig::ParamDescription<double>("stopped_velocity_tolerance", "double", 0, "Maximum velocity (m/s) at end of trajectory to be considered stopped", "", &PositionFFJointTrajectoryActionServerConfig::stopped_velocity_tolerance)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __min__.left_s0_goal = -1.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __max__.left_s0_goal = 1.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __default__.left_s0_goal = -1.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       Default.abstract_parameters.push_back(PositionFFJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new PositionFFJointTrajectoryActionServerConfig::ParamDescription<double>("left_s0_goal", "double", 0, "left_s0 - maximum final error", "", &PositionFFJointTrajectoryActionServerConfig::left_s0_goal)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __param_descriptions__.push_back(PositionFFJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new PositionFFJointTrajectoryActionServerConfig::ParamDescription<double>("left_s0_goal", "double", 0, "left_s0 - maximum final error", "", &PositionFFJointTrajectoryActionServerConfig::left_s0_goal)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __min__.left_s1_goal = -1.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __max__.left_s1_goal = 1.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __default__.left_s1_goal = -1.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       Default.abstract_parameters.push_back(PositionFFJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new PositionFFJointTrajectoryActionServerConfig::ParamDescription<double>("left_s1_goal", "double", 0, "left_s1 - maximum final error", "", &PositionFFJointTrajectoryActionServerConfig::left_s1_goal)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __param_descriptions__.push_back(PositionFFJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new PositionFFJointTrajectoryActionServerConfig::ParamDescription<double>("left_s1_goal", "double", 0, "left_s1 - maximum final error", "", &PositionFFJointTrajectoryActionServerConfig::left_s1_goal)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __min__.left_e0_goal = -1.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __max__.left_e0_goal = 1.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __default__.left_e0_goal = -1.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       Default.abstract_parameters.push_back(PositionFFJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new PositionFFJointTrajectoryActionServerConfig::ParamDescription<double>("left_e0_goal", "double", 0, "left_e0 - maximum final error", "", &PositionFFJointTrajectoryActionServerConfig::left_e0_goal)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __param_descriptions__.push_back(PositionFFJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new PositionFFJointTrajectoryActionServerConfig::ParamDescription<double>("left_e0_goal", "double", 0, "left_e0 - maximum final error", "", &PositionFFJointTrajectoryActionServerConfig::left_e0_goal)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __min__.left_e1_goal = -1.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __max__.left_e1_goal = 1.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __default__.left_e1_goal = -1.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       Default.abstract_parameters.push_back(PositionFFJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new PositionFFJointTrajectoryActionServerConfig::ParamDescription<double>("left_e1_goal", "double", 0, "left_e1 - maximum final error", "", &PositionFFJointTrajectoryActionServerConfig::left_e1_goal)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __param_descriptions__.push_back(PositionFFJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new PositionFFJointTrajectoryActionServerConfig::ParamDescription<double>("left_e1_goal", "double", 0, "left_e1 - maximum final error", "", &PositionFFJointTrajectoryActionServerConfig::left_e1_goal)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __min__.left_w0_goal = -1.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __max__.left_w0_goal = 1.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __default__.left_w0_goal = -1.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       Default.abstract_parameters.push_back(PositionFFJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new PositionFFJointTrajectoryActionServerConfig::ParamDescription<double>("left_w0_goal", "double", 0, "left_w0 - maximum final error", "", &PositionFFJointTrajectoryActionServerConfig::left_w0_goal)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __param_descriptions__.push_back(PositionFFJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new PositionFFJointTrajectoryActionServerConfig::ParamDescription<double>("left_w0_goal", "double", 0, "left_w0 - maximum final error", "", &PositionFFJointTrajectoryActionServerConfig::left_w0_goal)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __min__.left_w1_goal = -1.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __max__.left_w1_goal = 1.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __default__.left_w1_goal = -1.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       Default.abstract_parameters.push_back(PositionFFJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new PositionFFJointTrajectoryActionServerConfig::ParamDescription<double>("left_w1_goal", "double", 0, "left_w1 - maximum final error", "", &PositionFFJointTrajectoryActionServerConfig::left_w1_goal)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __param_descriptions__.push_back(PositionFFJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new PositionFFJointTrajectoryActionServerConfig::ParamDescription<double>("left_w1_goal", "double", 0, "left_w1 - maximum final error", "", &PositionFFJointTrajectoryActionServerConfig::left_w1_goal)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __min__.left_w2_goal = -1.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __max__.left_w2_goal = 1.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __default__.left_w2_goal = -1.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       Default.abstract_parameters.push_back(PositionFFJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new PositionFFJointTrajectoryActionServerConfig::ParamDescription<double>("left_w2_goal", "double", 0, "left_w2 - maximum final error", "", &PositionFFJointTrajectoryActionServerConfig::left_w2_goal)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __param_descriptions__.push_back(PositionFFJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new PositionFFJointTrajectoryActionServerConfig::ParamDescription<double>("left_w2_goal", "double", 0, "left_w2 - maximum final error", "", &PositionFFJointTrajectoryActionServerConfig::left_w2_goal)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __min__.right_s0_goal = -1.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __max__.right_s0_goal = 1.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __default__.right_s0_goal = -1.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       Default.abstract_parameters.push_back(PositionFFJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new PositionFFJointTrajectoryActionServerConfig::ParamDescription<double>("right_s0_goal", "double", 0, "right_s0 - maximum final error", "", &PositionFFJointTrajectoryActionServerConfig::right_s0_goal)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __param_descriptions__.push_back(PositionFFJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new PositionFFJointTrajectoryActionServerConfig::ParamDescription<double>("right_s0_goal", "double", 0, "right_s0 - maximum final error", "", &PositionFFJointTrajectoryActionServerConfig::right_s0_goal)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __min__.right_s1_goal = -1.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __max__.right_s1_goal = 1.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __default__.right_s1_goal = -1.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       Default.abstract_parameters.push_back(PositionFFJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new PositionFFJointTrajectoryActionServerConfig::ParamDescription<double>("right_s1_goal", "double", 0, "right_s1 - maximum final error", "", &PositionFFJointTrajectoryActionServerConfig::right_s1_goal)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __param_descriptions__.push_back(PositionFFJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new PositionFFJointTrajectoryActionServerConfig::ParamDescription<double>("right_s1_goal", "double", 0, "right_s1 - maximum final error", "", &PositionFFJointTrajectoryActionServerConfig::right_s1_goal)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __min__.right_e0_goal = -1.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __max__.right_e0_goal = 1.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __default__.right_e0_goal = -1.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       Default.abstract_parameters.push_back(PositionFFJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new PositionFFJointTrajectoryActionServerConfig::ParamDescription<double>("right_e0_goal", "double", 0, "right_e0 - maximum final error", "", &PositionFFJointTrajectoryActionServerConfig::right_e0_goal)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __param_descriptions__.push_back(PositionFFJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new PositionFFJointTrajectoryActionServerConfig::ParamDescription<double>("right_e0_goal", "double", 0, "right_e0 - maximum final error", "", &PositionFFJointTrajectoryActionServerConfig::right_e0_goal)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __min__.right_e1_goal = -1.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __max__.right_e1_goal = 1.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __default__.right_e1_goal = -1.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       Default.abstract_parameters.push_back(PositionFFJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new PositionFFJointTrajectoryActionServerConfig::ParamDescription<double>("right_e1_goal", "double", 0, "right_e1 - maximum final error", "", &PositionFFJointTrajectoryActionServerConfig::right_e1_goal)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __param_descriptions__.push_back(PositionFFJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new PositionFFJointTrajectoryActionServerConfig::ParamDescription<double>("right_e1_goal", "double", 0, "right_e1 - maximum final error", "", &PositionFFJointTrajectoryActionServerConfig::right_e1_goal)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __min__.right_w0_goal = -1.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __max__.right_w0_goal = 1.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __default__.right_w0_goal = -1.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       Default.abstract_parameters.push_back(PositionFFJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new PositionFFJointTrajectoryActionServerConfig::ParamDescription<double>("right_w0_goal", "double", 0, "right_w0 - maximum final error", "", &PositionFFJointTrajectoryActionServerConfig::right_w0_goal)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __param_descriptions__.push_back(PositionFFJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new PositionFFJointTrajectoryActionServerConfig::ParamDescription<double>("right_w0_goal", "double", 0, "right_w0 - maximum final error", "", &PositionFFJointTrajectoryActionServerConfig::right_w0_goal)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __min__.right_w1_goal = -1.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __max__.right_w1_goal = 1.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __default__.right_w1_goal = -1.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       Default.abstract_parameters.push_back(PositionFFJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new PositionFFJointTrajectoryActionServerConfig::ParamDescription<double>("right_w1_goal", "double", 0, "right_w1 - maximum final error", "", &PositionFFJointTrajectoryActionServerConfig::right_w1_goal)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __param_descriptions__.push_back(PositionFFJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new PositionFFJointTrajectoryActionServerConfig::ParamDescription<double>("right_w1_goal", "double", 0, "right_w1 - maximum final error", "", &PositionFFJointTrajectoryActionServerConfig::right_w1_goal)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __min__.right_w2_goal = -1.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __max__.right_w2_goal = 1.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __default__.right_w2_goal = -1.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       Default.abstract_parameters.push_back(PositionFFJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new PositionFFJointTrajectoryActionServerConfig::ParamDescription<double>("right_w2_goal", "double", 0, "right_w2 - maximum final error", "", &PositionFFJointTrajectoryActionServerConfig::right_w2_goal)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __param_descriptions__.push_back(PositionFFJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new PositionFFJointTrajectoryActionServerConfig::ParamDescription<double>("right_w2_goal", "double", 0, "right_w2 - maximum final error", "", &PositionFFJointTrajectoryActionServerConfig::right_w2_goal)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __min__.left_s0_trajectory = -1.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __max__.left_s0_trajectory = 1.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __default__.left_s0_trajectory = 0.35;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       Default.abstract_parameters.push_back(PositionFFJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new PositionFFJointTrajectoryActionServerConfig::ParamDescription<double>("left_s0_trajectory", "double", 0, "left_s0 - maximum error during trajectory execution", "", &PositionFFJointTrajectoryActionServerConfig::left_s0_trajectory)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __param_descriptions__.push_back(PositionFFJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new PositionFFJointTrajectoryActionServerConfig::ParamDescription<double>("left_s0_trajectory", "double", 0, "left_s0 - maximum error during trajectory execution", "", &PositionFFJointTrajectoryActionServerConfig::left_s0_trajectory)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __min__.left_s1_trajectory = -1.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __max__.left_s1_trajectory = 1.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __default__.left_s1_trajectory = 0.35;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       Default.abstract_parameters.push_back(PositionFFJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new PositionFFJointTrajectoryActionServerConfig::ParamDescription<double>("left_s1_trajectory", "double", 0, "left_s1 - maximum error during trajectory execution", "", &PositionFFJointTrajectoryActionServerConfig::left_s1_trajectory)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __param_descriptions__.push_back(PositionFFJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new PositionFFJointTrajectoryActionServerConfig::ParamDescription<double>("left_s1_trajectory", "double", 0, "left_s1 - maximum error during trajectory execution", "", &PositionFFJointTrajectoryActionServerConfig::left_s1_trajectory)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __min__.left_e0_trajectory = -1.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __max__.left_e0_trajectory = 1.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __default__.left_e0_trajectory = 0.35;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       Default.abstract_parameters.push_back(PositionFFJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new PositionFFJointTrajectoryActionServerConfig::ParamDescription<double>("left_e0_trajectory", "double", 0, "left_e0 - maximum error during trajectory execution", "", &PositionFFJointTrajectoryActionServerConfig::left_e0_trajectory)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __param_descriptions__.push_back(PositionFFJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new PositionFFJointTrajectoryActionServerConfig::ParamDescription<double>("left_e0_trajectory", "double", 0, "left_e0 - maximum error during trajectory execution", "", &PositionFFJointTrajectoryActionServerConfig::left_e0_trajectory)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __min__.left_e1_trajectory = -1.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __max__.left_e1_trajectory = 1.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __default__.left_e1_trajectory = 0.35;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       Default.abstract_parameters.push_back(PositionFFJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new PositionFFJointTrajectoryActionServerConfig::ParamDescription<double>("left_e1_trajectory", "double", 0, "left_e1 - maximum error during trajectory execution", "", &PositionFFJointTrajectoryActionServerConfig::left_e1_trajectory)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __param_descriptions__.push_back(PositionFFJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new PositionFFJointTrajectoryActionServerConfig::ParamDescription<double>("left_e1_trajectory", "double", 0, "left_e1 - maximum error during trajectory execution", "", &PositionFFJointTrajectoryActionServerConfig::left_e1_trajectory)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __min__.left_w0_trajectory = -1.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __max__.left_w0_trajectory = 1.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __default__.left_w0_trajectory = 0.35;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       Default.abstract_parameters.push_back(PositionFFJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new PositionFFJointTrajectoryActionServerConfig::ParamDescription<double>("left_w0_trajectory", "double", 0, "left_w0 - maximum error during trajectory execution", "", &PositionFFJointTrajectoryActionServerConfig::left_w0_trajectory)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __param_descriptions__.push_back(PositionFFJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new PositionFFJointTrajectoryActionServerConfig::ParamDescription<double>("left_w0_trajectory", "double", 0, "left_w0 - maximum error during trajectory execution", "", &PositionFFJointTrajectoryActionServerConfig::left_w0_trajectory)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __min__.left_w1_trajectory = -1.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __max__.left_w1_trajectory = 1.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __default__.left_w1_trajectory = 0.35;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       Default.abstract_parameters.push_back(PositionFFJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new PositionFFJointTrajectoryActionServerConfig::ParamDescription<double>("left_w1_trajectory", "double", 0, "left_w1 - maximum error during trajectory execution", "", &PositionFFJointTrajectoryActionServerConfig::left_w1_trajectory)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __param_descriptions__.push_back(PositionFFJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new PositionFFJointTrajectoryActionServerConfig::ParamDescription<double>("left_w1_trajectory", "double", 0, "left_w1 - maximum error during trajectory execution", "", &PositionFFJointTrajectoryActionServerConfig::left_w1_trajectory)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __min__.left_w2_trajectory = -1.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __max__.left_w2_trajectory = 1.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __default__.left_w2_trajectory = 0.35;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       Default.abstract_parameters.push_back(PositionFFJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new PositionFFJointTrajectoryActionServerConfig::ParamDescription<double>("left_w2_trajectory", "double", 0, "left_w2 - maximum error during trajectory execution", "", &PositionFFJointTrajectoryActionServerConfig::left_w2_trajectory)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __param_descriptions__.push_back(PositionFFJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new PositionFFJointTrajectoryActionServerConfig::ParamDescription<double>("left_w2_trajectory", "double", 0, "left_w2 - maximum error during trajectory execution", "", &PositionFFJointTrajectoryActionServerConfig::left_w2_trajectory)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __min__.right_s0_trajectory = -1.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __max__.right_s0_trajectory = 1.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __default__.right_s0_trajectory = 0.35;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       Default.abstract_parameters.push_back(PositionFFJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new PositionFFJointTrajectoryActionServerConfig::ParamDescription<double>("right_s0_trajectory", "double", 0, "right_s0 - maximum error during trajectory execution", "", &PositionFFJointTrajectoryActionServerConfig::right_s0_trajectory)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __param_descriptions__.push_back(PositionFFJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new PositionFFJointTrajectoryActionServerConfig::ParamDescription<double>("right_s0_trajectory", "double", 0, "right_s0 - maximum error during trajectory execution", "", &PositionFFJointTrajectoryActionServerConfig::right_s0_trajectory)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __min__.right_s1_trajectory = -1.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __max__.right_s1_trajectory = 1.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __default__.right_s1_trajectory = 0.35;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       Default.abstract_parameters.push_back(PositionFFJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new PositionFFJointTrajectoryActionServerConfig::ParamDescription<double>("right_s1_trajectory", "double", 0, "right_s1 - maximum error during trajectory execution", "", &PositionFFJointTrajectoryActionServerConfig::right_s1_trajectory)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __param_descriptions__.push_back(PositionFFJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new PositionFFJointTrajectoryActionServerConfig::ParamDescription<double>("right_s1_trajectory", "double", 0, "right_s1 - maximum error during trajectory execution", "", &PositionFFJointTrajectoryActionServerConfig::right_s1_trajectory)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __min__.right_e0_trajectory = -1.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __max__.right_e0_trajectory = 1.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __default__.right_e0_trajectory = 0.35;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       Default.abstract_parameters.push_back(PositionFFJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new PositionFFJointTrajectoryActionServerConfig::ParamDescription<double>("right_e0_trajectory", "double", 0, "right_e0 - maximum error during trajectory execution", "", &PositionFFJointTrajectoryActionServerConfig::right_e0_trajectory)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __param_descriptions__.push_back(PositionFFJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new PositionFFJointTrajectoryActionServerConfig::ParamDescription<double>("right_e0_trajectory", "double", 0, "right_e0 - maximum error during trajectory execution", "", &PositionFFJointTrajectoryActionServerConfig::right_e0_trajectory)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __min__.right_e1_trajectory = -1.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __max__.right_e1_trajectory = 1.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __default__.right_e1_trajectory = 0.35;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       Default.abstract_parameters.push_back(PositionFFJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new PositionFFJointTrajectoryActionServerConfig::ParamDescription<double>("right_e1_trajectory", "double", 0, "right_e1 - maximum error during trajectory execution", "", &PositionFFJointTrajectoryActionServerConfig::right_e1_trajectory)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __param_descriptions__.push_back(PositionFFJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new PositionFFJointTrajectoryActionServerConfig::ParamDescription<double>("right_e1_trajectory", "double", 0, "right_e1 - maximum error during trajectory execution", "", &PositionFFJointTrajectoryActionServerConfig::right_e1_trajectory)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __min__.right_w0_trajectory = -1.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __max__.right_w0_trajectory = 1.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __default__.right_w0_trajectory = 0.35;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       Default.abstract_parameters.push_back(PositionFFJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new PositionFFJointTrajectoryActionServerConfig::ParamDescription<double>("right_w0_trajectory", "double", 0, "right_w0 - maximum error during trajectory execution", "", &PositionFFJointTrajectoryActionServerConfig::right_w0_trajectory)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __param_descriptions__.push_back(PositionFFJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new PositionFFJointTrajectoryActionServerConfig::ParamDescription<double>("right_w0_trajectory", "double", 0, "right_w0 - maximum error during trajectory execution", "", &PositionFFJointTrajectoryActionServerConfig::right_w0_trajectory)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __min__.right_w1_trajectory = -1.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __max__.right_w1_trajectory = 1.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __default__.right_w1_trajectory = 0.35;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       Default.abstract_parameters.push_back(PositionFFJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new PositionFFJointTrajectoryActionServerConfig::ParamDescription<double>("right_w1_trajectory", "double", 0, "right_w1 - maximum error during trajectory execution", "", &PositionFFJointTrajectoryActionServerConfig::right_w1_trajectory)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __param_descriptions__.push_back(PositionFFJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new PositionFFJointTrajectoryActionServerConfig::ParamDescription<double>("right_w1_trajectory", "double", 0, "right_w1 - maximum error during trajectory execution", "", &PositionFFJointTrajectoryActionServerConfig::right_w1_trajectory)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __min__.right_w2_trajectory = -1.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __max__.right_w2_trajectory = 1.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __default__.right_w2_trajectory = 0.35;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       Default.abstract_parameters.push_back(PositionFFJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new PositionFFJointTrajectoryActionServerConfig::ParamDescription<double>("right_w2_trajectory", "double", 0, "right_w2 - maximum error during trajectory execution", "", &PositionFFJointTrajectoryActionServerConfig::right_w2_trajectory)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __param_descriptions__.push_back(PositionFFJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new PositionFFJointTrajectoryActionServerConfig::ParamDescription<double>("right_w2_trajectory", "double", 0, "right_w2 - maximum error during trajectory execution", "", &PositionFFJointTrajectoryActionServerConfig::right_w2_trajectory)));
 //#line 245 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       Default.convertParams();
 //#line 245 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __group_descriptions__.push_back(PositionFFJointTrajectoryActionServerConfig::AbstractGroupDescriptionConstPtr(new PositionFFJointTrajectoryActionServerConfig::GroupDescription<PositionFFJointTrajectoryActionServerConfig::DEFAULT, PositionFFJointTrajectoryActionServerConfig>(Default)));
-//#line 356 "/opt/ros/kinetic/share/dynamic_reconfigure/cmake/../templates/ConfigType.h.template"
+//#line 366 "/opt/ros/kinetic/share/dynamic_reconfigure/cmake/../templates/ConfigType.h.template"
 
       for (std::vector<PositionFFJointTrajectoryActionServerConfig::AbstractGroupDescriptionConstPtr>::const_iterator i = __group_descriptions__.begin(); i != __group_descriptions__.end(); ++i)
       {
@@ -877,5 +887,7 @@ PositionFFJointTrajectoryActionServerConfig::GroupDescription<PositionFFJointTra
 
 
 }
+
+#undef DYNAMIC_RECONFIGURE_FINAL
 
 #endif // __POSITIONFFJOINTTRAJECTORYACTIONSERVERRECONFIGURATOR_H__

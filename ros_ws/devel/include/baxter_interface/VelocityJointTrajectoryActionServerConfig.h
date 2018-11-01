@@ -10,6 +10,12 @@
 #ifndef __baxter_interface__VELOCITYJOINTTRAJECTORYACTIONSERVERCONFIG_H__
 #define __baxter_interface__VELOCITYJOINTTRAJECTORYACTIONSERVERCONFIG_H__
 
+#if __cplusplus >= 201103L
+#define DYNAMIC_RECONFIGURE_FINAL final
+#else
+#define DYNAMIC_RECONFIGURE_FINAL
+#endif
+
 #include <dynamic_reconfigure/config_tools.h>
 #include <limits>
 #include <ros/node_handle.h>
@@ -51,8 +57,10 @@ namespace baxter_interface
     typedef boost::shared_ptr<AbstractParamDescription> AbstractParamDescriptionPtr;
     typedef boost::shared_ptr<const AbstractParamDescription> AbstractParamDescriptionConstPtr;
 
+    // Final keyword added to class because it has virtual methods and inherits
+    // from a class with a non-virtual destructor.
     template <class T>
-    class ParamDescription : public AbstractParamDescription
+    class ParamDescription DYNAMIC_RECONFIGURE_FINAL : public AbstractParamDescription
     {
     public:
       ParamDescription(std::string a_name, std::string a_type, uint32_t a_level,
@@ -137,8 +145,10 @@ namespace baxter_interface
     typedef boost::shared_ptr<AbstractGroupDescription> AbstractGroupDescriptionPtr;
     typedef boost::shared_ptr<const AbstractGroupDescription> AbstractGroupDescriptionConstPtr;
 
+    // Final keyword added to class because it has virtual methods and inherits
+    // from a class with a non-virtual destructor.
     template<class T, class PT>
-    class GroupDescription : public AbstractGroupDescription
+    class GroupDescription DYNAMIC_RECONFIGURE_FINAL : public AbstractGroupDescription
     {
     public:
       GroupDescription(std::string a_name, std::string a_type, int a_parent, int a_id, bool a_s, T PT::* a_f) : AbstractGroupDescription(a_name, a_type, a_parent, a_id, a_s), field(a_f)
@@ -382,151 +392,151 @@ double right_w2_kd;
 
 
 
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       double goal_time;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       double stopped_velocity_tolerance;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       double left_s0_goal;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       double left_s1_goal;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       double left_e0_goal;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       double left_e1_goal;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       double left_w0_goal;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       double left_w1_goal;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       double left_w2_goal;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       double right_s0_goal;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       double right_s1_goal;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       double right_e0_goal;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       double right_e1_goal;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       double right_w0_goal;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       double right_w1_goal;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       double right_w2_goal;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       double left_s0_trajectory;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       double left_s1_trajectory;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       double left_e0_trajectory;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       double left_e1_trajectory;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       double left_w0_trajectory;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       double left_w1_trajectory;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       double left_w2_trajectory;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       double right_s0_trajectory;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       double right_s1_trajectory;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       double right_e0_trajectory;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       double right_e1_trajectory;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       double right_w0_trajectory;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       double right_w1_trajectory;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       double right_w2_trajectory;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       double left_s0_kp;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       double left_s0_ki;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       double left_s0_kd;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       double left_s1_kp;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       double left_s1_ki;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       double left_s1_kd;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       double left_e0_kp;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       double left_e0_ki;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       double left_e0_kd;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       double left_e1_kp;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       double left_e1_ki;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       double left_e1_kd;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       double left_w0_kp;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       double left_w0_ki;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       double left_w0_kd;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       double left_w1_kp;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       double left_w1_ki;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       double left_w1_kd;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       double left_w2_kp;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       double left_w2_ki;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       double left_w2_kd;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       double right_s0_kp;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       double right_s0_ki;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       double right_s0_kd;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       double right_s1_kp;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       double right_s1_ki;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       double right_s1_kd;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       double right_e0_kp;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       double right_e0_ki;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       double right_e0_kd;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       double right_e1_kp;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       double right_e1_ki;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       double right_e1_kd;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       double right_w0_kp;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       double right_w0_ki;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       double right_w0_kd;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       double right_w1_kp;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       double right_w1_ki;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       double right_w1_kd;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       double right_w2_kp;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       double right_w2_ki;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       double right_w2_kd;
-//#line 218 "/opt/ros/kinetic/share/dynamic_reconfigure/cmake/../templates/ConfigType.h.template"
+//#line 228 "/opt/ros/kinetic/share/dynamic_reconfigure/cmake/../templates/ConfigType.h.template"
 
     bool __fromMessage__(dynamic_reconfigure::Config &msg)
     {
@@ -664,731 +674,731 @@ double right_w2_kd;
     VelocityJointTrajectoryActionServerConfigStatics()
     {
 VelocityJointTrajectoryActionServerConfig::GroupDescription<VelocityJointTrajectoryActionServerConfig::DEFAULT, VelocityJointTrajectoryActionServerConfig> Default("Default", "", 0, 0, true, &VelocityJointTrajectoryActionServerConfig::groups);
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __min__.goal_time = 0.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __max__.goal_time = 120.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __default__.goal_time = 0.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       Default.abstract_parameters.push_back(VelocityJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new VelocityJointTrajectoryActionServerConfig::ParamDescription<double>("goal_time", "double", 0, "Amount of time (s) controller is permitted to be late achieving goal", "", &VelocityJointTrajectoryActionServerConfig::goal_time)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __param_descriptions__.push_back(VelocityJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new VelocityJointTrajectoryActionServerConfig::ParamDescription<double>("goal_time", "double", 0, "Amount of time (s) controller is permitted to be late achieving goal", "", &VelocityJointTrajectoryActionServerConfig::goal_time)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __min__.stopped_velocity_tolerance = -1.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __max__.stopped_velocity_tolerance = 1.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __default__.stopped_velocity_tolerance = -1.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       Default.abstract_parameters.push_back(VelocityJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new VelocityJointTrajectoryActionServerConfig::ParamDescription<double>("stopped_velocity_tolerance", "double", 0, "Maximum velocity (m/s) at end of trajectory to be considered stopped", "", &VelocityJointTrajectoryActionServerConfig::stopped_velocity_tolerance)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __param_descriptions__.push_back(VelocityJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new VelocityJointTrajectoryActionServerConfig::ParamDescription<double>("stopped_velocity_tolerance", "double", 0, "Maximum velocity (m/s) at end of trajectory to be considered stopped", "", &VelocityJointTrajectoryActionServerConfig::stopped_velocity_tolerance)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __min__.left_s0_goal = -1.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __max__.left_s0_goal = 3.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __default__.left_s0_goal = -1.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       Default.abstract_parameters.push_back(VelocityJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new VelocityJointTrajectoryActionServerConfig::ParamDescription<double>("left_s0_goal", "double", 0, "left_s0 - maximum final error", "", &VelocityJointTrajectoryActionServerConfig::left_s0_goal)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __param_descriptions__.push_back(VelocityJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new VelocityJointTrajectoryActionServerConfig::ParamDescription<double>("left_s0_goal", "double", 0, "left_s0 - maximum final error", "", &VelocityJointTrajectoryActionServerConfig::left_s0_goal)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __min__.left_s1_goal = -1.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __max__.left_s1_goal = 3.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __default__.left_s1_goal = -1.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       Default.abstract_parameters.push_back(VelocityJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new VelocityJointTrajectoryActionServerConfig::ParamDescription<double>("left_s1_goal", "double", 0, "left_s1 - maximum final error", "", &VelocityJointTrajectoryActionServerConfig::left_s1_goal)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __param_descriptions__.push_back(VelocityJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new VelocityJointTrajectoryActionServerConfig::ParamDescription<double>("left_s1_goal", "double", 0, "left_s1 - maximum final error", "", &VelocityJointTrajectoryActionServerConfig::left_s1_goal)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __min__.left_e0_goal = -1.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __max__.left_e0_goal = 3.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __default__.left_e0_goal = -1.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       Default.abstract_parameters.push_back(VelocityJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new VelocityJointTrajectoryActionServerConfig::ParamDescription<double>("left_e0_goal", "double", 0, "left_e0 - maximum final error", "", &VelocityJointTrajectoryActionServerConfig::left_e0_goal)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __param_descriptions__.push_back(VelocityJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new VelocityJointTrajectoryActionServerConfig::ParamDescription<double>("left_e0_goal", "double", 0, "left_e0 - maximum final error", "", &VelocityJointTrajectoryActionServerConfig::left_e0_goal)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __min__.left_e1_goal = -1.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __max__.left_e1_goal = 3.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __default__.left_e1_goal = -1.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       Default.abstract_parameters.push_back(VelocityJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new VelocityJointTrajectoryActionServerConfig::ParamDescription<double>("left_e1_goal", "double", 0, "left_e1 - maximum final error", "", &VelocityJointTrajectoryActionServerConfig::left_e1_goal)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __param_descriptions__.push_back(VelocityJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new VelocityJointTrajectoryActionServerConfig::ParamDescription<double>("left_e1_goal", "double", 0, "left_e1 - maximum final error", "", &VelocityJointTrajectoryActionServerConfig::left_e1_goal)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __min__.left_w0_goal = -1.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __max__.left_w0_goal = 3.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __default__.left_w0_goal = -1.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       Default.abstract_parameters.push_back(VelocityJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new VelocityJointTrajectoryActionServerConfig::ParamDescription<double>("left_w0_goal", "double", 0, "left_w0 - maximum final error", "", &VelocityJointTrajectoryActionServerConfig::left_w0_goal)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __param_descriptions__.push_back(VelocityJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new VelocityJointTrajectoryActionServerConfig::ParamDescription<double>("left_w0_goal", "double", 0, "left_w0 - maximum final error", "", &VelocityJointTrajectoryActionServerConfig::left_w0_goal)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __min__.left_w1_goal = -1.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __max__.left_w1_goal = 3.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __default__.left_w1_goal = -1.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       Default.abstract_parameters.push_back(VelocityJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new VelocityJointTrajectoryActionServerConfig::ParamDescription<double>("left_w1_goal", "double", 0, "left_w1 - maximum final error", "", &VelocityJointTrajectoryActionServerConfig::left_w1_goal)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __param_descriptions__.push_back(VelocityJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new VelocityJointTrajectoryActionServerConfig::ParamDescription<double>("left_w1_goal", "double", 0, "left_w1 - maximum final error", "", &VelocityJointTrajectoryActionServerConfig::left_w1_goal)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __min__.left_w2_goal = -1.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __max__.left_w2_goal = 3.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __default__.left_w2_goal = -1.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       Default.abstract_parameters.push_back(VelocityJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new VelocityJointTrajectoryActionServerConfig::ParamDescription<double>("left_w2_goal", "double", 0, "left_w2 - maximum final error", "", &VelocityJointTrajectoryActionServerConfig::left_w2_goal)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __param_descriptions__.push_back(VelocityJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new VelocityJointTrajectoryActionServerConfig::ParamDescription<double>("left_w2_goal", "double", 0, "left_w2 - maximum final error", "", &VelocityJointTrajectoryActionServerConfig::left_w2_goal)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __min__.right_s0_goal = -1.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __max__.right_s0_goal = 3.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __default__.right_s0_goal = -1.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       Default.abstract_parameters.push_back(VelocityJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new VelocityJointTrajectoryActionServerConfig::ParamDescription<double>("right_s0_goal", "double", 0, "right_s0 - maximum final error", "", &VelocityJointTrajectoryActionServerConfig::right_s0_goal)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __param_descriptions__.push_back(VelocityJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new VelocityJointTrajectoryActionServerConfig::ParamDescription<double>("right_s0_goal", "double", 0, "right_s0 - maximum final error", "", &VelocityJointTrajectoryActionServerConfig::right_s0_goal)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __min__.right_s1_goal = -1.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __max__.right_s1_goal = 3.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __default__.right_s1_goal = -1.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       Default.abstract_parameters.push_back(VelocityJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new VelocityJointTrajectoryActionServerConfig::ParamDescription<double>("right_s1_goal", "double", 0, "right_s1 - maximum final error", "", &VelocityJointTrajectoryActionServerConfig::right_s1_goal)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __param_descriptions__.push_back(VelocityJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new VelocityJointTrajectoryActionServerConfig::ParamDescription<double>("right_s1_goal", "double", 0, "right_s1 - maximum final error", "", &VelocityJointTrajectoryActionServerConfig::right_s1_goal)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __min__.right_e0_goal = -1.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __max__.right_e0_goal = 3.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __default__.right_e0_goal = -1.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       Default.abstract_parameters.push_back(VelocityJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new VelocityJointTrajectoryActionServerConfig::ParamDescription<double>("right_e0_goal", "double", 0, "right_e0 - maximum final error", "", &VelocityJointTrajectoryActionServerConfig::right_e0_goal)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __param_descriptions__.push_back(VelocityJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new VelocityJointTrajectoryActionServerConfig::ParamDescription<double>("right_e0_goal", "double", 0, "right_e0 - maximum final error", "", &VelocityJointTrajectoryActionServerConfig::right_e0_goal)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __min__.right_e1_goal = -1.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __max__.right_e1_goal = 3.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __default__.right_e1_goal = -1.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       Default.abstract_parameters.push_back(VelocityJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new VelocityJointTrajectoryActionServerConfig::ParamDescription<double>("right_e1_goal", "double", 0, "right_e1 - maximum final error", "", &VelocityJointTrajectoryActionServerConfig::right_e1_goal)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __param_descriptions__.push_back(VelocityJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new VelocityJointTrajectoryActionServerConfig::ParamDescription<double>("right_e1_goal", "double", 0, "right_e1 - maximum final error", "", &VelocityJointTrajectoryActionServerConfig::right_e1_goal)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __min__.right_w0_goal = -1.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __max__.right_w0_goal = 3.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __default__.right_w0_goal = -1.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       Default.abstract_parameters.push_back(VelocityJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new VelocityJointTrajectoryActionServerConfig::ParamDescription<double>("right_w0_goal", "double", 0, "right_w0 - maximum final error", "", &VelocityJointTrajectoryActionServerConfig::right_w0_goal)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __param_descriptions__.push_back(VelocityJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new VelocityJointTrajectoryActionServerConfig::ParamDescription<double>("right_w0_goal", "double", 0, "right_w0 - maximum final error", "", &VelocityJointTrajectoryActionServerConfig::right_w0_goal)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __min__.right_w1_goal = -1.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __max__.right_w1_goal = 3.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __default__.right_w1_goal = -1.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       Default.abstract_parameters.push_back(VelocityJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new VelocityJointTrajectoryActionServerConfig::ParamDescription<double>("right_w1_goal", "double", 0, "right_w1 - maximum final error", "", &VelocityJointTrajectoryActionServerConfig::right_w1_goal)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __param_descriptions__.push_back(VelocityJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new VelocityJointTrajectoryActionServerConfig::ParamDescription<double>("right_w1_goal", "double", 0, "right_w1 - maximum final error", "", &VelocityJointTrajectoryActionServerConfig::right_w1_goal)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __min__.right_w2_goal = -1.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __max__.right_w2_goal = 3.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __default__.right_w2_goal = -1.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       Default.abstract_parameters.push_back(VelocityJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new VelocityJointTrajectoryActionServerConfig::ParamDescription<double>("right_w2_goal", "double", 0, "right_w2 - maximum final error", "", &VelocityJointTrajectoryActionServerConfig::right_w2_goal)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __param_descriptions__.push_back(VelocityJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new VelocityJointTrajectoryActionServerConfig::ParamDescription<double>("right_w2_goal", "double", 0, "right_w2 - maximum final error", "", &VelocityJointTrajectoryActionServerConfig::right_w2_goal)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __min__.left_s0_trajectory = -1.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __max__.left_s0_trajectory = 3.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __default__.left_s0_trajectory = -1.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       Default.abstract_parameters.push_back(VelocityJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new VelocityJointTrajectoryActionServerConfig::ParamDescription<double>("left_s0_trajectory", "double", 0, "left_s0 - maximum error during trajectory execution", "", &VelocityJointTrajectoryActionServerConfig::left_s0_trajectory)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __param_descriptions__.push_back(VelocityJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new VelocityJointTrajectoryActionServerConfig::ParamDescription<double>("left_s0_trajectory", "double", 0, "left_s0 - maximum error during trajectory execution", "", &VelocityJointTrajectoryActionServerConfig::left_s0_trajectory)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __min__.left_s1_trajectory = -1.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __max__.left_s1_trajectory = 3.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __default__.left_s1_trajectory = -1.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       Default.abstract_parameters.push_back(VelocityJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new VelocityJointTrajectoryActionServerConfig::ParamDescription<double>("left_s1_trajectory", "double", 0, "left_s1 - maximum error during trajectory execution", "", &VelocityJointTrajectoryActionServerConfig::left_s1_trajectory)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __param_descriptions__.push_back(VelocityJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new VelocityJointTrajectoryActionServerConfig::ParamDescription<double>("left_s1_trajectory", "double", 0, "left_s1 - maximum error during trajectory execution", "", &VelocityJointTrajectoryActionServerConfig::left_s1_trajectory)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __min__.left_e0_trajectory = -1.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __max__.left_e0_trajectory = 3.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __default__.left_e0_trajectory = -1.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       Default.abstract_parameters.push_back(VelocityJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new VelocityJointTrajectoryActionServerConfig::ParamDescription<double>("left_e0_trajectory", "double", 0, "left_e0 - maximum error during trajectory execution", "", &VelocityJointTrajectoryActionServerConfig::left_e0_trajectory)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __param_descriptions__.push_back(VelocityJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new VelocityJointTrajectoryActionServerConfig::ParamDescription<double>("left_e0_trajectory", "double", 0, "left_e0 - maximum error during trajectory execution", "", &VelocityJointTrajectoryActionServerConfig::left_e0_trajectory)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __min__.left_e1_trajectory = -1.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __max__.left_e1_trajectory = 3.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __default__.left_e1_trajectory = -1.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       Default.abstract_parameters.push_back(VelocityJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new VelocityJointTrajectoryActionServerConfig::ParamDescription<double>("left_e1_trajectory", "double", 0, "left_e1 - maximum error during trajectory execution", "", &VelocityJointTrajectoryActionServerConfig::left_e1_trajectory)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __param_descriptions__.push_back(VelocityJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new VelocityJointTrajectoryActionServerConfig::ParamDescription<double>("left_e1_trajectory", "double", 0, "left_e1 - maximum error during trajectory execution", "", &VelocityJointTrajectoryActionServerConfig::left_e1_trajectory)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __min__.left_w0_trajectory = -1.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __max__.left_w0_trajectory = 3.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __default__.left_w0_trajectory = -1.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       Default.abstract_parameters.push_back(VelocityJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new VelocityJointTrajectoryActionServerConfig::ParamDescription<double>("left_w0_trajectory", "double", 0, "left_w0 - maximum error during trajectory execution", "", &VelocityJointTrajectoryActionServerConfig::left_w0_trajectory)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __param_descriptions__.push_back(VelocityJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new VelocityJointTrajectoryActionServerConfig::ParamDescription<double>("left_w0_trajectory", "double", 0, "left_w0 - maximum error during trajectory execution", "", &VelocityJointTrajectoryActionServerConfig::left_w0_trajectory)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __min__.left_w1_trajectory = -1.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __max__.left_w1_trajectory = 3.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __default__.left_w1_trajectory = -1.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       Default.abstract_parameters.push_back(VelocityJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new VelocityJointTrajectoryActionServerConfig::ParamDescription<double>("left_w1_trajectory", "double", 0, "left_w1 - maximum error during trajectory execution", "", &VelocityJointTrajectoryActionServerConfig::left_w1_trajectory)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __param_descriptions__.push_back(VelocityJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new VelocityJointTrajectoryActionServerConfig::ParamDescription<double>("left_w1_trajectory", "double", 0, "left_w1 - maximum error during trajectory execution", "", &VelocityJointTrajectoryActionServerConfig::left_w1_trajectory)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __min__.left_w2_trajectory = -1.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __max__.left_w2_trajectory = 3.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __default__.left_w2_trajectory = -1.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       Default.abstract_parameters.push_back(VelocityJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new VelocityJointTrajectoryActionServerConfig::ParamDescription<double>("left_w2_trajectory", "double", 0, "left_w2 - maximum error during trajectory execution", "", &VelocityJointTrajectoryActionServerConfig::left_w2_trajectory)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __param_descriptions__.push_back(VelocityJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new VelocityJointTrajectoryActionServerConfig::ParamDescription<double>("left_w2_trajectory", "double", 0, "left_w2 - maximum error during trajectory execution", "", &VelocityJointTrajectoryActionServerConfig::left_w2_trajectory)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __min__.right_s0_trajectory = -1.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __max__.right_s0_trajectory = 3.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __default__.right_s0_trajectory = -1.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       Default.abstract_parameters.push_back(VelocityJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new VelocityJointTrajectoryActionServerConfig::ParamDescription<double>("right_s0_trajectory", "double", 0, "right_s0 - maximum error during trajectory execution", "", &VelocityJointTrajectoryActionServerConfig::right_s0_trajectory)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __param_descriptions__.push_back(VelocityJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new VelocityJointTrajectoryActionServerConfig::ParamDescription<double>("right_s0_trajectory", "double", 0, "right_s0 - maximum error during trajectory execution", "", &VelocityJointTrajectoryActionServerConfig::right_s0_trajectory)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __min__.right_s1_trajectory = -1.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __max__.right_s1_trajectory = 3.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __default__.right_s1_trajectory = -1.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       Default.abstract_parameters.push_back(VelocityJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new VelocityJointTrajectoryActionServerConfig::ParamDescription<double>("right_s1_trajectory", "double", 0, "right_s1 - maximum error during trajectory execution", "", &VelocityJointTrajectoryActionServerConfig::right_s1_trajectory)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __param_descriptions__.push_back(VelocityJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new VelocityJointTrajectoryActionServerConfig::ParamDescription<double>("right_s1_trajectory", "double", 0, "right_s1 - maximum error during trajectory execution", "", &VelocityJointTrajectoryActionServerConfig::right_s1_trajectory)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __min__.right_e0_trajectory = -1.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __max__.right_e0_trajectory = 3.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __default__.right_e0_trajectory = -1.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       Default.abstract_parameters.push_back(VelocityJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new VelocityJointTrajectoryActionServerConfig::ParamDescription<double>("right_e0_trajectory", "double", 0, "right_e0 - maximum error during trajectory execution", "", &VelocityJointTrajectoryActionServerConfig::right_e0_trajectory)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __param_descriptions__.push_back(VelocityJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new VelocityJointTrajectoryActionServerConfig::ParamDescription<double>("right_e0_trajectory", "double", 0, "right_e0 - maximum error during trajectory execution", "", &VelocityJointTrajectoryActionServerConfig::right_e0_trajectory)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __min__.right_e1_trajectory = -1.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __max__.right_e1_trajectory = 3.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __default__.right_e1_trajectory = -1.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       Default.abstract_parameters.push_back(VelocityJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new VelocityJointTrajectoryActionServerConfig::ParamDescription<double>("right_e1_trajectory", "double", 0, "right_e1 - maximum error during trajectory execution", "", &VelocityJointTrajectoryActionServerConfig::right_e1_trajectory)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __param_descriptions__.push_back(VelocityJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new VelocityJointTrajectoryActionServerConfig::ParamDescription<double>("right_e1_trajectory", "double", 0, "right_e1 - maximum error during trajectory execution", "", &VelocityJointTrajectoryActionServerConfig::right_e1_trajectory)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __min__.right_w0_trajectory = -1.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __max__.right_w0_trajectory = 3.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __default__.right_w0_trajectory = -1.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       Default.abstract_parameters.push_back(VelocityJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new VelocityJointTrajectoryActionServerConfig::ParamDescription<double>("right_w0_trajectory", "double", 0, "right_w0 - maximum error during trajectory execution", "", &VelocityJointTrajectoryActionServerConfig::right_w0_trajectory)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __param_descriptions__.push_back(VelocityJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new VelocityJointTrajectoryActionServerConfig::ParamDescription<double>("right_w0_trajectory", "double", 0, "right_w0 - maximum error during trajectory execution", "", &VelocityJointTrajectoryActionServerConfig::right_w0_trajectory)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __min__.right_w1_trajectory = -1.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __max__.right_w1_trajectory = 3.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __default__.right_w1_trajectory = -1.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       Default.abstract_parameters.push_back(VelocityJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new VelocityJointTrajectoryActionServerConfig::ParamDescription<double>("right_w1_trajectory", "double", 0, "right_w1 - maximum error during trajectory execution", "", &VelocityJointTrajectoryActionServerConfig::right_w1_trajectory)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __param_descriptions__.push_back(VelocityJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new VelocityJointTrajectoryActionServerConfig::ParamDescription<double>("right_w1_trajectory", "double", 0, "right_w1 - maximum error during trajectory execution", "", &VelocityJointTrajectoryActionServerConfig::right_w1_trajectory)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __min__.right_w2_trajectory = -1.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __max__.right_w2_trajectory = 3.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __default__.right_w2_trajectory = -1.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       Default.abstract_parameters.push_back(VelocityJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new VelocityJointTrajectoryActionServerConfig::ParamDescription<double>("right_w2_trajectory", "double", 0, "right_w2 - maximum error during trajectory execution", "", &VelocityJointTrajectoryActionServerConfig::right_w2_trajectory)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __param_descriptions__.push_back(VelocityJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new VelocityJointTrajectoryActionServerConfig::ParamDescription<double>("right_w2_trajectory", "double", 0, "right_w2 - maximum error during trajectory execution", "", &VelocityJointTrajectoryActionServerConfig::right_w2_trajectory)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __min__.left_s0_kp = 0.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __max__.left_s0_kp = 500.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __default__.left_s0_kp = 2.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       Default.abstract_parameters.push_back(VelocityJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new VelocityJointTrajectoryActionServerConfig::ParamDescription<double>("left_s0_kp", "double", 0, "left_s0 - Kp proportional control gain", "", &VelocityJointTrajectoryActionServerConfig::left_s0_kp)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __param_descriptions__.push_back(VelocityJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new VelocityJointTrajectoryActionServerConfig::ParamDescription<double>("left_s0_kp", "double", 0, "left_s0 - Kp proportional control gain", "", &VelocityJointTrajectoryActionServerConfig::left_s0_kp)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __min__.left_s0_ki = 0.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __max__.left_s0_ki = 100.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __default__.left_s0_ki = 0.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       Default.abstract_parameters.push_back(VelocityJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new VelocityJointTrajectoryActionServerConfig::ParamDescription<double>("left_s0_ki", "double", 0, "left_s0 - Ki integral control gain", "", &VelocityJointTrajectoryActionServerConfig::left_s0_ki)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __param_descriptions__.push_back(VelocityJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new VelocityJointTrajectoryActionServerConfig::ParamDescription<double>("left_s0_ki", "double", 0, "left_s0 - Ki integral control gain", "", &VelocityJointTrajectoryActionServerConfig::left_s0_ki)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __min__.left_s0_kd = 0.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __max__.left_s0_kd = 100.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __default__.left_s0_kd = 0.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       Default.abstract_parameters.push_back(VelocityJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new VelocityJointTrajectoryActionServerConfig::ParamDescription<double>("left_s0_kd", "double", 0, "left_s0 - Kd derivative control gain", "", &VelocityJointTrajectoryActionServerConfig::left_s0_kd)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __param_descriptions__.push_back(VelocityJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new VelocityJointTrajectoryActionServerConfig::ParamDescription<double>("left_s0_kd", "double", 0, "left_s0 - Kd derivative control gain", "", &VelocityJointTrajectoryActionServerConfig::left_s0_kd)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __min__.left_s1_kp = 0.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __max__.left_s1_kp = 500.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __default__.left_s1_kp = 2.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       Default.abstract_parameters.push_back(VelocityJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new VelocityJointTrajectoryActionServerConfig::ParamDescription<double>("left_s1_kp", "double", 0, "left_s1 - Kp proportional control gain", "", &VelocityJointTrajectoryActionServerConfig::left_s1_kp)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __param_descriptions__.push_back(VelocityJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new VelocityJointTrajectoryActionServerConfig::ParamDescription<double>("left_s1_kp", "double", 0, "left_s1 - Kp proportional control gain", "", &VelocityJointTrajectoryActionServerConfig::left_s1_kp)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __min__.left_s1_ki = 0.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __max__.left_s1_ki = 100.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __default__.left_s1_ki = 0.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       Default.abstract_parameters.push_back(VelocityJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new VelocityJointTrajectoryActionServerConfig::ParamDescription<double>("left_s1_ki", "double", 0, "left_s1 - Ki integral control gain", "", &VelocityJointTrajectoryActionServerConfig::left_s1_ki)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __param_descriptions__.push_back(VelocityJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new VelocityJointTrajectoryActionServerConfig::ParamDescription<double>("left_s1_ki", "double", 0, "left_s1 - Ki integral control gain", "", &VelocityJointTrajectoryActionServerConfig::left_s1_ki)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __min__.left_s1_kd = 0.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __max__.left_s1_kd = 100.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __default__.left_s1_kd = 0.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       Default.abstract_parameters.push_back(VelocityJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new VelocityJointTrajectoryActionServerConfig::ParamDescription<double>("left_s1_kd", "double", 0, "left_s1 - Kd derivative control gain", "", &VelocityJointTrajectoryActionServerConfig::left_s1_kd)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __param_descriptions__.push_back(VelocityJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new VelocityJointTrajectoryActionServerConfig::ParamDescription<double>("left_s1_kd", "double", 0, "left_s1 - Kd derivative control gain", "", &VelocityJointTrajectoryActionServerConfig::left_s1_kd)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __min__.left_e0_kp = 0.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __max__.left_e0_kp = 500.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __default__.left_e0_kp = 2.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       Default.abstract_parameters.push_back(VelocityJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new VelocityJointTrajectoryActionServerConfig::ParamDescription<double>("left_e0_kp", "double", 0, "left_e0 - Kp proportional control gain", "", &VelocityJointTrajectoryActionServerConfig::left_e0_kp)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __param_descriptions__.push_back(VelocityJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new VelocityJointTrajectoryActionServerConfig::ParamDescription<double>("left_e0_kp", "double", 0, "left_e0 - Kp proportional control gain", "", &VelocityJointTrajectoryActionServerConfig::left_e0_kp)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __min__.left_e0_ki = 0.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __max__.left_e0_ki = 100.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __default__.left_e0_ki = 0.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       Default.abstract_parameters.push_back(VelocityJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new VelocityJointTrajectoryActionServerConfig::ParamDescription<double>("left_e0_ki", "double", 0, "left_e0 - Ki integral control gain", "", &VelocityJointTrajectoryActionServerConfig::left_e0_ki)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __param_descriptions__.push_back(VelocityJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new VelocityJointTrajectoryActionServerConfig::ParamDescription<double>("left_e0_ki", "double", 0, "left_e0 - Ki integral control gain", "", &VelocityJointTrajectoryActionServerConfig::left_e0_ki)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __min__.left_e0_kd = 0.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __max__.left_e0_kd = 100.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __default__.left_e0_kd = 0.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       Default.abstract_parameters.push_back(VelocityJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new VelocityJointTrajectoryActionServerConfig::ParamDescription<double>("left_e0_kd", "double", 0, "left_e0 - Kd derivative control gain", "", &VelocityJointTrajectoryActionServerConfig::left_e0_kd)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __param_descriptions__.push_back(VelocityJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new VelocityJointTrajectoryActionServerConfig::ParamDescription<double>("left_e0_kd", "double", 0, "left_e0 - Kd derivative control gain", "", &VelocityJointTrajectoryActionServerConfig::left_e0_kd)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __min__.left_e1_kp = 0.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __max__.left_e1_kp = 500.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __default__.left_e1_kp = 2.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       Default.abstract_parameters.push_back(VelocityJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new VelocityJointTrajectoryActionServerConfig::ParamDescription<double>("left_e1_kp", "double", 0, "left_e1 - Kp proportional control gain", "", &VelocityJointTrajectoryActionServerConfig::left_e1_kp)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __param_descriptions__.push_back(VelocityJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new VelocityJointTrajectoryActionServerConfig::ParamDescription<double>("left_e1_kp", "double", 0, "left_e1 - Kp proportional control gain", "", &VelocityJointTrajectoryActionServerConfig::left_e1_kp)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __min__.left_e1_ki = 0.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __max__.left_e1_ki = 100.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __default__.left_e1_ki = 0.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       Default.abstract_parameters.push_back(VelocityJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new VelocityJointTrajectoryActionServerConfig::ParamDescription<double>("left_e1_ki", "double", 0, "left_e1 - Ki integral control gain", "", &VelocityJointTrajectoryActionServerConfig::left_e1_ki)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __param_descriptions__.push_back(VelocityJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new VelocityJointTrajectoryActionServerConfig::ParamDescription<double>("left_e1_ki", "double", 0, "left_e1 - Ki integral control gain", "", &VelocityJointTrajectoryActionServerConfig::left_e1_ki)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __min__.left_e1_kd = 0.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __max__.left_e1_kd = 100.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __default__.left_e1_kd = 0.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       Default.abstract_parameters.push_back(VelocityJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new VelocityJointTrajectoryActionServerConfig::ParamDescription<double>("left_e1_kd", "double", 0, "left_e1 - Kd derivative control gain", "", &VelocityJointTrajectoryActionServerConfig::left_e1_kd)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __param_descriptions__.push_back(VelocityJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new VelocityJointTrajectoryActionServerConfig::ParamDescription<double>("left_e1_kd", "double", 0, "left_e1 - Kd derivative control gain", "", &VelocityJointTrajectoryActionServerConfig::left_e1_kd)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __min__.left_w0_kp = 0.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __max__.left_w0_kp = 500.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __default__.left_w0_kp = 2.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       Default.abstract_parameters.push_back(VelocityJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new VelocityJointTrajectoryActionServerConfig::ParamDescription<double>("left_w0_kp", "double", 0, "left_w0 - Kp proportional control gain", "", &VelocityJointTrajectoryActionServerConfig::left_w0_kp)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __param_descriptions__.push_back(VelocityJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new VelocityJointTrajectoryActionServerConfig::ParamDescription<double>("left_w0_kp", "double", 0, "left_w0 - Kp proportional control gain", "", &VelocityJointTrajectoryActionServerConfig::left_w0_kp)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __min__.left_w0_ki = 0.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __max__.left_w0_ki = 100.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __default__.left_w0_ki = 0.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       Default.abstract_parameters.push_back(VelocityJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new VelocityJointTrajectoryActionServerConfig::ParamDescription<double>("left_w0_ki", "double", 0, "left_w0 - Ki integral control gain", "", &VelocityJointTrajectoryActionServerConfig::left_w0_ki)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __param_descriptions__.push_back(VelocityJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new VelocityJointTrajectoryActionServerConfig::ParamDescription<double>("left_w0_ki", "double", 0, "left_w0 - Ki integral control gain", "", &VelocityJointTrajectoryActionServerConfig::left_w0_ki)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __min__.left_w0_kd = 0.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __max__.left_w0_kd = 100.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __default__.left_w0_kd = 0.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       Default.abstract_parameters.push_back(VelocityJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new VelocityJointTrajectoryActionServerConfig::ParamDescription<double>("left_w0_kd", "double", 0, "left_w0 - Kd derivative control gain", "", &VelocityJointTrajectoryActionServerConfig::left_w0_kd)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __param_descriptions__.push_back(VelocityJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new VelocityJointTrajectoryActionServerConfig::ParamDescription<double>("left_w0_kd", "double", 0, "left_w0 - Kd derivative control gain", "", &VelocityJointTrajectoryActionServerConfig::left_w0_kd)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __min__.left_w1_kp = 0.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __max__.left_w1_kp = 500.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __default__.left_w1_kp = 2.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       Default.abstract_parameters.push_back(VelocityJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new VelocityJointTrajectoryActionServerConfig::ParamDescription<double>("left_w1_kp", "double", 0, "left_w1 - Kp proportional control gain", "", &VelocityJointTrajectoryActionServerConfig::left_w1_kp)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __param_descriptions__.push_back(VelocityJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new VelocityJointTrajectoryActionServerConfig::ParamDescription<double>("left_w1_kp", "double", 0, "left_w1 - Kp proportional control gain", "", &VelocityJointTrajectoryActionServerConfig::left_w1_kp)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __min__.left_w1_ki = 0.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __max__.left_w1_ki = 100.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __default__.left_w1_ki = 0.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       Default.abstract_parameters.push_back(VelocityJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new VelocityJointTrajectoryActionServerConfig::ParamDescription<double>("left_w1_ki", "double", 0, "left_w1 - Ki integral control gain", "", &VelocityJointTrajectoryActionServerConfig::left_w1_ki)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __param_descriptions__.push_back(VelocityJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new VelocityJointTrajectoryActionServerConfig::ParamDescription<double>("left_w1_ki", "double", 0, "left_w1 - Ki integral control gain", "", &VelocityJointTrajectoryActionServerConfig::left_w1_ki)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __min__.left_w1_kd = 0.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __max__.left_w1_kd = 100.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __default__.left_w1_kd = 0.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       Default.abstract_parameters.push_back(VelocityJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new VelocityJointTrajectoryActionServerConfig::ParamDescription<double>("left_w1_kd", "double", 0, "left_w1 - Kd derivative control gain", "", &VelocityJointTrajectoryActionServerConfig::left_w1_kd)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __param_descriptions__.push_back(VelocityJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new VelocityJointTrajectoryActionServerConfig::ParamDescription<double>("left_w1_kd", "double", 0, "left_w1 - Kd derivative control gain", "", &VelocityJointTrajectoryActionServerConfig::left_w1_kd)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __min__.left_w2_kp = 0.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __max__.left_w2_kp = 500.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __default__.left_w2_kp = 2.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       Default.abstract_parameters.push_back(VelocityJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new VelocityJointTrajectoryActionServerConfig::ParamDescription<double>("left_w2_kp", "double", 0, "left_w2 - Kp proportional control gain", "", &VelocityJointTrajectoryActionServerConfig::left_w2_kp)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __param_descriptions__.push_back(VelocityJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new VelocityJointTrajectoryActionServerConfig::ParamDescription<double>("left_w2_kp", "double", 0, "left_w2 - Kp proportional control gain", "", &VelocityJointTrajectoryActionServerConfig::left_w2_kp)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __min__.left_w2_ki = 0.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __max__.left_w2_ki = 100.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __default__.left_w2_ki = 0.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       Default.abstract_parameters.push_back(VelocityJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new VelocityJointTrajectoryActionServerConfig::ParamDescription<double>("left_w2_ki", "double", 0, "left_w2 - Ki integral control gain", "", &VelocityJointTrajectoryActionServerConfig::left_w2_ki)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __param_descriptions__.push_back(VelocityJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new VelocityJointTrajectoryActionServerConfig::ParamDescription<double>("left_w2_ki", "double", 0, "left_w2 - Ki integral control gain", "", &VelocityJointTrajectoryActionServerConfig::left_w2_ki)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __min__.left_w2_kd = 0.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __max__.left_w2_kd = 100.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __default__.left_w2_kd = 0.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       Default.abstract_parameters.push_back(VelocityJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new VelocityJointTrajectoryActionServerConfig::ParamDescription<double>("left_w2_kd", "double", 0, "left_w2 - Kd derivative control gain", "", &VelocityJointTrajectoryActionServerConfig::left_w2_kd)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __param_descriptions__.push_back(VelocityJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new VelocityJointTrajectoryActionServerConfig::ParamDescription<double>("left_w2_kd", "double", 0, "left_w2 - Kd derivative control gain", "", &VelocityJointTrajectoryActionServerConfig::left_w2_kd)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __min__.right_s0_kp = 0.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __max__.right_s0_kp = 500.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __default__.right_s0_kp = 2.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       Default.abstract_parameters.push_back(VelocityJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new VelocityJointTrajectoryActionServerConfig::ParamDescription<double>("right_s0_kp", "double", 0, "right_s0 - Kp proportional control gain", "", &VelocityJointTrajectoryActionServerConfig::right_s0_kp)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __param_descriptions__.push_back(VelocityJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new VelocityJointTrajectoryActionServerConfig::ParamDescription<double>("right_s0_kp", "double", 0, "right_s0 - Kp proportional control gain", "", &VelocityJointTrajectoryActionServerConfig::right_s0_kp)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __min__.right_s0_ki = 0.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __max__.right_s0_ki = 100.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __default__.right_s0_ki = 0.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       Default.abstract_parameters.push_back(VelocityJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new VelocityJointTrajectoryActionServerConfig::ParamDescription<double>("right_s0_ki", "double", 0, "right_s0 - Ki integral control gain", "", &VelocityJointTrajectoryActionServerConfig::right_s0_ki)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __param_descriptions__.push_back(VelocityJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new VelocityJointTrajectoryActionServerConfig::ParamDescription<double>("right_s0_ki", "double", 0, "right_s0 - Ki integral control gain", "", &VelocityJointTrajectoryActionServerConfig::right_s0_ki)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __min__.right_s0_kd = 0.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __max__.right_s0_kd = 100.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __default__.right_s0_kd = 0.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       Default.abstract_parameters.push_back(VelocityJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new VelocityJointTrajectoryActionServerConfig::ParamDescription<double>("right_s0_kd", "double", 0, "right_s0 - Kd derivative control gain", "", &VelocityJointTrajectoryActionServerConfig::right_s0_kd)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __param_descriptions__.push_back(VelocityJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new VelocityJointTrajectoryActionServerConfig::ParamDescription<double>("right_s0_kd", "double", 0, "right_s0 - Kd derivative control gain", "", &VelocityJointTrajectoryActionServerConfig::right_s0_kd)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __min__.right_s1_kp = 0.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __max__.right_s1_kp = 500.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __default__.right_s1_kp = 2.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       Default.abstract_parameters.push_back(VelocityJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new VelocityJointTrajectoryActionServerConfig::ParamDescription<double>("right_s1_kp", "double", 0, "right_s1 - Kp proportional control gain", "", &VelocityJointTrajectoryActionServerConfig::right_s1_kp)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __param_descriptions__.push_back(VelocityJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new VelocityJointTrajectoryActionServerConfig::ParamDescription<double>("right_s1_kp", "double", 0, "right_s1 - Kp proportional control gain", "", &VelocityJointTrajectoryActionServerConfig::right_s1_kp)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __min__.right_s1_ki = 0.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __max__.right_s1_ki = 100.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __default__.right_s1_ki = 0.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       Default.abstract_parameters.push_back(VelocityJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new VelocityJointTrajectoryActionServerConfig::ParamDescription<double>("right_s1_ki", "double", 0, "right_s1 - Ki integral control gain", "", &VelocityJointTrajectoryActionServerConfig::right_s1_ki)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __param_descriptions__.push_back(VelocityJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new VelocityJointTrajectoryActionServerConfig::ParamDescription<double>("right_s1_ki", "double", 0, "right_s1 - Ki integral control gain", "", &VelocityJointTrajectoryActionServerConfig::right_s1_ki)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __min__.right_s1_kd = 0.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __max__.right_s1_kd = 100.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __default__.right_s1_kd = 0.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       Default.abstract_parameters.push_back(VelocityJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new VelocityJointTrajectoryActionServerConfig::ParamDescription<double>("right_s1_kd", "double", 0, "right_s1 - Kd derivative control gain", "", &VelocityJointTrajectoryActionServerConfig::right_s1_kd)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __param_descriptions__.push_back(VelocityJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new VelocityJointTrajectoryActionServerConfig::ParamDescription<double>("right_s1_kd", "double", 0, "right_s1 - Kd derivative control gain", "", &VelocityJointTrajectoryActionServerConfig::right_s1_kd)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __min__.right_e0_kp = 0.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __max__.right_e0_kp = 500.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __default__.right_e0_kp = 2.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       Default.abstract_parameters.push_back(VelocityJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new VelocityJointTrajectoryActionServerConfig::ParamDescription<double>("right_e0_kp", "double", 0, "right_e0 - Kp proportional control gain", "", &VelocityJointTrajectoryActionServerConfig::right_e0_kp)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __param_descriptions__.push_back(VelocityJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new VelocityJointTrajectoryActionServerConfig::ParamDescription<double>("right_e0_kp", "double", 0, "right_e0 - Kp proportional control gain", "", &VelocityJointTrajectoryActionServerConfig::right_e0_kp)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __min__.right_e0_ki = 0.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __max__.right_e0_ki = 100.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __default__.right_e0_ki = 0.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       Default.abstract_parameters.push_back(VelocityJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new VelocityJointTrajectoryActionServerConfig::ParamDescription<double>("right_e0_ki", "double", 0, "right_e0 - Ki integral control gain", "", &VelocityJointTrajectoryActionServerConfig::right_e0_ki)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __param_descriptions__.push_back(VelocityJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new VelocityJointTrajectoryActionServerConfig::ParamDescription<double>("right_e0_ki", "double", 0, "right_e0 - Ki integral control gain", "", &VelocityJointTrajectoryActionServerConfig::right_e0_ki)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __min__.right_e0_kd = 0.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __max__.right_e0_kd = 100.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __default__.right_e0_kd = 0.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       Default.abstract_parameters.push_back(VelocityJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new VelocityJointTrajectoryActionServerConfig::ParamDescription<double>("right_e0_kd", "double", 0, "right_e0 - Kd derivative control gain", "", &VelocityJointTrajectoryActionServerConfig::right_e0_kd)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __param_descriptions__.push_back(VelocityJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new VelocityJointTrajectoryActionServerConfig::ParamDescription<double>("right_e0_kd", "double", 0, "right_e0 - Kd derivative control gain", "", &VelocityJointTrajectoryActionServerConfig::right_e0_kd)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __min__.right_e1_kp = 0.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __max__.right_e1_kp = 500.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __default__.right_e1_kp = 2.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       Default.abstract_parameters.push_back(VelocityJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new VelocityJointTrajectoryActionServerConfig::ParamDescription<double>("right_e1_kp", "double", 0, "right_e1 - Kp proportional control gain", "", &VelocityJointTrajectoryActionServerConfig::right_e1_kp)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __param_descriptions__.push_back(VelocityJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new VelocityJointTrajectoryActionServerConfig::ParamDescription<double>("right_e1_kp", "double", 0, "right_e1 - Kp proportional control gain", "", &VelocityJointTrajectoryActionServerConfig::right_e1_kp)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __min__.right_e1_ki = 0.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __max__.right_e1_ki = 100.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __default__.right_e1_ki = 0.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       Default.abstract_parameters.push_back(VelocityJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new VelocityJointTrajectoryActionServerConfig::ParamDescription<double>("right_e1_ki", "double", 0, "right_e1 - Ki integral control gain", "", &VelocityJointTrajectoryActionServerConfig::right_e1_ki)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __param_descriptions__.push_back(VelocityJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new VelocityJointTrajectoryActionServerConfig::ParamDescription<double>("right_e1_ki", "double", 0, "right_e1 - Ki integral control gain", "", &VelocityJointTrajectoryActionServerConfig::right_e1_ki)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __min__.right_e1_kd = 0.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __max__.right_e1_kd = 100.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __default__.right_e1_kd = 0.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       Default.abstract_parameters.push_back(VelocityJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new VelocityJointTrajectoryActionServerConfig::ParamDescription<double>("right_e1_kd", "double", 0, "right_e1 - Kd derivative control gain", "", &VelocityJointTrajectoryActionServerConfig::right_e1_kd)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __param_descriptions__.push_back(VelocityJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new VelocityJointTrajectoryActionServerConfig::ParamDescription<double>("right_e1_kd", "double", 0, "right_e1 - Kd derivative control gain", "", &VelocityJointTrajectoryActionServerConfig::right_e1_kd)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __min__.right_w0_kp = 0.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __max__.right_w0_kp = 500.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __default__.right_w0_kp = 2.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       Default.abstract_parameters.push_back(VelocityJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new VelocityJointTrajectoryActionServerConfig::ParamDescription<double>("right_w0_kp", "double", 0, "right_w0 - Kp proportional control gain", "", &VelocityJointTrajectoryActionServerConfig::right_w0_kp)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __param_descriptions__.push_back(VelocityJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new VelocityJointTrajectoryActionServerConfig::ParamDescription<double>("right_w0_kp", "double", 0, "right_w0 - Kp proportional control gain", "", &VelocityJointTrajectoryActionServerConfig::right_w0_kp)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __min__.right_w0_ki = 0.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __max__.right_w0_ki = 100.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __default__.right_w0_ki = 0.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       Default.abstract_parameters.push_back(VelocityJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new VelocityJointTrajectoryActionServerConfig::ParamDescription<double>("right_w0_ki", "double", 0, "right_w0 - Ki integral control gain", "", &VelocityJointTrajectoryActionServerConfig::right_w0_ki)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __param_descriptions__.push_back(VelocityJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new VelocityJointTrajectoryActionServerConfig::ParamDescription<double>("right_w0_ki", "double", 0, "right_w0 - Ki integral control gain", "", &VelocityJointTrajectoryActionServerConfig::right_w0_ki)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __min__.right_w0_kd = 0.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __max__.right_w0_kd = 100.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __default__.right_w0_kd = 0.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       Default.abstract_parameters.push_back(VelocityJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new VelocityJointTrajectoryActionServerConfig::ParamDescription<double>("right_w0_kd", "double", 0, "right_w0 - Kd derivative control gain", "", &VelocityJointTrajectoryActionServerConfig::right_w0_kd)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __param_descriptions__.push_back(VelocityJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new VelocityJointTrajectoryActionServerConfig::ParamDescription<double>("right_w0_kd", "double", 0, "right_w0 - Kd derivative control gain", "", &VelocityJointTrajectoryActionServerConfig::right_w0_kd)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __min__.right_w1_kp = 0.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __max__.right_w1_kp = 500.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __default__.right_w1_kp = 2.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       Default.abstract_parameters.push_back(VelocityJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new VelocityJointTrajectoryActionServerConfig::ParamDescription<double>("right_w1_kp", "double", 0, "right_w1 - Kp proportional control gain", "", &VelocityJointTrajectoryActionServerConfig::right_w1_kp)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __param_descriptions__.push_back(VelocityJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new VelocityJointTrajectoryActionServerConfig::ParamDescription<double>("right_w1_kp", "double", 0, "right_w1 - Kp proportional control gain", "", &VelocityJointTrajectoryActionServerConfig::right_w1_kp)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __min__.right_w1_ki = 0.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __max__.right_w1_ki = 100.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __default__.right_w1_ki = 0.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       Default.abstract_parameters.push_back(VelocityJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new VelocityJointTrajectoryActionServerConfig::ParamDescription<double>("right_w1_ki", "double", 0, "right_w1 - Ki integral control gain", "", &VelocityJointTrajectoryActionServerConfig::right_w1_ki)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __param_descriptions__.push_back(VelocityJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new VelocityJointTrajectoryActionServerConfig::ParamDescription<double>("right_w1_ki", "double", 0, "right_w1 - Ki integral control gain", "", &VelocityJointTrajectoryActionServerConfig::right_w1_ki)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __min__.right_w1_kd = 0.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __max__.right_w1_kd = 100.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __default__.right_w1_kd = 0.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       Default.abstract_parameters.push_back(VelocityJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new VelocityJointTrajectoryActionServerConfig::ParamDescription<double>("right_w1_kd", "double", 0, "right_w1 - Kd derivative control gain", "", &VelocityJointTrajectoryActionServerConfig::right_w1_kd)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __param_descriptions__.push_back(VelocityJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new VelocityJointTrajectoryActionServerConfig::ParamDescription<double>("right_w1_kd", "double", 0, "right_w1 - Kd derivative control gain", "", &VelocityJointTrajectoryActionServerConfig::right_w1_kd)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __min__.right_w2_kp = 0.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __max__.right_w2_kp = 500.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __default__.right_w2_kp = 2.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       Default.abstract_parameters.push_back(VelocityJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new VelocityJointTrajectoryActionServerConfig::ParamDescription<double>("right_w2_kp", "double", 0, "right_w2 - Kp proportional control gain", "", &VelocityJointTrajectoryActionServerConfig::right_w2_kp)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __param_descriptions__.push_back(VelocityJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new VelocityJointTrajectoryActionServerConfig::ParamDescription<double>("right_w2_kp", "double", 0, "right_w2 - Kp proportional control gain", "", &VelocityJointTrajectoryActionServerConfig::right_w2_kp)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __min__.right_w2_ki = 0.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __max__.right_w2_ki = 100.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __default__.right_w2_ki = 0.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       Default.abstract_parameters.push_back(VelocityJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new VelocityJointTrajectoryActionServerConfig::ParamDescription<double>("right_w2_ki", "double", 0, "right_w2 - Ki integral control gain", "", &VelocityJointTrajectoryActionServerConfig::right_w2_ki)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __param_descriptions__.push_back(VelocityJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new VelocityJointTrajectoryActionServerConfig::ParamDescription<double>("right_w2_ki", "double", 0, "right_w2 - Ki integral control gain", "", &VelocityJointTrajectoryActionServerConfig::right_w2_ki)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __min__.right_w2_kd = 0.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __max__.right_w2_kd = 100.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __default__.right_w2_kd = 0.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       Default.abstract_parameters.push_back(VelocityJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new VelocityJointTrajectoryActionServerConfig::ParamDescription<double>("right_w2_kd", "double", 0, "right_w2 - Kd derivative control gain", "", &VelocityJointTrajectoryActionServerConfig::right_w2_kd)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __param_descriptions__.push_back(VelocityJointTrajectoryActionServerConfig::AbstractParamDescriptionConstPtr(new VelocityJointTrajectoryActionServerConfig::ParamDescription<double>("right_w2_kd", "double", 0, "right_w2 - Kd derivative control gain", "", &VelocityJointTrajectoryActionServerConfig::right_w2_kd)));
 //#line 245 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       Default.convertParams();
 //#line 245 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __group_descriptions__.push_back(VelocityJointTrajectoryActionServerConfig::AbstractGroupDescriptionConstPtr(new VelocityJointTrajectoryActionServerConfig::GroupDescription<VelocityJointTrajectoryActionServerConfig::DEFAULT, VelocityJointTrajectoryActionServerConfig>(Default)));
-//#line 356 "/opt/ros/kinetic/share/dynamic_reconfigure/cmake/../templates/ConfigType.h.template"
+//#line 366 "/opt/ros/kinetic/share/dynamic_reconfigure/cmake/../templates/ConfigType.h.template"
 
       for (std::vector<VelocityJointTrajectoryActionServerConfig::AbstractGroupDescriptionConstPtr>::const_iterator i = __group_descriptions__.begin(); i != __group_descriptions__.end(); ++i)
       {
@@ -1465,5 +1475,7 @@ VelocityJointTrajectoryActionServerConfig::GroupDescription<VelocityJointTraject
 
 
 }
+
+#undef DYNAMIC_RECONFIGURE_FINAL
 
 #endif // __VELOCITYJOINTTRAJECTORYACTIONSERVERRECONFIGURATOR_H__

@@ -13,4 +13,4 @@ export PKG_CONFIG_PATH="/home/bill/bill_ros/ros_ws/devel/lib/pkgconfig:$PKG_CONF
 export PWD="/home/bill/bill_ros/ros_ws/build"
 export PYTHONPATH="/home/bill/bill_ros/ros_ws/devel/lib/python2.7/dist-packages:$PYTHONPATH"
 export ROSLISP_PACKAGE_DIRECTORIES="/home/bill/bill_ros/ros_ws/devel/share/common-lisp"
-export ROS_PACKAGE_PATH="/home/bill/ros_ws/src:/home/bill/bill_ros/ros_ws/src:$ROS_PACKAGE_PATH"
+export ROS_PACKAGE_PATH="/home/bill/bill_ros/ros_ws/src:$ROS_PACKAGE_PATH"
