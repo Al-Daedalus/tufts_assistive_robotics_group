@@ -2,4 +2,4 @@
 source_root_dir = "/home/bill/bill_ros/bill_ws/src"
 whitelisted_packages = "".split(';') if "" != "" else []
 blacklisted_packages = "".split(';') if "" != "" else []
-underlay_workspaces = "/home/bill/bill_ros/bill_ws/devel;/opt/ros/kinetic".split(';') if "/home/bill/bill_ros/bill_ws/devel;/opt/ros/kinetic" != "" else []
+underlay_workspaces = "/opt/ros/kinetic".split(';') if "/opt/ros/kinetic" != "" else []

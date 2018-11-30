@@ -138,35 +138,26 @@ uint32 command_sequence
     """
     try:
       _x = self
-      buff.write(_struct_3I8B2f.pack(_x.timestamp.secs, _x.timestamp.nsecs, _x.id, _x.enabled, _x.calibrated, _x.ready, _x.moving, _x.gripping, _x.missed, _x.error, _x.reverse, _x.position, _x.force))
+      buff.write(_get_struct_3I8B2f().pack(_x.timestamp.secs, _x.timestamp.nsecs, _x.id, _x.enabled, _x.calibrated, _x.ready, _x.moving, _x.gripping, _x.missed, _x.error, _x.reverse, _x.position, _x.force))
       _x = self.state
       length = len(_x)
       if python3 or type(_x) == unicode:
         _x = _x.encode('utf-8')
         length = len(_x)
-      if python3:
-        buff.write(struct.pack('<I%sB'%length, length, *_x))
-      else:
-        buff.write(struct.pack('<I%ss'%length, length, _x))
+      buff.write(struct.pack('<I%ss'%length, length, _x))
       _x = self.command
       length = len(_x)
       if python3 or type(_x) == unicode:
         _x = _x.encode('utf-8')
         length = len(_x)
-      if python3:
-        buff.write(struct.pack('<I%sB'%length, length, *_x))
-      else:
-        buff.write(struct.pack('<I%ss'%length, length, _x))
+      buff.write(struct.pack('<I%ss'%length, length, _x))
       _x = self.command_sender
       length = len(_x)
       if python3 or type(_x) == unicode:
         _x = _x.encode('utf-8')
         length = len(_x)
-      if python3:
-        buff.write(struct.pack('<I%sB'%length, length, *_x))
-      else:
-        buff.write(struct.pack('<I%ss'%length, length, _x))
-      buff.write(_struct_I.pack(self.command_sequence))
+      buff.write(struct.pack('<I%ss'%length, length, _x))
+      buff.write(_get_struct_I().pack(self.command_sequence))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -182,7 +173,7 @@ uint32 command_sequence
       _x = self
       start = end
       end += 28
-      (_x.timestamp.secs, _x.timestamp.nsecs, _x.id, _x.enabled, _x.calibrated, _x.ready, _x.moving, _x.gripping, _x.missed, _x.error, _x.reverse, _x.position, _x.force,) = _struct_3I8B2f.unpack(str[start:end])
+      (_x.timestamp.secs, _x.timestamp.nsecs, _x.id, _x.enabled, _x.calibrated, _x.ready, _x.moving, _x.gripping, _x.missed, _x.error, _x.reverse, _x.position, _x.force,) = _get_struct_3I8B2f().unpack(str[start:end])
       start = end
       end += 4
       (length,) = _struct_I.unpack(str[start:end])
@@ -212,7 +203,7 @@ uint32 command_sequence
         self.command_sender = str[start:end]
       start = end
       end += 4
-      (self.command_sequence,) = _struct_I.unpack(str[start:end])
+      (self.command_sequence,) = _get_struct_I().unpack(str[start:end])
       self.timestamp.canon()
       return self
     except struct.error as e:
@@ -227,35 +218,26 @@ uint32 command_sequence
     """
     try:
       _x = self
-      buff.write(_struct_3I8B2f.pack(_x.timestamp.secs, _x.timestamp.nsecs, _x.id, _x.enabled, _x.calibrated, _x.ready, _x.moving, _x.gripping, _x.missed, _x.error, _x.reverse, _x.position, _x.force))
+      buff.write(_get_struct_3I8B2f().pack(_x.timestamp.secs, _x.timestamp.nsecs, _x.id, _x.enabled, _x.calibrated, _x.ready, _x.moving, _x.gripping, _x.missed, _x.error, _x.reverse, _x.position, _x.force))
       _x = self.state
       length = len(_x)
       if python3 or type(_x) == unicode:
         _x = _x.encode('utf-8')
         length = len(_x)
-      if python3:
-        buff.write(struct.pack('<I%sB'%length, length, *_x))
-      else:
-        buff.write(struct.pack('<I%ss'%length, length, _x))
+      buff.write(struct.pack('<I%ss'%length, length, _x))
       _x = self.command
       length = len(_x)
       if python3 or type(_x) == unicode:
         _x = _x.encode('utf-8')
         length = len(_x)
-      if python3:
-        buff.write(struct.pack('<I%sB'%length, length, *_x))
-      else:
-        buff.write(struct.pack('<I%ss'%length, length, _x))
+      buff.write(struct.pack('<I%ss'%length, length, _x))
       _x = self.command_sender
       length = len(_x)
       if python3 or type(_x) == unicode:
         _x = _x.encode('utf-8')
         length = len(_x)
-      if python3:
-        buff.write(struct.pack('<I%sB'%length, length, *_x))
-      else:
-        buff.write(struct.pack('<I%ss'%length, length, _x))
-      buff.write(_struct_I.pack(self.command_sequence))
+      buff.write(struct.pack('<I%ss'%length, length, _x))
+      buff.write(_get_struct_I().pack(self.command_sequence))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -272,7 +254,7 @@ uint32 command_sequence
       _x = self
       start = end
       end += 28
-      (_x.timestamp.secs, _x.timestamp.nsecs, _x.id, _x.enabled, _x.calibrated, _x.ready, _x.moving, _x.gripping, _x.missed, _x.error, _x.reverse, _x.position, _x.force,) = _struct_3I8B2f.unpack(str[start:end])
+      (_x.timestamp.secs, _x.timestamp.nsecs, _x.id, _x.enabled, _x.calibrated, _x.ready, _x.moving, _x.gripping, _x.missed, _x.error, _x.reverse, _x.position, _x.force,) = _get_struct_3I8B2f().unpack(str[start:end])
       start = end
       end += 4
       (length,) = _struct_I.unpack(str[start:end])
@@ -302,11 +284,19 @@ uint32 command_sequence
         self.command_sender = str[start:end]
       start = end
       end += 4
-      (self.command_sequence,) = _struct_I.unpack(str[start:end])
+      (self.command_sequence,) = _get_struct_I().unpack(str[start:end])
       self.timestamp.canon()
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e) #most likely buffer underfill
 
 _struct_I = genpy.struct_I
-_struct_3I8B2f = struct.Struct("<3I8B2f")
+def _get_struct_I():
+    global _struct_I
+    return _struct_I
+_struct_3I8B2f = None
+def _get_struct_3I8B2f():
+    global _struct_3I8B2f
+    if _struct_3I8B2f is None:
+        _struct_3I8B2f = struct.Struct("<3I8B2f")
+    return _struct_3I8B2f

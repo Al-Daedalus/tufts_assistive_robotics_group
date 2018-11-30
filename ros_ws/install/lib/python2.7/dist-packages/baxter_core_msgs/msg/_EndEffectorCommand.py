@@ -96,35 +96,26 @@ uint32 sequence # optional sequence number, return in state when the command is 
     :param buff: buffer, ``StringIO``
     """
     try:
-      buff.write(_struct_I.pack(self.id))
+      buff.write(_get_struct_I().pack(self.id))
       _x = self.command
       length = len(_x)
       if python3 or type(_x) == unicode:
         _x = _x.encode('utf-8')
         length = len(_x)
-      if python3:
-        buff.write(struct.pack('<I%sB'%length, length, *_x))
-      else:
-        buff.write(struct.pack('<I%ss'%length, length, _x))
+      buff.write(struct.pack('<I%ss'%length, length, _x))
       _x = self.args
       length = len(_x)
       if python3 or type(_x) == unicode:
         _x = _x.encode('utf-8')
         length = len(_x)
-      if python3:
-        buff.write(struct.pack('<I%sB'%length, length, *_x))
-      else:
-        buff.write(struct.pack('<I%ss'%length, length, _x))
+      buff.write(struct.pack('<I%ss'%length, length, _x))
       _x = self.sender
       length = len(_x)
       if python3 or type(_x) == unicode:
         _x = _x.encode('utf-8')
         length = len(_x)
-      if python3:
-        buff.write(struct.pack('<I%sB'%length, length, *_x))
-      else:
-        buff.write(struct.pack('<I%ss'%length, length, _x))
-      buff.write(_struct_I.pack(self.sequence))
+      buff.write(struct.pack('<I%ss'%length, length, _x))
+      buff.write(_get_struct_I().pack(self.sequence))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -137,7 +128,7 @@ uint32 sequence # optional sequence number, return in state when the command is 
       end = 0
       start = end
       end += 4
-      (self.id,) = _struct_I.unpack(str[start:end])
+      (self.id,) = _get_struct_I().unpack(str[start:end])
       start = end
       end += 4
       (length,) = _struct_I.unpack(str[start:end])
@@ -167,7 +158,7 @@ uint32 sequence # optional sequence number, return in state when the command is 
         self.sender = str[start:end]
       start = end
       end += 4
-      (self.sequence,) = _struct_I.unpack(str[start:end])
+      (self.sequence,) = _get_struct_I().unpack(str[start:end])
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e) #most likely buffer underfill
@@ -180,35 +171,26 @@ uint32 sequence # optional sequence number, return in state when the command is 
     :param numpy: numpy python module
     """
     try:
-      buff.write(_struct_I.pack(self.id))
+      buff.write(_get_struct_I().pack(self.id))
       _x = self.command
       length = len(_x)
       if python3 or type(_x) == unicode:
         _x = _x.encode('utf-8')
         length = len(_x)
-      if python3:
-        buff.write(struct.pack('<I%sB'%length, length, *_x))
-      else:
-        buff.write(struct.pack('<I%ss'%length, length, _x))
+      buff.write(struct.pack('<I%ss'%length, length, _x))
       _x = self.args
       length = len(_x)
       if python3 or type(_x) == unicode:
         _x = _x.encode('utf-8')
         length = len(_x)
-      if python3:
-        buff.write(struct.pack('<I%sB'%length, length, *_x))
-      else:
-        buff.write(struct.pack('<I%ss'%length, length, _x))
+      buff.write(struct.pack('<I%ss'%length, length, _x))
       _x = self.sender
       length = len(_x)
       if python3 or type(_x) == unicode:
         _x = _x.encode('utf-8')
         length = len(_x)
-      if python3:
-        buff.write(struct.pack('<I%sB'%length, length, *_x))
-      else:
-        buff.write(struct.pack('<I%ss'%length, length, _x))
-      buff.write(_struct_I.pack(self.sequence))
+      buff.write(struct.pack('<I%ss'%length, length, _x))
+      buff.write(_get_struct_I().pack(self.sequence))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -222,7 +204,7 @@ uint32 sequence # optional sequence number, return in state when the command is 
       end = 0
       start = end
       end += 4
-      (self.id,) = _struct_I.unpack(str[start:end])
+      (self.id,) = _get_struct_I().unpack(str[start:end])
       start = end
       end += 4
       (length,) = _struct_I.unpack(str[start:end])
@@ -252,9 +234,12 @@ uint32 sequence # optional sequence number, return in state when the command is 
         self.sender = str[start:end]
       start = end
       end += 4
-      (self.sequence,) = _struct_I.unpack(str[start:end])
+      (self.sequence,) = _get_struct_I().unpack(str[start:end])
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e) #most likely buffer underfill
 
 _struct_I = genpy.struct_I
+def _get_struct_I():
+    global _struct_I
+    return _struct_I

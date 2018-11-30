@@ -69,15 +69,12 @@ int8 UNPRESSED = 0"""
         if python3 or type(val1) == unicode:
           val1 = val1.encode('utf-8')
           length = len(val1)
-        if python3:
-          buff.write(struct.pack('<I%sB'%length, length, *val1))
-        else:
-          buff.write(struct.pack('<I%ss'%length, length, val1))
+        buff.write(struct.pack('<I%ss'%length, length, val1))
       length = len(self.states)
       buff.write(_struct_I.pack(length))
       for val1 in self.states:
         _x = val1
-        buff.write(_struct_bB.pack(_x.state, _x.isInputOnly))
+        buff.write(_get_struct_bB().pack(_x.state, _x.isInputOnly))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -114,7 +111,7 @@ int8 UNPRESSED = 0"""
         _x = val1
         start = end
         end += 2
-        (_x.state, _x.isInputOnly,) = _struct_bB.unpack(str[start:end])
+        (_x.state, _x.isInputOnly,) = _get_struct_bB().unpack(str[start:end])
         val1.isInputOnly = bool(val1.isInputOnly)
         self.states.append(val1)
       return self
@@ -136,15 +133,12 @@ int8 UNPRESSED = 0"""
         if python3 or type(val1) == unicode:
           val1 = val1.encode('utf-8')
           length = len(val1)
-        if python3:
-          buff.write(struct.pack('<I%sB'%length, length, *val1))
-        else:
-          buff.write(struct.pack('<I%ss'%length, length, val1))
+        buff.write(struct.pack('<I%ss'%length, length, val1))
       length = len(self.states)
       buff.write(_struct_I.pack(length))
       for val1 in self.states:
         _x = val1
-        buff.write(_struct_bB.pack(_x.state, _x.isInputOnly))
+        buff.write(_get_struct_bB().pack(_x.state, _x.isInputOnly))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -182,7 +176,7 @@ int8 UNPRESSED = 0"""
         _x = val1
         start = end
         end += 2
-        (_x.state, _x.isInputOnly,) = _struct_bB.unpack(str[start:end])
+        (_x.state, _x.isInputOnly,) = _get_struct_bB().unpack(str[start:end])
         val1.isInputOnly = bool(val1.isInputOnly)
         self.states.append(val1)
       return self
@@ -190,4 +184,12 @@ int8 UNPRESSED = 0"""
       raise genpy.DeserializationError(e) #most likely buffer underfill
 
 _struct_I = genpy.struct_I
-_struct_bB = struct.Struct("<bB")
+def _get_struct_I():
+    global _struct_I
+    return _struct_I
+_struct_bB = None
+def _get_struct_bB():
+    global _struct_bB
+    if _struct_bB is None:
+        _struct_bB = struct.Struct("<bB")
+    return _struct_bB

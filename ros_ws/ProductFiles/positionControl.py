@@ -366,6 +366,14 @@ def get_pick_bowl_goal_pose(marker_pose):
 
 	return goal_pose
 
+def get_pick_from_floor_pose(marker_pose):
+	goal_pose = PoseStamped()
+	goal_pose.pose.position.x = marker_pose.pose.position.x - 0.75#701
+	goal_pose.pose.position.y = marker_pose.pose.position.y - 0.088
+	goal_pose.pose.position.z = -0.463#marker_pose.pose.position.z - 0.772
+
+	return goal_pose
+
 
 def get_get_food_in_microwave_goal_pose(marker_pose):
 	goal_pose = PoseStamped()

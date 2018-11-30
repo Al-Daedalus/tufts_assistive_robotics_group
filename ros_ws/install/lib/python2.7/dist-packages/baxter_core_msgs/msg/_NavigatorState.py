@@ -78,15 +78,12 @@ bool[] lights
         if python3 or type(val1) == unicode:
           val1 = val1.encode('utf-8')
           length = len(val1)
-        if python3:
-          buff.write(struct.pack('<I%sB'%length, length, *val1))
-        else:
-          buff.write(struct.pack('<I%ss'%length, length, val1))
+        buff.write(struct.pack('<I%ss'%length, length, val1))
       length = len(self.buttons)
       buff.write(_struct_I.pack(length))
       pattern = '<%sB'%length
       buff.write(struct.pack(pattern, *self.buttons))
-      buff.write(_struct_B.pack(self.wheel))
+      buff.write(_get_struct_B().pack(self.wheel))
       length = len(self.light_names)
       buff.write(_struct_I.pack(length))
       for val1 in self.light_names:
@@ -94,10 +91,7 @@ bool[] lights
         if python3 or type(val1) == unicode:
           val1 = val1.encode('utf-8')
           length = len(val1)
-        if python3:
-          buff.write(struct.pack('<I%sB'%length, length, *val1))
-        else:
-          buff.write(struct.pack('<I%ss'%length, length, val1))
+        buff.write(struct.pack('<I%ss'%length, length, val1))
       length = len(self.lights)
       buff.write(_struct_I.pack(length))
       pattern = '<%sB'%length
@@ -137,7 +131,7 @@ bool[] lights
       self.buttons = map(bool, self.buttons)
       start = end
       end += 1
-      (self.wheel,) = _struct_B.unpack(str[start:end])
+      (self.wheel,) = _get_struct_B().unpack(str[start:end])
       start = end
       end += 4
       (length,) = _struct_I.unpack(str[start:end])
@@ -180,15 +174,12 @@ bool[] lights
         if python3 or type(val1) == unicode:
           val1 = val1.encode('utf-8')
           length = len(val1)
-        if python3:
-          buff.write(struct.pack('<I%sB'%length, length, *val1))
-        else:
-          buff.write(struct.pack('<I%ss'%length, length, val1))
+        buff.write(struct.pack('<I%ss'%length, length, val1))
       length = len(self.buttons)
       buff.write(_struct_I.pack(length))
       pattern = '<%sB'%length
       buff.write(self.buttons.tostring())
-      buff.write(_struct_B.pack(self.wheel))
+      buff.write(_get_struct_B().pack(self.wheel))
       length = len(self.light_names)
       buff.write(_struct_I.pack(length))
       for val1 in self.light_names:
@@ -196,10 +187,7 @@ bool[] lights
         if python3 or type(val1) == unicode:
           val1 = val1.encode('utf-8')
           length = len(val1)
-        if python3:
-          buff.write(struct.pack('<I%sB'%length, length, *val1))
-        else:
-          buff.write(struct.pack('<I%ss'%length, length, val1))
+        buff.write(struct.pack('<I%ss'%length, length, val1))
       length = len(self.lights)
       buff.write(_struct_I.pack(length))
       pattern = '<%sB'%length
@@ -240,7 +228,7 @@ bool[] lights
       self.buttons = map(bool, self.buttons)
       start = end
       end += 1
-      (self.wheel,) = _struct_B.unpack(str[start:end])
+      (self.wheel,) = _get_struct_B().unpack(str[start:end])
       start = end
       end += 4
       (length,) = _struct_I.unpack(str[start:end])
@@ -269,4 +257,12 @@ bool[] lights
       raise genpy.DeserializationError(e) #most likely buffer underfill
 
 _struct_I = genpy.struct_I
-_struct_B = struct.Struct("<B")
+def _get_struct_I():
+    global _struct_I
+    return _struct_I
+_struct_B = None
+def _get_struct_B():
+    global _struct_B
+    if _struct_B is None:
+        _struct_B = struct.Struct("<B")
+    return _struct_B

@@ -47,18 +47,21 @@ struct UpdateStatus_
   _long_description_type long_description;
 
 
-    enum { STS_IDLE = 0u };
-     enum { STS_INVALID = 1u };
-     enum { STS_BUSY = 2u };
-     enum { STS_CANCELLED = 3u };
-     enum { STS_ERR = 4u };
-     enum { STS_MOUNT_UPDATE = 5u };
-     enum { STS_VERIFY_UPDATE = 6u };
-     enum { STS_PREP_STAGING = 7u };
-     enum { STS_MOUNT_STAGING = 8u };
-     enum { STS_EXTRACT_UPDATE = 9u };
-     enum { STS_LOAD_KEXEC = 10u };
- 
+
+  enum {
+    STS_IDLE = 0u,
+    STS_INVALID = 1u,
+    STS_BUSY = 2u,
+    STS_CANCELLED = 3u,
+    STS_ERR = 4u,
+    STS_MOUNT_UPDATE = 5u,
+    STS_VERIFY_UPDATE = 6u,
+    STS_PREP_STAGING = 7u,
+    STS_MOUNT_STAGING = 8u,
+    STS_EXTRACT_UPDATE = 9u,
+    STS_LOAD_KEXEC = 10u,
+  };
+
 
   typedef boost::shared_ptr< ::baxter_maintenance_msgs::UpdateStatus_<ContainerAllocator> > Ptr;
   typedef boost::shared_ptr< ::baxter_maintenance_msgs::UpdateStatus_<ContainerAllocator> const> ConstPtr;
@@ -113,7 +116,7 @@ namespace message_traits
 
 
 // BOOLTRAITS {'IsFixedSize': False, 'IsMessage': True, 'HasHeader': False}
-// {'baxter_maintenance_msgs': ['/home/baxter/ros_ws/src/baxter_common/baxter_maintenance_msgs/msg'], 'std_msgs': ['/opt/ros/indigo/share/std_msgs/cmake/../msg']}
+// {'baxter_maintenance_msgs': ['/home/bill/bill_ros/ros_ws/src/baxter_common/baxter_maintenance_msgs/msg'], 'std_msgs': ['/opt/ros/kinetic/share/std_msgs/cmake/../msg']}
 
 // !!!!!!!!!!! ['__class__', '__delattr__', '__dict__', '__doc__', '__eq__', '__format__', '__getattribute__', '__hash__', '__init__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_parsed_fields', 'constants', 'fields', 'full_name', 'has_header', 'header_present', 'names', 'package', 'parsed_fields', 'short_name', 'text', 'types']
 

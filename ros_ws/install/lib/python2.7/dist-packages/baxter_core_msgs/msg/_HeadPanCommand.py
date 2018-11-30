@@ -74,7 +74,7 @@ uint8   enable_pan_request  # override automatic pan enable/disable
     """
     try:
       _x = self
-      buff.write(_struct_2fB.pack(_x.target, _x.speed_ratio, _x.enable_pan_request))
+      buff.write(_get_struct_2fB().pack(_x.target, _x.speed_ratio, _x.enable_pan_request))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -88,7 +88,7 @@ uint8   enable_pan_request  # override automatic pan enable/disable
       _x = self
       start = end
       end += 9
-      (_x.target, _x.speed_ratio, _x.enable_pan_request,) = _struct_2fB.unpack(str[start:end])
+      (_x.target, _x.speed_ratio, _x.enable_pan_request,) = _get_struct_2fB().unpack(str[start:end])
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e) #most likely buffer underfill
@@ -102,7 +102,7 @@ uint8   enable_pan_request  # override automatic pan enable/disable
     """
     try:
       _x = self
-      buff.write(_struct_2fB.pack(_x.target, _x.speed_ratio, _x.enable_pan_request))
+      buff.write(_get_struct_2fB().pack(_x.target, _x.speed_ratio, _x.enable_pan_request))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -117,10 +117,18 @@ uint8   enable_pan_request  # override automatic pan enable/disable
       _x = self
       start = end
       end += 9
-      (_x.target, _x.speed_ratio, _x.enable_pan_request,) = _struct_2fB.unpack(str[start:end])
+      (_x.target, _x.speed_ratio, _x.enable_pan_request,) = _get_struct_2fB().unpack(str[start:end])
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e) #most likely buffer underfill
 
 _struct_I = genpy.struct_I
-_struct_2fB = struct.Struct("<2fB")
+def _get_struct_I():
+    global _struct_I
+    return _struct_I
+_struct_2fB = None
+def _get_struct_2fB():
+    global _struct_2fB
+    if _struct_2fB is None:
+        _struct_2fB = struct.Struct("<2fB")
+    return _struct_2fB

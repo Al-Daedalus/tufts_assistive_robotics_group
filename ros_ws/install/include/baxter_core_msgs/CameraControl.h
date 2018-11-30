@@ -42,17 +42,20 @@ struct CameraControl_
   _value_type value;
 
 
-    enum { CAMERA_CONTROL_EXPOSURE = 100 };
-     enum { CAMERA_CONTROL_GAIN = 101 };
-     enum { CAMERA_CONTROL_WHITE_BALANCE_R = 102 };
-     enum { CAMERA_CONTROL_WHITE_BALANCE_G = 103 };
-     enum { CAMERA_CONTROL_WHITE_BALANCE_B = 104 };
-     enum { CAMERA_CONTROL_WINDOW_X = 105 };
-     enum { CAMERA_CONTROL_WINDOW_Y = 106 };
-     enum { CAMERA_CONTROL_FLIP = 107 };
-     enum { CAMERA_CONTROL_MIRROR = 108 };
-     enum { CAMERA_CONTROL_RESOLUTION_HALF = 109 };
- 
+
+  enum {
+    CAMERA_CONTROL_EXPOSURE = 100,
+    CAMERA_CONTROL_GAIN = 101,
+    CAMERA_CONTROL_WHITE_BALANCE_R = 102,
+    CAMERA_CONTROL_WHITE_BALANCE_G = 103,
+    CAMERA_CONTROL_WHITE_BALANCE_B = 104,
+    CAMERA_CONTROL_WINDOW_X = 105,
+    CAMERA_CONTROL_WINDOW_Y = 106,
+    CAMERA_CONTROL_FLIP = 107,
+    CAMERA_CONTROL_MIRROR = 108,
+    CAMERA_CONTROL_RESOLUTION_HALF = 109,
+  };
+
 
   typedef boost::shared_ptr< ::baxter_core_msgs::CameraControl_<ContainerAllocator> > Ptr;
   typedef boost::shared_ptr< ::baxter_core_msgs::CameraControl_<ContainerAllocator> const> ConstPtr;
@@ -105,7 +108,7 @@ namespace message_traits
 
 
 // BOOLTRAITS {'IsFixedSize': True, 'IsMessage': True, 'HasHeader': False}
-// {'std_msgs': ['/opt/ros/indigo/share/std_msgs/cmake/../msg'], 'sensor_msgs': ['/opt/ros/indigo/share/sensor_msgs/cmake/../msg'], 'geometry_msgs': ['/opt/ros/indigo/share/geometry_msgs/cmake/../msg'], 'baxter_core_msgs': ['/home/baxter/ros_ws/src/baxter_common/baxter_core_msgs/msg']}
+// {'std_msgs': ['/opt/ros/kinetic/share/std_msgs/cmake/../msg'], 'sensor_msgs': ['/opt/ros/kinetic/share/sensor_msgs/cmake/../msg'], 'geometry_msgs': ['/opt/ros/kinetic/share/geometry_msgs/cmake/../msg'], 'baxter_core_msgs': ['/home/bill/bill_ros/ros_ws/src/baxter_common/baxter_core_msgs/msg']}
 
 // !!!!!!!!!!! ['__class__', '__delattr__', '__dict__', '__doc__', '__eq__', '__format__', '__getattribute__', '__hash__', '__init__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_parsed_fields', 'constants', 'fields', 'full_name', 'has_header', 'header_present', 'names', 'package', 'parsed_fields', 'short_name', 'text', 'types']
 

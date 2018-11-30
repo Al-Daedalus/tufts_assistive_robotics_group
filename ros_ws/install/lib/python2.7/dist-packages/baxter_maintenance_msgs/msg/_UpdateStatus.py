@@ -88,16 +88,13 @@ uint16 STS_LOAD_KEXEC      = 10
     """
     try:
       _x = self
-      buff.write(_struct_Hf.pack(_x.status, _x.progress))
+      buff.write(_get_struct_Hf().pack(_x.status, _x.progress))
       _x = self.long_description
       length = len(_x)
       if python3 or type(_x) == unicode:
         _x = _x.encode('utf-8')
         length = len(_x)
-      if python3:
-        buff.write(struct.pack('<I%sB'%length, length, *_x))
-      else:
-        buff.write(struct.pack('<I%ss'%length, length, _x))
+      buff.write(struct.pack('<I%ss'%length, length, _x))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -111,7 +108,7 @@ uint16 STS_LOAD_KEXEC      = 10
       _x = self
       start = end
       end += 6
-      (_x.status, _x.progress,) = _struct_Hf.unpack(str[start:end])
+      (_x.status, _x.progress,) = _get_struct_Hf().unpack(str[start:end])
       start = end
       end += 4
       (length,) = _struct_I.unpack(str[start:end])
@@ -134,16 +131,13 @@ uint16 STS_LOAD_KEXEC      = 10
     """
     try:
       _x = self
-      buff.write(_struct_Hf.pack(_x.status, _x.progress))
+      buff.write(_get_struct_Hf().pack(_x.status, _x.progress))
       _x = self.long_description
       length = len(_x)
       if python3 or type(_x) == unicode:
         _x = _x.encode('utf-8')
         length = len(_x)
-      if python3:
-        buff.write(struct.pack('<I%sB'%length, length, *_x))
-      else:
-        buff.write(struct.pack('<I%ss'%length, length, _x))
+      buff.write(struct.pack('<I%ss'%length, length, _x))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -158,7 +152,7 @@ uint16 STS_LOAD_KEXEC      = 10
       _x = self
       start = end
       end += 6
-      (_x.status, _x.progress,) = _struct_Hf.unpack(str[start:end])
+      (_x.status, _x.progress,) = _get_struct_Hf().unpack(str[start:end])
       start = end
       end += 4
       (length,) = _struct_I.unpack(str[start:end])
@@ -173,4 +167,12 @@ uint16 STS_LOAD_KEXEC      = 10
       raise genpy.DeserializationError(e) #most likely buffer underfill
 
 _struct_I = genpy.struct_I
-_struct_Hf = struct.Struct("<Hf")
+def _get_struct_I():
+    global _struct_I
+    return _struct_I
+_struct_Hf = None
+def _get_struct_Hf():
+    global _struct_Hf
+    if _struct_Hf is None:
+        _struct_Hf = struct.Struct("<Hf")
+    return _struct_Hf

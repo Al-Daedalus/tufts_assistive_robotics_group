@@ -93,7 +93,7 @@ uint8  estop_source      # If stopped is true, the source of the e-stop.  One of
     """
     try:
       _x = self
-      buff.write(_struct_6B.pack(_x.ready, _x.enabled, _x.stopped, _x.error, _x.estop_button, _x.estop_source))
+      buff.write(_get_struct_6B().pack(_x.ready, _x.enabled, _x.stopped, _x.error, _x.estop_button, _x.estop_source))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -107,7 +107,7 @@ uint8  estop_source      # If stopped is true, the source of the e-stop.  One of
       _x = self
       start = end
       end += 6
-      (_x.ready, _x.enabled, _x.stopped, _x.error, _x.estop_button, _x.estop_source,) = _struct_6B.unpack(str[start:end])
+      (_x.ready, _x.enabled, _x.stopped, _x.error, _x.estop_button, _x.estop_source,) = _get_struct_6B().unpack(str[start:end])
       self.ready = bool(self.ready)
       self.enabled = bool(self.enabled)
       self.stopped = bool(self.stopped)
@@ -125,7 +125,7 @@ uint8  estop_source      # If stopped is true, the source of the e-stop.  One of
     """
     try:
       _x = self
-      buff.write(_struct_6B.pack(_x.ready, _x.enabled, _x.stopped, _x.error, _x.estop_button, _x.estop_source))
+      buff.write(_get_struct_6B().pack(_x.ready, _x.enabled, _x.stopped, _x.error, _x.estop_button, _x.estop_source))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -140,7 +140,7 @@ uint8  estop_source      # If stopped is true, the source of the e-stop.  One of
       _x = self
       start = end
       end += 6
-      (_x.ready, _x.enabled, _x.stopped, _x.error, _x.estop_button, _x.estop_source,) = _struct_6B.unpack(str[start:end])
+      (_x.ready, _x.enabled, _x.stopped, _x.error, _x.estop_button, _x.estop_source,) = _get_struct_6B().unpack(str[start:end])
       self.ready = bool(self.ready)
       self.enabled = bool(self.enabled)
       self.stopped = bool(self.stopped)
@@ -150,4 +150,12 @@ uint8  estop_source      # If stopped is true, the source of the e-stop.  One of
       raise genpy.DeserializationError(e) #most likely buffer underfill
 
 _struct_I = genpy.struct_I
-_struct_6B = struct.Struct("<6B")
+def _get_struct_I():
+    global _struct_I
+    return _struct_I
+_struct_6B = None
+def _get_struct_6B():
+    global _struct_6B
+    if _struct_6B is None:
+        _struct_6B = struct.Struct("<6B")
+    return _struct_6B

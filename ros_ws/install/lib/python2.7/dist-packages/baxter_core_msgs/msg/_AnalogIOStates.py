@@ -67,18 +67,15 @@ bool isInputOnly
         if python3 or type(val1) == unicode:
           val1 = val1.encode('utf-8')
           length = len(val1)
-        if python3:
-          buff.write(struct.pack('<I%sB'%length, length, *val1))
-        else:
-          buff.write(struct.pack('<I%ss'%length, length, val1))
+        buff.write(struct.pack('<I%ss'%length, length, val1))
       length = len(self.states)
       buff.write(_struct_I.pack(length))
       for val1 in self.states:
         _v1 = val1.timestamp
         _x = _v1
-        buff.write(_struct_2I.pack(_x.secs, _x.nsecs))
+        buff.write(_get_struct_2I().pack(_x.secs, _x.nsecs))
         _x = val1
-        buff.write(_struct_dB.pack(_x.value, _x.isInputOnly))
+        buff.write(_get_struct_dB().pack(_x.value, _x.isInputOnly))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -116,11 +113,11 @@ bool isInputOnly
         _x = _v2
         start = end
         end += 8
-        (_x.secs, _x.nsecs,) = _struct_2I.unpack(str[start:end])
+        (_x.secs, _x.nsecs,) = _get_struct_2I().unpack(str[start:end])
         _x = val1
         start = end
         end += 9
-        (_x.value, _x.isInputOnly,) = _struct_dB.unpack(str[start:end])
+        (_x.value, _x.isInputOnly,) = _get_struct_dB().unpack(str[start:end])
         val1.isInputOnly = bool(val1.isInputOnly)
         self.states.append(val1)
       return self
@@ -142,18 +139,15 @@ bool isInputOnly
         if python3 or type(val1) == unicode:
           val1 = val1.encode('utf-8')
           length = len(val1)
-        if python3:
-          buff.write(struct.pack('<I%sB'%length, length, *val1))
-        else:
-          buff.write(struct.pack('<I%ss'%length, length, val1))
+        buff.write(struct.pack('<I%ss'%length, length, val1))
       length = len(self.states)
       buff.write(_struct_I.pack(length))
       for val1 in self.states:
         _v3 = val1.timestamp
         _x = _v3
-        buff.write(_struct_2I.pack(_x.secs, _x.nsecs))
+        buff.write(_get_struct_2I().pack(_x.secs, _x.nsecs))
         _x = val1
-        buff.write(_struct_dB.pack(_x.value, _x.isInputOnly))
+        buff.write(_get_struct_dB().pack(_x.value, _x.isInputOnly))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -192,11 +186,11 @@ bool isInputOnly
         _x = _v4
         start = end
         end += 8
-        (_x.secs, _x.nsecs,) = _struct_2I.unpack(str[start:end])
+        (_x.secs, _x.nsecs,) = _get_struct_2I().unpack(str[start:end])
         _x = val1
         start = end
         end += 9
-        (_x.value, _x.isInputOnly,) = _struct_dB.unpack(str[start:end])
+        (_x.value, _x.isInputOnly,) = _get_struct_dB().unpack(str[start:end])
         val1.isInputOnly = bool(val1.isInputOnly)
         self.states.append(val1)
       return self
@@ -204,5 +198,18 @@ bool isInputOnly
       raise genpy.DeserializationError(e) #most likely buffer underfill
 
 _struct_I = genpy.struct_I
-_struct_dB = struct.Struct("<dB")
-_struct_2I = struct.Struct("<2I")
+def _get_struct_I():
+    global _struct_I
+    return _struct_I
+_struct_dB = None
+def _get_struct_dB():
+    global _struct_dB
+    if _struct_dB is None:
+        _struct_dB = struct.Struct("<dB")
+    return _struct_dB
+_struct_2I = None
+def _get_struct_2I():
+    global _struct_2I
+    if _struct_2I is None:
+        _struct_2I = struct.Struct("<2I")
+    return _struct_2I

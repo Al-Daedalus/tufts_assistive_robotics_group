@@ -98,17 +98,14 @@ string[] labels
     """
     try:
       _x = self
-      buff.write(_struct_Bi.pack(_x.isEnabled, _x.complete))
+      buff.write(_get_struct_Bi().pack(_x.isEnabled, _x.complete))
       _x = self.controlUid
       length = len(_x)
       if python3 or type(_x) == unicode:
         _x = _x.encode('utf-8')
         length = len(_x)
-      if python3:
-        buff.write(struct.pack('<I%sB'%length, length, *_x))
-      else:
-        buff.write(struct.pack('<I%ss'%length, length, _x))
-      buff.write(_struct_B.pack(self.timedOut))
+      buff.write(struct.pack('<I%ss'%length, length, _x))
+      buff.write(_get_struct_B().pack(self.timedOut))
       length = len(self.errorCodes)
       buff.write(_struct_I.pack(length))
       for val1 in self.errorCodes:
@@ -116,10 +113,7 @@ string[] labels
         if python3 or type(val1) == unicode:
           val1 = val1.encode('utf-8')
           length = len(val1)
-        if python3:
-          buff.write(struct.pack('<I%sB'%length, length, *val1))
-        else:
-          buff.write(struct.pack('<I%ss'%length, length, val1))
+        buff.write(struct.pack('<I%ss'%length, length, val1))
       length = len(self.labels)
       buff.write(_struct_I.pack(length))
       for val1 in self.labels:
@@ -127,10 +121,7 @@ string[] labels
         if python3 or type(val1) == unicode:
           val1 = val1.encode('utf-8')
           length = len(val1)
-        if python3:
-          buff.write(struct.pack('<I%sB'%length, length, *val1))
-        else:
-          buff.write(struct.pack('<I%ss'%length, length, val1))
+        buff.write(struct.pack('<I%ss'%length, length, val1))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -144,7 +135,7 @@ string[] labels
       _x = self
       start = end
       end += 5
-      (_x.isEnabled, _x.complete,) = _struct_Bi.unpack(str[start:end])
+      (_x.isEnabled, _x.complete,) = _get_struct_Bi().unpack(str[start:end])
       self.isEnabled = bool(self.isEnabled)
       start = end
       end += 4
@@ -157,7 +148,7 @@ string[] labels
         self.controlUid = str[start:end]
       start = end
       end += 1
-      (self.timedOut,) = _struct_B.unpack(str[start:end])
+      (self.timedOut,) = _get_struct_B().unpack(str[start:end])
       self.timedOut = bool(self.timedOut)
       start = end
       end += 4
@@ -202,17 +193,14 @@ string[] labels
     """
     try:
       _x = self
-      buff.write(_struct_Bi.pack(_x.isEnabled, _x.complete))
+      buff.write(_get_struct_Bi().pack(_x.isEnabled, _x.complete))
       _x = self.controlUid
       length = len(_x)
       if python3 or type(_x) == unicode:
         _x = _x.encode('utf-8')
         length = len(_x)
-      if python3:
-        buff.write(struct.pack('<I%sB'%length, length, *_x))
-      else:
-        buff.write(struct.pack('<I%ss'%length, length, _x))
-      buff.write(_struct_B.pack(self.timedOut))
+      buff.write(struct.pack('<I%ss'%length, length, _x))
+      buff.write(_get_struct_B().pack(self.timedOut))
       length = len(self.errorCodes)
       buff.write(_struct_I.pack(length))
       for val1 in self.errorCodes:
@@ -220,10 +208,7 @@ string[] labels
         if python3 or type(val1) == unicode:
           val1 = val1.encode('utf-8')
           length = len(val1)
-        if python3:
-          buff.write(struct.pack('<I%sB'%length, length, *val1))
-        else:
-          buff.write(struct.pack('<I%ss'%length, length, val1))
+        buff.write(struct.pack('<I%ss'%length, length, val1))
       length = len(self.labels)
       buff.write(_struct_I.pack(length))
       for val1 in self.labels:
@@ -231,10 +216,7 @@ string[] labels
         if python3 or type(val1) == unicode:
           val1 = val1.encode('utf-8')
           length = len(val1)
-        if python3:
-          buff.write(struct.pack('<I%sB'%length, length, *val1))
-        else:
-          buff.write(struct.pack('<I%ss'%length, length, val1))
+        buff.write(struct.pack('<I%ss'%length, length, val1))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -249,7 +231,7 @@ string[] labels
       _x = self
       start = end
       end += 5
-      (_x.isEnabled, _x.complete,) = _struct_Bi.unpack(str[start:end])
+      (_x.isEnabled, _x.complete,) = _get_struct_Bi().unpack(str[start:end])
       self.isEnabled = bool(self.isEnabled)
       start = end
       end += 4
@@ -262,7 +244,7 @@ string[] labels
         self.controlUid = str[start:end]
       start = end
       end += 1
-      (self.timedOut,) = _struct_B.unpack(str[start:end])
+      (self.timedOut,) = _get_struct_B().unpack(str[start:end])
       self.timedOut = bool(self.timedOut)
       start = end
       end += 4
@@ -299,5 +281,18 @@ string[] labels
       raise genpy.DeserializationError(e) #most likely buffer underfill
 
 _struct_I = genpy.struct_I
-_struct_B = struct.Struct("<B")
-_struct_Bi = struct.Struct("<Bi")
+def _get_struct_I():
+    global _struct_I
+    return _struct_I
+_struct_B = None
+def _get_struct_B():
+    global _struct_B
+    if _struct_B is None:
+        _struct_B = struct.Struct("<B")
+    return _struct_B
+_struct_Bi = None
+def _get_struct_Bi():
+    global _struct_Bi
+    if _struct_Bi is None:
+        _struct_Bi = struct.Struct("<Bi")
+    return _struct_Bi

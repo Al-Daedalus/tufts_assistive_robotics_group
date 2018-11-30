@@ -69,34 +69,25 @@ string urdf    # XML or JSON-encoded URDF data.  This should be a URDF fragment
     """
     try:
       _x = self
-      buff.write(_struct_2I.pack(_x.time.secs, _x.time.nsecs))
+      buff.write(_get_struct_2I().pack(_x.time.secs, _x.time.nsecs))
       _x = self.link
       length = len(_x)
       if python3 or type(_x) == unicode:
         _x = _x.encode('utf-8')
         length = len(_x)
-      if python3:
-        buff.write(struct.pack('<I%sB'%length, length, *_x))
-      else:
-        buff.write(struct.pack('<I%ss'%length, length, _x))
+      buff.write(struct.pack('<I%ss'%length, length, _x))
       _x = self.joint
       length = len(_x)
       if python3 or type(_x) == unicode:
         _x = _x.encode('utf-8')
         length = len(_x)
-      if python3:
-        buff.write(struct.pack('<I%sB'%length, length, *_x))
-      else:
-        buff.write(struct.pack('<I%ss'%length, length, _x))
+      buff.write(struct.pack('<I%ss'%length, length, _x))
       _x = self.urdf
       length = len(_x)
       if python3 or type(_x) == unicode:
         _x = _x.encode('utf-8')
         length = len(_x)
-      if python3:
-        buff.write(struct.pack('<I%sB'%length, length, *_x))
-      else:
-        buff.write(struct.pack('<I%ss'%length, length, _x))
+      buff.write(struct.pack('<I%ss'%length, length, _x))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -112,7 +103,7 @@ string urdf    # XML or JSON-encoded URDF data.  This should be a URDF fragment
       _x = self
       start = end
       end += 8
-      (_x.time.secs, _x.time.nsecs,) = _struct_2I.unpack(str[start:end])
+      (_x.time.secs, _x.time.nsecs,) = _get_struct_2I().unpack(str[start:end])
       start = end
       end += 4
       (length,) = _struct_I.unpack(str[start:end])
@@ -154,34 +145,25 @@ string urdf    # XML or JSON-encoded URDF data.  This should be a URDF fragment
     """
     try:
       _x = self
-      buff.write(_struct_2I.pack(_x.time.secs, _x.time.nsecs))
+      buff.write(_get_struct_2I().pack(_x.time.secs, _x.time.nsecs))
       _x = self.link
       length = len(_x)
       if python3 or type(_x) == unicode:
         _x = _x.encode('utf-8')
         length = len(_x)
-      if python3:
-        buff.write(struct.pack('<I%sB'%length, length, *_x))
-      else:
-        buff.write(struct.pack('<I%ss'%length, length, _x))
+      buff.write(struct.pack('<I%ss'%length, length, _x))
       _x = self.joint
       length = len(_x)
       if python3 or type(_x) == unicode:
         _x = _x.encode('utf-8')
         length = len(_x)
-      if python3:
-        buff.write(struct.pack('<I%sB'%length, length, *_x))
-      else:
-        buff.write(struct.pack('<I%ss'%length, length, _x))
+      buff.write(struct.pack('<I%ss'%length, length, _x))
       _x = self.urdf
       length = len(_x)
       if python3 or type(_x) == unicode:
         _x = _x.encode('utf-8')
         length = len(_x)
-      if python3:
-        buff.write(struct.pack('<I%sB'%length, length, *_x))
-      else:
-        buff.write(struct.pack('<I%ss'%length, length, _x))
+      buff.write(struct.pack('<I%ss'%length, length, _x))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -198,7 +180,7 @@ string urdf    # XML or JSON-encoded URDF data.  This should be a URDF fragment
       _x = self
       start = end
       end += 8
-      (_x.time.secs, _x.time.nsecs,) = _struct_2I.unpack(str[start:end])
+      (_x.time.secs, _x.time.nsecs,) = _get_struct_2I().unpack(str[start:end])
       start = end
       end += 4
       (length,) = _struct_I.unpack(str[start:end])
@@ -232,4 +214,12 @@ string urdf    # XML or JSON-encoded URDF data.  This should be a URDF fragment
       raise genpy.DeserializationError(e) #most likely buffer underfill
 
 _struct_I = genpy.struct_I
-_struct_2I = struct.Struct("<2I")
+def _get_struct_I():
+    global _struct_I
+    return _struct_I
+_struct_2I = None
+def _get_struct_2I():
+    global _struct_2I
+    if _struct_2I is None:
+        _struct_2I = struct.Struct("<2I")
+    return _struct_2I

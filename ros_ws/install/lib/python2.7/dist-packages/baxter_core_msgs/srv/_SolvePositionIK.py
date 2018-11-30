@@ -58,7 +58,7 @@ string frame_id
 
 ================================================================================
 MSG: geometry_msgs/Pose
-# A representation of pose in free space, composed of postion and orientation. 
+# A representation of pose in free space, composed of position and orientation. 
 Point position
 Quaternion orientation
 
@@ -160,43 +160,37 @@ float64[] effort
       buff.write(_struct_I.pack(length))
       for val1 in self.pose_stamp:
         _v1 = val1.header
-        buff.write(_struct_I.pack(_v1.seq))
+        buff.write(_get_struct_I().pack(_v1.seq))
         _v2 = _v1.stamp
         _x = _v2
-        buff.write(_struct_2I.pack(_x.secs, _x.nsecs))
+        buff.write(_get_struct_2I().pack(_x.secs, _x.nsecs))
         _x = _v1.frame_id
         length = len(_x)
         if python3 or type(_x) == unicode:
           _x = _x.encode('utf-8')
           length = len(_x)
-        if python3:
-          buff.write(struct.pack('<I%sB'%length, length, *_x))
-        else:
-          buff.write(struct.pack('<I%ss'%length, length, _x))
+        buff.write(struct.pack('<I%ss'%length, length, _x))
         _v3 = val1.pose
         _v4 = _v3.position
         _x = _v4
-        buff.write(_struct_3d.pack(_x.x, _x.y, _x.z))
+        buff.write(_get_struct_3d().pack(_x.x, _x.y, _x.z))
         _v5 = _v3.orientation
         _x = _v5
-        buff.write(_struct_4d.pack(_x.x, _x.y, _x.z, _x.w))
+        buff.write(_get_struct_4d().pack(_x.x, _x.y, _x.z, _x.w))
       length = len(self.seed_angles)
       buff.write(_struct_I.pack(length))
       for val1 in self.seed_angles:
         _v6 = val1.header
-        buff.write(_struct_I.pack(_v6.seq))
+        buff.write(_get_struct_I().pack(_v6.seq))
         _v7 = _v6.stamp
         _x = _v7
-        buff.write(_struct_2I.pack(_x.secs, _x.nsecs))
+        buff.write(_get_struct_2I().pack(_x.secs, _x.nsecs))
         _x = _v6.frame_id
         length = len(_x)
         if python3 or type(_x) == unicode:
           _x = _x.encode('utf-8')
           length = len(_x)
-        if python3:
-          buff.write(struct.pack('<I%sB'%length, length, *_x))
-        else:
-          buff.write(struct.pack('<I%ss'%length, length, _x))
+        buff.write(struct.pack('<I%ss'%length, length, _x))
         length = len(val1.name)
         buff.write(_struct_I.pack(length))
         for val2 in val1.name:
@@ -204,10 +198,7 @@ float64[] effort
           if python3 or type(val2) == unicode:
             val2 = val2.encode('utf-8')
             length = len(val2)
-          if python3:
-            buff.write(struct.pack('<I%sB'%length, length, *val2))
-          else:
-            buff.write(struct.pack('<I%ss'%length, length, val2))
+          buff.write(struct.pack('<I%ss'%length, length, val2))
         length = len(val1.position)
         buff.write(_struct_I.pack(length))
         pattern = '<%sd'%length
@@ -220,7 +211,7 @@ float64[] effort
         buff.write(_struct_I.pack(length))
         pattern = '<%sd'%length
         buff.write(struct.pack(pattern, *val1.effort))
-      buff.write(_struct_B.pack(self.seed_mode))
+      buff.write(_get_struct_B().pack(self.seed_mode))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -244,12 +235,12 @@ float64[] effort
         _v8 = val1.header
         start = end
         end += 4
-        (_v8.seq,) = _struct_I.unpack(str[start:end])
+        (_v8.seq,) = _get_struct_I().unpack(str[start:end])
         _v9 = _v8.stamp
         _x = _v9
         start = end
         end += 8
-        (_x.secs, _x.nsecs,) = _struct_2I.unpack(str[start:end])
+        (_x.secs, _x.nsecs,) = _get_struct_2I().unpack(str[start:end])
         start = end
         end += 4
         (length,) = _struct_I.unpack(str[start:end])
@@ -264,12 +255,12 @@ float64[] effort
         _x = _v11
         start = end
         end += 24
-        (_x.x, _x.y, _x.z,) = _struct_3d.unpack(str[start:end])
+        (_x.x, _x.y, _x.z,) = _get_struct_3d().unpack(str[start:end])
         _v12 = _v10.orientation
         _x = _v12
         start = end
         end += 32
-        (_x.x, _x.y, _x.z, _x.w,) = _struct_4d.unpack(str[start:end])
+        (_x.x, _x.y, _x.z, _x.w,) = _get_struct_4d().unpack(str[start:end])
         self.pose_stamp.append(val1)
       start = end
       end += 4
@@ -280,12 +271,12 @@ float64[] effort
         _v13 = val1.header
         start = end
         end += 4
-        (_v13.seq,) = _struct_I.unpack(str[start:end])
+        (_v13.seq,) = _get_struct_I().unpack(str[start:end])
         _v14 = _v13.stamp
         _x = _v14
         start = end
         end += 8
-        (_x.secs, _x.nsecs,) = _struct_2I.unpack(str[start:end])
+        (_x.secs, _x.nsecs,) = _get_struct_2I().unpack(str[start:end])
         start = end
         end += 4
         (length,) = _struct_I.unpack(str[start:end])
@@ -334,7 +325,7 @@ float64[] effort
         self.seed_angles.append(val1)
       start = end
       end += 1
-      (self.seed_mode,) = _struct_B.unpack(str[start:end])
+      (self.seed_mode,) = _get_struct_B().unpack(str[start:end])
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e) #most likely buffer underfill
@@ -351,43 +342,37 @@ float64[] effort
       buff.write(_struct_I.pack(length))
       for val1 in self.pose_stamp:
         _v15 = val1.header
-        buff.write(_struct_I.pack(_v15.seq))
+        buff.write(_get_struct_I().pack(_v15.seq))
         _v16 = _v15.stamp
         _x = _v16
-        buff.write(_struct_2I.pack(_x.secs, _x.nsecs))
+        buff.write(_get_struct_2I().pack(_x.secs, _x.nsecs))
         _x = _v15.frame_id
         length = len(_x)
         if python3 or type(_x) == unicode:
           _x = _x.encode('utf-8')
           length = len(_x)
-        if python3:
-          buff.write(struct.pack('<I%sB'%length, length, *_x))
-        else:
-          buff.write(struct.pack('<I%ss'%length, length, _x))
+        buff.write(struct.pack('<I%ss'%length, length, _x))
         _v17 = val1.pose
         _v18 = _v17.position
         _x = _v18
-        buff.write(_struct_3d.pack(_x.x, _x.y, _x.z))
+        buff.write(_get_struct_3d().pack(_x.x, _x.y, _x.z))
         _v19 = _v17.orientation
         _x = _v19
-        buff.write(_struct_4d.pack(_x.x, _x.y, _x.z, _x.w))
+        buff.write(_get_struct_4d().pack(_x.x, _x.y, _x.z, _x.w))
       length = len(self.seed_angles)
       buff.write(_struct_I.pack(length))
       for val1 in self.seed_angles:
         _v20 = val1.header
-        buff.write(_struct_I.pack(_v20.seq))
+        buff.write(_get_struct_I().pack(_v20.seq))
         _v21 = _v20.stamp
         _x = _v21
-        buff.write(_struct_2I.pack(_x.secs, _x.nsecs))
+        buff.write(_get_struct_2I().pack(_x.secs, _x.nsecs))
         _x = _v20.frame_id
         length = len(_x)
         if python3 or type(_x) == unicode:
           _x = _x.encode('utf-8')
           length = len(_x)
-        if python3:
-          buff.write(struct.pack('<I%sB'%length, length, *_x))
-        else:
-          buff.write(struct.pack('<I%ss'%length, length, _x))
+        buff.write(struct.pack('<I%ss'%length, length, _x))
         length = len(val1.name)
         buff.write(_struct_I.pack(length))
         for val2 in val1.name:
@@ -395,10 +380,7 @@ float64[] effort
           if python3 or type(val2) == unicode:
             val2 = val2.encode('utf-8')
             length = len(val2)
-          if python3:
-            buff.write(struct.pack('<I%sB'%length, length, *val2))
-          else:
-            buff.write(struct.pack('<I%ss'%length, length, val2))
+          buff.write(struct.pack('<I%ss'%length, length, val2))
         length = len(val1.position)
         buff.write(_struct_I.pack(length))
         pattern = '<%sd'%length
@@ -411,7 +393,7 @@ float64[] effort
         buff.write(_struct_I.pack(length))
         pattern = '<%sd'%length
         buff.write(val1.effort.tostring())
-      buff.write(_struct_B.pack(self.seed_mode))
+      buff.write(_get_struct_B().pack(self.seed_mode))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -436,12 +418,12 @@ float64[] effort
         _v22 = val1.header
         start = end
         end += 4
-        (_v22.seq,) = _struct_I.unpack(str[start:end])
+        (_v22.seq,) = _get_struct_I().unpack(str[start:end])
         _v23 = _v22.stamp
         _x = _v23
         start = end
         end += 8
-        (_x.secs, _x.nsecs,) = _struct_2I.unpack(str[start:end])
+        (_x.secs, _x.nsecs,) = _get_struct_2I().unpack(str[start:end])
         start = end
         end += 4
         (length,) = _struct_I.unpack(str[start:end])
@@ -456,12 +438,12 @@ float64[] effort
         _x = _v25
         start = end
         end += 24
-        (_x.x, _x.y, _x.z,) = _struct_3d.unpack(str[start:end])
+        (_x.x, _x.y, _x.z,) = _get_struct_3d().unpack(str[start:end])
         _v26 = _v24.orientation
         _x = _v26
         start = end
         end += 32
-        (_x.x, _x.y, _x.z, _x.w,) = _struct_4d.unpack(str[start:end])
+        (_x.x, _x.y, _x.z, _x.w,) = _get_struct_4d().unpack(str[start:end])
         self.pose_stamp.append(val1)
       start = end
       end += 4
@@ -472,12 +454,12 @@ float64[] effort
         _v27 = val1.header
         start = end
         end += 4
-        (_v27.seq,) = _struct_I.unpack(str[start:end])
+        (_v27.seq,) = _get_struct_I().unpack(str[start:end])
         _v28 = _v27.stamp
         _x = _v28
         start = end
         end += 8
-        (_x.secs, _x.nsecs,) = _struct_2I.unpack(str[start:end])
+        (_x.secs, _x.nsecs,) = _get_struct_2I().unpack(str[start:end])
         start = end
         end += 4
         (length,) = _struct_I.unpack(str[start:end])
@@ -526,16 +508,39 @@ float64[] effort
         self.seed_angles.append(val1)
       start = end
       end += 1
-      (self.seed_mode,) = _struct_B.unpack(str[start:end])
+      (self.seed_mode,) = _get_struct_B().unpack(str[start:end])
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e) #most likely buffer underfill
 
 _struct_I = genpy.struct_I
-_struct_4d = struct.Struct("<4d")
-_struct_B = struct.Struct("<B")
-_struct_2I = struct.Struct("<2I")
-_struct_3d = struct.Struct("<3d")
+def _get_struct_I():
+    global _struct_I
+    return _struct_I
+_struct_4d = None
+def _get_struct_4d():
+    global _struct_4d
+    if _struct_4d is None:
+        _struct_4d = struct.Struct("<4d")
+    return _struct_4d
+_struct_B = None
+def _get_struct_B():
+    global _struct_B
+    if _struct_B is None:
+        _struct_B = struct.Struct("<B")
+    return _struct_B
+_struct_2I = None
+def _get_struct_2I():
+    global _struct_2I
+    if _struct_2I is None:
+        _struct_2I = struct.Struct("<2I")
+    return _struct_2I
+_struct_3d = None
+def _get_struct_3d():
+    global _struct_3d
+    if _struct_3d is None:
+        _struct_3d = struct.Struct("<3d")
+    return _struct_3d
 # This Python file uses the following encoding: utf-8
 """autogenerated by genpy from baxter_core_msgs/SolvePositionIKResponse.msg. Do not edit."""
 import sys
@@ -637,11 +642,11 @@ string frame_id
       if self.isValid is None:
         self.isValid = []
       if self.result_type is None:
-        self.result_type = ''
+        self.result_type = b''
     else:
       self.joints = []
       self.isValid = []
-      self.result_type = ''
+      self.result_type = b''
 
   def _get_types(self):
     """
@@ -659,19 +664,16 @@ string frame_id
       buff.write(_struct_I.pack(length))
       for val1 in self.joints:
         _v29 = val1.header
-        buff.write(_struct_I.pack(_v29.seq))
+        buff.write(_get_struct_I().pack(_v29.seq))
         _v30 = _v29.stamp
         _x = _v30
-        buff.write(_struct_2I.pack(_x.secs, _x.nsecs))
+        buff.write(_get_struct_2I().pack(_x.secs, _x.nsecs))
         _x = _v29.frame_id
         length = len(_x)
         if python3 or type(_x) == unicode:
           _x = _x.encode('utf-8')
           length = len(_x)
-        if python3:
-          buff.write(struct.pack('<I%sB'%length, length, *_x))
-        else:
-          buff.write(struct.pack('<I%ss'%length, length, _x))
+        buff.write(struct.pack('<I%ss'%length, length, _x))
         length = len(val1.name)
         buff.write(_struct_I.pack(length))
         for val2 in val1.name:
@@ -679,10 +681,7 @@ string frame_id
           if python3 or type(val2) == unicode:
             val2 = val2.encode('utf-8')
             length = len(val2)
-          if python3:
-            buff.write(struct.pack('<I%sB'%length, length, *val2))
-          else:
-            buff.write(struct.pack('<I%ss'%length, length, val2))
+          buff.write(struct.pack('<I%ss'%length, length, val2))
         length = len(val1.position)
         buff.write(_struct_I.pack(length))
         pattern = '<%sd'%length
@@ -727,12 +726,12 @@ string frame_id
         _v31 = val1.header
         start = end
         end += 4
-        (_v31.seq,) = _struct_I.unpack(str[start:end])
+        (_v31.seq,) = _get_struct_I().unpack(str[start:end])
         _v32 = _v31.stamp
         _x = _v32
         start = end
         end += 8
-        (_x.secs, _x.nsecs,) = _struct_2I.unpack(str[start:end])
+        (_x.secs, _x.nsecs,) = _get_struct_2I().unpack(str[start:end])
         start = end
         end += 4
         (length,) = _struct_I.unpack(str[start:end])
@@ -809,19 +808,16 @@ string frame_id
       buff.write(_struct_I.pack(length))
       for val1 in self.joints:
         _v33 = val1.header
-        buff.write(_struct_I.pack(_v33.seq))
+        buff.write(_get_struct_I().pack(_v33.seq))
         _v34 = _v33.stamp
         _x = _v34
-        buff.write(_struct_2I.pack(_x.secs, _x.nsecs))
+        buff.write(_get_struct_2I().pack(_x.secs, _x.nsecs))
         _x = _v33.frame_id
         length = len(_x)
         if python3 or type(_x) == unicode:
           _x = _x.encode('utf-8')
           length = len(_x)
-        if python3:
-          buff.write(struct.pack('<I%sB'%length, length, *_x))
-        else:
-          buff.write(struct.pack('<I%ss'%length, length, _x))
+        buff.write(struct.pack('<I%ss'%length, length, _x))
         length = len(val1.name)
         buff.write(_struct_I.pack(length))
         for val2 in val1.name:
@@ -829,10 +825,7 @@ string frame_id
           if python3 or type(val2) == unicode:
             val2 = val2.encode('utf-8')
             length = len(val2)
-          if python3:
-            buff.write(struct.pack('<I%sB'%length, length, *val2))
-          else:
-            buff.write(struct.pack('<I%ss'%length, length, val2))
+          buff.write(struct.pack('<I%ss'%length, length, val2))
         length = len(val1.position)
         buff.write(_struct_I.pack(length))
         pattern = '<%sd'%length
@@ -878,12 +871,12 @@ string frame_id
         _v35 = val1.header
         start = end
         end += 4
-        (_v35.seq,) = _struct_I.unpack(str[start:end])
+        (_v35.seq,) = _get_struct_I().unpack(str[start:end])
         _v36 = _v35.stamp
         _x = _v36
         start = end
         end += 8
-        (_x.secs, _x.nsecs,) = _struct_2I.unpack(str[start:end])
+        (_x.secs, _x.nsecs,) = _get_struct_2I().unpack(str[start:end])
         start = end
         end += 4
         (length,) = _struct_I.unpack(str[start:end])
@@ -949,7 +942,15 @@ string frame_id
       raise genpy.DeserializationError(e) #most likely buffer underfill
 
 _struct_I = genpy.struct_I
-_struct_2I = struct.Struct("<2I")
+def _get_struct_I():
+    global _struct_I
+    return _struct_I
+_struct_2I = None
+def _get_struct_2I():
+    global _struct_2I
+    if _struct_2I is None:
+        _struct_2I = struct.Struct("<2I")
+    return _struct_2I
 class SolvePositionIK(object):
   _type          = 'baxter_core_msgs/SolvePositionIK'
   _md5sum = '18cc92fd96853eb10b34de0b5c7d3cba'

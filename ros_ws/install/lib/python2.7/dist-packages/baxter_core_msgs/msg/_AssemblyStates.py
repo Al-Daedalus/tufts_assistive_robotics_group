@@ -81,15 +81,12 @@ uint8  estop_source      # If stopped is true, the source of the e-stop.  One of
         if python3 or type(val1) == unicode:
           val1 = val1.encode('utf-8')
           length = len(val1)
-        if python3:
-          buff.write(struct.pack('<I%sB'%length, length, *val1))
-        else:
-          buff.write(struct.pack('<I%ss'%length, length, val1))
+        buff.write(struct.pack('<I%ss'%length, length, val1))
       length = len(self.states)
       buff.write(_struct_I.pack(length))
       for val1 in self.states:
         _x = val1
-        buff.write(_struct_6B.pack(_x.ready, _x.enabled, _x.stopped, _x.error, _x.estop_button, _x.estop_source))
+        buff.write(_get_struct_6B().pack(_x.ready, _x.enabled, _x.stopped, _x.error, _x.estop_button, _x.estop_source))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -126,7 +123,7 @@ uint8  estop_source      # If stopped is true, the source of the e-stop.  One of
         _x = val1
         start = end
         end += 6
-        (_x.ready, _x.enabled, _x.stopped, _x.error, _x.estop_button, _x.estop_source,) = _struct_6B.unpack(str[start:end])
+        (_x.ready, _x.enabled, _x.stopped, _x.error, _x.estop_button, _x.estop_source,) = _get_struct_6B().unpack(str[start:end])
         val1.ready = bool(val1.ready)
         val1.enabled = bool(val1.enabled)
         val1.stopped = bool(val1.stopped)
@@ -151,15 +148,12 @@ uint8  estop_source      # If stopped is true, the source of the e-stop.  One of
         if python3 or type(val1) == unicode:
           val1 = val1.encode('utf-8')
           length = len(val1)
-        if python3:
-          buff.write(struct.pack('<I%sB'%length, length, *val1))
-        else:
-          buff.write(struct.pack('<I%ss'%length, length, val1))
+        buff.write(struct.pack('<I%ss'%length, length, val1))
       length = len(self.states)
       buff.write(_struct_I.pack(length))
       for val1 in self.states:
         _x = val1
-        buff.write(_struct_6B.pack(_x.ready, _x.enabled, _x.stopped, _x.error, _x.estop_button, _x.estop_source))
+        buff.write(_get_struct_6B().pack(_x.ready, _x.enabled, _x.stopped, _x.error, _x.estop_button, _x.estop_source))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -197,7 +191,7 @@ uint8  estop_source      # If stopped is true, the source of the e-stop.  One of
         _x = val1
         start = end
         end += 6
-        (_x.ready, _x.enabled, _x.stopped, _x.error, _x.estop_button, _x.estop_source,) = _struct_6B.unpack(str[start:end])
+        (_x.ready, _x.enabled, _x.stopped, _x.error, _x.estop_button, _x.estop_source,) = _get_struct_6B().unpack(str[start:end])
         val1.ready = bool(val1.ready)
         val1.enabled = bool(val1.enabled)
         val1.stopped = bool(val1.stopped)
@@ -208,4 +202,12 @@ uint8  estop_source      # If stopped is true, the source of the e-stop.  One of
       raise genpy.DeserializationError(e) #most likely buffer underfill
 
 _struct_I = genpy.struct_I
-_struct_6B = struct.Struct("<6B")
+def _get_struct_I():
+    global _struct_I
+    return _struct_I
+_struct_6B = None
+def _get_struct_6B():
+    global _struct_6B
+    if _struct_6B is None:
+        _struct_6B = struct.Struct("<6B")
+    return _struct_6B

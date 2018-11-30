@@ -47,12 +47,15 @@ struct HeadPanCommand_
   _enable_pan_request_type enable_pan_request;
 
 
-    static const float MAX_SPEED_RATIO;
-     static const float MIN_SPEED_RATIO;
-     enum { REQUEST_PAN_DISABLE = 0u };
-     enum { REQUEST_PAN_ENABLE = 1u };
-     enum { REQUEST_PAN_VOID = 2u };
- 
+
+  enum {
+    REQUEST_PAN_DISABLE = 0u,
+    REQUEST_PAN_ENABLE = 1u,
+    REQUEST_PAN_VOID = 2u,
+  };
+
+  static const float MAX_SPEED_RATIO;
+  static const float MIN_SPEED_RATIO;
 
   typedef boost::shared_ptr< ::baxter_core_msgs::HeadPanCommand_<ContainerAllocator> > Ptr;
   typedef boost::shared_ptr< ::baxter_core_msgs::HeadPanCommand_<ContainerAllocator> const> ConstPtr;
@@ -109,7 +112,7 @@ namespace message_traits
 
 
 // BOOLTRAITS {'IsFixedSize': True, 'IsMessage': True, 'HasHeader': False}
-// {'std_msgs': ['/opt/ros/indigo/share/std_msgs/cmake/../msg'], 'sensor_msgs': ['/opt/ros/indigo/share/sensor_msgs/cmake/../msg'], 'geometry_msgs': ['/opt/ros/indigo/share/geometry_msgs/cmake/../msg'], 'baxter_core_msgs': ['/home/baxter/ros_ws/src/baxter_common/baxter_core_msgs/msg']}
+// {'std_msgs': ['/opt/ros/kinetic/share/std_msgs/cmake/../msg'], 'sensor_msgs': ['/opt/ros/kinetic/share/sensor_msgs/cmake/../msg'], 'geometry_msgs': ['/opt/ros/kinetic/share/geometry_msgs/cmake/../msg'], 'baxter_core_msgs': ['/home/bill/bill_ros/ros_ws/src/baxter_common/baxter_core_msgs/msg']}
 
 // !!!!!!!!!!! ['__class__', '__delattr__', '__dict__', '__doc__', '__eq__', '__format__', '__getattribute__', '__hash__', '__init__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_parsed_fields', 'constants', 'fields', 'full_name', 'has_header', 'header_present', 'names', 'package', 'parsed_fields', 'short_name', 'text', 'types']
 

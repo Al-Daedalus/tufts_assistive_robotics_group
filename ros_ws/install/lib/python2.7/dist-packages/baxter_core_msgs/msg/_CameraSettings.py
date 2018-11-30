@@ -79,12 +79,12 @@ int32 CAMERA_CONTROL_RESOLUTION_HALF=109
     """
     try:
       _x = self
-      buff.write(_struct_2if.pack(_x.width, _x.height, _x.fps))
+      buff.write(_get_struct_2if().pack(_x.width, _x.height, _x.fps))
       length = len(self.controls)
       buff.write(_struct_I.pack(length))
       for val1 in self.controls:
         _x = val1
-        buff.write(_struct_2i.pack(_x.id, _x.value))
+        buff.write(_get_struct_2i().pack(_x.id, _x.value))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -100,7 +100,7 @@ int32 CAMERA_CONTROL_RESOLUTION_HALF=109
       _x = self
       start = end
       end += 12
-      (_x.width, _x.height, _x.fps,) = _struct_2if.unpack(str[start:end])
+      (_x.width, _x.height, _x.fps,) = _get_struct_2if().unpack(str[start:end])
       start = end
       end += 4
       (length,) = _struct_I.unpack(str[start:end])
@@ -110,7 +110,7 @@ int32 CAMERA_CONTROL_RESOLUTION_HALF=109
         _x = val1
         start = end
         end += 8
-        (_x.id, _x.value,) = _struct_2i.unpack(str[start:end])
+        (_x.id, _x.value,) = _get_struct_2i().unpack(str[start:end])
         self.controls.append(val1)
       return self
     except struct.error as e:
@@ -125,12 +125,12 @@ int32 CAMERA_CONTROL_RESOLUTION_HALF=109
     """
     try:
       _x = self
-      buff.write(_struct_2if.pack(_x.width, _x.height, _x.fps))
+      buff.write(_get_struct_2if().pack(_x.width, _x.height, _x.fps))
       length = len(self.controls)
       buff.write(_struct_I.pack(length))
       for val1 in self.controls:
         _x = val1
-        buff.write(_struct_2i.pack(_x.id, _x.value))
+        buff.write(_get_struct_2i().pack(_x.id, _x.value))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -147,7 +147,7 @@ int32 CAMERA_CONTROL_RESOLUTION_HALF=109
       _x = self
       start = end
       end += 12
-      (_x.width, _x.height, _x.fps,) = _struct_2if.unpack(str[start:end])
+      (_x.width, _x.height, _x.fps,) = _get_struct_2if().unpack(str[start:end])
       start = end
       end += 4
       (length,) = _struct_I.unpack(str[start:end])
@@ -157,12 +157,25 @@ int32 CAMERA_CONTROL_RESOLUTION_HALF=109
         _x = val1
         start = end
         end += 8
-        (_x.id, _x.value,) = _struct_2i.unpack(str[start:end])
+        (_x.id, _x.value,) = _get_struct_2i().unpack(str[start:end])
         self.controls.append(val1)
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e) #most likely buffer underfill
 
 _struct_I = genpy.struct_I
-_struct_2if = struct.Struct("<2if")
-_struct_2i = struct.Struct("<2i")
+def _get_struct_I():
+    global _struct_I
+    return _struct_I
+_struct_2if = None
+def _get_struct_2if():
+    global _struct_2if
+    if _struct_2if is None:
+        _struct_2if = struct.Struct("<2if")
+    return _struct_2if
+_struct_2i = None
+def _get_struct_2i():
+    global _struct_2i
+    if _struct_2i is None:
+        _struct_2i = struct.Struct("<2i")
+    return _struct_2i

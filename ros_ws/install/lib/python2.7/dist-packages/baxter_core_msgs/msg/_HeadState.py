@@ -62,7 +62,7 @@ bool isPanEnabled
     """
     try:
       _x = self
-      buff.write(_struct_f3B.pack(_x.pan, _x.isTurning, _x.isNodding, _x.isPanEnabled))
+      buff.write(_get_struct_f3B().pack(_x.pan, _x.isTurning, _x.isNodding, _x.isPanEnabled))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -76,7 +76,7 @@ bool isPanEnabled
       _x = self
       start = end
       end += 7
-      (_x.pan, _x.isTurning, _x.isNodding, _x.isPanEnabled,) = _struct_f3B.unpack(str[start:end])
+      (_x.pan, _x.isTurning, _x.isNodding, _x.isPanEnabled,) = _get_struct_f3B().unpack(str[start:end])
       self.isTurning = bool(self.isTurning)
       self.isNodding = bool(self.isNodding)
       self.isPanEnabled = bool(self.isPanEnabled)
@@ -93,7 +93,7 @@ bool isPanEnabled
     """
     try:
       _x = self
-      buff.write(_struct_f3B.pack(_x.pan, _x.isTurning, _x.isNodding, _x.isPanEnabled))
+      buff.write(_get_struct_f3B().pack(_x.pan, _x.isTurning, _x.isNodding, _x.isPanEnabled))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -108,7 +108,7 @@ bool isPanEnabled
       _x = self
       start = end
       end += 7
-      (_x.pan, _x.isTurning, _x.isNodding, _x.isPanEnabled,) = _struct_f3B.unpack(str[start:end])
+      (_x.pan, _x.isTurning, _x.isNodding, _x.isPanEnabled,) = _get_struct_f3B().unpack(str[start:end])
       self.isTurning = bool(self.isTurning)
       self.isNodding = bool(self.isNodding)
       self.isPanEnabled = bool(self.isPanEnabled)
@@ -117,4 +117,12 @@ bool isPanEnabled
       raise genpy.DeserializationError(e) #most likely buffer underfill
 
 _struct_I = genpy.struct_I
-_struct_f3B = struct.Struct("<f3B")
+def _get_struct_I():
+    global _struct_I
+    return _struct_I
+_struct_f3B = None
+def _get_struct_f3B():
+    global _struct_f3B
+    if _struct_f3B is None:
+        _struct_f3B = struct.Struct("<f3B")
+    return _struct_f3B

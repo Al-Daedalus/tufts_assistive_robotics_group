@@ -62,16 +62,19 @@ struct AssemblyState_
   _estop_source_type estop_source;
 
 
-    enum { ESTOP_BUTTON_UNPRESSED = 0u };
-     enum { ESTOP_BUTTON_PRESSED = 1u };
-     enum { ESTOP_BUTTON_UNKNOWN = 2u };
-     enum { ESTOP_BUTTON_RELEASED = 3u };
-     enum { ESTOP_SOURCE_NONE = 0u };
-     enum { ESTOP_SOURCE_USER = 1u };
-     enum { ESTOP_SOURCE_UNKNOWN = 2u };
-     enum { ESTOP_SOURCE_FAULT = 3u };
-     enum { ESTOP_SOURCE_BRAIN = 4u };
- 
+
+  enum {
+    ESTOP_BUTTON_UNPRESSED = 0u,
+    ESTOP_BUTTON_PRESSED = 1u,
+    ESTOP_BUTTON_UNKNOWN = 2u,
+    ESTOP_BUTTON_RELEASED = 3u,
+    ESTOP_SOURCE_NONE = 0u,
+    ESTOP_SOURCE_USER = 1u,
+    ESTOP_SOURCE_UNKNOWN = 2u,
+    ESTOP_SOURCE_FAULT = 3u,
+    ESTOP_SOURCE_BRAIN = 4u,
+  };
+
 
   typedef boost::shared_ptr< ::baxter_core_msgs::AssemblyState_<ContainerAllocator> > Ptr;
   typedef boost::shared_ptr< ::baxter_core_msgs::AssemblyState_<ContainerAllocator> const> ConstPtr;
@@ -122,7 +125,7 @@ namespace message_traits
 
 
 // BOOLTRAITS {'IsFixedSize': True, 'IsMessage': True, 'HasHeader': False}
-// {'std_msgs': ['/opt/ros/indigo/share/std_msgs/cmake/../msg'], 'sensor_msgs': ['/opt/ros/indigo/share/sensor_msgs/cmake/../msg'], 'geometry_msgs': ['/opt/ros/indigo/share/geometry_msgs/cmake/../msg'], 'baxter_core_msgs': ['/home/baxter/ros_ws/src/baxter_common/baxter_core_msgs/msg']}
+// {'std_msgs': ['/opt/ros/kinetic/share/std_msgs/cmake/../msg'], 'sensor_msgs': ['/opt/ros/kinetic/share/sensor_msgs/cmake/../msg'], 'geometry_msgs': ['/opt/ros/kinetic/share/geometry_msgs/cmake/../msg'], 'baxter_core_msgs': ['/home/bill/bill_ros/ros_ws/src/baxter_common/baxter_core_msgs/msg']}
 
 // !!!!!!!!!!! ['__class__', '__delattr__', '__dict__', '__doc__', '__eq__', '__format__', '__getattribute__', '__hash__', '__init__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_parsed_fields', 'constants', 'fields', 'full_name', 'has_header', 'header_present', 'names', 'package', 'parsed_fields', 'short_name', 'text', 'types']
 

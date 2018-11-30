@@ -49,11 +49,14 @@ struct SolvePositionIKRequest_
   _seed_mode_type seed_mode;
 
 
-    enum { SEED_AUTO = 0u };
-     enum { SEED_USER = 1u };
-     enum { SEED_CURRENT = 2u };
-     enum { SEED_NS_MAP = 3u };
- 
+
+  enum {
+    SEED_AUTO = 0u,
+    SEED_USER = 1u,
+    SEED_CURRENT = 2u,
+    SEED_NS_MAP = 3u,
+  };
+
 
   typedef boost::shared_ptr< ::baxter_core_msgs::SolvePositionIKRequest_<ContainerAllocator> > Ptr;
   typedef boost::shared_ptr< ::baxter_core_msgs::SolvePositionIKRequest_<ContainerAllocator> const> ConstPtr;
@@ -94,7 +97,7 @@ namespace message_traits
 
 
 // BOOLTRAITS {'IsFixedSize': False, 'IsMessage': True, 'HasHeader': False}
-// {'std_msgs': ['/opt/ros/indigo/share/std_msgs/cmake/../msg'], 'sensor_msgs': ['/opt/ros/indigo/share/sensor_msgs/cmake/../msg'], 'geometry_msgs': ['/opt/ros/indigo/share/geometry_msgs/cmake/../msg'], 'baxter_core_msgs': ['/home/baxter/ros_ws/src/baxter_common/baxter_core_msgs/msg']}
+// {'std_msgs': ['/opt/ros/kinetic/share/std_msgs/cmake/../msg'], 'sensor_msgs': ['/opt/ros/kinetic/share/sensor_msgs/cmake/../msg'], 'geometry_msgs': ['/opt/ros/kinetic/share/geometry_msgs/cmake/../msg'], 'baxter_core_msgs': ['/home/bill/bill_ros/ros_ws/src/baxter_common/baxter_core_msgs/msg']}
 
 // !!!!!!!!!!! ['__class__', '__delattr__', '__dict__', '__doc__', '__eq__', '__format__', '__getattribute__', '__hash__', '__init__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_parsed_fields', 'constants', 'fields', 'full_name', 'has_header', 'header_present', 'names', 'package', 'parsed_fields', 'short_name', 'text', 'types']
 
@@ -206,7 +209,7 @@ string frame_id\n\
 \n\
 ================================================================================\n\
 MSG: geometry_msgs/Pose\n\
-# A representation of pose in free space, composed of postion and orientation. \n\
+# A representation of pose in free space, composed of position and orientation. \n\
 Point position\n\
 Quaternion orientation\n\
 \n\

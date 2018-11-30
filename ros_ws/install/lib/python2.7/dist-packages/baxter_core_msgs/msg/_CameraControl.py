@@ -77,7 +77,7 @@ int32 CAMERA_CONTROL_RESOLUTION_HALF=109
     """
     try:
       _x = self
-      buff.write(_struct_2i.pack(_x.id, _x.value))
+      buff.write(_get_struct_2i().pack(_x.id, _x.value))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -91,7 +91,7 @@ int32 CAMERA_CONTROL_RESOLUTION_HALF=109
       _x = self
       start = end
       end += 8
-      (_x.id, _x.value,) = _struct_2i.unpack(str[start:end])
+      (_x.id, _x.value,) = _get_struct_2i().unpack(str[start:end])
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e) #most likely buffer underfill
@@ -105,7 +105,7 @@ int32 CAMERA_CONTROL_RESOLUTION_HALF=109
     """
     try:
       _x = self
-      buff.write(_struct_2i.pack(_x.id, _x.value))
+      buff.write(_get_struct_2i().pack(_x.id, _x.value))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -120,10 +120,18 @@ int32 CAMERA_CONTROL_RESOLUTION_HALF=109
       _x = self
       start = end
       end += 8
-      (_x.id, _x.value,) = _struct_2i.unpack(str[start:end])
+      (_x.id, _x.value,) = _get_struct_2i().unpack(str[start:end])
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e) #most likely buffer underfill
 
 _struct_I = genpy.struct_I
-_struct_2i = struct.Struct("<2i")
+def _get_struct_I():
+    global _struct_I
+    return _struct_I
+_struct_2i = None
+def _get_struct_2i():
+    global _struct_2i
+    if _struct_2i is None:
+        _struct_2i = struct.Struct("<2i")
+    return _struct_2i

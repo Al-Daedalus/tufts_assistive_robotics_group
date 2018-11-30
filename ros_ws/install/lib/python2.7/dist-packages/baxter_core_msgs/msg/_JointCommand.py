@@ -67,7 +67,7 @@ int32 RAW_POSITION_MODE=4"""
     :param buff: buffer, ``StringIO``
     """
     try:
-      buff.write(_struct_i.pack(self.mode))
+      buff.write(_get_struct_i().pack(self.mode))
       length = len(self.command)
       buff.write(_struct_I.pack(length))
       pattern = '<%sd'%length
@@ -79,10 +79,7 @@ int32 RAW_POSITION_MODE=4"""
         if python3 or type(val1) == unicode:
           val1 = val1.encode('utf-8')
           length = len(val1)
-        if python3:
-          buff.write(struct.pack('<I%sB'%length, length, *val1))
-        else:
-          buff.write(struct.pack('<I%ss'%length, length, val1))
+        buff.write(struct.pack('<I%ss'%length, length, val1))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -95,7 +92,7 @@ int32 RAW_POSITION_MODE=4"""
       end = 0
       start = end
       end += 4
-      (self.mode,) = _struct_i.unpack(str[start:end])
+      (self.mode,) = _get_struct_i().unpack(str[start:end])
       start = end
       end += 4
       (length,) = _struct_I.unpack(str[start:end])
@@ -130,7 +127,7 @@ int32 RAW_POSITION_MODE=4"""
     :param numpy: numpy python module
     """
     try:
-      buff.write(_struct_i.pack(self.mode))
+      buff.write(_get_struct_i().pack(self.mode))
       length = len(self.command)
       buff.write(_struct_I.pack(length))
       pattern = '<%sd'%length
@@ -142,10 +139,7 @@ int32 RAW_POSITION_MODE=4"""
         if python3 or type(val1) == unicode:
           val1 = val1.encode('utf-8')
           length = len(val1)
-        if python3:
-          buff.write(struct.pack('<I%sB'%length, length, *val1))
-        else:
-          buff.write(struct.pack('<I%ss'%length, length, val1))
+        buff.write(struct.pack('<I%ss'%length, length, val1))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -159,7 +153,7 @@ int32 RAW_POSITION_MODE=4"""
       end = 0
       start = end
       end += 4
-      (self.mode,) = _struct_i.unpack(str[start:end])
+      (self.mode,) = _get_struct_i().unpack(str[start:end])
       start = end
       end += 4
       (length,) = _struct_I.unpack(str[start:end])
@@ -187,4 +181,12 @@ int32 RAW_POSITION_MODE=4"""
       raise genpy.DeserializationError(e) #most likely buffer underfill
 
 _struct_I = genpy.struct_I
-_struct_i = struct.Struct("<i")
+def _get_struct_I():
+    global _struct_I
+    return _struct_I
+_struct_i = None
+def _get_struct_i():
+    global _struct_i
+    if _struct_i is None:
+        _struct_i = struct.Struct("<i")
+    return _struct_i

@@ -10,6 +10,12 @@
 #ifndef __ar_track_alvar__PARAMSCONFIG_H__
 #define __ar_track_alvar__PARAMSCONFIG_H__
 
+#if __cplusplus >= 201103L
+#define DYNAMIC_RECONFIGURE_FINAL final
+#else
+#define DYNAMIC_RECONFIGURE_FINAL
+#endif
+
 #include <dynamic_reconfigure/config_tools.h>
 #include <limits>
 #include <ros/node_handle.h>
@@ -51,8 +57,10 @@ namespace ar_track_alvar
     typedef boost::shared_ptr<AbstractParamDescription> AbstractParamDescriptionPtr;
     typedef boost::shared_ptr<const AbstractParamDescription> AbstractParamDescriptionConstPtr;
 
+    // Final keyword added to class because it has virtual methods and inherits
+    // from a class with a non-virtual destructor.
     template <class T>
-    class ParamDescription : public AbstractParamDescription
+    class ParamDescription DYNAMIC_RECONFIGURE_FINAL : public AbstractParamDescription
     {
     public:
       ParamDescription(std::string a_name, std::string a_type, uint32_t a_level,
@@ -137,8 +145,10 @@ namespace ar_track_alvar
     typedef boost::shared_ptr<AbstractGroupDescription> AbstractGroupDescriptionPtr;
     typedef boost::shared_ptr<const AbstractGroupDescription> AbstractGroupDescriptionConstPtr;
 
+    // Final keyword added to class because it has virtual methods and inherits
+    // from a class with a non-virtual destructor.
     template<class T, class PT>
-    class GroupDescription : public AbstractGroupDescription
+    class GroupDescription DYNAMIC_RECONFIGURE_FINAL : public AbstractGroupDescription
     {
     public:
       GroupDescription(std::string a_name, std::string a_type, int a_parent, int a_id, bool a_s, T PT::* a_f) : AbstractGroupDescription(a_name, a_type, a_parent, a_id, a_s), field(a_f)
@@ -248,17 +258,17 @@ double max_track_error;
 
 
 
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       bool enabled;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       double max_frequency;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       double marker_size;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       double max_new_marker_error;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       double max_track_error;
-//#line 218 "/opt/ros/kinetic/share/dynamic_reconfigure/cmake/../templates/ConfigType.h.template"
+//#line 228 "/opt/ros/kinetic/share/dynamic_reconfigure/cmake/../templates/ConfigType.h.template"
 
     bool __fromMessage__(dynamic_reconfigure::Config &msg)
     {
@@ -396,61 +406,61 @@ double max_track_error;
     ParamsConfigStatics()
     {
 ParamsConfig::GroupDescription<ParamsConfig::DEFAULT, ParamsConfig> Default("Default", "", 0, 0, true, &ParamsConfig::groups);
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __min__.enabled = 0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __max__.enabled = 1;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __default__.enabled = 1;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       Default.abstract_parameters.push_back(ParamsConfig::AbstractParamDescriptionConstPtr(new ParamsConfig::ParamDescription<bool>("enabled", "bool", 0, "Enable/disable tracking, unsubscribing from camera topic to stop openni processing", "", &ParamsConfig::enabled)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __param_descriptions__.push_back(ParamsConfig::AbstractParamDescriptionConstPtr(new ParamsConfig::ParamDescription<bool>("enabled", "bool", 0, "Enable/disable tracking, unsubscribing from camera topic to stop openni processing", "", &ParamsConfig::enabled)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __min__.max_frequency = 1.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __max__.max_frequency = 30.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __default__.max_frequency = 10.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       Default.abstract_parameters.push_back(ParamsConfig::AbstractParamDescriptionConstPtr(new ParamsConfig::ParamDescription<double>("max_frequency", "double", 0, "Maximum processing rate; frames coming at a higher rate are discarded", "", &ParamsConfig::max_frequency)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __param_descriptions__.push_back(ParamsConfig::AbstractParamDescriptionConstPtr(new ParamsConfig::ParamDescription<double>("max_frequency", "double", 0, "Maximum processing rate; frames coming at a higher rate are discarded", "", &ParamsConfig::max_frequency)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __min__.marker_size = 1.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __max__.marker_size = 100.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __default__.marker_size = 10.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       Default.abstract_parameters.push_back(ParamsConfig::AbstractParamDescriptionConstPtr(new ParamsConfig::ParamDescription<double>("marker_size", "double", 0, "The width in centimeters of one side of the black square marker border", "", &ParamsConfig::marker_size)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __param_descriptions__.push_back(ParamsConfig::AbstractParamDescriptionConstPtr(new ParamsConfig::ParamDescription<double>("marker_size", "double", 0, "The width in centimeters of one side of the black square marker border", "", &ParamsConfig::marker_size)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __min__.max_new_marker_error = 0.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __max__.max_new_marker_error = 2.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __default__.max_new_marker_error = 0.08;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       Default.abstract_parameters.push_back(ParamsConfig::AbstractParamDescriptionConstPtr(new ParamsConfig::ParamDescription<double>("max_new_marker_error", "double", 0, "A threshold determining when new markers can be detected under uncertainty", "", &ParamsConfig::max_new_marker_error)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __param_descriptions__.push_back(ParamsConfig::AbstractParamDescriptionConstPtr(new ParamsConfig::ParamDescription<double>("max_new_marker_error", "double", 0, "A threshold determining when new markers can be detected under uncertainty", "", &ParamsConfig::max_new_marker_error)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __min__.max_track_error = 0.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __max__.max_track_error = 4.0;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __default__.max_track_error = 0.2;
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       Default.abstract_parameters.push_back(ParamsConfig::AbstractParamDescriptionConstPtr(new ParamsConfig::ParamDescription<double>("max_track_error", "double", 0, "A threshold determining how much tracking error can be observed before an tag is considered to have disappeared", "", &ParamsConfig::max_track_error)));
-//#line 292 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
+//#line 290 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __param_descriptions__.push_back(ParamsConfig::AbstractParamDescriptionConstPtr(new ParamsConfig::ParamDescription<double>("max_track_error", "double", 0, "A threshold determining how much tracking error can be observed before an tag is considered to have disappeared", "", &ParamsConfig::max_track_error)));
 //#line 245 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       Default.convertParams();
 //#line 245 "/opt/ros/kinetic/lib/python2.7/dist-packages/dynamic_reconfigure/parameter_generator_catkin.py"
       __group_descriptions__.push_back(ParamsConfig::AbstractGroupDescriptionConstPtr(new ParamsConfig::GroupDescription<ParamsConfig::DEFAULT, ParamsConfig>(Default)));
-//#line 356 "/opt/ros/kinetic/share/dynamic_reconfigure/cmake/../templates/ConfigType.h.template"
+//#line 366 "/opt/ros/kinetic/share/dynamic_reconfigure/cmake/../templates/ConfigType.h.template"
 
       for (std::vector<ParamsConfig::AbstractGroupDescriptionConstPtr>::const_iterator i = __group_descriptions__.begin(); i != __group_descriptions__.end(); ++i)
       {
@@ -527,5 +537,7 @@ ParamsConfig::GroupDescription<ParamsConfig::DEFAULT, ParamsConfig> Default("Def
 
 
 }
+
+#undef DYNAMIC_RECONFIGURE_FINAL
 
 #endif // __PARAMSRECONFIGURATOR_H__

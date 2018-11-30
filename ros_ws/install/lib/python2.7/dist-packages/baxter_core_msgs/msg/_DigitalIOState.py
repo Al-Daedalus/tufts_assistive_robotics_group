@@ -64,7 +64,7 @@ int8 UNPRESSED = 0"""
     """
     try:
       _x = self
-      buff.write(_struct_bB.pack(_x.state, _x.isInputOnly))
+      buff.write(_get_struct_bB().pack(_x.state, _x.isInputOnly))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -78,7 +78,7 @@ int8 UNPRESSED = 0"""
       _x = self
       start = end
       end += 2
-      (_x.state, _x.isInputOnly,) = _struct_bB.unpack(str[start:end])
+      (_x.state, _x.isInputOnly,) = _get_struct_bB().unpack(str[start:end])
       self.isInputOnly = bool(self.isInputOnly)
       return self
     except struct.error as e:
@@ -93,7 +93,7 @@ int8 UNPRESSED = 0"""
     """
     try:
       _x = self
-      buff.write(_struct_bB.pack(_x.state, _x.isInputOnly))
+      buff.write(_get_struct_bB().pack(_x.state, _x.isInputOnly))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -108,11 +108,19 @@ int8 UNPRESSED = 0"""
       _x = self
       start = end
       end += 2
-      (_x.state, _x.isInputOnly,) = _struct_bB.unpack(str[start:end])
+      (_x.state, _x.isInputOnly,) = _get_struct_bB().unpack(str[start:end])
       self.isInputOnly = bool(self.isInputOnly)
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e) #most likely buffer underfill
 
 _struct_I = genpy.struct_I
-_struct_bB = struct.Struct("<bB")
+def _get_struct_I():
+    global _struct_I
+    return _struct_I
+_struct_bB = None
+def _get_struct_bB():
+    global _struct_bB
+    if _struct_bB is None:
+        _struct_bB = struct.Struct("<bB")
+    return _struct_bB

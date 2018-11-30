@@ -1,8 +1,0 @@
-prefix=/home/bill/bill_ros/bill_ws/devel
-
-Name: object_recognition_tabletop
-Description: Description of object_recognition_tabletop
-Version: 0.3.2
-Cflags: 
-Libs: -L/home/bill/bill_ros/bill_ws/devel/lib 
-Requires: 

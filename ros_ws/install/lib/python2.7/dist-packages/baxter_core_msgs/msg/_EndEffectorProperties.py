@@ -130,72 +130,51 @@ string properties       # JSON; other properties
     """
     try:
       _x = self
-      buff.write(_struct_IB.pack(_x.id, _x.ui_type))
+      buff.write(_get_struct_IB().pack(_x.id, _x.ui_type))
       _x = self.manufacturer
       length = len(_x)
       if python3 or type(_x) == unicode:
         _x = _x.encode('utf-8')
         length = len(_x)
-      if python3:
-        buff.write(struct.pack('<I%sB'%length, length, *_x))
-      else:
-        buff.write(struct.pack('<I%ss'%length, length, _x))
+      buff.write(struct.pack('<I%ss'%length, length, _x))
       _x = self.product
       length = len(_x)
       if python3 or type(_x) == unicode:
         _x = _x.encode('utf-8')
         length = len(_x)
-      if python3:
-        buff.write(struct.pack('<I%sB'%length, length, *_x))
-      else:
-        buff.write(struct.pack('<I%ss'%length, length, _x))
+      buff.write(struct.pack('<I%ss'%length, length, _x))
       _x = self.serial_number
       length = len(_x)
       if python3 or type(_x) == unicode:
         _x = _x.encode('utf-8')
         length = len(_x)
-      if python3:
-        buff.write(struct.pack('<I%sB'%length, length, *_x))
-      else:
-        buff.write(struct.pack('<I%ss'%length, length, _x))
+      buff.write(struct.pack('<I%ss'%length, length, _x))
       _x = self.hardware_rev
       length = len(_x)
       if python3 or type(_x) == unicode:
         _x = _x.encode('utf-8')
         length = len(_x)
-      if python3:
-        buff.write(struct.pack('<I%sB'%length, length, *_x))
-      else:
-        buff.write(struct.pack('<I%ss'%length, length, _x))
+      buff.write(struct.pack('<I%ss'%length, length, _x))
       _x = self.firmware_rev
       length = len(_x)
       if python3 or type(_x) == unicode:
         _x = _x.encode('utf-8')
         length = len(_x)
-      if python3:
-        buff.write(struct.pack('<I%sB'%length, length, *_x))
-      else:
-        buff.write(struct.pack('<I%ss'%length, length, _x))
+      buff.write(struct.pack('<I%ss'%length, length, _x))
       _x = self.firmware_date
       length = len(_x)
       if python3 or type(_x) == unicode:
         _x = _x.encode('utf-8')
         length = len(_x)
-      if python3:
-        buff.write(struct.pack('<I%sB'%length, length, *_x))
-      else:
-        buff.write(struct.pack('<I%ss'%length, length, _x))
+      buff.write(struct.pack('<I%ss'%length, length, _x))
       _x = self
-      buff.write(_struct_8B.pack(_x.has_calibration, _x.controls_grip, _x.senses_grip, _x.reverses_grip, _x.controls_force, _x.senses_force, _x.controls_position, _x.senses_position))
+      buff.write(_get_struct_8B().pack(_x.has_calibration, _x.controls_grip, _x.senses_grip, _x.reverses_grip, _x.controls_force, _x.senses_force, _x.controls_position, _x.senses_position))
       _x = self.properties
       length = len(_x)
       if python3 or type(_x) == unicode:
         _x = _x.encode('utf-8')
         length = len(_x)
-      if python3:
-        buff.write(struct.pack('<I%sB'%length, length, *_x))
-      else:
-        buff.write(struct.pack('<I%ss'%length, length, _x))
+      buff.write(struct.pack('<I%ss'%length, length, _x))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -209,7 +188,7 @@ string properties       # JSON; other properties
       _x = self
       start = end
       end += 5
-      (_x.id, _x.ui_type,) = _struct_IB.unpack(str[start:end])
+      (_x.id, _x.ui_type,) = _get_struct_IB().unpack(str[start:end])
       start = end
       end += 4
       (length,) = _struct_I.unpack(str[start:end])
@@ -267,7 +246,7 @@ string properties       # JSON; other properties
       _x = self
       start = end
       end += 8
-      (_x.has_calibration, _x.controls_grip, _x.senses_grip, _x.reverses_grip, _x.controls_force, _x.senses_force, _x.controls_position, _x.senses_position,) = _struct_8B.unpack(str[start:end])
+      (_x.has_calibration, _x.controls_grip, _x.senses_grip, _x.reverses_grip, _x.controls_force, _x.senses_force, _x.controls_position, _x.senses_position,) = _get_struct_8B().unpack(str[start:end])
       self.has_calibration = bool(self.has_calibration)
       self.controls_grip = bool(self.controls_grip)
       self.senses_grip = bool(self.senses_grip)
@@ -298,72 +277,51 @@ string properties       # JSON; other properties
     """
     try:
       _x = self
-      buff.write(_struct_IB.pack(_x.id, _x.ui_type))
+      buff.write(_get_struct_IB().pack(_x.id, _x.ui_type))
       _x = self.manufacturer
       length = len(_x)
       if python3 or type(_x) == unicode:
         _x = _x.encode('utf-8')
         length = len(_x)
-      if python3:
-        buff.write(struct.pack('<I%sB'%length, length, *_x))
-      else:
-        buff.write(struct.pack('<I%ss'%length, length, _x))
+      buff.write(struct.pack('<I%ss'%length, length, _x))
       _x = self.product
       length = len(_x)
       if python3 or type(_x) == unicode:
         _x = _x.encode('utf-8')
         length = len(_x)
-      if python3:
-        buff.write(struct.pack('<I%sB'%length, length, *_x))
-      else:
-        buff.write(struct.pack('<I%ss'%length, length, _x))
+      buff.write(struct.pack('<I%ss'%length, length, _x))
       _x = self.serial_number
       length = len(_x)
       if python3 or type(_x) == unicode:
         _x = _x.encode('utf-8')
         length = len(_x)
-      if python3:
-        buff.write(struct.pack('<I%sB'%length, length, *_x))
-      else:
-        buff.write(struct.pack('<I%ss'%length, length, _x))
+      buff.write(struct.pack('<I%ss'%length, length, _x))
       _x = self.hardware_rev
       length = len(_x)
       if python3 or type(_x) == unicode:
         _x = _x.encode('utf-8')
         length = len(_x)
-      if python3:
-        buff.write(struct.pack('<I%sB'%length, length, *_x))
-      else:
-        buff.write(struct.pack('<I%ss'%length, length, _x))
+      buff.write(struct.pack('<I%ss'%length, length, _x))
       _x = self.firmware_rev
       length = len(_x)
       if python3 or type(_x) == unicode:
         _x = _x.encode('utf-8')
         length = len(_x)
-      if python3:
-        buff.write(struct.pack('<I%sB'%length, length, *_x))
-      else:
-        buff.write(struct.pack('<I%ss'%length, length, _x))
+      buff.write(struct.pack('<I%ss'%length, length, _x))
       _x = self.firmware_date
       length = len(_x)
       if python3 or type(_x) == unicode:
         _x = _x.encode('utf-8')
         length = len(_x)
-      if python3:
-        buff.write(struct.pack('<I%sB'%length, length, *_x))
-      else:
-        buff.write(struct.pack('<I%ss'%length, length, _x))
+      buff.write(struct.pack('<I%ss'%length, length, _x))
       _x = self
-      buff.write(_struct_8B.pack(_x.has_calibration, _x.controls_grip, _x.senses_grip, _x.reverses_grip, _x.controls_force, _x.senses_force, _x.controls_position, _x.senses_position))
+      buff.write(_get_struct_8B().pack(_x.has_calibration, _x.controls_grip, _x.senses_grip, _x.reverses_grip, _x.controls_force, _x.senses_force, _x.controls_position, _x.senses_position))
       _x = self.properties
       length = len(_x)
       if python3 or type(_x) == unicode:
         _x = _x.encode('utf-8')
         length = len(_x)
-      if python3:
-        buff.write(struct.pack('<I%sB'%length, length, *_x))
-      else:
-        buff.write(struct.pack('<I%ss'%length, length, _x))
+      buff.write(struct.pack('<I%ss'%length, length, _x))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -378,7 +336,7 @@ string properties       # JSON; other properties
       _x = self
       start = end
       end += 5
-      (_x.id, _x.ui_type,) = _struct_IB.unpack(str[start:end])
+      (_x.id, _x.ui_type,) = _get_struct_IB().unpack(str[start:end])
       start = end
       end += 4
       (length,) = _struct_I.unpack(str[start:end])
@@ -436,7 +394,7 @@ string properties       # JSON; other properties
       _x = self
       start = end
       end += 8
-      (_x.has_calibration, _x.controls_grip, _x.senses_grip, _x.reverses_grip, _x.controls_force, _x.senses_force, _x.controls_position, _x.senses_position,) = _struct_8B.unpack(str[start:end])
+      (_x.has_calibration, _x.controls_grip, _x.senses_grip, _x.reverses_grip, _x.controls_force, _x.senses_force, _x.controls_position, _x.senses_position,) = _get_struct_8B().unpack(str[start:end])
       self.has_calibration = bool(self.has_calibration)
       self.controls_grip = bool(self.controls_grip)
       self.senses_grip = bool(self.senses_grip)
@@ -459,5 +417,18 @@ string properties       # JSON; other properties
       raise genpy.DeserializationError(e) #most likely buffer underfill
 
 _struct_I = genpy.struct_I
-_struct_8B = struct.Struct("<8B")
-_struct_IB = struct.Struct("<IB")
+def _get_struct_I():
+    global _struct_I
+    return _struct_I
+_struct_8B = None
+def _get_struct_8B():
+    global _struct_8B
+    if _struct_8B is None:
+        _struct_8B = struct.Struct("<8B")
+    return _struct_8B
+_struct_IB = None
+def _get_struct_IB():
+    global _struct_IB
+    if _struct_IB is None:
+        _struct_IB = struct.Struct("<IB")
+    return _struct_IB

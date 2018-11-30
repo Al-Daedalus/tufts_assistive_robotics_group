@@ -2,11 +2,11 @@ import rospy as ros
 import baxter_interface as baxter
 import json
 from positionControl import *
-import taskFunctions as tasks
+# import taskFunctions as tasks
 import time
-from threading import *
-import ctypes
-from mobileTasks import *
+# from threading import *
+# import ctypes
+# from mobileTasks import *
 
 
 def terminate_thread(thread):
@@ -53,4 +53,6 @@ rGripper.set_moving_force(100)
 # head = baxter.Head()
 # head.set_pan(1.5707)
 pause_event = Event()
-tester(lLimb, rLimb, lGripper, pause_event)
+playPositionFile('cuffgripper.wp', lLimb, rLimb, pause_event)
+time.sleep(5)
+playPositionFile('dismountadapter.wp', lLimb, rLimb, pause_event)

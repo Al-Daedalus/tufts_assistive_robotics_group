@@ -59,7 +59,7 @@ bool isInputOnly
     """
     try:
       _x = self
-      buff.write(_struct_2IdB.pack(_x.timestamp.secs, _x.timestamp.nsecs, _x.value, _x.isInputOnly))
+      buff.write(_get_struct_2IdB().pack(_x.timestamp.secs, _x.timestamp.nsecs, _x.value, _x.isInputOnly))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -75,7 +75,7 @@ bool isInputOnly
       _x = self
       start = end
       end += 17
-      (_x.timestamp.secs, _x.timestamp.nsecs, _x.value, _x.isInputOnly,) = _struct_2IdB.unpack(str[start:end])
+      (_x.timestamp.secs, _x.timestamp.nsecs, _x.value, _x.isInputOnly,) = _get_struct_2IdB().unpack(str[start:end])
       self.isInputOnly = bool(self.isInputOnly)
       self.timestamp.canon()
       return self
@@ -91,7 +91,7 @@ bool isInputOnly
     """
     try:
       _x = self
-      buff.write(_struct_2IdB.pack(_x.timestamp.secs, _x.timestamp.nsecs, _x.value, _x.isInputOnly))
+      buff.write(_get_struct_2IdB().pack(_x.timestamp.secs, _x.timestamp.nsecs, _x.value, _x.isInputOnly))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -108,7 +108,7 @@ bool isInputOnly
       _x = self
       start = end
       end += 17
-      (_x.timestamp.secs, _x.timestamp.nsecs, _x.value, _x.isInputOnly,) = _struct_2IdB.unpack(str[start:end])
+      (_x.timestamp.secs, _x.timestamp.nsecs, _x.value, _x.isInputOnly,) = _get_struct_2IdB().unpack(str[start:end])
       self.isInputOnly = bool(self.isInputOnly)
       self.timestamp.canon()
       return self
@@ -116,4 +116,12 @@ bool isInputOnly
       raise genpy.DeserializationError(e) #most likely buffer underfill
 
 _struct_I = genpy.struct_I
-_struct_2IdB = struct.Struct("<2IdB")
+def _get_struct_I():
+    global _struct_I
+    return _struct_I
+_struct_2IdB = None
+def _get_struct_2IdB():
+    global _struct_2IdB
+    if _struct_2IdB is None:
+        _struct_2IdB = struct.Struct("<2IdB")
+    return _struct_2IdB
