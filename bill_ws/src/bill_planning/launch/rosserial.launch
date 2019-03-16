@@ -7,5 +7,9 @@
 <param name="port" value="/dev/ultrasonic"/>
 </node>
 
+<node pkg="rosserial_python" type="serial_node.py" name="encoder_node" output="screen">
+<param name="port" value="/dev/encoder"/>
+</node>
+
 <!--<include file="$(find usb_cam)/launch/logitech.launch"/>-->
 </launch>

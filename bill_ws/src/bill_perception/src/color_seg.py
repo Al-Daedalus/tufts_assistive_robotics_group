@@ -2,7 +2,6 @@
 # -*- coding: utf-8 -*-
 
 import rospy
-import numpy
 import tf
 from geometry_msgs.msg import PoseStamped
 from os.path import expanduser
@@ -100,6 +99,10 @@ class Floor_Object_Pose:
 			ang.data = angle
 			self.anglepub.publish(ang)
 
+			wid = Float32()
+			wid.data = width
+			self.widthpub.publish(wid)
+
 		return rect, img
 
 
@@ -187,6 +190,7 @@ class Floor_Object_Pose:
 		rospy.Subscriber('/camera/depth/points', PointCloud2, self.pc_callback)
 		self.imagepub = rospy.Publisher('/floor_object/image', Image, queue_size=10)
 		self.anglepub = rospy.Publisher('/floor_object/angle', Float32, queue_size=10)
+		self.widthpub = rospy.Publisher('/floor_object/width', Float32, queue_size=10)
 		self.posepub = rospy.Publisher('/floor_object/pose', PoseStamped, queue_size=10)
 
 

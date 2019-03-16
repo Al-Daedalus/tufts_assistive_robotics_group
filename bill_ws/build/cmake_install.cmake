@@ -139,6 +139,7 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   include("/home/bill/bill_ros/bill_ws/build/ar_track_alvar/cmake_install.cmake")
   include("/home/bill/bill_ros/bill_ws/build/bill_perception/cmake_install.cmake")
   include("/home/bill/bill_ros/bill_ws/build/usb_cam/cmake_install.cmake")
+  include("/home/bill/bill_ros/bill_ws/build/walk_distance_msg/cmake_install.cmake")
 
 endif()
 

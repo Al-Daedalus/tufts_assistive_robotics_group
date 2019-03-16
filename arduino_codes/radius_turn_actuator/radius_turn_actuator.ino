@@ -6,6 +6,7 @@
 #include <std_msgs/Float32.h>
 
 #define SPEED 30
+#define LOW_SPEED 15
 #define OFFSET 15
 #define LOFFSET 0
 #define TURN_OFFSET 0
@@ -48,16 +49,28 @@ void turnLeft()
   roboclaw.ForwardM2(address, SPEED+LOFFSET);
 }
 
-void moveForward()
+void moveBackward()
 {
   roboclaw.ForwardM1(address, SPEED+OFFSET);
   roboclaw.ForwardM2(address, SPEED+LOFFSET);
 }
 
-void moveBackward()
+void moveForward()
 {
   roboclaw.BackwardM1(address, SPEED+OFFSET);
   roboclaw.BackwardM2(address, SPEED+LOFFSET);
+}
+
+void moveBackwardALittle()
+{
+  roboclaw.ForwardM1(address, LOW_SPEED+OFFSET);
+  roboclaw.ForwardM2(address, LOW_SPEED+LOFFSET);
+}
+
+void moveForwardALittle()
+{
+  roboclaw.BackwardM1(address, LOW_SPEED+OFFSET);
+  roboclaw.BackwardM2(address, LOW_SPEED+LOFFSET);
 }
 
 void messageCb(const geometry_msgs::Twist &input) 
@@ -80,13 +93,22 @@ void messageCb(const geometry_msgs::Twist &input)
 
   
   //move BACKWARD
-  else if (input.linear.x < 0.0  ) 
-                        moveForward();
+  else if (input.linear.x == -3.0  ) 
+                        moveBackward();
            
     //move FORWARD                       
- else if (input.linear.x > 0.0) {
+ else if (input.linear.x == 3.0) {
   if (not TOO_CLOSE)
-                        moveBackward();
+                        moveForward();
+ }
+
+ //move BACKWARD A LITTLE
+ else if (input.linear.x == -0.5)
+                        moveBackwardALittle();
+
+ else if (input.linear.x == 0.5){
+  if (not TOO_CLOSE)
+                        moveForwardALittle();
  }
 
   else if (input.linear.x == 0 and input.angular.z == 0)
