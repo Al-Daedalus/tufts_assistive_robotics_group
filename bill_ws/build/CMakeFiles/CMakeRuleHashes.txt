@@ -20,6 +20,7 @@ a5fdf9a53f126a9697d01f2df5cc54d2 /home/bill/bill_ros/bill_ws/devel/include/multi
 933741a95491fe3ea3863b5fb77f522b /home/bill/bill_ros/bill_ws/devel/include/multimaster_msgs_fkie/SyncServiceInfo.h
 06d980f169b8e07a66450e57fd0bb990 /home/bill/bill_ros/bill_ws/devel/include/multimaster_msgs_fkie/SyncTopicInfo.h
 96c1506056123e117426654911abaabf /home/bill/bill_ros/bill_ws/devel/include/multimaster_msgs_fkie/Task.h
+499f706ee3eacd31791ed68e8a6f1796 /home/bill/bill_ros/bill_ws/devel/include/walk_distance_msg/Walk.h
 1f677270dfc4aa33fac19810927f406d /home/bill/bill_ros/bill_ws/devel/lib/python2.7/dist-packages/bill_diff_drive/msg/_Diff_drive.py
 91f77c9a5a58bb72e5d90624357d33d5 /home/bill/bill_ros/bill_ws/devel/lib/python2.7/dist-packages/bill_diff_drive/msg/__init__.py
 3c156aa23e3a86b921067d7f9b3c29a4 /home/bill/bill_ros/bill_ws/devel/lib/python2.7/dist-packages/bill_encoder/msg/_Encoder.py
@@ -47,6 +48,8 @@ f2ff0c7dcdd939be59cde4f82306444c /home/bill/bill_ros/bill_ws/devel/lib/python2.7
 9af3559c2225577112101a6dd4eadbae /home/bill/bill_ros/bill_ws/devel/lib/python2.7/dist-packages/multimaster_msgs_fkie/srv/_LoadLaunch.py
 479d2ec4e40db91a083a2827739e9260 /home/bill/bill_ros/bill_ws/devel/lib/python2.7/dist-packages/multimaster_msgs_fkie/srv/_Task.py
 98750b6541a80a2364eb270228bd645b /home/bill/bill_ros/bill_ws/devel/lib/python2.7/dist-packages/multimaster_msgs_fkie/srv/__init__.py
+80e6a157f130f944f27bedba0b044813 /home/bill/bill_ros/bill_ws/devel/lib/python2.7/dist-packages/walk_distance_msg/msg/_Walk.py
+78a7cfdb5e81a5e747bde3d49471993a /home/bill/bill_ros/bill_ws/devel/lib/python2.7/dist-packages/walk_distance_msg/msg/__init__.py
 6b3995a43b4fd07ff00201fc442e520d /home/bill/bill_ros/bill_ws/devel/share/common-lisp/ros/bill_diff_drive/msg/Diff_drive.lisp
 15bcca7de02e39bb57f4c187a3ba64af /home/bill/bill_ros/bill_ws/devel/share/common-lisp/ros/bill_encoder/msg/Encoder.lisp
 5939bf5aaefb8b4584aad71e7f8ad45b /home/bill/bill_ros/bill_ws/devel/share/common-lisp/ros/diff_drive_msgs/msg/Diff_drive.lisp
@@ -67,6 +70,7 @@ f5fbfce03f3c8bc49f62f9a16950c1cf /home/bill/bill_ros/bill_ws/devel/share/common-
 5a612bc7a7828f7752cf2abb73a39f9e /home/bill/bill_ros/bill_ws/devel/share/common-lisp/ros/multimaster_msgs_fkie/srv/ListNodes.lisp
 3f0c8a02004be269339a9e64ee7ad370 /home/bill/bill_ros/bill_ws/devel/share/common-lisp/ros/multimaster_msgs_fkie/srv/LoadLaunch.lisp
 61070a1ef64253d65469d12187580b16 /home/bill/bill_ros/bill_ws/devel/share/common-lisp/ros/multimaster_msgs_fkie/srv/Task.lisp
+912c48647dd006c32e7c64c195481902 /home/bill/bill_ros/bill_ws/devel/share/common-lisp/ros/walk_distance_msg/msg/Walk.lisp
 d3922b60decdaeb9d8c9958ed4806f6d /home/bill/bill_ros/bill_ws/devel/share/gennodejs/ros/bill_diff_drive/msg/Diff_drive.js
 0980b19c0169cd5f888996f1ecd1b287 /home/bill/bill_ros/bill_ws/devel/share/gennodejs/ros/bill_encoder/msg/Encoder.js
 8ed061c02b3c1424c1a9e9d5506f360f /home/bill/bill_ros/bill_ws/devel/share/gennodejs/ros/diff_drive_msgs/msg/Diff_drive.js
@@ -87,6 +91,7 @@ a21560136e122320ea68fe61c98ebb01 /home/bill/bill_ros/bill_ws/devel/share/gennode
 c8136ee9b030892081bc228146867e0b /home/bill/bill_ros/bill_ws/devel/share/gennodejs/ros/multimaster_msgs_fkie/srv/ListNodes.js
 f7da95a46f79b06bde7e237c165684dc /home/bill/bill_ros/bill_ws/devel/share/gennodejs/ros/multimaster_msgs_fkie/srv/LoadLaunch.js
 b7e8bb3809179531fdfc1dc1896e39ba /home/bill/bill_ros/bill_ws/devel/share/gennodejs/ros/multimaster_msgs_fkie/srv/Task.js
+a07889f32b8e18cde215e6217dbb9bcd /home/bill/bill_ros/bill_ws/devel/share/gennodejs/ros/walk_distance_msg/msg/Walk.js
 efeec598e739a44f2039ff95e1978992 /home/bill/bill_ros/bill_ws/devel/share/roseus/ros/bill_diff_drive/manifest.l
 e71b88ad5a2170524bae0610a4f3e113 /home/bill/bill_ros/bill_ws/devel/share/roseus/ros/bill_diff_drive/msg/Diff_drive.l
 97acf09a1104dab938c7582a8af58aaa /home/bill/bill_ros/bill_ws/devel/share/roseus/ros/bill_encoder/manifest.l
@@ -113,6 +118,8 @@ e7e7055191c9708f4ab1814029380638 /home/bill/bill_ros/bill_ws/devel/share/roseus/
 a24c44d6fa2a2f3d6dba58075fa88953 /home/bill/bill_ros/bill_ws/devel/share/roseus/ros/multimaster_msgs_fkie/srv/ListNodes.l
 e732990b22f87e32c1f28c7542b74594 /home/bill/bill_ros/bill_ws/devel/share/roseus/ros/multimaster_msgs_fkie/srv/LoadLaunch.l
 0cafd39cdc9d300ecc51cebba449af64 /home/bill/bill_ros/bill_ws/devel/share/roseus/ros/multimaster_msgs_fkie/srv/Task.l
+7e4c9fc10dedcafdb3169a9a90e13ab3 /home/bill/bill_ros/bill_ws/devel/share/roseus/ros/walk_distance_msg/manifest.l
+45ed7bd5f3dd5442cacc8c43eb20e326 /home/bill/bill_ros/bill_ws/devel/share/roseus/ros/walk_distance_msg/msg/Walk.l
 ec2579c3180a37e91082d50c3e87c6e3 CMakeFiles/clean_test_results
 7d1a4d2e923e73f2eed7caeac872773e ar_track_alvar/CMakeFiles/_run_tests_ar_track_alvar_roslaunch-check__home_bill_bill_ros_bill_ws_src_ar_track_alvar_launch_pr2_bundle.launch
 1c7bf30cae8097ff122b59765b245071 ar_track_alvar/CMakeFiles/_run_tests_ar_track_alvar_roslaunch-check__home_bill_bill_ros_bill_ws_src_ar_track_alvar_launch_pr2_bundle_no_kinect.launch
@@ -193,3 +200,9 @@ e46f10a3d74b9a72e46228599a75eea0 multimaster_msgs_fkie/CMakeFiles/_multimaster_m
 83db8ed8c1cd82b0913b73c9afaf2100 multimaster_msgs_fkie/CMakeFiles/multimaster_msgs_fkie_generate_messages_lisp
 83db8ed8c1cd82b0913b73c9afaf2100 multimaster_msgs_fkie/CMakeFiles/multimaster_msgs_fkie_generate_messages_nodejs
 83db8ed8c1cd82b0913b73c9afaf2100 multimaster_msgs_fkie/CMakeFiles/multimaster_msgs_fkie_generate_messages_py
+96fd17656d4d9229f30570a8a62a1753 walk_distance_msg/CMakeFiles/_walk_distance_msg_generate_messages_check_deps_Walk
+ec178be2b3ecd50d2f8184db969a5cd7 walk_distance_msg/CMakeFiles/walk_distance_msg_generate_messages_cpp
+ec178be2b3ecd50d2f8184db969a5cd7 walk_distance_msg/CMakeFiles/walk_distance_msg_generate_messages_eus
+ec178be2b3ecd50d2f8184db969a5cd7 walk_distance_msg/CMakeFiles/walk_distance_msg_generate_messages_lisp
+ec178be2b3ecd50d2f8184db969a5cd7 walk_distance_msg/CMakeFiles/walk_distance_msg_generate_messages_nodejs
+ec178be2b3ecd50d2f8184db969a5cd7 walk_distance_msg/CMakeFiles/walk_distance_msg_generate_messages_py

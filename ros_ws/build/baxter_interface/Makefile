@@ -78,17 +78,6 @@ install/fast: preinstall/fast
 	/usr/bin/cmake -P cmake_install.cmake
 .PHONY : install/fast
 
-# Special rule for the target test
-test:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
-	/usr/bin/ctest --force-new-ctest-process $(ARGS)
-.PHONY : test
-
-# Special rule for the target test
-test/fast: test
-
-.PHONY : test/fast
-
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
@@ -110,6 +99,17 @@ install/strip: preinstall
 install/strip/fast: install/strip
 
 .PHONY : install/strip/fast
+
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+
+.PHONY : test/fast
 
 # Special rule for the target install/local
 install/local: preinstall
@@ -166,51 +166,6 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-baxter_interface/CMakeFiles/dynamic_reconfigure_gencfg.dir/rule:
-	cd /home/bill/bill_ros/ros_ws/build && $(MAKE) -f CMakeFiles/Makefile2 baxter_interface/CMakeFiles/dynamic_reconfigure_gencfg.dir/rule
-.PHONY : baxter_interface/CMakeFiles/dynamic_reconfigure_gencfg.dir/rule
-
-# Convenience name for target.
-dynamic_reconfigure_gencfg: baxter_interface/CMakeFiles/dynamic_reconfigure_gencfg.dir/rule
-
-.PHONY : dynamic_reconfigure_gencfg
-
-# fast build rule for target.
-dynamic_reconfigure_gencfg/fast:
-	cd /home/bill/bill_ros/ros_ws/build && $(MAKE) -f baxter_interface/CMakeFiles/dynamic_reconfigure_gencfg.dir/build.make baxter_interface/CMakeFiles/dynamic_reconfigure_gencfg.dir/build
-.PHONY : dynamic_reconfigure_gencfg/fast
-
-# Convenience name for target.
-baxter_interface/CMakeFiles/dynamic_reconfigure_generate_messages_nodejs.dir/rule:
-	cd /home/bill/bill_ros/ros_ws/build && $(MAKE) -f CMakeFiles/Makefile2 baxter_interface/CMakeFiles/dynamic_reconfigure_generate_messages_nodejs.dir/rule
-.PHONY : baxter_interface/CMakeFiles/dynamic_reconfigure_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-dynamic_reconfigure_generate_messages_nodejs: baxter_interface/CMakeFiles/dynamic_reconfigure_generate_messages_nodejs.dir/rule
-
-.PHONY : dynamic_reconfigure_generate_messages_nodejs
-
-# fast build rule for target.
-dynamic_reconfigure_generate_messages_nodejs/fast:
-	cd /home/bill/bill_ros/ros_ws/build && $(MAKE) -f baxter_interface/CMakeFiles/dynamic_reconfigure_generate_messages_nodejs.dir/build.make baxter_interface/CMakeFiles/dynamic_reconfigure_generate_messages_nodejs.dir/build
-.PHONY : dynamic_reconfigure_generate_messages_nodejs/fast
-
-# Convenience name for target.
-baxter_interface/CMakeFiles/dynamic_reconfigure_generate_messages_eus.dir/rule:
-	cd /home/bill/bill_ros/ros_ws/build && $(MAKE) -f CMakeFiles/Makefile2 baxter_interface/CMakeFiles/dynamic_reconfigure_generate_messages_eus.dir/rule
-.PHONY : baxter_interface/CMakeFiles/dynamic_reconfigure_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-dynamic_reconfigure_generate_messages_eus: baxter_interface/CMakeFiles/dynamic_reconfigure_generate_messages_eus.dir/rule
-
-.PHONY : dynamic_reconfigure_generate_messages_eus
-
-# fast build rule for target.
-dynamic_reconfigure_generate_messages_eus/fast:
-	cd /home/bill/bill_ros/ros_ws/build && $(MAKE) -f baxter_interface/CMakeFiles/dynamic_reconfigure_generate_messages_eus.dir/build.make baxter_interface/CMakeFiles/dynamic_reconfigure_generate_messages_eus.dir/build
-.PHONY : dynamic_reconfigure_generate_messages_eus/fast
-
-# Convenience name for target.
 baxter_interface/CMakeFiles/trajectory_msgs_generate_messages_nodejs.dir/rule:
 	cd /home/bill/bill_ros/ros_ws/build && $(MAKE) -f CMakeFiles/Makefile2 baxter_interface/CMakeFiles/trajectory_msgs_generate_messages_nodejs.dir/rule
 .PHONY : baxter_interface/CMakeFiles/trajectory_msgs_generate_messages_nodejs.dir/rule
@@ -226,6 +181,21 @@ trajectory_msgs_generate_messages_nodejs/fast:
 .PHONY : trajectory_msgs_generate_messages_nodejs/fast
 
 # Convenience name for target.
+baxter_interface/CMakeFiles/dynamic_reconfigure_generate_messages_cpp.dir/rule:
+	cd /home/bill/bill_ros/ros_ws/build && $(MAKE) -f CMakeFiles/Makefile2 baxter_interface/CMakeFiles/dynamic_reconfigure_generate_messages_cpp.dir/rule
+.PHONY : baxter_interface/CMakeFiles/dynamic_reconfigure_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+dynamic_reconfigure_generate_messages_cpp: baxter_interface/CMakeFiles/dynamic_reconfigure_generate_messages_cpp.dir/rule
+
+.PHONY : dynamic_reconfigure_generate_messages_cpp
+
+# fast build rule for target.
+dynamic_reconfigure_generate_messages_cpp/fast:
+	cd /home/bill/bill_ros/ros_ws/build && $(MAKE) -f baxter_interface/CMakeFiles/dynamic_reconfigure_generate_messages_cpp.dir/build.make baxter_interface/CMakeFiles/dynamic_reconfigure_generate_messages_cpp.dir/build
+.PHONY : dynamic_reconfigure_generate_messages_cpp/fast
+
+# Convenience name for target.
 baxter_interface/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/rule:
 	cd /home/bill/bill_ros/ros_ws/build && $(MAKE) -f CMakeFiles/Makefile2 baxter_interface/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/rule
 .PHONY : baxter_interface/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/rule
@@ -239,21 +209,6 @@ trajectory_msgs_generate_messages_lisp: baxter_interface/CMakeFiles/trajectory_m
 trajectory_msgs_generate_messages_lisp/fast:
 	cd /home/bill/bill_ros/ros_ws/build && $(MAKE) -f baxter_interface/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/build.make baxter_interface/CMakeFiles/trajectory_msgs_generate_messages_lisp.dir/build
 .PHONY : trajectory_msgs_generate_messages_lisp/fast
-
-# Convenience name for target.
-baxter_interface/CMakeFiles/trajectory_msgs_generate_messages_eus.dir/rule:
-	cd /home/bill/bill_ros/ros_ws/build && $(MAKE) -f CMakeFiles/Makefile2 baxter_interface/CMakeFiles/trajectory_msgs_generate_messages_eus.dir/rule
-.PHONY : baxter_interface/CMakeFiles/trajectory_msgs_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-trajectory_msgs_generate_messages_eus: baxter_interface/CMakeFiles/trajectory_msgs_generate_messages_eus.dir/rule
-
-.PHONY : trajectory_msgs_generate_messages_eus
-
-# fast build rule for target.
-trajectory_msgs_generate_messages_eus/fast:
-	cd /home/bill/bill_ros/ros_ws/build && $(MAKE) -f baxter_interface/CMakeFiles/trajectory_msgs_generate_messages_eus.dir/build.make baxter_interface/CMakeFiles/trajectory_msgs_generate_messages_eus.dir/build
-.PHONY : trajectory_msgs_generate_messages_eus/fast
 
 # Convenience name for target.
 baxter_interface/CMakeFiles/trajectory_msgs_generate_messages_cpp.dir/rule:
@@ -301,139 +256,19 @@ control_msgs_generate_messages_py/fast:
 .PHONY : control_msgs_generate_messages_py/fast
 
 # Convenience name for target.
-baxter_interface/CMakeFiles/control_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/bill/bill_ros/ros_ws/build && $(MAKE) -f CMakeFiles/Makefile2 baxter_interface/CMakeFiles/control_msgs_generate_messages_nodejs.dir/rule
-.PHONY : baxter_interface/CMakeFiles/control_msgs_generate_messages_nodejs.dir/rule
+baxter_interface/CMakeFiles/control_msgs_generate_messages_eus.dir/rule:
+	cd /home/bill/bill_ros/ros_ws/build && $(MAKE) -f CMakeFiles/Makefile2 baxter_interface/CMakeFiles/control_msgs_generate_messages_eus.dir/rule
+.PHONY : baxter_interface/CMakeFiles/control_msgs_generate_messages_eus.dir/rule
 
 # Convenience name for target.
-control_msgs_generate_messages_nodejs: baxter_interface/CMakeFiles/control_msgs_generate_messages_nodejs.dir/rule
+control_msgs_generate_messages_eus: baxter_interface/CMakeFiles/control_msgs_generate_messages_eus.dir/rule
 
-.PHONY : control_msgs_generate_messages_nodejs
+.PHONY : control_msgs_generate_messages_eus
 
 # fast build rule for target.
-control_msgs_generate_messages_nodejs/fast:
-	cd /home/bill/bill_ros/ros_ws/build && $(MAKE) -f baxter_interface/CMakeFiles/control_msgs_generate_messages_nodejs.dir/build.make baxter_interface/CMakeFiles/control_msgs_generate_messages_nodejs.dir/build
-.PHONY : control_msgs_generate_messages_nodejs/fast
-
-# Convenience name for target.
-baxter_interface/CMakeFiles/dynamic_reconfigure_generate_messages_lisp.dir/rule:
-	cd /home/bill/bill_ros/ros_ws/build && $(MAKE) -f CMakeFiles/Makefile2 baxter_interface/CMakeFiles/dynamic_reconfigure_generate_messages_lisp.dir/rule
-.PHONY : baxter_interface/CMakeFiles/dynamic_reconfigure_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-dynamic_reconfigure_generate_messages_lisp: baxter_interface/CMakeFiles/dynamic_reconfigure_generate_messages_lisp.dir/rule
-
-.PHONY : dynamic_reconfigure_generate_messages_lisp
-
-# fast build rule for target.
-dynamic_reconfigure_generate_messages_lisp/fast:
-	cd /home/bill/bill_ros/ros_ws/build && $(MAKE) -f baxter_interface/CMakeFiles/dynamic_reconfigure_generate_messages_lisp.dir/build.make baxter_interface/CMakeFiles/dynamic_reconfigure_generate_messages_lisp.dir/build
-.PHONY : dynamic_reconfigure_generate_messages_lisp/fast
-
-# Convenience name for target.
-baxter_interface/CMakeFiles/control_msgs_generate_messages_lisp.dir/rule:
-	cd /home/bill/bill_ros/ros_ws/build && $(MAKE) -f CMakeFiles/Makefile2 baxter_interface/CMakeFiles/control_msgs_generate_messages_lisp.dir/rule
-.PHONY : baxter_interface/CMakeFiles/control_msgs_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-control_msgs_generate_messages_lisp: baxter_interface/CMakeFiles/control_msgs_generate_messages_lisp.dir/rule
-
-.PHONY : control_msgs_generate_messages_lisp
-
-# fast build rule for target.
-control_msgs_generate_messages_lisp/fast:
-	cd /home/bill/bill_ros/ros_ws/build && $(MAKE) -f baxter_interface/CMakeFiles/control_msgs_generate_messages_lisp.dir/build.make baxter_interface/CMakeFiles/control_msgs_generate_messages_lisp.dir/build
-.PHONY : control_msgs_generate_messages_lisp/fast
-
-# Convenience name for target.
-baxter_interface/CMakeFiles/roscpp_generate_messages_lisp.dir/rule:
-	cd /home/bill/bill_ros/ros_ws/build && $(MAKE) -f CMakeFiles/Makefile2 baxter_interface/CMakeFiles/roscpp_generate_messages_lisp.dir/rule
-.PHONY : baxter_interface/CMakeFiles/roscpp_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-roscpp_generate_messages_lisp: baxter_interface/CMakeFiles/roscpp_generate_messages_lisp.dir/rule
-
-.PHONY : roscpp_generate_messages_lisp
-
-# fast build rule for target.
-roscpp_generate_messages_lisp/fast:
-	cd /home/bill/bill_ros/ros_ws/build && $(MAKE) -f baxter_interface/CMakeFiles/roscpp_generate_messages_lisp.dir/build.make baxter_interface/CMakeFiles/roscpp_generate_messages_lisp.dir/build
-.PHONY : roscpp_generate_messages_lisp/fast
-
-# Convenience name for target.
-baxter_interface/CMakeFiles/actionlib_generate_messages_py.dir/rule:
-	cd /home/bill/bill_ros/ros_ws/build && $(MAKE) -f CMakeFiles/Makefile2 baxter_interface/CMakeFiles/actionlib_generate_messages_py.dir/rule
-.PHONY : baxter_interface/CMakeFiles/actionlib_generate_messages_py.dir/rule
-
-# Convenience name for target.
-actionlib_generate_messages_py: baxter_interface/CMakeFiles/actionlib_generate_messages_py.dir/rule
-
-.PHONY : actionlib_generate_messages_py
-
-# fast build rule for target.
-actionlib_generate_messages_py/fast:
-	cd /home/bill/bill_ros/ros_ws/build && $(MAKE) -f baxter_interface/CMakeFiles/actionlib_generate_messages_py.dir/build.make baxter_interface/CMakeFiles/actionlib_generate_messages_py.dir/build
-.PHONY : actionlib_generate_messages_py/fast
-
-# Convenience name for target.
-baxter_interface/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule:
-	cd /home/bill/bill_ros/ros_ws/build && $(MAKE) -f CMakeFiles/Makefile2 baxter_interface/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule
-.PHONY : baxter_interface/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-rosgraph_msgs_generate_messages_eus: baxter_interface/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule
-
-.PHONY : rosgraph_msgs_generate_messages_eus
-
-# fast build rule for target.
-rosgraph_msgs_generate_messages_eus/fast:
-	cd /home/bill/bill_ros/ros_ws/build && $(MAKE) -f baxter_interface/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build.make baxter_interface/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build
-.PHONY : rosgraph_msgs_generate_messages_eus/fast
-
-# Convenience name for target.
-baxter_interface/CMakeFiles/control_msgs_generate_messages_cpp.dir/rule:
-	cd /home/bill/bill_ros/ros_ws/build && $(MAKE) -f CMakeFiles/Makefile2 baxter_interface/CMakeFiles/control_msgs_generate_messages_cpp.dir/rule
-.PHONY : baxter_interface/CMakeFiles/control_msgs_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-control_msgs_generate_messages_cpp: baxter_interface/CMakeFiles/control_msgs_generate_messages_cpp.dir/rule
-
-.PHONY : control_msgs_generate_messages_cpp
-
-# fast build rule for target.
-control_msgs_generate_messages_cpp/fast:
-	cd /home/bill/bill_ros/ros_ws/build && $(MAKE) -f baxter_interface/CMakeFiles/control_msgs_generate_messages_cpp.dir/build.make baxter_interface/CMakeFiles/control_msgs_generate_messages_cpp.dir/build
-.PHONY : control_msgs_generate_messages_cpp/fast
-
-# Convenience name for target.
-baxter_interface/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/bill/bill_ros/ros_ws/build && $(MAKE) -f CMakeFiles/Makefile2 baxter_interface/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/rule
-.PHONY : baxter_interface/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-actionlib_msgs_generate_messages_nodejs: baxter_interface/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/rule
-
-.PHONY : actionlib_msgs_generate_messages_nodejs
-
-# fast build rule for target.
-actionlib_msgs_generate_messages_nodejs/fast:
-	cd /home/bill/bill_ros/ros_ws/build && $(MAKE) -f baxter_interface/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/build.make baxter_interface/CMakeFiles/actionlib_msgs_generate_messages_nodejs.dir/build
-.PHONY : actionlib_msgs_generate_messages_nodejs/fast
-
-# Convenience name for target.
-baxter_interface/CMakeFiles/actionlib_generate_messages_cpp.dir/rule:
-	cd /home/bill/bill_ros/ros_ws/build && $(MAKE) -f CMakeFiles/Makefile2 baxter_interface/CMakeFiles/actionlib_generate_messages_cpp.dir/rule
-.PHONY : baxter_interface/CMakeFiles/actionlib_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-actionlib_generate_messages_cpp: baxter_interface/CMakeFiles/actionlib_generate_messages_cpp.dir/rule
-
-.PHONY : actionlib_generate_messages_cpp
-
-# fast build rule for target.
-actionlib_generate_messages_cpp/fast:
-	cd /home/bill/bill_ros/ros_ws/build && $(MAKE) -f baxter_interface/CMakeFiles/actionlib_generate_messages_cpp.dir/build.make baxter_interface/CMakeFiles/actionlib_generate_messages_cpp.dir/build
-.PHONY : actionlib_generate_messages_cpp/fast
+control_msgs_generate_messages_eus/fast:
+	cd /home/bill/bill_ros/ros_ws/build && $(MAKE) -f baxter_interface/CMakeFiles/control_msgs_generate_messages_eus.dir/build.make baxter_interface/CMakeFiles/control_msgs_generate_messages_eus.dir/build
+.PHONY : control_msgs_generate_messages_eus/fast
 
 # Convenience name for target.
 baxter_interface/CMakeFiles/trajectory_msgs_generate_messages_py.dir/rule:
@@ -451,19 +286,109 @@ trajectory_msgs_generate_messages_py/fast:
 .PHONY : trajectory_msgs_generate_messages_py/fast
 
 # Convenience name for target.
-baxter_interface/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/rule:
-	cd /home/bill/bill_ros/ros_ws/build && $(MAKE) -f CMakeFiles/Makefile2 baxter_interface/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/rule
-.PHONY : baxter_interface/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/rule
+baxter_interface/CMakeFiles/trajectory_msgs_generate_messages_eus.dir/rule:
+	cd /home/bill/bill_ros/ros_ws/build && $(MAKE) -f CMakeFiles/Makefile2 baxter_interface/CMakeFiles/trajectory_msgs_generate_messages_eus.dir/rule
+.PHONY : baxter_interface/CMakeFiles/trajectory_msgs_generate_messages_eus.dir/rule
 
 # Convenience name for target.
-actionlib_msgs_generate_messages_eus: baxter_interface/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/rule
+trajectory_msgs_generate_messages_eus: baxter_interface/CMakeFiles/trajectory_msgs_generate_messages_eus.dir/rule
 
-.PHONY : actionlib_msgs_generate_messages_eus
+.PHONY : trajectory_msgs_generate_messages_eus
 
 # fast build rule for target.
-actionlib_msgs_generate_messages_eus/fast:
-	cd /home/bill/bill_ros/ros_ws/build && $(MAKE) -f baxter_interface/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/build.make baxter_interface/CMakeFiles/actionlib_msgs_generate_messages_eus.dir/build
-.PHONY : actionlib_msgs_generate_messages_eus/fast
+trajectory_msgs_generate_messages_eus/fast:
+	cd /home/bill/bill_ros/ros_ws/build && $(MAKE) -f baxter_interface/CMakeFiles/trajectory_msgs_generate_messages_eus.dir/build.make baxter_interface/CMakeFiles/trajectory_msgs_generate_messages_eus.dir/build
+.PHONY : trajectory_msgs_generate_messages_eus/fast
+
+# Convenience name for target.
+baxter_interface/CMakeFiles/dynamic_reconfigure_gencfg.dir/rule:
+	cd /home/bill/bill_ros/ros_ws/build && $(MAKE) -f CMakeFiles/Makefile2 baxter_interface/CMakeFiles/dynamic_reconfigure_gencfg.dir/rule
+.PHONY : baxter_interface/CMakeFiles/dynamic_reconfigure_gencfg.dir/rule
+
+# Convenience name for target.
+dynamic_reconfigure_gencfg: baxter_interface/CMakeFiles/dynamic_reconfigure_gencfg.dir/rule
+
+.PHONY : dynamic_reconfigure_gencfg
+
+# fast build rule for target.
+dynamic_reconfigure_gencfg/fast:
+	cd /home/bill/bill_ros/ros_ws/build && $(MAKE) -f baxter_interface/CMakeFiles/dynamic_reconfigure_gencfg.dir/build.make baxter_interface/CMakeFiles/dynamic_reconfigure_gencfg.dir/build
+.PHONY : dynamic_reconfigure_gencfg/fast
+
+# Convenience name for target.
+baxter_interface/CMakeFiles/control_msgs_generate_messages_nodejs.dir/rule:
+	cd /home/bill/bill_ros/ros_ws/build && $(MAKE) -f CMakeFiles/Makefile2 baxter_interface/CMakeFiles/control_msgs_generate_messages_nodejs.dir/rule
+.PHONY : baxter_interface/CMakeFiles/control_msgs_generate_messages_nodejs.dir/rule
+
+# Convenience name for target.
+control_msgs_generate_messages_nodejs: baxter_interface/CMakeFiles/control_msgs_generate_messages_nodejs.dir/rule
+
+.PHONY : control_msgs_generate_messages_nodejs
+
+# fast build rule for target.
+control_msgs_generate_messages_nodejs/fast:
+	cd /home/bill/bill_ros/ros_ws/build && $(MAKE) -f baxter_interface/CMakeFiles/control_msgs_generate_messages_nodejs.dir/build.make baxter_interface/CMakeFiles/control_msgs_generate_messages_nodejs.dir/build
+.PHONY : control_msgs_generate_messages_nodejs/fast
+
+# Convenience name for target.
+baxter_interface/CMakeFiles/dynamic_reconfigure_generate_messages_eus.dir/rule:
+	cd /home/bill/bill_ros/ros_ws/build && $(MAKE) -f CMakeFiles/Makefile2 baxter_interface/CMakeFiles/dynamic_reconfigure_generate_messages_eus.dir/rule
+.PHONY : baxter_interface/CMakeFiles/dynamic_reconfigure_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+dynamic_reconfigure_generate_messages_eus: baxter_interface/CMakeFiles/dynamic_reconfigure_generate_messages_eus.dir/rule
+
+.PHONY : dynamic_reconfigure_generate_messages_eus
+
+# fast build rule for target.
+dynamic_reconfigure_generate_messages_eus/fast:
+	cd /home/bill/bill_ros/ros_ws/build && $(MAKE) -f baxter_interface/CMakeFiles/dynamic_reconfigure_generate_messages_eus.dir/build.make baxter_interface/CMakeFiles/dynamic_reconfigure_generate_messages_eus.dir/build
+.PHONY : dynamic_reconfigure_generate_messages_eus/fast
+
+# Convenience name for target.
+baxter_interface/CMakeFiles/control_msgs_generate_messages_lisp.dir/rule:
+	cd /home/bill/bill_ros/ros_ws/build && $(MAKE) -f CMakeFiles/Makefile2 baxter_interface/CMakeFiles/control_msgs_generate_messages_lisp.dir/rule
+.PHONY : baxter_interface/CMakeFiles/control_msgs_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+control_msgs_generate_messages_lisp: baxter_interface/CMakeFiles/control_msgs_generate_messages_lisp.dir/rule
+
+.PHONY : control_msgs_generate_messages_lisp
+
+# fast build rule for target.
+control_msgs_generate_messages_lisp/fast:
+	cd /home/bill/bill_ros/ros_ws/build && $(MAKE) -f baxter_interface/CMakeFiles/control_msgs_generate_messages_lisp.dir/build.make baxter_interface/CMakeFiles/control_msgs_generate_messages_lisp.dir/build
+.PHONY : control_msgs_generate_messages_lisp/fast
+
+# Convenience name for target.
+baxter_interface/CMakeFiles/dynamic_reconfigure_generate_messages_lisp.dir/rule:
+	cd /home/bill/bill_ros/ros_ws/build && $(MAKE) -f CMakeFiles/Makefile2 baxter_interface/CMakeFiles/dynamic_reconfigure_generate_messages_lisp.dir/rule
+.PHONY : baxter_interface/CMakeFiles/dynamic_reconfigure_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+dynamic_reconfigure_generate_messages_lisp: baxter_interface/CMakeFiles/dynamic_reconfigure_generate_messages_lisp.dir/rule
+
+.PHONY : dynamic_reconfigure_generate_messages_lisp
+
+# fast build rule for target.
+dynamic_reconfigure_generate_messages_lisp/fast:
+	cd /home/bill/bill_ros/ros_ws/build && $(MAKE) -f baxter_interface/CMakeFiles/dynamic_reconfigure_generate_messages_lisp.dir/build.make baxter_interface/CMakeFiles/dynamic_reconfigure_generate_messages_lisp.dir/build
+.PHONY : dynamic_reconfigure_generate_messages_lisp/fast
+
+# Convenience name for target.
+baxter_interface/CMakeFiles/dynamic_reconfigure_generate_messages_nodejs.dir/rule:
+	cd /home/bill/bill_ros/ros_ws/build && $(MAKE) -f CMakeFiles/Makefile2 baxter_interface/CMakeFiles/dynamic_reconfigure_generate_messages_nodejs.dir/rule
+.PHONY : baxter_interface/CMakeFiles/dynamic_reconfigure_generate_messages_nodejs.dir/rule
+
+# Convenience name for target.
+dynamic_reconfigure_generate_messages_nodejs: baxter_interface/CMakeFiles/dynamic_reconfigure_generate_messages_nodejs.dir/rule
+
+.PHONY : dynamic_reconfigure_generate_messages_nodejs
+
+# fast build rule for target.
+dynamic_reconfigure_generate_messages_nodejs/fast:
+	cd /home/bill/bill_ros/ros_ws/build && $(MAKE) -f baxter_interface/CMakeFiles/dynamic_reconfigure_generate_messages_nodejs.dir/build.make baxter_interface/CMakeFiles/dynamic_reconfigure_generate_messages_nodejs.dir/build
+.PHONY : dynamic_reconfigure_generate_messages_nodejs/fast
 
 # Convenience name for target.
 baxter_interface/CMakeFiles/dynamic_reconfigure_generate_messages_py.dir/rule:
@@ -481,244 +406,19 @@ dynamic_reconfigure_generate_messages_py/fast:
 .PHONY : dynamic_reconfigure_generate_messages_py/fast
 
 # Convenience name for target.
-baxter_interface/CMakeFiles/roscpp_generate_messages_py.dir/rule:
-	cd /home/bill/bill_ros/ros_ws/build && $(MAKE) -f CMakeFiles/Makefile2 baxter_interface/CMakeFiles/roscpp_generate_messages_py.dir/rule
-.PHONY : baxter_interface/CMakeFiles/roscpp_generate_messages_py.dir/rule
+baxter_interface/CMakeFiles/control_msgs_generate_messages_cpp.dir/rule:
+	cd /home/bill/bill_ros/ros_ws/build && $(MAKE) -f CMakeFiles/Makefile2 baxter_interface/CMakeFiles/control_msgs_generate_messages_cpp.dir/rule
+.PHONY : baxter_interface/CMakeFiles/control_msgs_generate_messages_cpp.dir/rule
 
 # Convenience name for target.
-roscpp_generate_messages_py: baxter_interface/CMakeFiles/roscpp_generate_messages_py.dir/rule
+control_msgs_generate_messages_cpp: baxter_interface/CMakeFiles/control_msgs_generate_messages_cpp.dir/rule
 
-.PHONY : roscpp_generate_messages_py
+.PHONY : control_msgs_generate_messages_cpp
 
 # fast build rule for target.
-roscpp_generate_messages_py/fast:
-	cd /home/bill/bill_ros/ros_ws/build && $(MAKE) -f baxter_interface/CMakeFiles/roscpp_generate_messages_py.dir/build.make baxter_interface/CMakeFiles/roscpp_generate_messages_py.dir/build
-.PHONY : roscpp_generate_messages_py/fast
-
-# Convenience name for target.
-baxter_interface/CMakeFiles/actionlib_generate_messages_eus.dir/rule:
-	cd /home/bill/bill_ros/ros_ws/build && $(MAKE) -f CMakeFiles/Makefile2 baxter_interface/CMakeFiles/actionlib_generate_messages_eus.dir/rule
-.PHONY : baxter_interface/CMakeFiles/actionlib_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-actionlib_generate_messages_eus: baxter_interface/CMakeFiles/actionlib_generate_messages_eus.dir/rule
-
-.PHONY : actionlib_generate_messages_eus
-
-# fast build rule for target.
-actionlib_generate_messages_eus/fast:
-	cd /home/bill/bill_ros/ros_ws/build && $(MAKE) -f baxter_interface/CMakeFiles/actionlib_generate_messages_eus.dir/build.make baxter_interface/CMakeFiles/actionlib_generate_messages_eus.dir/build
-.PHONY : actionlib_generate_messages_eus/fast
-
-# Convenience name for target.
-baxter_interface/CMakeFiles/actionlib_generate_messages_lisp.dir/rule:
-	cd /home/bill/bill_ros/ros_ws/build && $(MAKE) -f CMakeFiles/Makefile2 baxter_interface/CMakeFiles/actionlib_generate_messages_lisp.dir/rule
-.PHONY : baxter_interface/CMakeFiles/actionlib_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-actionlib_generate_messages_lisp: baxter_interface/CMakeFiles/actionlib_generate_messages_lisp.dir/rule
-
-.PHONY : actionlib_generate_messages_lisp
-
-# fast build rule for target.
-actionlib_generate_messages_lisp/fast:
-	cd /home/bill/bill_ros/ros_ws/build && $(MAKE) -f baxter_interface/CMakeFiles/actionlib_generate_messages_lisp.dir/build.make baxter_interface/CMakeFiles/actionlib_generate_messages_lisp.dir/build
-.PHONY : actionlib_generate_messages_lisp/fast
-
-# Convenience name for target.
-baxter_interface/CMakeFiles/control_msgs_generate_messages_eus.dir/rule:
-	cd /home/bill/bill_ros/ros_ws/build && $(MAKE) -f CMakeFiles/Makefile2 baxter_interface/CMakeFiles/control_msgs_generate_messages_eus.dir/rule
-.PHONY : baxter_interface/CMakeFiles/control_msgs_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-control_msgs_generate_messages_eus: baxter_interface/CMakeFiles/control_msgs_generate_messages_eus.dir/rule
-
-.PHONY : control_msgs_generate_messages_eus
-
-# fast build rule for target.
-control_msgs_generate_messages_eus/fast:
-	cd /home/bill/bill_ros/ros_ws/build && $(MAKE) -f baxter_interface/CMakeFiles/control_msgs_generate_messages_eus.dir/build.make baxter_interface/CMakeFiles/control_msgs_generate_messages_eus.dir/build
-.PHONY : control_msgs_generate_messages_eus/fast
-
-# Convenience name for target.
-baxter_interface/CMakeFiles/roscpp_generate_messages_cpp.dir/rule:
-	cd /home/bill/bill_ros/ros_ws/build && $(MAKE) -f CMakeFiles/Makefile2 baxter_interface/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
-.PHONY : baxter_interface/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-roscpp_generate_messages_cpp: baxter_interface/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
-
-.PHONY : roscpp_generate_messages_cpp
-
-# fast build rule for target.
-roscpp_generate_messages_cpp/fast:
-	cd /home/bill/bill_ros/ros_ws/build && $(MAKE) -f baxter_interface/CMakeFiles/roscpp_generate_messages_cpp.dir/build.make baxter_interface/CMakeFiles/roscpp_generate_messages_cpp.dir/build
-.PHONY : roscpp_generate_messages_cpp/fast
-
-# Convenience name for target.
-baxter_interface/CMakeFiles/actionlib_msgs_generate_messages_py.dir/rule:
-	cd /home/bill/bill_ros/ros_ws/build && $(MAKE) -f CMakeFiles/Makefile2 baxter_interface/CMakeFiles/actionlib_msgs_generate_messages_py.dir/rule
-.PHONY : baxter_interface/CMakeFiles/actionlib_msgs_generate_messages_py.dir/rule
-
-# Convenience name for target.
-actionlib_msgs_generate_messages_py: baxter_interface/CMakeFiles/actionlib_msgs_generate_messages_py.dir/rule
-
-.PHONY : actionlib_msgs_generate_messages_py
-
-# fast build rule for target.
-actionlib_msgs_generate_messages_py/fast:
-	cd /home/bill/bill_ros/ros_ws/build && $(MAKE) -f baxter_interface/CMakeFiles/actionlib_msgs_generate_messages_py.dir/build.make baxter_interface/CMakeFiles/actionlib_msgs_generate_messages_py.dir/build
-.PHONY : actionlib_msgs_generate_messages_py/fast
-
-# Convenience name for target.
-baxter_interface/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/rule:
-	cd /home/bill/bill_ros/ros_ws/build && $(MAKE) -f CMakeFiles/Makefile2 baxter_interface/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/rule
-.PHONY : baxter_interface/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-actionlib_msgs_generate_messages_lisp: baxter_interface/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/rule
-
-.PHONY : actionlib_msgs_generate_messages_lisp
-
-# fast build rule for target.
-actionlib_msgs_generate_messages_lisp/fast:
-	cd /home/bill/bill_ros/ros_ws/build && $(MAKE) -f baxter_interface/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/build.make baxter_interface/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir/build
-.PHONY : actionlib_msgs_generate_messages_lisp/fast
-
-# Convenience name for target.
-baxter_interface/CMakeFiles/actionlib_generate_messages_nodejs.dir/rule:
-	cd /home/bill/bill_ros/ros_ws/build && $(MAKE) -f CMakeFiles/Makefile2 baxter_interface/CMakeFiles/actionlib_generate_messages_nodejs.dir/rule
-.PHONY : baxter_interface/CMakeFiles/actionlib_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-actionlib_generate_messages_nodejs: baxter_interface/CMakeFiles/actionlib_generate_messages_nodejs.dir/rule
-
-.PHONY : actionlib_generate_messages_nodejs
-
-# fast build rule for target.
-actionlib_generate_messages_nodejs/fast:
-	cd /home/bill/bill_ros/ros_ws/build && $(MAKE) -f baxter_interface/CMakeFiles/actionlib_generate_messages_nodejs.dir/build.make baxter_interface/CMakeFiles/actionlib_generate_messages_nodejs.dir/build
-.PHONY : actionlib_generate_messages_nodejs/fast
-
-# Convenience name for target.
-baxter_interface/CMakeFiles/dynamic_reconfigure_generate_messages_cpp.dir/rule:
-	cd /home/bill/bill_ros/ros_ws/build && $(MAKE) -f CMakeFiles/Makefile2 baxter_interface/CMakeFiles/dynamic_reconfigure_generate_messages_cpp.dir/rule
-.PHONY : baxter_interface/CMakeFiles/dynamic_reconfigure_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-dynamic_reconfigure_generate_messages_cpp: baxter_interface/CMakeFiles/dynamic_reconfigure_generate_messages_cpp.dir/rule
-
-.PHONY : dynamic_reconfigure_generate_messages_cpp
-
-# fast build rule for target.
-dynamic_reconfigure_generate_messages_cpp/fast:
-	cd /home/bill/bill_ros/ros_ws/build && $(MAKE) -f baxter_interface/CMakeFiles/dynamic_reconfigure_generate_messages_cpp.dir/build.make baxter_interface/CMakeFiles/dynamic_reconfigure_generate_messages_cpp.dir/build
-.PHONY : dynamic_reconfigure_generate_messages_cpp/fast
-
-# Convenience name for target.
-baxter_interface/CMakeFiles/roscpp_generate_messages_eus.dir/rule:
-	cd /home/bill/bill_ros/ros_ws/build && $(MAKE) -f CMakeFiles/Makefile2 baxter_interface/CMakeFiles/roscpp_generate_messages_eus.dir/rule
-.PHONY : baxter_interface/CMakeFiles/roscpp_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-roscpp_generate_messages_eus: baxter_interface/CMakeFiles/roscpp_generate_messages_eus.dir/rule
-
-.PHONY : roscpp_generate_messages_eus
-
-# fast build rule for target.
-roscpp_generate_messages_eus/fast:
-	cd /home/bill/bill_ros/ros_ws/build && $(MAKE) -f baxter_interface/CMakeFiles/roscpp_generate_messages_eus.dir/build.make baxter_interface/CMakeFiles/roscpp_generate_messages_eus.dir/build
-.PHONY : roscpp_generate_messages_eus/fast
-
-# Convenience name for target.
-baxter_interface/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule:
-	cd /home/bill/bill_ros/ros_ws/build && $(MAKE) -f CMakeFiles/Makefile2 baxter_interface/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule
-.PHONY : baxter_interface/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-rosgraph_msgs_generate_messages_cpp: baxter_interface/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule
-
-.PHONY : rosgraph_msgs_generate_messages_cpp
-
-# fast build rule for target.
-rosgraph_msgs_generate_messages_cpp/fast:
-	cd /home/bill/bill_ros/ros_ws/build && $(MAKE) -f baxter_interface/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build.make baxter_interface/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build
-.PHONY : rosgraph_msgs_generate_messages_cpp/fast
-
-# Convenience name for target.
-baxter_interface/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule:
-	cd /home/bill/bill_ros/ros_ws/build && $(MAKE) -f CMakeFiles/Makefile2 baxter_interface/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule
-.PHONY : baxter_interface/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule
-
-# Convenience name for target.
-rosgraph_msgs_generate_messages_py: baxter_interface/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule
-
-.PHONY : rosgraph_msgs_generate_messages_py
-
-# fast build rule for target.
-rosgraph_msgs_generate_messages_py/fast:
-	cd /home/bill/bill_ros/ros_ws/build && $(MAKE) -f baxter_interface/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build.make baxter_interface/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build
-.PHONY : rosgraph_msgs_generate_messages_py/fast
-
-# Convenience name for target.
-baxter_interface/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule:
-	cd /home/bill/bill_ros/ros_ws/build && $(MAKE) -f CMakeFiles/Makefile2 baxter_interface/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule
-.PHONY : baxter_interface/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-roscpp_generate_messages_nodejs: baxter_interface/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule
-
-.PHONY : roscpp_generate_messages_nodejs
-
-# fast build rule for target.
-roscpp_generate_messages_nodejs/fast:
-	cd /home/bill/bill_ros/ros_ws/build && $(MAKE) -f baxter_interface/CMakeFiles/roscpp_generate_messages_nodejs.dir/build.make baxter_interface/CMakeFiles/roscpp_generate_messages_nodejs.dir/build
-.PHONY : roscpp_generate_messages_nodejs/fast
-
-# Convenience name for target.
-baxter_interface/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule:
-	cd /home/bill/bill_ros/ros_ws/build && $(MAKE) -f CMakeFiles/Makefile2 baxter_interface/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule
-.PHONY : baxter_interface/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-rosgraph_msgs_generate_messages_lisp: baxter_interface/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule
-
-.PHONY : rosgraph_msgs_generate_messages_lisp
-
-# fast build rule for target.
-rosgraph_msgs_generate_messages_lisp/fast:
-	cd /home/bill/bill_ros/ros_ws/build && $(MAKE) -f baxter_interface/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build.make baxter_interface/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build
-.PHONY : rosgraph_msgs_generate_messages_lisp/fast
-
-# Convenience name for target.
-baxter_interface/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/rule:
-	cd /home/bill/bill_ros/ros_ws/build && $(MAKE) -f CMakeFiles/Makefile2 baxter_interface/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/rule
-.PHONY : baxter_interface/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-actionlib_msgs_generate_messages_cpp: baxter_interface/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/rule
-
-.PHONY : actionlib_msgs_generate_messages_cpp
-
-# fast build rule for target.
-actionlib_msgs_generate_messages_cpp/fast:
-	cd /home/bill/bill_ros/ros_ws/build && $(MAKE) -f baxter_interface/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/build.make baxter_interface/CMakeFiles/actionlib_msgs_generate_messages_cpp.dir/build
-.PHONY : actionlib_msgs_generate_messages_cpp/fast
-
-# Convenience name for target.
-baxter_interface/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/bill/bill_ros/ros_ws/build && $(MAKE) -f CMakeFiles/Makefile2 baxter_interface/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule
-.PHONY : baxter_interface/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-rosgraph_msgs_generate_messages_nodejs: baxter_interface/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule
-
-.PHONY : rosgraph_msgs_generate_messages_nodejs
-
-# fast build rule for target.
-rosgraph_msgs_generate_messages_nodejs/fast:
-	cd /home/bill/bill_ros/ros_ws/build && $(MAKE) -f baxter_interface/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build.make baxter_interface/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build
-.PHONY : rosgraph_msgs_generate_messages_nodejs/fast
+control_msgs_generate_messages_cpp/fast:
+	cd /home/bill/bill_ros/ros_ws/build && $(MAKE) -f baxter_interface/CMakeFiles/control_msgs_generate_messages_cpp.dir/build.make baxter_interface/CMakeFiles/control_msgs_generate_messages_cpp.dir/build
+.PHONY : control_msgs_generate_messages_cpp/fast
 
 # Help Target
 help:
@@ -728,48 +428,28 @@ help:
 	@echo "... depend"
 	@echo "... list_install_components"
 	@echo "... install"
-	@echo "... test"
-	@echo "... edit_cache"
-	@echo "... dynamic_reconfigure_gencfg"
-	@echo "... dynamic_reconfigure_generate_messages_nodejs"
-	@echo "... install/strip"
-	@echo "... dynamic_reconfigure_generate_messages_eus"
 	@echo "... trajectory_msgs_generate_messages_nodejs"
+	@echo "... dynamic_reconfigure_generate_messages_cpp"
 	@echo "... trajectory_msgs_generate_messages_lisp"
-	@echo "... trajectory_msgs_generate_messages_eus"
 	@echo "... trajectory_msgs_generate_messages_cpp"
 	@echo "... baxter_interface_gencfg"
 	@echo "... control_msgs_generate_messages_py"
-	@echo "... control_msgs_generate_messages_nodejs"
-	@echo "... dynamic_reconfigure_generate_messages_lisp"
-	@echo "... control_msgs_generate_messages_lisp"
-	@echo "... roscpp_generate_messages_lisp"
-	@echo "... actionlib_generate_messages_py"
-	@echo "... rosgraph_msgs_generate_messages_eus"
-	@echo "... install/local"
-	@echo "... control_msgs_generate_messages_cpp"
-	@echo "... actionlib_msgs_generate_messages_nodejs"
-	@echo "... actionlib_generate_messages_cpp"
-	@echo "... trajectory_msgs_generate_messages_py"
-	@echo "... actionlib_msgs_generate_messages_eus"
-	@echo "... dynamic_reconfigure_generate_messages_py"
-	@echo "... roscpp_generate_messages_py"
-	@echo "... actionlib_generate_messages_eus"
-	@echo "... actionlib_generate_messages_lisp"
 	@echo "... control_msgs_generate_messages_eus"
-	@echo "... roscpp_generate_messages_cpp"
-	@echo "... actionlib_msgs_generate_messages_py"
-	@echo "... actionlib_msgs_generate_messages_lisp"
+	@echo "... trajectory_msgs_generate_messages_py"
+	@echo "... trajectory_msgs_generate_messages_eus"
+	@echo "... dynamic_reconfigure_gencfg"
+	@echo "... edit_cache"
+	@echo "... control_msgs_generate_messages_nodejs"
+	@echo "... install/strip"
+	@echo "... dynamic_reconfigure_generate_messages_eus"
+	@echo "... control_msgs_generate_messages_lisp"
+	@echo "... dynamic_reconfigure_generate_messages_lisp"
+	@echo "... dynamic_reconfigure_generate_messages_nodejs"
+	@echo "... test"
+	@echo "... dynamic_reconfigure_generate_messages_py"
+	@echo "... control_msgs_generate_messages_cpp"
+	@echo "... install/local"
 	@echo "... rebuild_cache"
-	@echo "... actionlib_generate_messages_nodejs"
-	@echo "... dynamic_reconfigure_generate_messages_cpp"
-	@echo "... roscpp_generate_messages_eus"
-	@echo "... rosgraph_msgs_generate_messages_cpp"
-	@echo "... rosgraph_msgs_generate_messages_py"
-	@echo "... roscpp_generate_messages_nodejs"
-	@echo "... rosgraph_msgs_generate_messages_lisp"
-	@echo "... actionlib_msgs_generate_messages_cpp"
-	@echo "... rosgraph_msgs_generate_messages_nodejs"
 .PHONY : help
 
 
