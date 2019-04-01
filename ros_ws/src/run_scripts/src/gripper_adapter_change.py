@@ -66,17 +66,19 @@ class pick_object:
 		self.object_orientation = angle.data 
 
 
-	def pose_callback(self, pose):
-		self.object_pose = pose
+	def bottle_callback(self, pose):
+		self.bottle_pose = pose
+		# print(self.transform_bottle_pose_to_robot_rf())
 
 		#self.grab_object()
 
-	def width_callback(self, width):
-		self.object_width = width
+	def cup_callback(self, pose):
+		self.cup_pose = pose
+		# print(self.transform_cup_pose_to_robot_rf())
 		#self.grab_object()
 
 
-	def transform_object_pose_to_robot_rf(self):
+	def transform_bottle_pose_to_robot_rf(self):
 		#kinect camera axis not the same as the robot axis so we could have
 		#to perform the necessary transforms first to get both axes aligned
 		#and then to transform camera rf to robot's rf
@@ -87,31 +89,58 @@ class pick_object:
 
 		transform = tf_buffer.lookup_transform('base', 'camera_link',rospy.Time(0),
 			rospy.Duration(1.0))
-		trans_pose = tf2_geometry_msgs.do_transform_pose(self.object_pose, transform)
+		trans_pose = tf2_geometry_msgs.do_transform_pose(self.bottle_pose, transform)
+
+		return trans_pose
+
+
+	def transform_cup_pose_to_robot_rf(self):
+		#kinect camera axis not the same as the robot axis so we could have
+		#to perform the necessary transforms first to get both axes aligned
+		#and then to transform camera rf to robot's rf
+		#goal_pose is the final pose of the marker wrt the robot's rf
+
+		tf_buffer = tf2_ros.Buffer(rospy.Duration(1200.0))
+		tf_listener = tf2_ros.TransformListener(tf_buffer)
+
+		transform = tf_buffer.lookup_transform('base', 'camera_link',rospy.Time(0),
+			rospy.Duration(1.0))
+		trans_pose = tf2_geometry_msgs.do_transform_pose(self.cup_pose, transform)
 
 		return trans_pose
 
 
 
-	def grab_object(self):
-		pose = self.transform_object_pose_to_robot_rf()
+	def grab_bottle(self):
+		pose = self.transform_bottle_pose_to_robot_rf()
 		# print(pose)
-		gpose = get_pick_from_box_pose(pose)
-		self.change_gripper()
+		gpose = get_pick_bottle_drink_pose(pose)
+		# self.engage_gripper()
 		time.sleep(2)
 		playPositionFile('waypoints/get_ready_to_grab.wp', self.lLimb, self.rLimb, self.pause_event)
 		move_to_goal_pose(self.lLimb, gpose, self.pause_event)
-		time.sleep(2)
+		# time.sleep(2)
 		self.lGripper.close()
-		playPositionFile('waypoints/transport_object.wp', self.lLimb, self.rLimb, self.pause_event)
+		# playPositionFile('waypoints/transport_object.wp', self.lLimb, self.rLimb, self.pause_event)
+		# self.lGripper.open()
+		# playPositionFile('waypoints/leave_to_origin.wp', self.lLimb, self.rLimb, self.pause_event)
+		# time.sleep(2)
+		# playPositionFile('waypoints/remove_gripper.wp', self.lLimb, self.rLimb, self.pause_event)
+
+	def pour_drink(self):
+		playPositionFile('waypoints/raise_before_pour.wp', self.lLimb, self.rLimb, self.pause_event)
+		pose = self.transform_cup_pose_to_robot_rf()
+		p = get_pour_drink_pose(pose)
+		move_to_goal_pose(self.lLimb, p, self.pause_event)
+		time.sleep(3)
+		playPositionFile('waypoints/return_bottle_to_table.wp', self.lLimb, self.rLimb, self.pause_event)
+		time.sleep(1)
 		self.lGripper.open()
-		playPositionFile('waypoints/leave_to_origin.wp', self.lLimb, self.rLimb, self.pause_event)
-		time.sleep(2)
-		playPositionFile('waypoints/remove_gripper.wp', self.lLimb, self.rLimb, self.pause_event)
+		playPositionFile('waypoints/retract_arm_from_bottle.wp', self.lLimb, self.rLimb, self.pause_event)
+		
 
-
-	def change_gripper(self):
-		print('width is',self.object_width)
+	def engage_gripper(self):
+		# print('width is',self.object_width)
 		playPositionFile('waypoints/wear_gripper.wp', self.lLimb, self.rLimb, self.pause_event)
 		
 		# if self.object_width > 180.0:
@@ -123,7 +152,19 @@ class pick_object:
 		# 		playPositionFile('waypoints/remove_gripper.wp', self.lLimb, self.rLimb, self.pause_event)
 		# 		self.adapter_on = False
 
-		
+	
+	def remove_gripper(self):
+		playPositionFile('waypoints/remove_gripper.wp', self.lLimb, self.rLimb, self.pause_event)
+
+
+	def move_cup(self):
+		pose = self.transform_cup_pose_to_robot_rf()
+		p = get_move_cup_pose(pose)
+		playRightPositionFile('waypoints/pick_the_cup.wp', self.lLimb, self.rLimb, self.pause_event)
+		time.sleep(1)
+		right_move_to_goal_pose(self.rLimb, p, self.pause_event)
+		self.rGripper.close()
+
 
 
 	def map_angle_to_wrist(self):
@@ -159,6 +200,9 @@ class pick_object:
 		if not self.lGripper.calibrate():
 		    print("left gripper did not calibrate")
 		    sys.exit()
+		if not self.rGripper.calibrate():
+			print('right gripper did not calibrate')
+			sys.exit()
 
 		self.lGripper.set_holding_force(100)
 		self.lGripper.set_moving_force(100)
@@ -179,29 +223,37 @@ class pick_object:
 		#self.head.set_pan(1.57)
 
 		#Speech recognition variables
-		self.rec = sr.Recognizer()
-		self.mic = sr.Microphone()
+		# self.rec = sr.Recognizer()
+		# self.mic = sr.Microphone()
 
 		self.object_orientation = None
 		self.object_pose = None
 		self.pause_event = Event()
 
 		#move_to_goal_joint_angle(self.lLimb, self.origin, self.pause_event)
-		rospy.Subscriber('/floor_object/pose', PoseStamped, self.pose_callback)
-		rospy.Subscriber('/floor_object/angle', Float32, self.orientation_callback)
-		rospy.Subscriber('/floor_object/width', Float32, self.width_callback)
-
-
-		self.setup_speech()
-		self.stopListening = self.rec.listen_in_background(self.mic, self.speech_callback, phrase_time_limit=4)
+		rospy.Subscriber('/bottle_pose', PoseStamped, self.bottle_callback)
+		rospy.Subscriber('/cup_pose', PoseStamped, self.cup_callback)
 		
-		#self.gui.main_loop()
+		time.sleep(3)
 
+		# self.setup_speech()
+		# self.stopListening = self.rec.listen_in_background(self.mic, self.speech_callback, phrase_time_limit=4)
+		
+		self.engage_gripper()
+		self.grab_bottle()
+		time.sleep(1)
+		self.move_cup()
+		self.pour_drink()
+		time.sleep(1)
+		self.remove_gripper()
+		
 		
 
-		#print self.lLimb.endpoint_pose()
+		# print self.rLimb.endpoint_pose()
+
+		# print self.lLimb.endpoint_pose()
 		#print self.lLimb.joint_angles()
-		
+		# self.grab_bottle()
 		
 		rospy.spin()
 		
